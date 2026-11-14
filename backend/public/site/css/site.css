@@ -132,3 +132,24 @@ h1, h2, h3, h4, h5, h6, .doc-name, .specialty { font-family: var(--site-font-bod
 
 #main-content .section-title-inverse { color: #fff; }
 #main-content .section-title-inverse em { color: #d3e3d6; }
+
+/* The same public heading hierarchy on every inner page. */
+#main-content .section-eyebrow {
+    font-family: var(--site-font-body);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+#main-content .content-title {
+    font-family: var(--site-font-body);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: normal;
+}
+#main-content .breadcrumb-title.section-title { text-shadow: none; }
+#main-content .breadcrumb-desc, #main-content .dr-short-bio { font-size: 14px; line-height: 1.8; }
+#main-content .accordion-button { font-family: var(--site-font-body); font-size: 16px; font-weight: 600; line-height: 1.5; }
+#main-content .accordion-body { font-size: 14px; line-height: 1.8; }

@@ -8,7 +8,7 @@
             <div class="row align-items-center min-vh-40">
                 <div class="py-5 text-center col-lg-7 text-lg-start">
                     <div class="breadcrumb-text-box animate-up">
-                        <h1 class="mb-3 text-white breadcrumb-title display-4 fw-bold">Expert Services</h1>
+                        <h1 class="mb-3 breadcrumb-title section-title section-title-inverse">Expert <em>Services</em></h1>
 
                         <p class="mt-3 breadcrumb-desc lead text-white-50">{{ $profile->summary }}</p>
 
@@ -34,8 +34,8 @@
         <div class="container">
                             <div class="mb-5 text-center row justify-content-center animate-up">
                     <div class="col-lg-7">
-                        <span class="text-success fw-bold text-uppercase ls-2">What I Provide</span>
-                        <h2 class="mt-2 display-5 fw-bold ">Expert Medical <span class="text-success">Services</span></h2>
+                        <span class="text-success section-eyebrow">What I Provide</span>
+                        <h2 class="mt-2 section-title">Expert Medical <em>Services</em></h2>
                         <div class="mx-auto mb-4 header-line-gold"></div>
                         <p class="text-muted">{{ $profile->summary }}</p>
                     </div>
@@ -46,7 +46,7 @@
                         <div class="p-4 transition-all border-0 shadow-sm service-card-luxury h-100 rounded-4">
                             @if($service->image)<img src="{{ $service->image->url() }}" alt="{{ $service->image->alt_text ?? $service->name }}" class="w-100 rounded-3 mb-3 service-photo" loading="lazy" width="{{ $service->image->width }}" height="{{ $service->image->height }}">@endif
                             <div class="mb-4 icon-box-medical-luxury"><i class="{{ $service->icon ?: 'fas fa-heart-pulse' }}" aria-hidden="true"></i></div>
-                            <h3 class="mb-3 h4 fw-bold text-dark">{{ $service->name }}</h3>
+                            <h3 class="mb-3 content-title text-dark">{{ $service->name }}</h3>
                             <div class="service-desc text-secondary">{{ $service->description }}</div>
                         </div>
                     </article>@endforeach
@@ -65,8 +65,8 @@
                                     <i class="fas fa-user-md me-2"></i> Specialized Healthcare Specialist
                                 </div>
 
-                                <h2 class="mb-3 text-white display-5 fw-bold header-shining">
-                                    Expert Solutions for <br> <span class="text-gold-luxury">Skin Health &amp; Aesthetic Care.</span>
+                                <h2 class="mb-3 section-title section-title-inverse">
+                                    Expert Solutions for <br> <em>Skin Health &amp; Aesthetic Care.</em>
                                 </h2>
 
                                 <p class="mb-4 text-white-50 lead fw-medium">{{ $profile->summary }}</p>

@@ -8,7 +8,7 @@
         <div class="row align-items-center min-vh-40">
             <div class="py-5 text-center col-lg-7 text-lg-start">
                 <div class="breadcrumb-text-box animate-up">
-                    <h1 class="mb-3 text-white breadcrumb-title display-4 fw-bold">Medical Gallery</h1>
+                    <h1 class="mb-3 breadcrumb-title section-title section-title-inverse">Medical <em>Gallery</em></h1>
 
                     <p class="mt-3 breadcrumb-desc lead text-white-50">{{ $profile->summary }}</p>
 
@@ -32,8 +32,8 @@
 <section class="py-5 gallery-main" style="background: #fdfdfd;">
     <div class="container">
                     <div class="mb-5 text-center section-header animate-up">
-                <h6 class="text-success fw-bold text-uppercase ls-2">THE PHOTO JOURNAL</h6>
-                <h2 class="fw-bold display-6">In practice. In person.</h2>
+                <h6 class="text-success section-eyebrow">THE PHOTO JOURNAL</h6>
+                <h2 class="section-title">In practice. <em>In person.</em></h2>
                 <div class="mx-auto mt-2 gold-line"></div>
             </div>
 

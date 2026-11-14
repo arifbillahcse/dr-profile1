@@ -7,7 +7,7 @@
             <div class="row align-items-center min-vh-40">
                 <div class="py-5 text-center col-lg-7 text-lg-start">
                     <div class="breadcrumb-text-box animate-up">
-                        <h1 class="mb-3 text-white breadcrumb-title display-4 fw-bold">Frequently Asked Questions</h1>
+                        <h1 class="mb-3 breadcrumb-title section-title section-title-inverse">Frequently Asked <em>Questions</em></h1>
                         <p class="mt-3 breadcrumb-desc lead text-white-50">{{ $profile->summary }}</p>
                         <nav aria-label="breadcrumb" class="mt-4">
                             <ol class="breadcrumb custom-breadcrumb justify-content-lg-start justify-content-center">
@@ -29,13 +29,12 @@
     <section class="py-5 faq-main-section" style="background: #f8fdfb;">
         <div class="container">
                             <div class="mb-5 text-center section-header animate-up">
-                    <span class="text-success fw-bold text-uppercase ls-2">Knowledge Base</span>
-                    <h2 class="mt-2 display-5 fw-bold text-dark">Have Any <span class="text-success">Questions?</span></h2>
+                    <span class="text-success section-eyebrow">Knowledge Base</span>
+                    <h2 class="mt-2 section-title">Have Any <em>Questions?</em></h2>
                     <div class="mx-auto mb-4 gold-line-divider"></div>
                     <p class="mx-auto text-muted col-lg-8">
-                        Explore answers to common questions. If you have specific concerns regarding high-risk maternity
-                        care, please
-                        @if($site->email)<a href="mailto:{{ $site->email }}" class="text-success fw-bold text-decoration-none">contact me</a>@endif directly.
+                        Explore answers to common questions about the doctor and chamber.
+                        @if($phoneLink)For appointment information, <a href="{{ $phoneLink }}" class="text-success fw-bold text-decoration-none">call the chamber</a>.@endif
                     </p>
                 </div>
 

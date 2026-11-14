@@ -7,7 +7,7 @@
             <div class="row align-items-center min-vh-40">
                 <div class="py-5 text-center col-lg-7 text-lg-start">
                     <div class="breadcrumb-text-box animate-up">
-                        <h1 class="mb-3 text-white breadcrumb-title display-4 fw-bold">{{ $profile->name }}</h1>
+                        <h1 class="mb-3 breadcrumb-title section-title section-title-inverse">{{ $profile->name }}</h1>
                         <p class="mt-3 breadcrumb-desc lead text-white-50">{{ $profile->summary }}</p>
                         <nav aria-label="breadcrumb" class="mt-4">
                             <ol class="breadcrumb custom-breadcrumb justify-content-lg-start justify-content-center">
@@ -43,8 +43,8 @@
                 </div>
 
                 <div class="col-lg-7" data-aos="fade-up">
-                    <h6 class="mb-2 text-success fw-bold text-uppercase ls-2">Expert Physician</h6>
-                    <h2 class="mb-3 display-5 fw-bold text-dark">{{ $profile->name }}</h2>
+                    <h6 class="mb-2 text-success section-eyebrow">Expert Physician</h6>
+                    <h2 class="mb-3 section-title">{{ $profile->name }}</h2>
                     <h4 class="mb-4 text-success-glow fw-semibold">{{ $profile->specialty }}</h4>
 
                     <div class="mb-4 dr-short-bio text-muted lead">{{ $profile->summary }}</div>
@@ -62,7 +62,7 @@
                     @if($educations->isNotEmpty())<div class="p-5 overflow-hidden shadow-lg academic-luxury-card rounded-5 position-relative">
                         <div class="academic-icon-bg"><i class="fas fa-user-graduate"></i></div>
                         <div class="position-relative z-2">
-                            <h3 class="mb-4 fw-bold d-flex align-items-center">
+                            <h3 class="mb-4 content-title d-flex align-items-center">
                                 <i class="bi bi-mortarboard-fill me-3 text-warning"></i> Academic Excellence
                             </h3>
                             <div class="row g-4">@foreach($educations as $education)<div class="col-md-6"><ul class="list-unstyled timeline-luxury"><li class="mb-3"><strong>{{ $education->qualification }}</strong> {{ $education->year }}<br>{{ $education->description ?: $education->institution }}</li></ul></div>@endforeach</div>
@@ -87,7 +87,7 @@
                     <div class="luxury-blob blob-2"></div>
                     <div class="p-5 d-flex flex-column flex-lg-row align-items-center justify-content-between position-relative z-3">
                         <div class="text-center cta-content text-lg-start">
-                            <h2 class="mb-3 text-white display-6 fw-bold">Care for Your Skin & Wellbeing</h2>
+                            <h2 class="mb-3 section-title section-title-inverse">Care for Your Skin <em>&amp; Wellbeing</em></h2>
                             <p class="mb-4 text-white-50 lead">Specialist consultations in dermatology, venereology and aesthetic medicine.</p>
                             @if($phoneLink)<a href="{{ $phoneLink }}" class="btn-help-luxury ripple" aria-label="Call the practice">
                                 <span>CALL FOR APPOINTMENT</span>
