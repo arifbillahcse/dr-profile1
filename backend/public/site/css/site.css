@@ -259,3 +259,10 @@ h1, h2, h3, h4, h5, h6, .doc-name, .specialty { font-family: var(--site-font-bod
     }
     .care-services-heading .care-services-intro>a { align-self: center; }
 }
+
+@media (max-width: 767.98px) {
+    #consultation>.container { padding-left: 24px; padding-right: 24px; }
+    #consultation .process-timeline-wrapper { padding-left: 40px !important; }
+    #consultation .process-timeline-wrapper::before { left: 16px; }
+    #consultation .process-content-card:hover { transform: none; }
+}
