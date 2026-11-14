@@ -234,69 +234,44 @@
 
 
 
-    @if($services->isNotEmpty())<section class="py-5 overflow-hidden service-section position-relative" id="services" itemscope="" itemtype="https://schema.org/Service" style="background-color: #fcfdfd;">
-
-    <div class="service-bg-icon s-icon-1"><i class="fas fa-microscope"></i></div>
-    <div class="service-bg-icon s-icon-2"><i class="fas fa-hand-holding-medical"></i></div>
-
-    <div class="container position-relative" style="z-index: 2;">
-        <div class="mb-5 text-center row justify-content-center">
-            <div class="col-lg-8" data-aos="fade-up">
-                <span class="mb-1 text-success fw-bold text-uppercase ls-2 small d-block">Expert Healthcare
-                    Solutions</span>
-                <h2 class="mt-2 display-5 fw-bold text-dark" itemprop="name">
-                    Specialized <span style="color: #0a2d1e;">Medical Services</span>
-                </h2>
-                <div class="mx-auto mt-2 divider-premium"></div>
-                <p class="mt-4 text-secondary lead-sm" itemprop="description">{{ $profile->summary }}</p>
+    @if($services->isNotEmpty())
+<section class="care-services" id="services" aria-labelledby="care-services-title">
+    <div class="container">
+        <div class="care-services-heading">
+            <div>
+                <span class="care-eyebrow"><span aria-hidden="true"></span> EXPERT HEALTHCARE SOLUTIONS</span>
+                <h2 id="care-services-title">Specialized<br><em>Medical Services.</em></h2>
+            </div>
+            <div class="care-services-intro">
+                <p>Explore care for your skin, hair and aesthetic concerns. Start with a consultation to discuss the options suited to you.</p>
+                <a href="{{ route('public.services') }}">Explore all services <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
         </div>
-
-        <div class="row g-4">
-                            @foreach($services as $service)<article class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100" itemscope="" itemtype="https://schema.org/MedicalSpecialty" id="{{ 'service-'.$service->id }}">
-                    <div class="p-4 overflow-hidden bg-white shadow-sm service-card-pro h-100 rounded-4 position-relative">
-
-                        <div class="card-glow"></div>
-
-                        @if($service->image)<img src="{{ $service->image->url() }}" alt="{{ $service->image->alt_text ?? $service->name }}" class="w-100 rounded-3 mb-3 service-photo" loading="lazy" width="{{ $service->image->width }}" height="{{ $service->image->height }}">@endif
-                        <div class="mb-4 icon-wrapper-medical" aria-hidden="true">
-                            <div class="icon-main"><i class="{{ $service->icon ?: 'fas fa-heart-pulse' }}" aria-hidden="true"></i></div>
-                            
-                        </div>
-
-                        <h3 class="mb-3 h5 fw-bold text-dark" itemprop="name" style="color: #0a2d1e !important;">{{ $service->name }}</h3>
-
-                        <div class="mb-3 text-secondary small lh-base" itemprop="description">{{ $service->description }}</div>
-
-                        <meta itemprop="relevantSpecialty" content="{{ $profile->specialty }}">
-
-
-                    </div>
-                </article>@endforeach
-                            
-                            
-
-            <div class="mt-5 col-lg-12" data-aos="zoom-in">
-                <div class="p-4 overflow-hidden text-white p-md-5 cta-banner-premium rounded-5 d-flex flex-column flex-md-row align-items-center justify-content-between position-relative">
-                    <div class="text-center cta-content position-relative z-2 text-md-start">
-                        <h2 class="mb-2 display-6 fw-bold">Trustworthy Care in Dhaka</h2>
-                        <p class="mb-4 opacity-90">
-                            Book a consultation with
-                            <strong>{{ $profile->name }}</strong> for skin, allergy and aesthetic consultations.
-                        </p>
-                        @if($phoneLink)<a href="{{ $phoneLink }}" class="btn-cta-luxury text-decoration-none">
-                            <span>BOOK AN APPOINTMENT</span>
-                            <i class="fas fa-calendar-check ms-2"></i>
-                        </a>@endif
-                    </div>
-                    <div class="cta-icon-bg z-1 d-none d-md-block">
-                        <i class="fas fa-hand-holding-heart floating-cta-icon"></i>
-                    </div>
+        <div class="care-services-grid">
+            @foreach($services as $service)
+            <article class="care-service" id="{{ 'service-'.$service->id }}">
+                <div class="care-service-top">
+                    <span class="care-service-icon" aria-hidden="true"><i class="{{ $service->icon ?: 'fas fa-stethoscope' }}"></i></span>
+                    <span class="care-service-number" aria-hidden="true">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
                 </div>
-            </div>
+                <h3>{{ $service->name }}</h3>
+                <p>{{ $service->description }}</p>
+                <a class="care-service-link" href="{{ route('public.services') }}#service-{{ $service->id }}" aria-label="Explore {{ $service->name }}">Explore care <span aria-hidden="true">↗</span></a>
+            </article>
+            @endforeach
         </div>
+        @if($phoneLink)
+        <div class="care-consultation">
+            <div class="care-consultation-copy">
+                <span class="care-consultation-icon" aria-hidden="true"><i class="fas fa-comments"></i></span>
+                <div><h3>Not sure where to start?</h3><p>Book a consultation with {{ $profile->name }}.</p></div>
+            </div>
+            <a href="{{ $phoneLink }}">Let’s talk about your care <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        @endif
     </div>
-</section>@endif
+</section>
+@endif
 
 
 
