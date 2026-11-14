@@ -25,7 +25,7 @@
         <link rel="stylesheet" href="{{ asset('site/css/'.$stylesheet.'.css') }}">
     @endforeach
     <link rel="stylesheet" href="{{ asset('site/css/page-'.$page.'.css') }}">
-    <link rel="stylesheet" href="{{ asset('site/css/site.css') }}">
+    <link rel="stylesheet" href="{{ asset('site/css/site.css') }}?v={{ filemtime(public_path('site/css/site.css')) }}">
     <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>

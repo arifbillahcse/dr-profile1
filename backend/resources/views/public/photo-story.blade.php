@@ -1,6 +1,6 @@
 @if($gallery->isNotEmpty())
 <section class="practice-story py-5" aria-labelledby="practice-story-heading">
-    <div class="container py-lg-4">
+    <div class="container">
         <div class="row align-items-end mb-4 g-3">
             <div class="col-lg-8">
                 <p class="story-eyebrow">THE PERSON BEHIND THE CARE</p>
@@ -13,7 +13,7 @@
             @foreach($gallery->take(4) as $moment)
                 @if($moment->image)<a class="practice-moment" href="{{ route('public.gallery') }}" aria-label="{{ $moment->title }}">
                     <img src="{{ $moment->image->url() }}" alt="{{ $moment->image->alt_text ?: $moment->title }}" loading="lazy" width="{{ $moment->image->width }}" height="{{ $moment->image->height }}">
-                    <span><small>IN FOCUS</small>{{ $moment->title }} <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+                    <span>{{ $moment->title }} <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
                 </a>@endif
             @endforeach
         </div>
