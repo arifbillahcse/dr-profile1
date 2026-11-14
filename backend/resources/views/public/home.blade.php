@@ -158,7 +158,7 @@
     <div class="container position-relative" style="z-index: 2;">
         <header class="mb-5 text-center" data-aos="fade-up">
             <span class="mb-2 text-success fw-bold text-uppercase ls-2 small d-block">Academic Journey</span>
-            <h2 class="fw-bold display-5 text-dark" style="letter-spacing: -1px;">Expertise &amp; <span style="color: #0a2d1e;">Certifications</span></h2>
+            <h2 class="section-title">Expertise &amp; <em>Certifications</em></h2>
             <div class="mx-auto mt-2 premium-underline"></div>
         </header>
 
@@ -240,7 +240,7 @@
         <div class="care-services-heading">
             <div>
                 <span class="care-eyebrow"><span aria-hidden="true"></span> EXPERT HEALTHCARE SOLUTIONS</span>
-                <h2 id="care-services-title">Specialized<br><em>Medical Services.</em></h2>
+                <h2 id="care-services-title" class="section-title">Specialized<br><em>Medical Services.</em></h2>
             </div>
             <div class="care-services-intro">
                 <p>Explore care for your skin, hair and aesthetic concerns. Start with a consultation to discuss the options suited to you.</p>
@@ -326,8 +326,9 @@
             <div class="col-lg-6" data-aos="fade-left">
                 <div class="ps-lg-4 about-content">
                     <span class="mb-1 text-success fw-bold text-uppercase ls-2 small d-block">🏥 Introduction</span>
-                    <h2 class="mb-3 display-6 fw-bold text-dark" itemprop="name">
+                    <h2 class="mb-3 section-title" itemprop="name">
                         {{ $profile->name }}
+                    </h2>
                         <div class="mt-3 degree-badge-container" itemprop="medicalSpecialty">
 
                             <div class="flex-wrap gap-2 d-flex">
@@ -337,7 +338,6 @@
                                                                     
                                                             </div>
                         </div>
-                    </h2>
 
                     <div class="mb-4 text-secondary lh-lg" itemprop="description">{{ $profile->summary }}</div>
 
@@ -378,7 +378,7 @@
     <div class="container">
         <div class="mb-5 text-center" data-aos="fade-up">
             <span class="mb-1 text-success fw-bold text-uppercase ls-2 small d-block">How I Care For You</span>
-            <h2 class="fw-bold display-5 text-dark">My Consultation <span style="color: #0a2d1e;">Process</span></h2>
+            <h2 class="section-title">My Consultation <em>Process</em></h2>
             <div class="mx-auto mt-2 divider-premium"></div>
         </div>
 
@@ -448,7 +448,7 @@
 
     <div class="container position-relative" style="z-index: 2;">
         <header class="mb-5 text-center" data-aos="fade-up">
-            <h2 class="fw-bold display-6 text-dark">Video <span class="text-success">Gallery</span></h2>
+            <h2 class="section-title">Video <em>Gallery</em></h2>
             <div class="mx-auto mt-2 header-underline bg-success" style="width: 70px; height: 4px; border-radius: 10px;"></div>
         </header>
 
@@ -490,8 +490,8 @@
     <div class="container">
         <header class="mb-5 text-center" data-aos="fade-up">
             <span class="mb-1 text-success fw-bold text-uppercase ls-2 small d-block">Career Journey</span>
-            <h2 id="exp-title" class="fw-bold display-5 text-dark">
-                Professional <span style="color: #0a2d1e;">Experience</span>
+            <h2 id="exp-title" class="section-title">
+                Professional <em>Experience</em>
             </h2>
             <div class="mx-auto mt-2 divider-premium"></div>
         </header>
@@ -551,7 +551,7 @@
                 <span class="px-3 py-2 mb-2 shadow-sm badge bg-warning text-dark rounded-pill fw-bold ls-1 animate__animated animate__fadeInLeft">
                     <i class="fas fa-clock me-1"></i> CONTACT THE PRACTICE
                 </span>
-                <h2 class="mt-3 mb-2 text-white fw-bold display-6">Do You Have Health Concerns? 🩺</h2>
+                <h2 class="mt-3 mb-2 section-title section-title-inverse">Do You Have <em>Health Concerns?</em></h2>
                 <p class="mb-0 lh-base">
                     For consultation availability and appointments, contact
                     <strong class="text-warning">{{ $profile->name }}</strong> —
@@ -580,7 +580,7 @@
             <div class="d-none d-md-block"></div>
 
             <div class="text-center reveiwbutton">
-                <h2 class="fw-bold display-6">What Patients Are Saying!</h2>
+                <h2 class="section-title">What Patients <em>Are Saying!</em></h2>
                 <div class="mx-auto mt-2 divider bg-success" style="width: 60px; height: 4px;"></div>
             </div>
 
