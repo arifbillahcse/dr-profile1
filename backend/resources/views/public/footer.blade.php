@@ -54,7 +54,7 @@
                 <p class="mb-0 opacity-50 x-small">© {{ now()->year }} {{ $profile->name }}. All rights reserved.</p>
             </div>
             <div class="mt-3 text-center col-md-6 text-md-end mt-md-0">
-                <p class="mb-0 opacity-50 x-small">Developed by <a href="https://classicit.com.bd" target="_blank" rel="noopener noreferrer" class="text-warning text-decoration-none fw-bold">Classic IT</a></p>
+                <p class="mb-0 opacity-50 x-small">Developed by <a href="https://softorio.com" target="_blank" rel="noopener noreferrer" class="text-warning text-decoration-none fw-bold">Softorio</a></p>
             </div>
         </div>
     </div>
