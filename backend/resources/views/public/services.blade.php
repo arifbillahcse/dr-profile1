@@ -44,7 +44,7 @@
             <div class="row g-4">
                                     @foreach($services as $service)<article class="col-lg-4 col-md-6" data-aos="fade-up" id="{{ 'service-'.$service->id }}">
                         <div class="p-4 transition-all border-0 shadow-sm service-card-luxury h-100 rounded-4">
-                            @if($service->image)<img src="{{ $service->image->url() }}" alt="{{ $service->image->alt_text ?? $service->name }}" class="w-100 rounded-3 mb-3" loading="lazy">@endif
+                            @if($service->image)<img src="{{ $service->image->url() }}" alt="{{ $service->image->alt_text ?? $service->name }}" class="w-100 rounded-3 mb-3 service-photo" loading="lazy" width="{{ $service->image->width }}" height="{{ $service->image->height }}">@endif
                             <div class="mb-4 icon-box-medical-luxury"><i class="{{ $service->icon ?: 'fas fa-heart-pulse' }}" aria-hidden="true"></i></div>
                             <h3 class="mb-3 h4 fw-bold text-dark">{{ $service->name }}</h3>
                             <div class="service-desc text-secondary">{{ $service->description }}</div>

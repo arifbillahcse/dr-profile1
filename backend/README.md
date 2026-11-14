@@ -128,3 +128,7 @@ If an update fails, keep maintenance active. Restore the prior source release an
 After configuring the domain, check `/up`, all six public pages, images, mobile navigation, FAQ/gallery interactions, administrator login, settings/content visibility, upload/replacement and a review’s submission/approval/rejection cycle. Verify `/.env`, `/composer.json` and `/storage/logs/laravel.log` are inaccessible. Use HTTPS when testing secure cookies. Review server logs and remove any test content before launch.
 
 These steps follow [Laravel 13 deployment guidance](https://laravel.com/framework/docs/13.x/deployment). The static `dist/` hosting configuration is separate and cannot run this PHP application.
+
+## Supplied Facebook photo collection
+
+After `website:doctor`, run `php artisan website:photos` once to import the seven client-supplied Facebook images into local managed WebP storage, update the portrait and service images, and add the photo journal. Source links are recorded in `database/seeders/data/doctor-photos.json`; the website never depends on expiring Facebook CDN links. The command archives previous service cards, preserves accounts, chambers and reviews, and keeps later edits on repeat runs. Two supplied 206-pixel images remain compact in the gallery. Photo content is not used to infer additional qualifications or unlisted chamber schedules.

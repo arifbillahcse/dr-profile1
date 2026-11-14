@@ -20,7 +20,7 @@
 
                     
 
-                    <div class="hero-header">
+                    <div class="hero-header"><p class="hero-eyebrow"><span></span> CLINICAL &amp; AESTHETIC DERMATOLOGY</p>
                         <h1 class="mb-2 text-white hero-title fw-bold">
                             <span class="opacity-75 d-block specialist-label fs-5 fw-normal">{{ $profile->designation }}</span>
                             <span class="mt-1 doctor-name display-4 d-block" style="color: #ffb703;">{{ $profile->name }}</span>
@@ -258,7 +258,7 @@
 
                         <div class="card-glow"></div>
 
-                        @if($service->image)<img src="{{ $service->image->url() }}" alt="{{ $service->image->alt_text ?? $service->name }}" class="w-100 rounded-3 mb-3" loading="lazy">@endif
+                        @if($service->image)<img src="{{ $service->image->url() }}" alt="{{ $service->image->alt_text ?? $service->name }}" class="w-100 rounded-3 mb-3 service-photo" loading="lazy" width="{{ $service->image->width }}" height="{{ $service->image->height }}">@endif
                         <div class="mb-4 icon-wrapper-medical" aria-hidden="true">
                             <div class="icon-main"><i class="{{ $service->icon ?: 'fas fa-heart-pulse' }}" aria-hidden="true"></i></div>
                             
@@ -301,6 +301,7 @@
 
 
 
+    @include('public.photo-story')
     <section class="py-5 overflow-hidden about-area position-relative" id="about" style="background: #fff url('{{ asset('site/images/a21b1277868e-about_bg.svg') }}') no-repeat center / cover;" itemscope="" itemtype="https://schema.org/Physician">
 
     <div class="about-bg-anim icon-1"><i class="fas fa-hand-holding-heart"></i></div>
