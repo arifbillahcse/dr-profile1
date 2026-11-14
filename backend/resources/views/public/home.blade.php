@@ -164,23 +164,23 @@
 
         <div class="row g-4">
 
-            <div class="col-lg-7" data-aos="fade-right">
+            @if($educations->isNotEmpty())<div class="{{ $awards->isNotEmpty() ? 'col-lg-7' : 'col-12' }}" data-aos="fade-right">
                 <div class="p-4 bg-white shadow-sm h-100 rounded-5 border-top-premium">
                     <h4 class="mb-4 h5 fw-bold text-dark d-flex align-items-center">
                         <span class="icon-circle-sm me-3"><i class="fas fa-graduation-cap"></i></span>
                         Academic Excellence
                     </h4>
 
-                    <div class="qualification-items">
+                    <div class="qualification-items {{ $awards->isEmpty() ? 'qualification-grid' : '' }}">
                                                     @foreach($educations as $education)<div class="mb-3 q-card-step d-flex align-items-center">
                                 <div class="shadow-xs q-logo-wrapper me-3">
-                                    @if($education->image)<img src="{{ $education->image->url() }}" alt="{{ $education->qualification }}" class="img-fluid" loading="lazy">@endif
+                                    @if($education->image)<img src="{{ $education->image->url() }}" alt="{{ $education->qualification }}" class="img-fluid" loading="lazy">@else<i class="fas fa-graduation-cap text-success" aria-hidden="true"></i>@endif
                                 </div>
 
                                 <div class="q-content flex-grow-1">
                                     <h5 class="mb-1 fw-bold text-dark institution-name">{{ $education->qualification }}</h5>
                                     <div class="flex-wrap gap-3 d-flex align-items-center">
-                                        <span class="text-success session-text fw-semibold"><i class="far fa-calendar-check me-1"></i>{{ $education->year }}</span>
+                                        @if($education->year)<span class="text-success session-text fw-semibold"><i class="far fa-calendar-check me-1"></i>{{ $education->year }}</span>@endif
                                         <span class="degree-badge-inline fw-bold text-dark-emphasis">{{ $education->description ?: $education->institution }}</span>
                                     </div>
                                 </div>
@@ -194,7 +194,8 @@
                 </div>
             </div>
 
-            <div class="col-lg-5" data-aos="fade-left">
+            @endif
+            @if($awards->isNotEmpty())<div class="{{ $educations->isNotEmpty() ? 'col-lg-5' : 'col-12' }}" data-aos="fade-left">
                 <div class="p-4 bg-white shadow-sm h-100 rounded-5 border-top-premium">
                     <h4 class="mb-4 h5 fw-bold text-dark d-flex align-items-center">
                         <span class="icon-circle-sm me-3"><i class="fas fa-award"></i></span>
@@ -226,7 +227,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        @endif</div>
     </div>
 </section>@endif
 
@@ -236,7 +237,7 @@
     @if($services->isNotEmpty())<section class="py-5 overflow-hidden service-section position-relative" id="services" itemscope="" itemtype="https://schema.org/Service" style="background-color: #fcfdfd;">
 
     <div class="service-bg-icon s-icon-1"><i class="fas fa-microscope"></i></div>
-    <div class="service-bg-icon s-icon-2"><i class="fas fa-baby"></i></div>
+    <div class="service-bg-icon s-icon-2"><i class="fas fa-hand-holding-medical"></i></div>
 
     <div class="container position-relative" style="z-index: 2;">
         <div class="mb-5 text-center row justify-content-center">
@@ -267,7 +268,7 @@
 
                         <div class="mb-3 text-secondary small lh-base" itemprop="description">{{ $service->description }}</div>
 
-                        <meta itemprop="relevantSpecialty" content="Obstetrics and Gynecology">
+                        <meta itemprop="relevantSpecialty" content="{{ $profile->specialty }}">
 
 
                     </div>
@@ -281,10 +282,9 @@
                         <h2 class="mb-2 display-6 fw-bold">Trustworthy Care in Dhaka</h2>
                         <p class="mb-4 opacity-90">
                             Book a consultation with
-                            <strong>{{ $profile->name }}</strong> for expert High-Risk
-                            Pregnancy management.
+                            <strong>{{ $profile->name }}</strong> for skin, allergy and aesthetic consultations.
                         </p>
-                        @if($site->email)<a href="mailto:{{ $site->email }}" class="btn-cta-luxury text-decoration-none">
+                        @if($phoneLink)<a href="{{ $phoneLink }}" class="btn-cta-luxury text-decoration-none">
                             <span>BOOK AN APPOINTMENT</span>
                             <i class="fas fa-calendar-check ms-2"></i>
                         </a>@endif
@@ -334,7 +334,7 @@
                                 </defs>
                                 <text fill="#198754" font-weight="bold" font-size="8.5" letter-spacing="1">
                                     <textPath xlink:href="#circlePath">
-                                        SINCE 2025 • 24 HOURS SOLUTION • EXPERT CARE •
+                                        DERMATOLOGY • SPECIALIST CONSULTATION • SKIN CARE •
                                     </textPath>
                                 </text>
                             </svg>
@@ -527,7 +527,7 @@
 
                         <div class="mx-auto mb-4 logo-wrapper-premium">
                             <figure class="m-0 overflow-hidden bg-white shadow-sm rounded-circle d-flex align-items-center justify-content-center" style="width: 100px; height: 100px; border: 3px solid #f0f7f4;">
-                                @if($experience->image)<img src="{{ $experience->image->url() }}" alt="{{ $experience->institution }}" class="p-2 img-fluid object-fit-contain" itemprop="logo" loading="lazy">@endif
+                                @if($experience->image)<img src="{{ $experience->image->url() }}" alt="{{ $experience->institution }}" class="p-2 img-fluid object-fit-contain" itemprop="logo" loading="lazy">@else<i class="fas fa-hospital fa-2x text-success" aria-hidden="true"></i>@endif
                             </figure>
                             <span class="verified-badge-exp" title="Verified Experience">
                                 <i class="fas fa-check-circle"></i>
@@ -577,14 +577,14 @@
                 </span>
                 <h2 class="mt-3 mb-2 text-white fw-bold display-6">Do You Have Health Concerns? 🩺</h2>
                 <p class="mb-0 lh-base">
-                    Need Immediate Medical Attention? Get Expert Help From
+                    For consultation availability and appointments, contact
                     <strong class="text-warning">{{ $profile->name }}</strong> —
                     <span class="text-light fw-semibold">{{ $profile->specialty }}</span>
                 </p>
             </div>
 
             <div class="button-side position-relative">
-                @if($site->email)<a href="mailto:{{ $site->email }}" class="btn-help-premium text-decoration-none d-inline-flex align-items-center" title="Get medical help via email">
+                @if($phoneLink)<a href="{{ $phoneLink }}" class="btn-help-premium text-decoration-none d-inline-flex align-items-center" title="Call the chamber for an appointment">
                     <div class="btn-content">
                         <span class="fw-bold">I NEED HELP</span>
                         <i class="fas fa-heartbeat ms-2 pulse-icon"></i>

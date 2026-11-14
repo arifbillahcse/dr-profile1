@@ -24,6 +24,7 @@ class WebsiteImportTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
+        config(['website.manifest' => database_path('seeders/data/website.json')]);
         Storage::fake('public');
     }
 

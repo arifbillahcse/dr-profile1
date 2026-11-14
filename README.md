@@ -1,4 +1,13 @@
-# Dr. Runa Akhter Dola website
+# Dr. Farzana Rahman Shathi website
+
+The active website is the Laravel application in `backend/`. It contains the doctor profile, public pages and administrator dashboard. See [backend setup and cPanel instructions](backend/README.md).
+
+Profile information and portrait were checked against the [official Medinova profile](https://medinovamalibagh.com/doctor-detailes/74) on 14 November 2026 and the client-supplied chamber poster. The source manifest is `backend/database/seeders/data/farzana-shathi.json`.
+
+After pulling an existing deployment, run `php artisan website:doctor` inside `backend/`, then `php artisan optimize`. This archives the previous doctor’s public content and preserves administrator accounts. Repeated runs keep later administrator edits.
+
+## Historical design reference
+
 
 A standalone HTML, CSS and JavaScript version of https://www.drrunaakhterdola.com/, captured on 13 November 2026. The original page layouts, responsive styles, photographs, fonts, icons and browser interactions are stored locally.
 

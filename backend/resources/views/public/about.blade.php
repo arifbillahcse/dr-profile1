@@ -87,9 +87,8 @@
                     <div class="luxury-blob blob-2"></div>
                     <div class="p-5 d-flex flex-column flex-lg-row align-items-center justify-content-between position-relative z-3">
                         <div class="text-center cta-content text-lg-start">
-                            <h2 class="mb-3 text-white display-6 fw-bold">Commitment to Women's Health</h2>
-                            <p class="mb-4 text-white-50 lead">Expert care for complicated pregnancies and specialized fetal
-                                medicine.</p>
+                            <h2 class="mb-3 text-white display-6 fw-bold">Care for Your Skin & Wellbeing</h2>
+                            <p class="mb-4 text-white-50 lead">Specialist consultations in dermatology, venereology and aesthetic medicine.</p>
                             @if($phoneLink)<a href="{{ $phoneLink }}" class="btn-help-luxury ripple" aria-label="Call the practice">
                                 <span>CALL FOR APPOINTMENT</span>
                                 <div class="btn-glow"></div>

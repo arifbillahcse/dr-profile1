@@ -1,0 +1,353 @@
+{
+  "identity": "farzana-shathi-v1",
+  "sources": [
+    {
+      "url": "https://medinovamalibagh.com/doctor-detailes/74",
+      "accessed": "2026-11-14",
+      "fields": [
+        "name",
+        "qualifications",
+        "designation",
+        "institution",
+        "specialty",
+        "portrait",
+        "chamber",
+        "schedule",
+        "phones"
+      ]
+    },
+    {
+      "url": "https://monowarahospital.com/doctors/dr-farzana-rahman-shathi/",
+      "accessed": "2026-11-14",
+      "fields": [
+        "MBBS institution",
+        "dermatosurgery"
+      ]
+    },
+    {
+      "file": "farzana-shathi-chamber.jpeg",
+      "provided_by": "client",
+      "fields": [
+        "Bengali name",
+        "fellowship",
+        "chamber poster"
+      ]
+    }
+  ],
+  "profile": {
+    "data": {
+      "name": "Dr. Farzana Rahman Shathi",
+      "designation": "Assistant Professor, Dermatology",
+      "credentials": [
+        "MBBS (Shaheed Suhrawardy Medical College)",
+        "BCS (Health)",
+        "FCPS (Dermatology & Venereology)",
+        "MCPS (Dermatology & Venereology)",
+        "DDV",
+        "Fellowship in Advanced Aesthetic Dermatology & Regenerative Medicine"
+      ],
+      "summary": "Assistant Professor, Dermatology, Shaheed Suhrawardy Medical College & Hospital, Dhaka. Specialist in skin, allergy, sexual diseases and leprosy; dermatosurgeon and aesthetic practitioner.",
+      "biography": "ডাঃ ফারজানা রহমান সাথী\n\nAssistant Professor, Dermatology, Shaheed Suhrawardy Medical College & Hospital, Dhaka. Specialist in skin, allergy, sexual diseases and leprosy; dermatosurgeon and aesthetic practitioner.\n\nShe holds MBBS, BCS (Health), FCPS (Dermatology & Venereology), MCPS (Dermatology & Venereology), DDV, and a fellowship in Advanced Aesthetic Dermatology & Regenerative Medicine.\n\nShe sees patients at Medinova Malibagh on Saturday, Monday and Wednesday, 6:00 PM–9:00 PM, Lift 6, Room 701. Call the chamber to confirm your appointment.",
+      "specialty": "Dermatology, Venereology & Aesthetic Medicine",
+      "trusted_patients": null,
+      "introduction_youtube_id": null
+    },
+    "media": {
+      "portrait_image_id": "farzana-shathi-portrait.png",
+      "first_image_id": "farzana-shathi-chamber.jpeg",
+      "second_image_id": null,
+      "tall_image_id": "farzana-shathi-portrait.png"
+    }
+  },
+  "site": {
+    "data": {
+      "site_title": "Dr. Farzana Rahman Shathi",
+      "phone": "+880 1790-118855",
+      "additional_phones": [
+        "01790-118866",
+        "02-58313811",
+        "02-58311812-13"
+      ],
+      "email": null,
+      "address": "Room 701, Lift 6, Medinova Medical Services Ltd., Gemcon Business Center, 255 New Circular Road, Malibagh More, Dhaka-1217",
+      "whatsapp_number": null,
+      "social_links": {
+        "facebook": "https://www.facebook.com/dr.shathi"
+      },
+      "seo_title": "Dr. Farzana Rahman Shathi | Dermatologist in Dhaka",
+      "seo_description": "Dermatology, skin, allergy and aesthetic consultations with Dr. Farzana Rahman Shathi at Medinova Malibagh. Saturday, Monday & Wednesday, 6 PM–9 PM. Room 701.",
+      "seo_keywords": "Dr Farzana Rahman Shathi, ডাঃ ফারজানা রহমান সাথী, dermatologist Dhaka, skin allergy specialist, Medinova Malibagh"
+    },
+    "media": {
+      "logo_image_id": null,
+      "favicon_image_id": null,
+      "social_image_id": "farzana-shathi-portrait.png"
+    }
+  },
+  "modules": {
+    "slider": [
+      {
+        "data": {
+          "title": "Dr. Farzana Rahman Shathi",
+          "caption": "Dermatology & Aesthetic Medicine"
+        },
+        "media": {
+          "image_id": "farzana-shathi-portrait.png"
+        }
+      }
+    ],
+    "featured": [],
+    "award": [],
+    "youtube": [],
+    "education": [
+      {
+        "data": {
+          "qualification": "MBBS",
+          "institution": "Shaheed Suhrawardy Medical College",
+          "year": null,
+          "description": "Bachelor of Medicine and Bachelor of Surgery"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "qualification": "BCS (Health)",
+          "institution": null,
+          "year": null,
+          "description": "Bangladesh Civil Service (Health)"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "qualification": "FCPS (Dermatology & Venereology)",
+          "institution": null,
+          "year": null,
+          "description": "Specialist qualification in skin and venereal diseases"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "qualification": "MCPS (Dermatology & Venereology)",
+          "institution": null,
+          "year": null,
+          "description": "Membership qualification in skin and venereal diseases"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "qualification": "DDV",
+          "institution": null,
+          "year": null,
+          "description": "Diploma in Dermatology and Venereology"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "qualification": "Fellowship in Advanced Aesthetic Dermatology & Regenerative Medicine",
+          "institution": null,
+          "year": null,
+          "description": "Advanced training in aesthetic dermatology and regenerative medicine."
+        },
+        "media": {}
+      }
+    ],
+    "service": [
+      {
+        "data": {
+          "name": "Skin & Allergy Consultation",
+          "description": "Consultations for skin conditions and allergies. Assessment and treatment are discussed during your visit.",
+          "icon": "fas fa-hand-holding-medical",
+          "slug": "skin-allergy-consultation"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "name": "Venereology & Leprosy",
+          "description": "Specialist consultation for sexual diseases and leprosy in a private clinical setting.",
+          "icon": "fas fa-user-md",
+          "slug": "venereology-leprosy"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "name": "Dermatosurgery & Aesthetic Care",
+          "description": "Dermatosurgery, aesthetic dermatology and cosmetic consultation. The doctor assesses which options are suitable for your needs.",
+          "icon": "fas fa-stethoscope",
+          "slug": "dermatosurgery-aesthetic-care"
+        },
+        "media": {}
+      }
+    ],
+    "specialist": [
+      {
+        "data": {
+          "title": "Dermatology",
+          "icon": "fas fa-check-circle"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Skin Allergies",
+          "icon": "fas fa-check-circle"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Venereology",
+          "icon": "fas fa-check-circle"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Leprosy",
+          "icon": "fas fa-check-circle"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Dermatosurgery",
+          "icon": "fas fa-check-circle"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Aesthetic & Cosmetic Consultation",
+          "icon": "fas fa-check-circle"
+        },
+        "media": {}
+      }
+    ],
+    "process": [
+      {
+        "data": {
+          "title": "Call the Chamber",
+          "description": "Call 01790-118855 or 01790-118866 to confirm availability and book your serial."
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Visit Medinova Malibagh",
+          "description": "Saturday, Monday or Wednesday, 6 PM–9 PM. Lift 6, Room 701, Gemcon Business Center, 255 New Circular Road, Dhaka."
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Consult the Doctor",
+          "description": "Bring relevant medical reports, prescriptions and a list of medicines you currently use."
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Plan Your Follow-up",
+          "description": "Follow the advice given during your consultation and contact the chamber to arrange any recommended follow-up."
+        },
+        "media": {}
+      }
+    ],
+    "experience": [
+      {
+        "data": {
+          "institution": "Shaheed Suhrawardy Medical College & Hospital, Dhaka",
+          "position": "Assistant Professor, Dermatology (Skin & VD)",
+          "description": "Clinical and academic role in Dermatology & Venereology.",
+          "period_label": "Current appointment",
+          "is_current": true
+        },
+        "media": {}
+      }
+    ],
+    "chamber": [
+      {
+        "data": {
+          "name": "Medinova Medical Services Ltd. — Malibagh Branch",
+          "address": "Room 701, Lift 6, Medinova Medical Services Ltd., Gemcon Business Center, 255 New Circular Road, Malibagh More, Dhaka-1217",
+          "phone": "+880 1790-118855",
+          "additional_phones": [
+            "01790-118866"
+          ],
+          "timezone": "Asia/Dhaka",
+          "map_url": "https://www.google.com/maps/search/?api=1&query=Medinova+Malibagh+255+New+Circular+Road+Dhaka",
+          "schedules": [
+            {
+              "day_of_week": 6,
+              "opens_at": "18:00",
+              "closes_at": "21:00",
+              "is_active": true
+            },
+            {
+              "day_of_week": 1,
+              "opens_at": "18:00",
+              "closes_at": "21:00",
+              "is_active": true
+            },
+            {
+              "day_of_week": 3,
+              "opens_at": "18:00",
+              "closes_at": "21:00",
+              "is_active": true
+            }
+          ]
+        },
+        "media": {}
+      }
+    ],
+    "faq": [
+      {
+        "data": {
+          "question": "ডাঃ ফারজানা রহমান সাথী কোন বিষয়ে বিশেষজ্ঞ?",
+          "answer": "তিনি চর্ম, যৌন, কুষ্ঠ ও এলার্জি রোগের বিশেষজ্ঞ এবং ডার্মাটোসার্জারি ও এসথেটিক চিকিৎসায় পরামর্শ দেন।"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "question": "কোথায় এবং কখন রোগী দেখেন?",
+          "answer": "মেডিনোভা মালিবাগ শাখা, জেমকন বিজনেস সেন্টার, ২৫৫ নিউ সার্কুলার রোড, ঢাকা-১২১৭। লিফট ৬, রুম ৭০১। শনি, সোম ও বুধবার সন্ধ্যা ৬টা থেকে রাত ৯টা পর্যন্ত।"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "question": "অ্যাপয়েন্টমেন্ট কীভাবে নেব?",
+          "answer": "সিরিয়াল ও সময় নিশ্চিত করতে 01790-118855 অথবা 01790-118866 নম্বরে কল করুন।"
+        },
+        "media": {}
+      }
+    ],
+    "gallery": [
+      {
+        "data": {
+          "title": "Dr. Farzana Rahman Shathi",
+          "caption": "Portrait published by Medinova Malibagh."
+        },
+        "media": {
+          "image_id": "farzana-shathi-portrait.png"
+        }
+      },
+      {
+        "data": {
+          "title": "Medinova Malibagh — Chamber Information",
+          "caption": "শনি, সোম ও বুধবার সন্ধ্যা ৬টা–রাত ৯টা। লিফট ৬, রুম ৭০১।"
+        },
+        "media": {
+          "image_id": "farzana-shathi-chamber.jpeg"
+        }
+      }
+    ]
+  },
+  "reviews": []
+}

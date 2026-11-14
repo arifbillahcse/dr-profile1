@@ -18,12 +18,19 @@ class WebsiteImporter
 {
     private array $report = [];
 
+    private string $prefix = '';
+
     public function __construct(private MediaLibrary $library) {}
 
-    public function run(): array
+    public function run(bool $replaceDoctor = false): array
     {
         $this->report = ['created' => 0, 'kept' => 0, 'skipped_modules' => []];
         $manifest = json_decode(file_get_contents(config('website.manifest')), true, flags: JSON_THROW_ON_ERROR);
+        $this->prefix = isset($manifest['identity']) ? $manifest['identity'].':' : '';
+        if (! $replaceDoctor && $this->prefix !== '' && ! $this->imported('profile:primary')
+            && DoctorProfile::where('key', 'primary')->where('name', '!=', $manifest['profile']['data']['name'])->exists()) {
+            throw new RuntimeException('A different doctor profile exists. Run php artisan website:doctor to archive the previous content and apply the new doctor.');
+        }
         foreach ([$manifest['profile'], $manifest['site'], ...array_merge(...array_values($manifest['modules']))] as $entry) {
             foreach ($entry['media'] ?? [] as $filename) {
                 if ($filename !== null) {
@@ -32,8 +39,16 @@ class WebsiteImporter
             }
         }
 
-        $this->singleton('profile:primary', DoctorProfile::class, $manifest['profile']);
-        $this->singleton('site:primary', SiteSetting::class, $manifest['site']);
+        if ($replaceDoctor) {
+            foreach (array_keys($manifest['modules']) as $module) {
+                $class = config('admin.modules')[$module]['model'];
+                $class::query()->delete();
+            }
+            Review::query()->delete();
+        }
+
+        $this->singleton('profile:primary', DoctorProfile::class, $manifest['profile'], $replaceDoctor);
+        $this->singleton('site:primary', SiteSetting::class, $manifest['site'], $replaceDoctor);
 
         foreach ($manifest['modules'] as $module => $entries) {
             if (! array_key_exists($module, config('content_editor.modules'))) {
@@ -41,7 +56,7 @@ class WebsiteImporter
             }
             $class = config('admin.modules')[$module]['model'];
             $history = DB::table('website_imports')->where('model', $class)->exists();
-            if (! $history && $class::withTrashed()->exists()) {
+            if (! $replaceDoctor && ! $history && $class::withTrashed()->exists()) {
                 $this->report['skipped_modules'][] = $module;
 
                 continue;
@@ -86,12 +101,18 @@ class WebsiteImporter
         return $this->report;
     }
 
-    private function singleton(string $key, string $class, array $entry): void
+    private function singleton(string $key, string $class, array $entry, bool $replaceDoctor = false): void
     {
         if ($this->imported($key)) {
             return;
         }
         $record = $class::firstOrNew(['key' => 'primary']);
+        if ($replaceDoctor) {
+            $record->fill([...$entry['data'], ...$this->mediaIds($entry)])->save();
+            $this->remember($key, $record);
+
+            return;
+        }
         $data = [];
         foreach ($entry['data'] as $column => $value) {
             if ($column === 'social_links') {
@@ -130,7 +151,7 @@ class WebsiteImporter
     private function media(string $filename): ?MediaAsset
     {
         $key = 'media:'.$filename;
-        $mapping = DB::table('website_imports')->where('key', $key)->first();
+        $mapping = DB::table('website_imports')->where('key', $this->prefix.$key)->first();
         if ($mapping) {
             return MediaAsset::find($mapping->record_id);
         }
@@ -164,11 +185,11 @@ class WebsiteImporter
 
     private function imported(string $key): bool
     {
-        return DB::table('website_imports')->where('key', $key)->exists();
+        return DB::table('website_imports')->where('key', $this->prefix.$key)->exists();
     }
 
     private function remember(string $key, Model $model): void
     {
-        DB::table('website_imports')->insert(['key' => $key, 'model' => $model::class, 'record_id' => $model->getKey(), 'created_at' => now(), 'updated_at' => now()]);
+        DB::table('website_imports')->insert(['key' => $this->prefix.$key, 'model' => $model::class, 'record_id' => $model->getKey(), 'created_at' => now(), 'updated_at' => now()]);
     }
 }

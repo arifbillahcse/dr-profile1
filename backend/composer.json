@@ -2,7 +2,7 @@
     "$schema": "https://getcomposer.org/schema.json",
     "name": "doctor-profile/backend",
     "type": "project",
-    "description": "Content management backend for Dr. Runa Akhter Dola's website.",
+    "description": "Content management backend for Dr. Farzana Rahman Shathi's website.",
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {

@@ -14,13 +14,13 @@ class SiteConfigurationSeeder extends Seeder
     public function run(): void
     {
         DoctorProfile::firstOrCreate(['key' => 'primary'], [
-            'name' => 'Dr. Runa Akhter Dola',
-            'designation' => 'Asst. Prof.',
+            'name' => 'Dr. Farzana Rahman Shathi',
+            'designation' => 'Assistant Professor, Dermatology',
             'credentials' => [],
         ]);
 
         SiteSetting::firstOrCreate(['key' => 'primary'], [
-            'site_title' => 'Dr. Runa Akhter Dola',
+            'site_title' => 'Dr. Farzana Rahman Shathi',
             'social_links' => [],
         ]);
     }

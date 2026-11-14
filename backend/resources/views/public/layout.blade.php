@@ -20,7 +20,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ $title }}">
     <meta name="twitter:description" content="{{ $description }}">
-    @if($site->favicon)<link rel="icon" href="{{ $site->favicon->url() }}" type="image/webp">@endif
+    @if($site->favicon)<link rel="icon" href="{{ $site->favicon->url() }}" type="image/webp">@else<link rel="icon" href="{{ asset('site/images/doctor-mark.svg') }}" type="image/svg+xml">@endif
     @foreach(['ab62d5ee79a9-bootstrap.min','dbe397d0d04e-all.min','39bc4941d961-swiper-bundle.min','3bb26241a579-magnific-popup.min','784d76080809-bootstrap-icons','2e8ca68208a7-aos','8c4e301a8e13-style','6b743f2723bf-responsive'] as $stylesheet)
         <link rel="stylesheet" href="{{ asset('site/css/'.$stylesheet.'.css') }}">
     @endforeach

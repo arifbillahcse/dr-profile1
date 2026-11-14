@@ -66,8 +66,7 @@
                                 </div>
 
                                 <h2 class="mb-3 text-white display-5 fw-bold header-shining">
-                                    Expert Solutions for <br> <span class="text-gold-luxury">Women's Health &amp;
-                                        Pregnancy.</span>
+                                    Expert Solutions for <br> <span class="text-gold-luxury">Skin Health &amp; Aesthetic Care.</span>
                                 </h2>
 
                                 <p class="mb-4 text-white-50 lead fw-medium">{{ $profile->summary }}</p>
@@ -77,7 +76,7 @@
                                 </div>
 
                                 <div class="cta-action-group">
-                                    @if($site->email)<a href="mailto:{{ $site->email }}" class="btn-help-luxury ripple">
+                                    @if($phoneLink)<a href="{{ $phoneLink }}" class="btn-help-luxury ripple">
                                         <span>BOOK AN APPOINTMENT</span>
                                         <div class="btn-glow"></div>
                                     </a>@endif

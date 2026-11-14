@@ -7,7 +7,7 @@
 
                 <div class="logo-box">
                     <a href="{{ route('public.home') }}">
-                        @if($site->logo)<img src="{{ $site->logo->url() }}" alt="{{ $site->site_title }}" width="200" height="60" class="main-logo-img" loading="lazy">@endif
+                        @if($site->logo)<img src="{{ $site->logo->url() }}" alt="{{ $site->site_title }}" width="200" height="60" class="main-logo-img" loading="lazy">@else<span class="doctor-wordmark"><span class="doctor-wordmark-symbol" aria-hidden="true">✚</span><span><strong>{{ $profile->name }}</strong><small>{{ $profile->specialty }}</small></span></span>@endif
                     </a>
                 </div>
 
@@ -39,7 +39,7 @@
 
     <div class="offcanvas offcanvas-start luxury-mobile-canvas" tabindex="-1" id="mobileMenu">
         <div class="offcanvas-header border-bottom border-light border-opacity-10">
-            @if($site->logo)<img src="{{ $site->logo->url() }}" alt="{{ $site->site_title }}" height="35" loading="lazy">@endif
+            @if($site->logo)<img src="{{ $site->logo->url() }}" alt="{{ $site->site_title }}" height="35" loading="lazy">@else<span class="doctor-wordmark"><span class="doctor-wordmark-symbol" aria-hidden="true">✚</span><span><strong>{{ $profile->name }}</strong><small>{{ $profile->specialty }}</small></span></span>@endif
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close navigation"></button>
         </div>
         <div class="offcanvas-body">

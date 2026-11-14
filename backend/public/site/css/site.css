@@ -20,3 +20,11 @@ body { overflow-x: clip; max-width: 100%; }
 #reviewModal { overflow-wrap: anywhere; }
 #reviews { scroll-margin-top: 100px; }
 .review-card > p { white-space: pre-line; overflow-wrap: anywhere; }
+
+.doctor-wordmark{display:flex;align-items:center;gap:10px;color:#0a4935;max-width:310px;line-height:1.2}.doctor-wordmark strong{font-size:17px;display:block}.doctor-wordmark small{font-size:10px;display:block;margin-top:5px;letter-spacing:.3px}.doctor-wordmark-symbol{font-size:30px;color:#119c76}.logo-box a{text-decoration:none}.luxury-mobile-canvas .doctor-wordmark{color:#fff;max-width:240px}.heroSwiper .hero-img{object-fit:contain;background:#e8f6f7}.heroSwiperMobile .swiper-slide img{width:100%;height:auto;max-height:440px;object-fit:contain;background:#e8f6f7}.gallery-img{object-fit:contain!important;background:#eef7f8}.about-image-wrapper .main-img-card img{object-position:center top}.about-image-wrapper .row>.col-6:first-child .img-hover-card:empty{display:none}@media(max-width:575px){.doctor-wordmark{max-width:235px;gap:7px}.doctor-wordmark strong{font-size:14px}.doctor-wordmark small{font-size:9px}.doctor-wordmark-symbol{font-size:25px}}
+
+.main-header-area .doctor-wordmark{color:#fff}.main-header-area .doctor-wordmark-symbol{color:#40d6ad}.heroSwiper .hero-slide .hero-img{object-fit:contain!important;object-position:center!important}.heroSwiper .slide-overlay{display:none}
+
+.heroSwiper{height:auto!important;max-width:560px;margin-inline:auto}.heroSwiper .hero-slide .hero-img{height:auto!important;width:100%}.heroSwiper .hero-slide::after{display:none}
+
+.qualification-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.qualification-grid .q-card-step{margin-bottom:0!important}@media(max-width:767px){.qualification-grid{grid-template-columns:1fr}}
