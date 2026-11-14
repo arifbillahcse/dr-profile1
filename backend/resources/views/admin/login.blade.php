@@ -19,7 +19,7 @@
     @if($errors->any())<div class="alert alert-danger" role="alert" id="login-errors">{{ $errors->first() }}</div>@endif
     <form method="POST" action="{{ route('admin.login.store') }}">
         @csrf
-        <div class="mb-3"><label class="form-label" for="email">Email address</label><input class="form-control @error('email') is-invalid @enderror" id="email" type="email" name="email" value="{{ old('email') }}" required maxlength="254" autocomplete="username" autofocus @if($errors->any()) aria-describedby="login-errors" @endif></div>
+        <div class="mb-3"><label class="form-label" for="username">Username</label><input class="form-control @error('username') is-invalid @enderror" id="username" type="text" name="username" value="{{ old('username') }}" required maxlength="64" minlength="3" autocapitalize="none" spellcheck="false" autocomplete="username" autofocus @if($errors->any()) aria-describedby="login-errors" @endif></div>
         <div class="mb-4"><label class="form-label" for="password">Password</label><div class="password-input"><input class="form-control" id="password" type="password" name="password" required maxlength="1024" autocomplete="current-password"><button type="button" data-toggle-password="password" aria-label="Show password" aria-pressed="false"><i class="bi bi-eye" aria-hidden="true"></i></button></div></div>
         <button class="btn btn-success auth-submit w-100" type="submit">Sign in <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i></button>
     </form>

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\Password;
 
-#[Signature('admin:create {email? : Administrator email} {--name= : Display name} {--password-stdin : Read the password from standard input instead of an interactive prompt}')]
+#[Signature('admin:create {username? : Administrator username} {--email= : Optional contact email} {--name= : Display name} {--password-stdin : Read the password from standard input instead of an interactive prompt}')]
 #[Description('Create a new administrator without placing a password in command arguments')]
 class CreateAdministrator extends Command
 {
@@ -25,7 +25,8 @@ class CreateAdministrator extends Command
             return self::FAILURE;
         }
 
-        $email = Str::lower(trim((string) ($this->argument('email') ?: $this->ask('Administrator email'))));
+        $username = Str::lower(trim((string) ($this->argument('username') ?: $this->ask('Administrator username'))));
+        $email = filled($this->option('email')) ? Str::lower(trim((string) $this->option('email'))) : null;
         $name = $this->option('name') ?: $this->ask('Display name');
         $password = $this->option('password-stdin') ? rtrim(stream_get_contents(STDIN), "\r\n") : $this->secret('Password');
 
@@ -35,8 +36,9 @@ class CreateAdministrator extends Command
             return self::FAILURE;
         }
 
-        $validator = Validator::make(compact('email', 'name', 'password'), [
-            'email' => ['required', 'email', 'max:254', 'unique:users,email'],
+        $validator = Validator::make(compact('username', 'email', 'name', 'password'), [
+            'username' => ['required', 'string', 'regex:/^[a-z0-9][a-z0-9._-]{2,63}$/D', 'max:64', 'unique:users,username'],
+            'email' => ['nullable', 'email', 'max:254', 'unique:users,email'],
             'name' => ['required', 'string', 'max:255'],
             'password' => ['required', 'string', 'max:1024', Password::min(12)->mixedCase()->numbers()->symbols()],
         ]);
@@ -50,8 +52,8 @@ class CreateAdministrator extends Command
         }
 
         $user = new User;
-        $user->forceFill(['name' => $name, 'email' => $email, 'password' => $password, 'is_admin' => true])->save();
-        $this->info('Administrator created: '.$email);
+        $user->forceFill(['name' => $name, 'username' => $username, 'email' => $email, 'password' => $password, 'is_admin' => true])->save();
+        $this->info('Administrator created: '.$username);
 
         return self::SUCCESS;
     }

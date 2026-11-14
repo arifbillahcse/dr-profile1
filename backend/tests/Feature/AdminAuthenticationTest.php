@@ -22,10 +22,10 @@ class AdminAuthenticationTest extends TestCase
         $this->get('/admin/logout')->assertMethodNotAllowed();
     }
 
-    public function test_admin_can_sign_in_with_a_normalized_email_and_sign_out(): void
+    public function test_admin_can_sign_in_with_a_normalized_username_and_sign_out(): void
     {
-        $admin = User::factory()->admin()->create(['email' => 'admin@example.test']);
-        $this->post(route('admin.login.store'), ['email' => ' ADMIN@example.test ', 'password' => 'password'])->assertRedirect(route('admin.dashboard'));
+        $admin = User::factory()->admin()->create(['username' => 'admin', 'email' => 'admin@example.test']);
+        $this->post(route('admin.login.store'), ['username' => ' ADMIN ', 'password' => 'password'])->assertRedirect(route('admin.dashboard'));
         $this->assertAuthenticatedAs($admin);
         $this->get(route('admin.dashboard'))->assertOk()->assertHeader('Cache-Control', 'no-store, private');
         $this->post(route('admin.logout'))->assertRedirect(route('admin.login'));
@@ -35,11 +35,11 @@ class AdminAuthenticationTest extends TestCase
 
     public function test_invalid_credentials_and_non_admin_accounts_cannot_sign_in(): void
     {
-        User::factory()->create(['email' => 'visitor@example.test']);
-        $this->post(route('admin.login.store'), ['email' => 'visitor@example.test', 'password' => 'password'])->assertSessionHasErrors('email');
+        User::factory()->create(['username' => 'visitor', 'email' => 'visitor@example.test']);
+        $this->post(route('admin.login.store'), ['username' => 'visitor', 'password' => 'password'])->assertSessionHasErrors('username');
         $this->assertGuest();
         $admin = User::factory()->admin()->create();
-        $this->post(route('admin.login.store'), ['email' => $admin->email, 'password' => 'wrong-password'])->assertSessionHasErrors('email');
+        $this->post(route('admin.login.store'), ['username' => $admin->username, 'password' => 'wrong-password'])->assertSessionHasErrors('username');
         $this->assertGuest();
     }
 
@@ -48,13 +48,13 @@ class AdminAuthenticationTest extends TestCase
         $this->freezeTime();
         $admin = User::factory()->admin()->create();
         for ($attempt = 0; $attempt < 5; $attempt++) {
-            $this->post(route('admin.login.store'), ['email' => $admin->email, 'password' => 'wrong-password'])->assertSessionHasErrors('email');
+            $this->post(route('admin.login.store'), ['username' => $admin->username, 'password' => 'wrong-password'])->assertSessionHasErrors('username');
         }
-        $this->post(route('admin.login.store'), ['email' => $admin->email, 'password' => 'password'])
-            ->assertSessionHasErrors(['email' => 'Too many sign-in attempts. Try again in 60 seconds.']);
+        $this->post(route('admin.login.store'), ['username' => $admin->username, 'password' => 'password'])
+            ->assertSessionHasErrors(['username' => 'Too many sign-in attempts. Try again in 60 seconds.']);
         $this->assertGuest();
         $this->travel(61)->seconds();
-        $this->post(route('admin.login.store'), ['email' => $admin->email, 'password' => 'password'])->assertRedirect(route('admin.dashboard'));
+        $this->post(route('admin.login.store'), ['username' => $admin->username, 'password' => 'password'])->assertRedirect(route('admin.dashboard'));
         $this->assertAuthenticatedAs($admin);
     }
 
@@ -88,8 +88,8 @@ class AdminAuthenticationTest extends TestCase
         ])->assertRedirect(route('admin.login'))->assertSessionHas('status');
         $this->assertGuest();
         $this->assertTrue(Hash::check($newPassword, $admin->fresh()->password));
-        $this->post(route('admin.login.store'), ['email' => $admin->email, 'password' => 'password'])->assertSessionHasErrors('email');
-        $this->post(route('admin.login.store'), ['email' => $admin->email, 'password' => $newPassword])->assertRedirect(route('admin.dashboard'));
+        $this->post(route('admin.login.store'), ['username' => $admin->username, 'password' => 'password'])->assertSessionHasErrors('username');
+        $this->post(route('admin.login.store'), ['username' => $admin->username, 'password' => $newPassword])->assertRedirect(route('admin.dashboard'));
     }
 
     public function test_a_session_with_an_old_password_hash_is_rejected(): void
@@ -121,10 +121,10 @@ class AdminAuthenticationTest extends TestCase
 
     public function test_administrator_creation_hashes_password_and_does_not_print_it(): void
     {
-        $this->artisan('admin:create', ['email' => 'owner@example.test', '--name' => 'Website Owner'])
+        $this->artisan('admin:create', ['username' => 'owner', '--email' => 'owner@example.test', '--name' => 'Website Owner'])
             ->expectsQuestion('Password', 'Initial-Strong-Password-42!')
             ->expectsQuestion('Confirm password', 'Initial-Strong-Password-42!')
-            ->expectsOutput('Administrator created: owner@example.test')
+            ->expectsOutput('Administrator created: owner')
             ->doesntExpectOutput('Initial-Strong-Password-42!')
             ->assertSuccessful();
         $admin = User::where('email', 'owner@example.test')->firstOrFail();
@@ -135,7 +135,7 @@ class AdminAuthenticationTest extends TestCase
     public function test_provisioning_does_not_promote_an_existing_account(): void
     {
         $user = User::factory()->create(['email' => 'owner@example.test']);
-        $this->artisan('admin:create', ['email' => $user->email, '--name' => 'Owner'])
+        $this->artisan('admin:create', ['username' => 'owner', '--email' => $user->email, '--name' => 'Owner'])
             ->expectsQuestion('Password', 'Initial-Strong-Password-42!')
             ->expectsQuestion('Confirm password', 'Initial-Strong-Password-42!')
             ->assertFailed();

@@ -27,29 +27,29 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => ['required', 'string', 'email', 'max:254'],
+            'username' => ['required', 'string', 'regex:/^[a-z0-9][a-z0-9._-]{2,63}$/D', 'max:64'],
             'password' => ['required', 'string', 'max:1024'],
         ];
     }
 
     protected function prepareForValidation(): void
     {
-        if (is_string($this->input('email'))) {
-            $this->merge(['email' => Str::lower(trim($this->input('email')))]);
+        if (is_string($this->input('username'))) {
+            $this->merge(['username' => Str::lower(trim($this->input('username')))]);
         }
     }
 
     public function authenticate(): void
     {
-        $key = 'admin-login:'.hash('sha256', $this->string('email').'|'.$this->ip());
+        $key = 'admin-login:'.hash('sha256', $this->string('username').'|'.$this->ip());
 
         if (RateLimiter::tooManyAttempts($key, 5)) {
-            throw ValidationException::withMessages(['email' => 'Too many sign-in attempts. Try again in '.RateLimiter::availableIn($key).' seconds.']);
+            throw ValidationException::withMessages(['username' => 'Too many sign-in attempts. Try again in '.RateLimiter::availableIn($key).' seconds.']);
         }
 
-        if (! Auth::attempt([...$this->safe()->only(['email', 'password']), 'is_admin' => true])) {
+        if (! Auth::attempt([...$this->safe()->only(['username', 'password']), 'is_admin' => true])) {
             RateLimiter::hit($key, 60);
-            throw ValidationException::withMessages(['email' => 'The supplied credentials do not match an administrator account.']);
+            throw ValidationException::withMessages(['username' => 'The supplied credentials do not match an administrator account.']);
         }
 
         RateLimiter::clear($key);
