@@ -246,3 +246,16 @@ h1, h2, h3, h4, h5, h6, .doc-name, .specialty { font-family: var(--site-font-bod
 @media (prefers-reduced-motion: reduce) {
     .animate-up, .hero-content, .hero-title { animation: none !important; opacity: 1; transform: none !important; }
 }
+
+/* Keep the services introduction together and centered below desktop navigation width. */
+@media (max-width: 991.98px) {
+    .care-services-heading { grid-template-columns: minmax(0, 1fr); gap: 18px; text-align: center; }
+    .care-services-heading>div { width: 100%; min-width: 0; }
+    .care-services-heading .care-eyebrow { justify-content: center; text-align: center; }
+    .care-services-heading #care-services-title { text-align: center !important; }
+    .care-services-heading .care-services-intro {
+        display: flex; flex-direction: column; align-items: center;
+        max-width: 520px; justify-self: center; text-align: center !important;
+    }
+    .care-services-heading .care-services-intro>a { align-self: center; }
+}
