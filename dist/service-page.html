@@ -1,0 +1,1395 @@
+<style>
+    .slanted-breadcrumb {
+        background: #0a2d1e;
+        min-height: 450px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+    }
+
+    .breadcrumb-bg-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 20% 50%, rgba(25, 135, 84, 0.25), transparent);
+    }
+
+    .slanted-image-wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 45%;
+        height: 100%;
+        z-index: 2;
+    }
+
+    .slanted-shape {
+        position: absolute;
+        top: 0;
+        left: -100px;
+        width: 200px;
+        height: 100%;
+        background: #0a2d1e;
+        transform: skewX(-15deg);
+        z-index: 3;
+    }
+
+    .doctor-image-bg {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center top;
+        position: relative;
+        z-index: 1;
+    }
+
+    .service-card-luxury {
+        background: #ffffff;
+        border-bottom: 4px solid transparent !important;
+        transition: all 0.4s ease;
+    }
+
+    .service-card-luxury:hover {
+        transform: translateY(-10px);
+        border-bottom-color: #ffb703 !important;
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .icon-box-medical-luxury {
+        width: 70px;
+        height: 70px;
+        background: rgba(25, 135, 84, 0.1);
+        color: #198754;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        transition: 0.4s;
+    }
+
+    .service-card-luxury:hover .icon-box-medical-luxury {
+        background: #198754;
+        color: #fff;
+        transform: rotateY(360deg);
+    }
+
+    .header-line-gold {
+        width: 70px;
+        height: 4px;
+        background: #ffb703;
+        border-radius: 50px;
+    }
+
+    /* --- CTA Luxury Banner --- */
+    .cta-banner-luxury {
+        background: linear-gradient(135deg, #0a2d1e 0%, #198754 100%);
+        box-shadow: 0 20px 40px rgba(10, 45, 30, 0.3);
+    }
+
+    .btn-gold-luxury {
+        background: #ffb703;
+        color: #0a2d1e;
+        border: none;
+        font-weight: 800;
+        transition: 0.3s;
+    }
+
+    .btn-gold-luxury:hover {
+        background: #fff;
+        color: #0a2d1e;
+        transform: scale(1.05);
+    }
+
+    .ls-2 {
+        letter-spacing: 2px;
+    }
+
+    .animate-up {
+        animation: fadeInUp 0.8s both;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 991px) {
+        .slanted-breadcrumb {
+            min-height: auto;
+            padding: 60px 0;
+        }
+
+        .cta-banner-luxury {
+            padding: 40px 30px !important;
+            text-align: center;
+        }
+    }
+
+    .cta-help-luxury {
+        background: #0a2d1e;
+        border: 1px solid rgba(255, 183, 3, 0.1);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    /* 2. Interactive Blobs (Home Page style) */
+    .luxury-blob {
+        position: absolute;
+        width: 350px;
+        height: 350px;
+        border-radius: 50%;
+        filter: blur(80px);
+        z-index: 1;
+        animation: blobFloat 10s infinite alternate;
+    }
+
+    .blob-1 {
+        background: rgba(25, 135, 84, 0.25);
+        top: -100px;
+        right: -50px;
+    }
+
+    .blob-2 {
+        background: rgba(255, 183, 3, 0.1);
+        bottom: -100px;
+        left: -50px;
+        animation-delay: -5s;
+    }
+
+    @keyframes blobFloat {
+        0% {
+            transform: translate(0, 0) scale(1);
+        }
+
+        100% {
+            transform: translate(40px, 60px) scale(1.1);
+        }
+    }
+
+    /* 3. Shining Header Effect */
+    .header-shining {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .text-gold-luxury {
+        color: #ffb703;
+        background: linear-gradient(to right, #ffb703, #fff1cc, #ffb703);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shineText 3s linear infinite;
+    }
+
+    @keyframes shineText {
+        to {
+            background-position: 200% center;
+        }
+    }
+
+    /* 4. Luxury Button (Home Help style) */
+    .btn-help-luxury {
+        position: relative;
+        padding: 16px 45px;
+        background: #ffb703;
+        color: #0a2d1e !important;
+        font-weight: 800;
+        border-radius: 50px;
+        display: inline-flex;
+        text-decoration: none;
+        transition: 0.4s;
+        overflow: hidden;
+        z-index: 5;
+    }
+
+    .btn-help-luxury:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(255, 183, 3, 0.4);
+    }
+
+    .btn-glow {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
+        transform: skewX(-25deg);
+        transition: 0.5s;
+    }
+
+    .btn-help-luxury:hover .btn-glow {
+        left: 150%;
+    }
+
+    /* 5. Floating Icon with Rotating Glow (Special Home Animation) */
+    .floating-icon-wrapper {
+        position: relative;
+        width: 220px;
+        height: 220px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icon-circle-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 2px dashed rgba(255, 183, 3, 0.3);
+        border-radius: 50%;
+        animation: rotateLine 15s linear infinite;
+    }
+
+    .cta-main-icon {
+        font-size: 130px;
+        color: #ffb703;
+        filter: drop-shadow(0 0 15px rgba(255, 183, 3, 0.5));
+        animation: bounceIcon 4s infinite ease-in-out;
+    }
+
+    @keyframes rotateLine {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes bounceIcon {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+
+    /* 6. Help Badge Animation */
+    .help-badge {
+        background: rgba(255, 255, 255, 0.05);
+        color: #ffb703;
+        padding: 10px 20px;
+        border-radius: 50px;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: bold;
+        border: 1px solid rgba(255, 183, 3, 0.2);
+    }
+
+    @media (max-width: 991px) {
+        .cta-help-luxury {
+            text-align: center;
+        }
+
+        .btn-help-luxury {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    .specialist-services-grid ul li {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.85);
+        flex: 0 0 calc(50% - 20px);
+        /* দুই কলামে সার্ভিস দেখাবে */
+        transition: 0.3s;
+    }
+
+    .specialist-services-grid ul li:hover {
+        color: #ffb703;
+        transform: translateX(5px);
+    }
+
+    /* Header Text Gradient & Shine */
+    .text-gold-luxury {
+        background: linear-gradient(to right, #ffb703, #fff, #ffb703);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shineEffect 3s linear infinite;
+    }
+
+    @keyframes shineEffect {
+        to {
+            background-position: 200% center;
+        }
+    }
+
+    /* Luxury Wrapper & Background */
+    .cta-help-luxury {
+        background: linear-gradient(135deg, #0a2d1e 0%, #051911 100%);
+        border: 1px solid rgba(255, 183, 3, 0.15);
+    }
+
+    /* Floating Icon Wrapper */
+    .floating-icon-wrapper {
+        position: relative;
+        width: 250px;
+        height: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icon-circle-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 2px dashed rgba(255, 183, 3, 0.4);
+        border-radius: 50%;
+        animation: spinCircle 20s linear infinite;
+    }
+
+    @keyframes spinCircle {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Mobile Optimizations */
+    @media (max-width: 768px) {
+        .specialist-services-grid ul li {
+            flex: 0 0 100%;
+            /* মোবাইলে এক কলামে দেখাবে */
+        }
+
+        .cta-help-luxury {
+            text-align: center;
+        }
+
+        .cta-action-group {
+            width: 100%;
+        }
+
+        .btn-help-luxury {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    .checklist-premium-luxury {
+        position: relative;
+        z-index: 10;
+    }
+
+    /* Glowing Check Icon */
+    .icon-circle-glow {
+        width: 24px;
+        height: 24px;
+        background: rgba(255, 183, 3, 0.1);
+        border: 1px solid rgba(255, 183, 3, 0.4);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffb703;
+        font-size: 11px;
+        box-shadow: 0 0 10px rgba(255, 183, 3, 0.2);
+        transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    /* Hover Effect on Item */
+    .specialist-item-wrapper {
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .specialist-item-wrapper:hover .icon-circle-glow {
+        background: #ffb703;
+        color: #0a2d1e;
+        transform: scale(1.2) rotate(360deg);
+        box-shadow: 0 0 15px #ffb703;
+    }
+
+    .specialist-name {
+        font-size: 14.5px;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+        transition: 0.3s;
+    }
+
+    .specialist-item-wrapper:hover .specialist-name {
+        color: #fff !important;
+        padding-left: 5px;
+    }
+
+    /* Animation for List items */
+    @keyframes fadeInUpSubtle {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-up {
+        animation: fadeInUpSubtle 0.5s ease forwards;
+    }
+
+    /* Responsive Fix */
+    @media (max-width: 575px) {
+        .specialist-name {
+            font-size: 13px;
+        }
+
+        .icon-circle-glow {
+            width: 20px;
+            height: 20px;
+            font-size: 9px;
+        }
+    }
+
+    /* উদাহরণ: টেক্সট কালার আরও গাঢ় করা */
+    .text-white-50 {
+        color: rgba(255, 255, 255, 0.85) !important;
+        /* ৫০% এর বদলে ৮৫% অপাসিটি দিন */
+    }
+
+    .text-muted {
+        color: #555555 !important;
+        /* হালকা ধূসর থেকে গাঢ় ধূসরে পরিবর্তন */
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>    Medical Services | Best Gynecologist & Obstetrician | Dr. Runa Akhter Dola
+ | Dr. Runa Akhter Dola | Best Gynaecologist in Dhaka</title>
+
+    <meta name="description" content="Asst. Prof. Dr. Runa Akter Dola is a High-Risk Pregnancy &amp; Feto-Maternal Medicine Specialist at Mitford Hospital, Dhaka.">
+    <meta name="keywords" content="Dr. Runa Akter Dola, Gynaecologist Dhaka, High Risk Pregnancy Specialist Mitford, Feto-Maternal Medicine Bangladesh">
+    <link rel="canonical" href="service-page.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.drrunaakhterdola.com/service-page">
+    <meta property="og:title" content="    Medical Services | Best Gynecologist & Obstetrician | Dr. Runa Akhter Dola
+ | Dr. Runa Akhter Dola">
+    <meta property="og:description" content="Asst. Prof. Dr. Runa Akter Dola is a High-Risk Pregnancy &amp; Feto-Maternal Medicine Specialist.">
+    <meta property="og:image" content="https://www.drrunaakhterdola.com/upload/settings/1768206138_logo.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="    Medical Services | Best Gynecologist & Obstetrician | Dr. Runa Akhter Dola
+">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://www.drrunaakhterdola.com/upload/settings/1768206138_logo.png">
+
+
+
+
+
+        <meta name="description"
+        content="Comprehensive gynecological and obstetric services by Dr. Runa Akhter Dola. বিশেষজ্ঞ গাইনি ও প্রসূতি সেবা।">
+    <meta name="keywords"
+        content="Gynecology Services, Maternity Care, Dr. Dr. Runa Akhter Dola, Infertility Treatment">
+    <link rel="canonical" href="service-page.html">
+
+    <link rel="shortcut icon" href="assets/images/731eb70a0a21-1768206138_favicon.png" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+    <link href="assets/css/ab62d5ee79a9-bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/dbe397d0d04e-all.min.css" />
+    <link rel="stylesheet" href="assets/css/39bc4941d961-swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/3bb26241a579-magnific-popup.min.css">
+    <link rel="stylesheet" href="assets/css/784d76080809-bootstrap-icons.css">
+    <link href="assets/css/2e8ca68208a7-aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/8c4e301a8e13-style.css">
+    <link rel="stylesheet" href="assets/css/6b743f2723bf-responsive.css">
+
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            /* উল্টো দিকে রাখা হয়েছে back-to-top থেকে */
+            background-color: #25d366;
+            color: #FFF;
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        .whatsapp-float i {
+            font-size: 25px;
+            margin-right: 8px;
+        }
+
+        .wa-text {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .wa-text {
+                display: none;
+            }
+
+            /* মোবাইলে শুধু আইকন দেখাবে */
+            .whatsapp-float {
+                padding: 12px;
+            }
+
+            .whatsapp-float i {
+                margin: 0;
+            }
+        }
+    </style>
+
+    <!-- Google Tag Manager -->
+
+<!-- End Google Tag Manager -->
+
+    <link rel="stylesheet" href="assets/css/site.css">
+</head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+
+<!-- End Google Tag Manager (noscript) -->
+
+    <header class="main-header-area">
+
+
+    <section class="header-sticky header-navigation-main">
+        <div class="container">
+            <div class="header-inner d-flex align-items-center justify-content-between">
+
+                <div class="logo-box">
+                    <a href="index.html">
+                        <img src="assets/images/47009257cd87-1768206138_logo.png" alt="Logo" width="200" height="60" class="main-logo-img"
+                            loading="lazy">
+                    </a>
+                </div>
+
+                <nav class="d-none d-lg-block">
+                    <ul class="mb-0 luxury-menu d-flex list-unstyled">
+                        <li><a href="index.html" class="">Home</a></li>
+                        <li><a href="about-us.html">About</a></li>
+                        <li><a href="service-page.html">Services</a></li>
+                        <li><a href="faq-page.html">Faqs</a></li>
+                        <li><a href="gallery-page.html">Gallery</a></li>
+                    </ul>
+                </nav>
+
+                <div class="gap-2 header-action-btns d-flex align-items-center">
+                    <a href="tel:+880 1790-118855" class="btn-call-neon"
+                        aria-label="Call Dr. Runa Akter Dola at +880 1790-118855">
+
+                        <i class="fas fa-phone-alt phone-shake" aria-hidden="true"></i>
+
+                        <span class="ms-2 d-none d-lg-inline">
+                            +880 1790-118855
+                        </span>
+                    </a>
+
+                    <button class="mobile-nav-toggle d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
+                        aria-label="Open Navigation Menu" title="Open Menu">
+                        <i class="fas fa-bars-staggered" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="offcanvas offcanvas-start luxury-mobile-canvas" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header border-bottom border-light border-opacity-10">
+            <img src="assets/images/47009257cd87-1768206138_logo.png" alt="https://www.drrunaakhterdola.com/Dr. Runa Akhter Dola" height="35"
+                loading="lazy">
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="mobile-nav-links list-unstyled">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About</a></li>
+                <li><a href="service-page.html">Services</a></li>
+                <li><a href="faq-page.html">Faqs</a></li>
+                <li><a href="gallery-page.html">Gallery</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<style>
+    /* Base Header Setup */
+    .main-header-area {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .header-top-bar {
+        background: rgba(10, 45, 30, 0.5);
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+    }
+
+    /* Social Icons Style */
+    .social-glass-icon {
+        width: 32px;
+        height: 32px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.4s;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        font-size: 14px;
+    }
+
+    .social-glass-icon:hover {
+        background: #ffb703;
+        color: #0a2d1e;
+        transform: translateY(-3px) rotate(360deg);
+        box-shadow: 0 0 15px #ffb703;
+    }
+
+    /* Navigation Area */
+    .header-navigation-main {
+        padding: 20px 0;
+        transition: 0.4s ease;
+    }
+
+    /* Sticky Effect (Used by your jQuery) */
+    .header-sticky.sticky {
+        position: fixed !important;
+        top: 0;
+        width: 100%;
+        background: rgba(10, 45, 30, 0.98) !important;
+        padding: 12px 0 !important;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+        animation: slideInHeader 0.5s both;
+    }
+
+    @keyframes slideInHeader {
+        from {
+            transform: translateY(-100%);
+        }
+
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    /* Menu Link Animation */
+    .luxury-menu li {
+        margin: 0 18px;
+    }
+
+    .luxury-menu li a {
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 15px;
+        position: relative;
+        padding: 10px 0;
+        transition: 0.3s;
+    }
+
+    .luxury-menu li a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #ffb703;
+        transition: 0.4s;
+        box-shadow: 0 0 10px #ffb703;
+    }
+
+    .luxury-menu li a:hover::after,
+    .luxury-menu li a.active::after {
+        width: 100%;
+    }
+
+    .luxury-menu li a:hover,
+    .luxury-menu li a.active {
+        color: #ffb703;
+    }
+
+    /* Neon Call Button */
+    .btn-call-neon {
+        background: #ffb703;
+        color: #0a2d1e !important;
+        padding: 10px 22px;
+        border-radius: 50px;
+        font-weight: 800;
+        text-decoration: none;
+        box-shadow: 0 0 15px rgba(255, 183, 3, 0.3);
+        transition: 0.4s;
+    }
+
+    .btn-call-neon:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px rgba(255, 183, 3, 0.6);
+    }
+
+    /* Phone Shake Animation */
+    .phone-shake {
+        animation: shake 2s infinite;
+    }
+
+    @keyframes shake {
+
+        0%,
+        100% {
+            transform: rotate(0);
+        }
+
+        10%,
+        30%,
+        50% {
+            transform: rotate(-15deg);
+        }
+
+        20%,
+        40%,
+        60% {
+            transform: rotate(15deg);
+        }
+    }
+
+    /* Mobile View Responsive Fix */
+    @media (max-width: 991px) {
+        .main-header-area {
+            position: relative;
+            background: #0a2d1e;
+        }
+
+        .header-navigation-main {
+            padding: 12px 0;
+        }
+
+        .main-logo-img {
+            height: 40px !important;
+        }
+
+        .mobile-nav-toggle {
+            background: none;
+            border: none;
+            color: #ffb703;
+            font-size: 24px;
+        }
+    }
+
+    .main-logo-img {
+        height: 60px;
+        transition: 0.4s;
+        width: auto;
+    }
+
+    .sticky .main-logo-img {
+        height: 45px;
+    }
+
+    /* Mobile Canvas Sidebar */
+    .luxury-mobile-canvas {
+        background: #0a2d1e;
+        width: 280px !important;
+    }
+
+    .mobile-nav-links li a {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 15px 0;
+        display: block;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+</style>
+
+    <main id="main-content">
+            <section class="breadcrumb-area slanted-breadcrumb position-relative">
+        <div class="breadcrumb-bg-overlay"></div>
+
+        <div class="container position-relative" style="z-index: 5;">
+            <div class="row align-items-center min-vh-40">
+                <div class="py-5 text-center col-lg-7 text-lg-start">
+                    <div class="breadcrumb-text-box animate-up">
+                        <h1 class="mb-3 text-white breadcrumb-title display-4 fw-bold">Expert Services</h1>
+
+                        <p class="mt-3 breadcrumb-desc lead text-white-50">
+                            <strong>Dr. Runa Akhter Dola</strong> is a <strong>High-Risk Pregnancy & Feto-Maternal
+                                Medicine Specialist</strong>
+                            with 18+ Years of clinical excellence, dedicated to providing
+                            advanced, evidence-based maternal care.
+                        </p>
+
+                        <nav aria-label="breadcrumb" class="mt-4">
+                            <ol class="breadcrumb custom-breadcrumb justify-content-lg-start justify-content-center">
+                                <li class="breadcrumb-item"><a href="index.html"
+                                        class="text-white-50 text-decoration-none">Home</a></li>
+                                <li class="breadcrumb-item active text-warning" aria-current="page">Services</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slanted-image-wrapper d-none d-lg-block">
+            <div class="slanted-shape"></div>
+            <div class="doctor-image-bg" style="background-image: url("assets/images/6b59a9c6ebf9-.jpg");">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-white service-section position-relative" id="services">
+        <div class="container">
+                            <div class="mb-5 text-center row justify-content-center animate-up">
+                    <div class="col-lg-7">
+                        <span class="text-success fw-bold text-uppercase ls-2">What I Provide</span>
+                        <h2 class="mt-2 display-5 fw-bold ">Expert Medical <span class="text-success">Services</span></h2>
+                        <div class="mx-auto mb-4 header-line-gold"></div>
+                        <p class="text-muted">
+                            Dedicated to ensuring gynecological excellence with over
+                            18+ Years of clinical expertise.
+                        </p>
+                    </div>
+                </div>
+
+            <div class="row g-4">
+                                    <article class="col-lg-4 col-md-6" data-aos="fade-up">
+                        <div class="p-4 transition-all border-0 shadow-sm service-card-luxury h-100 rounded-4">
+                            <div class="mb-4 icon-box-medical-luxury">
+                                <svg class="svg-inline--fa fa-user-shield" data-prefix="fas" data-icon="user-shield" role="img" viewBox="0 0 576 512" aria-hidden="true" data-fa-i2svg=""><path fill="currentColor" d="M224 248a120 120 0 1 0 0-240 120 120 0 1 0 0 240zm-29.7 56C95.8 304 16 383.8 16 482.3 16 498.7 29.3 512 45.7 512l251.5 0C261 469.4 240 414.5 240 356.4l0-31.1c0-7.3 1-14.5 2.9-21.3l-48.6 0zm251 184.5l-13.3 6.3 0-188.1 96 32 0 19.6c0 55.8-32.2 106.5-82.7 130.3zM421.9 259.5l-112 37.3c-13.1 4.4-21.9 16.6-21.9 30.4l0 31.1c0 74.4 43 142.1 110.2 173.7l18.5 8.7c4.8 2.2 10 3.4 15.2 3.4s10.5-1.2 15.2-3.4l18.5-8.7C533 500.3 576 432.6 576 358.2l0-31.1c0-13.8-8.8-26-21.9-30.4l-112-37.3c-6.6-2.2-13.7-2.2-20.2 0z"></path></svg>
+                            </div>
+                            <h3 class="mb-3 h4 fw-bold text-dark">Cervical Cancer</h3>
+                            <div class="service-desc text-secondary">
+                                <p><span style="color: rgb(108, 117, 125); font-family: Poppins, sans-serif;">Expert screening, preventive vaccination, and comprehensive management for cervical health.</span></p>
+                            </div>
+                        </div>
+                    </article>
+                                    <article class="col-lg-4 col-md-6" data-aos="fade-up">
+                        <div class="p-4 transition-all border-0 shadow-sm service-card-luxury h-100 rounded-4">
+                            <div class="mb-4 icon-box-medical-luxury">
+                                <svg class="svg-inline--fa fa-baby" data-prefix="fas" data-icon="baby" role="img" viewBox="0 0 384 512" aria-hidden="true" data-fa-i2svg=""><path fill="currentColor" d="M120 88a72 72 0 1 1 144 0 72 72 0 1 1 -144 0zM7.7 144.5c13-17.9 38-21.8 55.9-8.8L99.8 162c26.8 19.5 59.1 30 92.2 30s65.4-10.5 92.2-30l36.2-26.4c17.9-13 42.9-9 55.9 8.8s9 42.9-8.8 55.9l-36.2 26.4c-13.6 9.9-28.1 18.2-43.3 25l0 36.3-192 0 0-36.3c-15.2-6.7-29.7-15.1-43.3-25L16.5 200.3c-17.9-13-21.8-38-8.8-55.9zM97.5 329.3l60.6 53-26 37.2 24.3 24.3c15.6 15.6 15.6 40.9 0 56.6s-40.9 15.6-56.6 0l-48-48C38 438.6 36.1 417 47.2 401.1l50.2-71.8zm128.5 53l60.6-53 50.2 71.8c11.1 15.9 9.2 37.5-4.5 51.2l-48 48c-15.6 15.6-40.9 15.6-56.6 0s-15.6-40.9 0-56.6l24.3-24.3-26-37.2z"></path></svg>
+                            </div>
+                            <h3 class="mb-3 h4 fw-bold text-dark">Fetal Medicine</h3>
+                            <div class="service-desc text-secondary">
+                                <p><span style="color: rgb(108, 117, 125); font-family: Poppins, sans-serif;">Specialized monitoring and high-resolution ultrasound for the health and safety of your unborn baby.</span></p>
+                            </div>
+                        </div>
+                    </article>
+                                    <article class="col-lg-4 col-md-6" data-aos="fade-up">
+                        <div class="p-4 transition-all border-0 shadow-sm service-card-luxury h-100 rounded-4">
+                            <div class="mb-4 icon-box-medical-luxury">
+                                <svg class="svg-inline--fa fa-microscope" data-prefix="fas" data-icon="microscope" role="img" viewBox="0 0 512 512" aria-hidden="true" data-fa-i2svg=""><path fill="currentColor" d="M176 0c-26.5 0-48 21.5-48 48l0 208c0 26.5 21.5 48 48 48l64 0c26.5 0 48-21.5 48-48l0-64 32 0c70.7 0 128 57.3 128 128S390.7 448 320 448L32 448c-17.7 0-32 14.3-32 32s14.3 32 32 32l448 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-16.9 0c30.4-34 48.9-78.8 48.9-128 0-106-86-192-192-192l-32 0 0-80c0-26.5-21.5-48-48-48L176 0zM120 352c-13.3 0-24 10.7-24 24s10.7 24 24 24l176 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-176 0z"></path></svg>
+                            </div>
+                            <h3 class="mb-3 h4 fw-bold text-dark">Endometriosis</h3>
+                            <div class="service-desc text-secondary">
+                                <p><span style="color: rgb(108, 117, 125); font-family: Poppins, sans-serif;">Comprehensive diagnosis and advanced treatment for endometriosis to improve your quality of life</span></p>
+                            </div>
+                        </div>
+                    </article>
+
+                <div class="mt-5 col-lg-12" data-aos="zoom-in-up">
+                    <div class="overflow-hidden shadow-lg cta-help-luxury position-relative rounded-5">
+
+                        <div class="luxury-blob blob-1"></div>
+                        <div class="luxury-blob blob-2"></div>
+
+                        <div
+                            class="p-4 p-md-5 d-flex flex-column flex-lg-row align-items-center justify-content-between position-relative z-3">
+                            <div class="cta-content col-lg-8">
+                                <div class="mb-3 help-badge animate-flicker">
+                                    <i class="fas fa-user-md me-2"></i> Specialized Healthcare Specialist
+                                </div>
+
+                                <h2 class="mb-3 text-white display-5 fw-bold header-shining">
+                                    Expert Solutions for <br> <span class="text-gold-luxury">Women's Health &
+                                        Pregnancy.</span>
+                                </h2>
+
+                                <p class="mb-4 text-white-50 lead fw-medium">
+                                    Dr. Runa Akhter Dola:
+                                    Focused on your health with <span
+                                        class="text-success-glow fw-bold">18+ Years</span>
+                                    of professional clinical expertise in Fetal Medicine & Gynaecology.
+                                </p>
+
+                                <div class="mt-4 specialist-services-grid position-relative">
+                                    <div class="row g-3">
+
+                                                                                    <div class="col-md-6">
+                                                <ul class="mb-0 list-unstyled checklist-premium-luxury">
+                                                                                                            <li
+                                                            class="mb-3 d-flex align-items-center specialist-item-wrapper animate-up">
+                                                            <div class="icon-circle-glow me-3">
+                                                                <i class="fas fa-check"></i>
+                                                            </div>
+                                                            <span itemprop="knowsAbout"
+                                                                class="specialist-name text-white-50">
+                                                                Monthly Checkups
+                                                            </span>
+                                                        </li>
+                                                                                                            <li
+                                                            class="mb-3 d-flex align-items-center specialist-item-wrapper animate-up">
+                                                            <div class="icon-circle-glow me-3">
+                                                                <i class="fas fa-check"></i>
+                                                            </div>
+                                                            <span itemprop="knowsAbout"
+                                                                class="specialist-name text-white-50">
+                                                                Caring &amp; Support Always
+                                                            </span>
+                                                        </li>
+                                                                                                            <li
+                                                            class="mb-3 d-flex align-items-center specialist-item-wrapper animate-up">
+                                                            <div class="icon-circle-glow me-3">
+                                                                <i class="fas fa-check"></i>
+                                                            </div>
+                                                            <span itemprop="knowsAbout"
+                                                                class="specialist-name text-white-50">
+                                                                Proactive and Fast Results
+                                                            </span>
+                                                        </li>
+                                                                                                    </ul>
+                                            </div>
+                                                                                    <div class="col-md-6">
+                                                <ul class="mb-0 list-unstyled checklist-premium-luxury">
+                                                                                                            <li
+                                                            class="mb-3 d-flex align-items-center specialist-item-wrapper animate-up">
+                                                            <div class="icon-circle-glow me-3">
+                                                                <i class="fas fa-check"></i>
+                                                            </div>
+                                                            <span itemprop="knowsAbout"
+                                                                class="specialist-name text-white-50">
+                                                                Specialized Consultation
+                                                            </span>
+                                                        </li>
+                                                                                                            <li
+                                                            class="mb-3 d-flex align-items-center specialist-item-wrapper animate-up">
+                                                            <div class="icon-circle-glow me-3">
+                                                                <i class="fas fa-check"></i>
+                                                            </div>
+                                                            <span itemprop="knowsAbout"
+                                                                class="specialist-name text-white-50">
+                                                                Advanced Diagnostics
+                                                            </span>
+                                                        </li>
+                                                                                                            <li
+                                                            class="mb-3 d-flex align-items-center specialist-item-wrapper animate-up">
+                                                            <div class="icon-circle-glow me-3">
+                                                                <i class="fas fa-check"></i>
+                                                            </div>
+                                                            <span itemprop="knowsAbout"
+                                                                class="specialist-name text-white-50">
+                                                                Complete Care Solutions
+                                                            </span>
+                                                        </li>
+                                                                                                    </ul>
+                                            </div>
+                                                                            </div>
+                                </div>
+
+                                <div class="cta-action-group">
+                                    <a href="mailto:medinova.mmsl@gmail.com" class="btn-help-luxury ripple">
+                                        <span>BOOK AN APPOINTMENT</span>
+                                        <div class="btn-glow"></div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="cta-visual-luxury d-none d-lg-block">
+                                <div class="floating-icon-wrapper">
+                                    <div class="icon-circle-bg"></div>
+                                    <i class="fas fa-hand-holding-heart cta-main-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <div class="d-none" aria-hidden="true">
+        <h2>Dr. Runa Akhter Dola - Best Gynaecologist & Feto-Maternal Specialist in Dhaka</h2>
+        <p>
+            <strong>Expertise:</strong> Abortion / Medical Termination of Pregnancy (MTP),
+            Advice To Pregnant Women, All Gynae Surgery, Diseases in Pregnancy,
+            Doppler Scan In Pregnancy, Early Pregnancy Scan, Fetomaternal Medicine,
+            Gynae Check Up, Gynae Problems, Gynaec Laparoscopy, Gynec Advices,
+            Gynecologic Oncology, High-Risk Pregnancy Care, Maternal Care,
+            Maternity Care, Mitford Hospital Gynae Specialist, Dr. Runa Akter Dola Chamber.
+        </p>
+        <p>Locations:Malibugh, Medinova , Dhaka, Mitford, SSMC, South Dhaka Gynaecology Expert.</p>
+    </div>
+
+    <style>
+    .ls-2 {
+        letter-spacing: 2px;
+    }
+
+    .footer-section {
+        background-image: radial-gradient(circle at 0% 0%, #0a2d1e 0%, #051a11 100%);
+    }
+
+    /* Contact Hover Effect */
+    .contact-link {
+        transition: 0.3s ease;
+        padding: 5px 0;
+        display: block;
+    }
+
+    .contact-link:hover {
+        padding-left: 10px;
+        background: rgba(255, 183, 3, 0.05);
+        border-radius: 5px;
+    }
+
+    .contact-link i {
+        width: 25px;
+    }
+
+    /* Premium Link Style */
+    .footer-links li a {
+        position: relative;
+        transition: 0.3s;
+    }
+
+    .footer-links li a:hover {
+        color: #ffb703 !important;
+        padding-left: 8px;
+    }
+
+    /* Social Buttons */
+    .social-v4-btn {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.4s;
+        border: 1px solid rgba(255, 183, 3, 0.3);
+    }
+
+    .social-v4-btn:hover {
+        background: #ffb703;
+        color: #000;
+        transform: rotate(360deg) scale(1.1);
+    }
+
+    /* Facebook Page Premium Card - Boro and Sundor */
+    .fb-premium-card {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 20px;
+        transition: 0.5s;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .fb-premium-card:hover {
+        transform: translateY(-10px);
+        border-color: #ffb703;
+        box-shadow: 0 15px 40px rgba(25, 135, 84, 0.4);
+    }
+
+    .fb-profile-img {
+        width: 80px;
+        height: 80px;
+        border: 3px solid #ffb703;
+        padding: 3px;
+        background: #fff;
+    }
+
+    .btn-fb-follow {
+        background: #ffb703;
+        color: #000;
+        font-weight: bold;
+        border-radius: 50px;
+        padding: 8px 20px;
+        font-size: 13px;
+        transition: 0.3s;
+        border: none;
+    }
+
+    .btn-fb-follow:hover {
+        background: #fff;
+        color: #0a2d1e;
+        transform: scale(1.05);
+    }
+
+    /* Scroll Top */
+    .back-to-top-simple {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: #ffb703;
+        color: #000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        transition: 0.3s;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .back-to-top-simple:hover {
+        transform: translateY(-10px);
+        background: #fff;
+    }
+
+    .credential-tag {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.75);
+        letter-spacing: 0.5px;
+        transition: color 0.3s ease;
+    }
+
+    .credential-tag:hover {
+        color: #ffb703;
+        /* গোল্ডেন হাইলাইট */
+    }
+
+    .credential-separator {
+        font-size: 1.2rem;
+        line-height: 1;
+    }
+
+    @media (max-width: 991px) {
+        .doctor-credentials-wrapper .d-flex {
+            justify-content: center;
+            /* মোবাইলে সেন্টারে থাকবে */
+        }
+
+        .credential-tag {
+            font-size: 0.85rem;
+        }
+    }
+</style>
+
+
+<footer class="pt-5 pb-4 text-white footer-section position-relative" itemscope
+    itemtype="https://schema.org/MedicalOrganization">
+    <div class="container">
+        <div class="row g-4">
+
+            <div class="mb-4 col-lg-4 col-md-6" data-aos="fade-up">
+                <div class="footer-about">
+                    <h3 class="mb-2 footer-title fw-bold text-warning" itemprop="name">
+                        Dr. Runa Akhter Dola
+                    </h3>
+                    <div class="mb-3 doctor-credentials-wrapper">
+
+                        <div class="flex-wrap gap-2 d-flex align-items-center">
+                                                            <span class="credential-tag">
+                                    MBBS: Sir Salimullah Medical College.  got 9th position in combined merit list in 1st processional exam
+                                </span>
+                                                                    <span class="opacity-50 credential-separator text-warning">•</span>
+                                                                                            <span class="credential-tag">
+                                    FCPS: Obstetrics and Gynaecology
+                                </span>
+                                                                    <span class="opacity-50 credential-separator text-warning">•</span>
+                                                                                            <span class="credential-tag">
+                                    FCPS: Feto-Maternal Medicine
+                                </span>
+                                                                    <span class="opacity-50 credential-separator text-warning">•</span>
+                                                                                            <span class="credential-tag">
+                                    Community fellowship (Philippines)
+                                </span>
+                                                                                    </div>
+                    </div>
+                    <div class="mb-4 opacity-75 about-text small lh-lg" itemprop="description">
+                        Assistant Professor (Feto-Maternal Medicine) at Sir Salimullah Medical College. Expert in High-Risk Pregnancy & Women's Health with 16+ years of experience.
+                    </div>
+
+                    <div class="footer-contact-info">
+                                                    <div class="contact-link">
+                                <i class="fas fa-phone-alt text-warning"></i>
+                                <a aria-label="Follow us on Facebook" href="tel:+880 1790-118855"
+                                    itemprop="telephone"
+                                    class="text-white text-decoration-none small">+880 1790-118855</a>
+                            </div>
+                                                                            <div class="contact-link">
+                                <i class="fas fa-phone-alt text-warning"></i>
+                                <a aria-label="Follow us on Facebook" href="tel:01790118866, 02-58313811, 02-58311812-13"
+                                    itemprop="telephone"
+                                    class="text-white text-decoration-none small">01790118866, 02-58313811, 02-58311812-13</a>
+                            </div>
+                                                                            <div class="contact-link">
+                                <i class="fas fa-envelope text-warning"></i>
+                                <a aria-label="Follow us on Linkedin" href="mailto:medinova.mmsl@gmail.com"
+                                    itemprop="email"
+                                    class="text-white text-decoration-none small">medinova.mmsl@gmail.com</a>
+                            </div>
+                                                                            <div class="contact-link d-flex align-items-start">
+                                <i class="mt-1 fas fa-map-marker-alt text-warning"></i>
+                                <address class="mb-0 text-white small ms-1" itemprop="address" itemscope
+                                    itemtype="https://schema.org/PostalAddress">
+                                    <span itemprop="streetAddress"><p>Gemcon Business Center (Lift 2 - 6), 255, New Circular Road, Malibagh More, Dhaka-1217</p></span>
+                                </address>
+                            </div>
+                                            </div>
+                </div>
+            </div>
+
+
+            <div class="mb-4 col-lg-2 col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
+                <h4 class="pb-1 mb-4 text-white footer-subtitle fw-bold border-bottom border-warning d-inline-block">
+                    Services</h4>
+                <ul class="footer-links list-unstyled">
+                                            <li class="mb-2"><a href="service-page.html"
+                                class="text-white-50 text-decoration-none small"><i
+                                    class="fas fa-plus x-small text-warning me-2"></i>Cervical Cancer</a>
+                        </li>
+                                            <li class="mb-2"><a href="service-page.html"
+                                class="text-white-50 text-decoration-none small"><i
+                                    class="fas fa-plus x-small text-warning me-2"></i>Fetal Medicine</a>
+                        </li>
+                                            <li class="mb-2"><a href="service-page.html"
+                                class="text-white-50 text-decoration-none small"><i
+                                    class="fas fa-plus x-small text-warning me-2"></i>Endometriosis</a>
+                        </li>
+                                    </ul>
+            </div>
+
+            <div class="mb-4 col-lg-3 col-md-6 col-6" data-aos="fade-up" data-aos-delay="200">
+                <h4 class="pb-1 mb-4 text-white footer-subtitle fw-bold border-bottom border-warning d-inline-block">
+                    Expertise</h4>
+                <ul class="footer-links list-unstyled">
+                                            <li class="mb-2"><span class="text-white-50 text-decoration-none small"><i
+                                    class="fas fa-check-circle x-small text-warning me-2"></i>Complete Care Solutions</span>
+                        </li>
+                                            <li class="mb-2"><span class="text-white-50 text-decoration-none small"><i
+                                    class="fas fa-check-circle x-small text-warning me-2"></i>Advanced Diagnostics</span>
+                        </li>
+                                            <li class="mb-2"><span class="text-white-50 text-decoration-none small"><i
+                                    class="fas fa-check-circle x-small text-warning me-2"></i>Specialized Consultation</span>
+                        </li>
+                                            <li class="mb-2"><span class="text-white-50 text-decoration-none small"><i
+                                    class="fas fa-check-circle x-small text-warning me-2"></i>Proactive And Fast Results</span>
+                        </li>
+                                            <li class="mb-2"><span class="text-white-50 text-decoration-none small"><i
+                                    class="fas fa-check-circle x-small text-warning me-2"></i>Caring &amp; Support Always</span>
+                        </li>
+                                            <li class="mb-2"><span class="text-white-50 text-decoration-none small"><i
+                                    class="fas fa-check-circle x-small text-warning me-2"></i>Monthly Checkups</span>
+                        </li>
+                                    </ul>
+            </div>
+
+
+            <div class="mb-4 col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <h4 class="mb-4 text-white footer-subtitle fw-bold">Official Facebook</h4>
+                                    <div class="text-center fb-premium-card">
+                        <img src="assets/images/329b7c727ee8-1766689599_profile_photo.png" alt="Dr. Runa Akhter Dola"
+                            class="mb-3 shadow fb-profile-img rounded-circle" loading="lazy">
+                        <h2 class="mb-1 text-white fw-bold h6-size-fix">Dr. Runa Akhter Dola</h2>
+                        <p class="mb-3 x-small text-white-50">Gynaecologist & Fetal Medicine Specialist</p>
+
+                        <a href="https://www.facebook.com/drrunaakhterdola" target="_blank" class="btn btn-fb-follow"
+                            aria-label="Visit our Facebook profile">
+                            <i class="fab fa-facebook-f me-2"></i> Visit Facebook Page
+                        </a>
+                        <div class="gap-2 mt-3 d-flex justify-content-center">
+                                                            <a href="https://www.linkedin.com/drrunaakhterdola" class="social-v4-btn"
+                                    aria-label="Visit our Linkedin profile"><i class="fab fa-linkedin-in"></i></a>
+                                                        <a href="tel:" class="social-v4-btn"
+                                aria-label="Our youtube channel"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="tel:+880 1790-118855" class="social-v4-btn"
+                                aria-label="Our mobile number"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                            </div>
+        </div>
+
+        <hr class="mt-5 mb-4 opacity-10">
+
+        <div class="row align-items-center">
+            <div class="text-center col-md-6 text-md-start">
+                <p class="mb-0 opacity-50 x-small">&copy; 2026 Dr. Runa Akhter  Dola. All
+                    rights reserved.</p>
+            </div>
+            <div class="mt-3 text-center col-md-6 text-md-end mt-md-0">
+                <p class="mb-0 opacity-50 x-small">Developed by <a href="https://classicit.com.bd" target="_blank"
+                        class="text-warning text-decoration-none fw-bold">Classic IT</a></p>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="shadow-lg back-to-top-simple" aria-label="Scroll back to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+
+</footer>
+
+
+    <a href="https://wa.me/+880 1790-118855"
+        class="shadow-lg whatsapp-float" target="_blank" rel="noopener noreferrer"
+        aria-label="Direct chat with Dr. Runa on WhatsApp"> <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        <span class="wa-text">Need Help?</span>
+
+    </a>
+
+    <script src="assets/js/0de5e5bb3196-jquery.min.js"></script>
+    <script src="assets/js/b711803b04bd-popper.min.js"></script>
+    <script src="assets/js/dee9369ea5e2-bootstrap.min.js"></script>
+    <script src="assets/js/d9cf33e64045-all.min.js"></script>
+    <script src="assets/js/13cf11a4182d-swiper-bundle.min.js"></script>
+    <script src="assets/js/f685c239a3a3-jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/4dc952d76a63-aos.js"></script>
+    <script defer src="assets/js/ef632448f753-main.js"></script>
+
+    <script src="assets/js/site.js" defer></script>
+</body>
+
+</html>

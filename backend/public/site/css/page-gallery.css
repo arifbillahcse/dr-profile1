@@ -1,0 +1,469 @@
+
+/* Slanted Breadcrumb Setup */
+.slanted-breadcrumb {
+    background: #0a2d1e; /* Dark Green Base */
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.breadcrumb-bg-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 20% 50%, rgba(25, 135, 84, 0.2), transparent);
+}
+
+/* The Magic: Slanted Image Wrapper */
+.slanted-image-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+    z-index: 2;
+}
+
+.slanted-shape {
+    position: absolute;
+    top: 0;
+    left: -100px; /* Adjust for the cut angle */
+    width: 200px;
+    height: 100%;
+    background: #0a2d1e;
+    transform: skewX(-15deg); /* তেরছা করার মেইন কোড */
+    z-index: 3;
+}
+
+.doctor-image-bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+    z-index: 1;
+}
+
+/* Premium Gallery Card */
+.premium-gallery-card {
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+.gallery-img {
+    height: 300px;
+    object-fit: cover;
+    transition: 0.6s ease;
+}
+.premium-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(10, 45, 30, 0.8);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: 0.4s;
+}
+.premium-gallery-card:hover .premium-overlay { opacity: 1; }
+.premium-gallery-card:hover .gallery-img { transform: scale(1.1); }
+
+.gold-line { width: 60px; height: 4px; background: #ffb703; border-radius: 50px; }
+
+@media (max-width: 991px) {
+    .slanted-breadcrumb { min-height: auto; padding: 80px 0; }
+    .gallery-img { height: 200px; }
+}
+
+/* Animation */
+.animate-up { animation: fadeInUp 0.8s both; }
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            /* উল্টো দিকে রাখা হয়েছে back-to-top থেকে */
+            background-color: #25d366;
+            color: #FFF;
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        .whatsapp-float i {
+            font-size: 25px;
+            margin-right: 8px;
+        }
+
+        .wa-text {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .wa-text {
+                display: none;
+            }
+
+            /* মোবাইলে শুধু আইকন দেখাবে */
+            .whatsapp-float {
+                padding: 12px;
+            }
+
+            .whatsapp-float i {
+                margin: 0;
+            }
+        }
+    
+
+    /* Base Header Setup */
+    .main-header-area {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .header-top-bar {
+        background: rgba(10, 45, 30, 0.5);
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+    }
+
+    /* Social Icons Style */
+    .social-glass-icon {
+        width: 32px;
+        height: 32px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.4s;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        font-size: 14px;
+    }
+
+    .social-glass-icon:hover {
+        background: #ffb703;
+        color: #0a2d1e;
+        transform: translateY(-3px) rotate(360deg);
+        box-shadow: 0 0 15px #ffb703;
+    }
+
+    /* Navigation Area */
+    .header-navigation-main {
+        padding: 20px 0;
+        transition: 0.4s ease;
+    }
+
+    /* Sticky Effect (Used by your jQuery) */
+    .header-sticky.sticky {
+        position: fixed !important;
+        top: 0;
+        width: 100%;
+        background: rgba(10, 45, 30, 0.98) !important;
+        padding: 12px 0 !important;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+        animation: slideInHeader 0.5s both;
+    }
+
+    @keyframes slideInHeader {
+        from {
+            transform: translateY(-100%);
+        }
+
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    /* Menu Link Animation */
+    .luxury-menu li {
+        margin: 0 18px;
+    }
+
+    .luxury-menu li a {
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 15px;
+        position: relative;
+        padding: 10px 0;
+        transition: 0.3s;
+    }
+
+    .luxury-menu li a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #ffb703;
+        transition: 0.4s;
+        box-shadow: 0 0 10px #ffb703;
+    }
+
+    .luxury-menu li a:hover::after,
+    .luxury-menu li a.active::after {
+        width: 100%;
+    }
+
+    .luxury-menu li a:hover,
+    .luxury-menu li a.active {
+        color: #ffb703;
+    }
+
+    /* Neon Call Button */
+    .btn-call-neon {
+        background: #ffb703;
+        color: #0a2d1e !important;
+        padding: 10px 22px;
+        border-radius: 50px;
+        font-weight: 800;
+        text-decoration: none;
+        box-shadow: 0 0 15px rgba(255, 183, 3, 0.3);
+        transition: 0.4s;
+    }
+
+    .btn-call-neon:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px rgba(255, 183, 3, 0.6);
+    }
+
+    /* Phone Shake Animation */
+    .phone-shake {
+        animation: shake 2s infinite;
+    }
+
+    @keyframes shake {
+
+        0%,
+        100% {
+            transform: rotate(0);
+        }
+
+        10%,
+        30%,
+        50% {
+            transform: rotate(-15deg);
+        }
+
+        20%,
+        40%,
+        60% {
+            transform: rotate(15deg);
+        }
+    }
+
+    /* Mobile View Responsive Fix */
+    @media (max-width: 991px) {
+        .main-header-area {
+            position: relative;
+            background: #0a2d1e;
+        }
+
+        .header-navigation-main {
+            padding: 12px 0;
+        }
+
+        .main-logo-img {
+            height: 40px !important;
+        }
+
+        .mobile-nav-toggle {
+            background: none;
+            border: none;
+            color: #ffb703;
+            font-size: 24px;
+        }
+    }
+
+    .main-logo-img {
+        height: 60px;
+        transition: 0.4s;
+        width: auto;
+    }
+
+    .sticky .main-logo-img {
+        height: 45px;
+    }
+
+    /* Mobile Canvas Sidebar */
+    .luxury-mobile-canvas {
+        background: #0a2d1e;
+        width: 280px !important;
+    }
+
+    .mobile-nav-links li a {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 15px 0;
+        display: block;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+
+    .ls-2 {
+        letter-spacing: 2px;
+    }
+
+    .footer-section {
+        background-image: radial-gradient(circle at 0% 0%, #0a2d1e 0%, #051a11 100%);
+    }
+
+    /* Contact Hover Effect */
+    .contact-link {
+        transition: 0.3s ease;
+        padding: 5px 0;
+        display: block;
+    }
+
+    .contact-link:hover {
+        padding-left: 10px;
+        background: rgba(255, 183, 3, 0.05);
+        border-radius: 5px;
+    }
+
+    .contact-link i {
+        width: 25px;
+    }
+
+    /* Premium Link Style */
+    .footer-links li a {
+        position: relative;
+        transition: 0.3s;
+    }
+
+    .footer-links li a:hover {
+        color: #ffb703 !important;
+        padding-left: 8px;
+    }
+
+    /* Social Buttons */
+    .social-v4-btn {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.4s;
+        border: 1px solid rgba(255, 183, 3, 0.3);
+    }
+
+    .social-v4-btn:hover {
+        background: #ffb703;
+        color: #000;
+        transform: rotate(360deg) scale(1.1);
+    }
+
+    /* Facebook Page Premium Card - Boro and Sundor */
+    .fb-premium-card {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 20px;
+        transition: 0.5s;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .fb-premium-card:hover {
+        transform: translateY(-10px);
+        border-color: #ffb703;
+        box-shadow: 0 15px 40px rgba(25, 135, 84, 0.4);
+    }
+
+    .fb-profile-img {
+        width: 80px;
+        height: 80px;
+        border: 3px solid #ffb703;
+        padding: 3px;
+        background: #fff;
+    }
+
+    .btn-fb-follow {
+        background: #ffb703;
+        color: #000;
+        font-weight: bold;
+        border-radius: 50px;
+        padding: 8px 20px;
+        font-size: 13px;
+        transition: 0.3s;
+        border: none;
+    }
+
+    .btn-fb-follow:hover {
+        background: #fff;
+        color: #0a2d1e;
+        transform: scale(1.05);
+    }
+
+    /* Scroll Top */
+    .back-to-top-simple {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: #ffb703;
+        color: #000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        transition: 0.3s;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .back-to-top-simple:hover {
+        transform: translateY(-10px);
+        background: #fff;
+    }
+
+    .credential-tag {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.75);
+        letter-spacing: 0.5px;
+        transition: color 0.3s ease;
+    }
+
+    .credential-tag:hover {
+        color: #ffb703;
+        /* গোল্ডেন হাইলাইট */
+    }
+
+    .credential-separator {
+        font-size: 1.2rem;
+        line-height: 1;
+    }
+
+    @media (max-width: 991px) {
+        .doctor-credentials-wrapper .d-flex {
+            justify-content: center;
+            /* মোবাইলে সেন্টারে থাকবে */
+        }
+
+        .credential-tag {
+            font-size: 0.85rem;
+        }
+    }

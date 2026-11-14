@@ -1,0 +1,22 @@
+/* Keep off-screen animation transforms from widening the mobile viewport. */
+html { overflow-x: clip; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-aos] { opacity: 1 !important; transform: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+.public-copy, .service-desc, .accordion-body { white-space: pre-line; overflow-wrap: anywhere; }
+body { overflow-wrap: break-word; }
+body:not(:has(.hero-section)) .doctor-image-bg { background-position: center top; }
+html:not(.js) [data-aos], html:not(.js) .animate-up { opacity: 1 !important; transform: none !important; }
+.hero-section:has(.swiper-wrapper:empty) .hero-swiper-wrapper,
+.hero-section:has(.swiper-wrapper:empty) .heroSwiperMobile { display: none; }
+.gallery-img { object-fit: cover; }
+
+body { overflow-x: clip; max-width: 100%; }
+
+.review-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+#reviewModal { overflow-wrap: anywhere; }
+#reviews { scroll-margin-top: 100px; }
+.review-card > p { white-space: pre-line; overflow-wrap: anywhere; }

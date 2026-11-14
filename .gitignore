@@ -1,0 +1,16 @@
+# Temporary files and local dependencies.
+/tmp/
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
+
+# Isolated local PHP/Composer/database runtime and private configuration.
+/.local/
+/backend/.env
+/backend/.env.*
+!/backend/.env.example
+!/backend/.env.testing.example
+/backend/vendor/
+/backend/node_modules/
+/backend/database/*.sqlite*

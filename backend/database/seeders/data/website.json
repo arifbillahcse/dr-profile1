@@ -1,0 +1,449 @@
+{
+  "profile": {
+    "data": {
+      "name": "Dr. Runa Akhter Dola",
+      "designation": "Asst. Prof.",
+      "credentials": [
+        "MBBS: Sir Salimullah Medical College. got 9th position in combined merit list in 1st processional exam",
+        "FCPS: Obstetrics and Gynaecology",
+        "FCPS: Feto-Maternal Medicine",
+        "Community fellowship (Philippines)"
+      ],
+      "summary": "Assistant Professor (Feto-Maternal Medicine) at Sir Salimullah Medical College. Expert in High-Risk Pregnancy & Women's Health with 16+ years of experience.",
+      "biography": "Assistant Professor (Feto-Maternal Medicine) at Sir Salimullah Medical College. Expert in High-Risk Pregnancy & Women's Health with 16+ years of experience.",
+      "specialty": "High Risk Pregnancy & Foetal Medicine Specialist",
+      "trusted_patients": "5k",
+      "introduction_youtube_id": "n7cZSkZiRbI"
+    },
+    "media": {
+      "portrait_image_id": "3b80e88ba002-1775489308_aboutpagephoto.jpeg",
+      "first_image_id": "af92e88b9fd8-1775489308_firstphoto.jpeg",
+      "second_image_id": "ba8b2767add9-1775489308_secondphoto.jpeg",
+      "tall_image_id": "c6db5a4bebd0-1775489308_longphoto.jpeg"
+    }
+  },
+  "site": {
+    "data": {
+      "site_title": "Dr. Runa Akhter Dola",
+      "phone": "+880 1790-118855",
+      "additional_phones": [
+        "01790118866",
+        "02-58313811",
+        "02-58311812-13"
+      ],
+      "email": "medinova.mmsl@gmail.com",
+      "address": "Gemcon Business Center (Lift 2 - 6), 255, New Circular Road, Malibagh More, Dhaka-1217",
+      "whatsapp_number": "+8801790118855",
+      "social_links": {
+        "facebook": "https://www.facebook.com/drrunaakhterdola",
+        "linkedin": "https://www.linkedin.com/drrunaakhterdola"
+      },
+      "seo_title": "Dr. Runa Akhter Dola | Gynaecology & Feto-Maternal Medicine",
+      "seo_description": "Assistant Professor (Feto-Maternal Medicine) at Sir Salimullah Medical College. Expert in High-Risk Pregnancy & Women's Health with 16+ years of experience.",
+      "seo_keywords": "Dr. Runa Akter Dola, Gynaecologist Dhaka, High Risk Pregnancy Specialist Mitford, Feto-Maternal Medicine Bangladesh"
+    },
+    "media": {
+      "logo_image_id": "47009257cd87-1768206138_logo.png",
+      "favicon_image_id": "731eb70a0a21-1768206138_favicon.png",
+      "social_image_id": "329b7c727ee8-1766689599_profile_photo.png"
+    }
+  },
+  "modules": {
+    "slider": [
+      {
+        "data": {
+          "title": "Dr. Runa Akhter Dola",
+          "caption": null
+        },
+        "media": {
+          "image_id": "e2548f6ab056-dr-runa-akter-dola-specialist-gynae-problems-gynecologic-oncology-69d3d026e84e3.webp"
+        }
+      },
+      {
+        "data": {
+          "title": "Dr. Runa Akhter Dola",
+          "caption": null
+        },
+        "media": {
+          "image_id": "e3165f49839c-dr-runa-akter-dola-specialist-all-gynae-surgery-gynaec-laparoscopy-69d3d02eb28bb.webp"
+        }
+      }
+    ],
+    "featured": [
+      {
+        "data": {
+          "label": "Successful Cases",
+          "value": "2000",
+          "suffix": "+",
+          "icon": "fas fa-microscope"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "label": "Years Excellence",
+          "value": "18",
+          "suffix": "+",
+          "icon": "fas fa-award"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "label": "Patient Satisfaction",
+          "value": "95",
+          "suffix": "%",
+          "icon": "fas fa-user-check"
+        },
+        "media": {}
+      }
+    ],
+    "education": [
+      {
+        "data": {
+          "qualification": "FCPS (Feto-Maternal medicine)",
+          "year": 2023,
+          "institution": null,
+          "description": "FCPS (Fellowship of the College of Physicians and Surgeons)"
+        },
+        "media": {
+          "image_id": "bce4e7aadd8e-1861735261793012.jpeg"
+        }
+      },
+      {
+        "data": {
+          "qualification": "Community fellowship",
+          "year": 2019,
+          "institution": null,
+          "description": "Young Gynaecology award and community fellowship 2019"
+        },
+        "media": {
+          "image_id": "90091fed4be1-1861735282768331.jpeg"
+        }
+      },
+      {
+        "data": {
+          "qualification": "FCPS (Gynae and Obsrics)",
+          "year": 2011,
+          "institution": null,
+          "description": "FCPS (Fellowship of the College of Physicians and Surgeons)"
+        },
+        "media": {
+          "image_id": "d946d1cb85e5-1861735289604585.jpeg"
+        }
+      },
+      {
+        "data": {
+          "qualification": "MBBS (Bachelor of Medicine, Bachelor of Surgery)",
+          "year": 2003,
+          "institution": null,
+          "description": "Sir Salimullah medical College"
+        },
+        "media": {
+          "image_id": "8b70c0de11ad-1861735298509341.jpeg"
+        }
+      },
+      {
+        "data": {
+          "qualification": "HSC (Higher Secondary Certificate)",
+          "year": 1997,
+          "institution": null,
+          "description": "Mymensingh Girls Cadet College"
+        },
+        "media": {
+          "image_id": "ab09b7dac21f-1861735304861925.jpeg"
+        }
+      },
+      {
+        "data": {
+          "qualification": "SSC (Secondary School Certificate)",
+          "year": 1995,
+          "institution": null,
+          "description": "Mymensigh Girls Cadet College"
+        },
+        "media": {
+          "image_id": "414da28e4b04-1861735311253241.jpeg"
+        }
+      }
+    ],
+    "award": [
+      {
+        "data": {
+          "title": "SS Ratnam Young Gynaecology award 2019",
+          "year": 2019,
+          "description": "\"SS Ratnam Young Gynaecology award 2019 (It is a prestigious award given by Asia and Osania Federation of obstetrics and Gynaecology (AOFOG) for research work and contribution towards society).\""
+        },
+        "media": {
+          "image_id": "b5322502e108-1861735321327331.jpeg"
+        }
+      }
+    ],
+    "service": [
+      {
+        "data": {
+          "name": "Cervical Cancer",
+          "description": "Expert screening, preventive vaccination, and comprehensive management for cervical health.",
+          "icon": "fas fa-user-shield",
+          "slug": "cervical-cancer"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "name": "Fetal Medicine",
+          "description": "Specialized monitoring and high-resolution ultrasound for the health and safety of your unborn baby.",
+          "icon": "fas fa-baby",
+          "slug": "fetal-medicine"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "name": "Endometriosis",
+          "description": "Comprehensive diagnosis and advanced treatment for endometriosis to improve your quality of life",
+          "icon": "fas fa-microscope",
+          "slug": "endometriosis"
+        },
+        "media": {}
+      }
+    ],
+    "specialist": [
+      {
+        "data": {
+          "title": "Specialized Consultation",
+          "icon": "fas fa-check-circle"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Advanced Diagnostics",
+          "icon": "fas fa-check-circle"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Caring & Support Always",
+          "icon": "fas fa-check-circle"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Proactive and Fast Results",
+          "icon": "fas fa-check-circle"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Complete Care Solutions",
+          "icon": "fas fa-check-circle"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Monthly Checkups",
+          "icon": "fas fa-check-circle"
+        },
+        "media": {}
+      }
+    ],
+    "process": [
+      {
+        "data": {
+          "title": "Book an Appointment",
+          "description": "Schedule your consultation easily through phone or online booking. Emergency and follow-up appointments are prioritized for expectant mothers."
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Initial Consultation & Checkup",
+          "description": "During the first visit, a detailed medical history is reviewed and necessary clinical examinations or ultrasound tests are performed."
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Diagnosis & Treatment Planning",
+          "description": "Based on test results, an individualized care plan is created covering prenatal care, gynecological issues, or feto-maternal evaluations."
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Follow-up & Ongoing Care",
+          "description": "Patients receive continuous monitoring, lifestyle guidance, and compassionate support to ensure safe recovery and the best maternal-fetal outcomes."
+        },
+        "media": {}
+      }
+    ],
+    "youtube": [
+      {
+        "data": {
+          "title": "Health video 1",
+          "youtube_id": "n7cZSkZiRbI",
+          "description": null
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Health video 2",
+          "youtube_id": "EuPKv1UUIKw",
+          "description": null
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Health video 3",
+          "youtube_id": "vNtuGoaU7LI",
+          "description": null
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Health video 4",
+          "youtube_id": "nYsTEVneYKQ",
+          "description": null
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Health video 5",
+          "youtube_id": "h3vB4Q7BRyk",
+          "description": null
+        },
+        "media": {}
+      }
+    ],
+    "experience": [
+      {
+        "data": {
+          "institution": "Sir Salimullah Medical College and Mitford Hospital.",
+          "position": "Assistant Professor — OBGYN Department",
+          "description": "\"Hands-on experience in labor management, antenatal counseling, and infertility evaluation.\"",
+          "period_label": "2026",
+          "is_current": true
+        },
+        "media": {
+          "image_id": "a2dcbcaf6788-1861735371244761.jpeg"
+        }
+      }
+    ],
+    "chamber": [
+      {
+        "data": {
+          "name": "Medinova Medical Services Ltd. Malibagh Branch",
+          "address": "Gemcon Business Center (Lift 2 - 6), 255, New Circular Road, Malibagh More, Dhaka-1217",
+          "phone": "+880 1790-118855",
+          "additional_phones": [
+            "01790118866",
+            "02-58313811",
+            "02-58311812-13"
+          ],
+          "timezone": "Asia/Dhaka",
+          "schedules": [
+            {
+              "day_of_week": 6,
+              "opens_at": "17:00",
+              "closes_at": "21:00",
+              "is_active": true
+            },
+            {
+              "day_of_week": 1,
+              "opens_at": "17:00",
+              "closes_at": "21:00",
+              "is_active": true
+            },
+            {
+              "day_of_week": 3,
+              "opens_at": "17:00",
+              "closes_at": "21:00",
+              "is_active": true
+            }
+          ]
+        },
+        "media": {}
+      }
+    ],
+    "faq": [
+      {
+        "data": {
+          "question": "ডা. রুনা আক্তার দোলা কোন কোন বিষয়ে বিশেষজ্ঞ?",
+          "answer": "স্ত্রীরোগ, প্রসূতি ও ফিটো-ম্যাটারনাল মেডিসিন বিশেষজ্ঞ (হাইরিস্ক প্রেগন্যান্সি ও গর্ভস্থ শিশু রোগ বিশেষজ্ঞ)"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "question": "ম্যাডাম বর্তমানে কোথায় রোগী দেখছেন?",
+          "answer": "জেমকন বিজনেস সেন্টার, (লিফটের-৩, রুম-৪০১) নিউ সার্কুলার রোড,মালিবাগ মোড়, ঢাকা-১২১৭"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "question": "অ্যাপয়েন্টমেন্ট বুক করার নিয়ম কী?",
+          "answer": "সিরিয়ালের জন্য কল করুনঃ 01790-118855, 01790-118866, 02-58313811, 02-58311812-13"
+        },
+        "media": {}
+      }
+    ],
+    "gallery": [
+      {
+        "data": {
+          "title": "Dr. Runa Akhter Dola",
+          "caption": null
+        },
+        "media": {
+          "image_id": "b4a37abf32dc-1775489173_69d3d095dbc25.jpeg"
+        }
+      },
+      {
+        "data": {
+          "title": "Dr. Runa Akhter Dola",
+          "caption": null
+        },
+        "media": {
+          "image_id": "08c0e7e790ed-1775489181_69d3d09d7ca44.jpeg"
+        }
+      },
+      {
+        "data": {
+          "title": "Dr. Runa Akhter Dola",
+          "caption": null
+        },
+        "media": {
+          "image_id": "f1b822d3f30c-1775489187_69d3d0a3bd466.jpeg"
+        }
+      },
+      {
+        "data": {
+          "title": "Dr. Runa Akhter Dola",
+          "caption": null
+        },
+        "media": {
+          "image_id": "3d61a58a683c-1775489193_69d3d0a9ad93d.jpeg"
+        }
+      }
+    ]
+  },
+  "reviews": [
+    {
+      "data": {
+        "name": "Md Maruf Billah",
+        "workplace": "Dhaka",
+        "message": "best Gynae Specialist Dr in Bangladesh",
+        "rating": 5
+      },
+      "media": {}
+    }
+  ]
+}

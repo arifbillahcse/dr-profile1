@@ -1,0 +1,868 @@
+
+    .slanted-breadcrumb {
+        background: #0a2d1e;
+        min-height: 450px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+    }
+
+    .breadcrumb-bg-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 20% 50%, rgba(25, 135, 84, 0.25), transparent);
+    }
+
+    .slanted-image-wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 45%;
+        height: 100%;
+        z-index: 2;
+    }
+
+    .slanted-shape {
+        position: absolute;
+        top: 0;
+        left: -100px;
+        width: 200px;
+        height: 100%;
+        background: #0a2d1e;
+        transform: skewX(-15deg);
+        z-index: 3;
+    }
+
+    .doctor-image-bg {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center top;
+        position: relative;
+        z-index: 1;
+    }
+
+    .service-card-luxury {
+        background: #ffffff;
+        border-bottom: 4px solid transparent !important;
+        transition: all 0.4s ease;
+    }
+
+    .service-card-luxury:hover {
+        transform: translateY(-10px);
+        border-bottom-color: #ffb703 !important;
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .icon-box-medical-luxury {
+        width: 70px;
+        height: 70px;
+        background: rgba(25, 135, 84, 0.1);
+        color: #198754;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        transition: 0.4s;
+    }
+
+    .service-card-luxury:hover .icon-box-medical-luxury {
+        background: #198754;
+        color: #fff;
+        transform: rotateY(360deg);
+    }
+
+    .header-line-gold {
+        width: 70px;
+        height: 4px;
+        background: #ffb703;
+        border-radius: 50px;
+    }
+
+    /* --- CTA Luxury Banner --- */
+    .cta-banner-luxury {
+        background: linear-gradient(135deg, #0a2d1e 0%, #198754 100%);
+        box-shadow: 0 20px 40px rgba(10, 45, 30, 0.3);
+    }
+
+    .btn-gold-luxury {
+        background: #ffb703;
+        color: #0a2d1e;
+        border: none;
+        font-weight: 800;
+        transition: 0.3s;
+    }
+
+    .btn-gold-luxury:hover {
+        background: #fff;
+        color: #0a2d1e;
+        transform: scale(1.05);
+    }
+
+    .ls-2 {
+        letter-spacing: 2px;
+    }
+
+    .animate-up {
+        animation: fadeInUp 0.8s both;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 991px) {
+        .slanted-breadcrumb {
+            min-height: auto;
+            padding: 60px 0;
+        }
+
+        .cta-banner-luxury {
+            padding: 40px 30px !important;
+            text-align: center;
+        }
+    }
+
+    .cta-help-luxury {
+        background: #0a2d1e;
+        border: 1px solid rgba(255, 183, 3, 0.1);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    /* 2. Interactive Blobs (Home Page style) */
+    .luxury-blob {
+        position: absolute;
+        width: 350px;
+        height: 350px;
+        border-radius: 50%;
+        filter: blur(80px);
+        z-index: 1;
+        animation: blobFloat 10s infinite alternate;
+    }
+
+    .blob-1 {
+        background: rgba(25, 135, 84, 0.25);
+        top: -100px;
+        right: -50px;
+    }
+
+    .blob-2 {
+        background: rgba(255, 183, 3, 0.1);
+        bottom: -100px;
+        left: -50px;
+        animation-delay: -5s;
+    }
+
+    @keyframes blobFloat {
+        0% {
+            transform: translate(0, 0) scale(1);
+        }
+
+        100% {
+            transform: translate(40px, 60px) scale(1.1);
+        }
+    }
+
+    /* 3. Shining Header Effect */
+    .header-shining {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .text-gold-luxury {
+        color: #ffb703;
+        background: linear-gradient(to right, #ffb703, #fff1cc, #ffb703);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shineText 3s linear infinite;
+    }
+
+    @keyframes shineText {
+        to {
+            background-position: 200% center;
+        }
+    }
+
+    /* 4. Luxury Button (Home Help style) */
+    .btn-help-luxury {
+        position: relative;
+        padding: 16px 45px;
+        background: #ffb703;
+        color: #0a2d1e !important;
+        font-weight: 800;
+        border-radius: 50px;
+        display: inline-flex;
+        text-decoration: none;
+        transition: 0.4s;
+        overflow: hidden;
+        z-index: 5;
+    }
+
+    .btn-help-luxury:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(255, 183, 3, 0.4);
+    }
+
+    .btn-glow {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
+        transform: skewX(-25deg);
+        transition: 0.5s;
+    }
+
+    .btn-help-luxury:hover .btn-glow {
+        left: 150%;
+    }
+
+    /* 5. Floating Icon with Rotating Glow (Special Home Animation) */
+    .floating-icon-wrapper {
+        position: relative;
+        width: 220px;
+        height: 220px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icon-circle-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 2px dashed rgba(255, 183, 3, 0.3);
+        border-radius: 50%;
+        animation: rotateLine 15s linear infinite;
+    }
+
+    .cta-main-icon {
+        font-size: 130px;
+        color: #ffb703;
+        filter: drop-shadow(0 0 15px rgba(255, 183, 3, 0.5));
+        animation: bounceIcon 4s infinite ease-in-out;
+    }
+
+    @keyframes rotateLine {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes bounceIcon {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+
+    /* 6. Help Badge Animation */
+    .help-badge {
+        background: rgba(255, 255, 255, 0.05);
+        color: #ffb703;
+        padding: 10px 20px;
+        border-radius: 50px;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: bold;
+        border: 1px solid rgba(255, 183, 3, 0.2);
+    }
+
+    @media (max-width: 991px) {
+        .cta-help-luxury {
+            text-align: center;
+        }
+
+        .btn-help-luxury {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    .specialist-services-grid ul li {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.85);
+        flex: 0 0 calc(50% - 20px);
+        /* দুই কলামে সার্ভিস দেখাবে */
+        transition: 0.3s;
+    }
+
+    .specialist-services-grid ul li:hover {
+        color: #ffb703;
+        transform: translateX(5px);
+    }
+
+    /* Header Text Gradient & Shine */
+    .text-gold-luxury {
+        background: linear-gradient(to right, #ffb703, #fff, #ffb703);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shineEffect 3s linear infinite;
+    }
+
+    @keyframes shineEffect {
+        to {
+            background-position: 200% center;
+        }
+    }
+
+    /* Luxury Wrapper & Background */
+    .cta-help-luxury {
+        background: linear-gradient(135deg, #0a2d1e 0%, #051911 100%);
+        border: 1px solid rgba(255, 183, 3, 0.15);
+    }
+
+    /* Floating Icon Wrapper */
+    .floating-icon-wrapper {
+        position: relative;
+        width: 250px;
+        height: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icon-circle-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 2px dashed rgba(255, 183, 3, 0.4);
+        border-radius: 50%;
+        animation: spinCircle 20s linear infinite;
+    }
+
+    @keyframes spinCircle {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Mobile Optimizations */
+    @media (max-width: 768px) {
+        .specialist-services-grid ul li {
+            flex: 0 0 100%;
+            /* মোবাইলে এক কলামে দেখাবে */
+        }
+
+        .cta-help-luxury {
+            text-align: center;
+        }
+
+        .cta-action-group {
+            width: 100%;
+        }
+
+        .btn-help-luxury {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    .checklist-premium-luxury {
+        position: relative;
+        z-index: 10;
+    }
+
+    /* Glowing Check Icon */
+    .icon-circle-glow {
+        width: 24px;
+        height: 24px;
+        background: rgba(255, 183, 3, 0.1);
+        border: 1px solid rgba(255, 183, 3, 0.4);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffb703;
+        font-size: 11px;
+        box-shadow: 0 0 10px rgba(255, 183, 3, 0.2);
+        transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    /* Hover Effect on Item */
+    .specialist-item-wrapper {
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .specialist-item-wrapper:hover .icon-circle-glow {
+        background: #ffb703;
+        color: #0a2d1e;
+        transform: scale(1.2) rotate(360deg);
+        box-shadow: 0 0 15px #ffb703;
+    }
+
+    .specialist-name {
+        font-size: 14.5px;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+        transition: 0.3s;
+    }
+
+    .specialist-item-wrapper:hover .specialist-name {
+        color: #fff !important;
+        padding-left: 5px;
+    }
+
+    /* Animation for List items */
+    @keyframes fadeInUpSubtle {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-up {
+        animation: fadeInUpSubtle 0.5s ease forwards;
+    }
+
+    /* Responsive Fix */
+    @media (max-width: 575px) {
+        .specialist-name {
+            font-size: 13px;
+        }
+
+        .icon-circle-glow {
+            width: 20px;
+            height: 20px;
+            font-size: 9px;
+        }
+    }
+
+    /* উদাহরণ: টেক্সট কালার আরও গাঢ় করা */
+    .text-white-50 {
+        color: rgba(255, 255, 255, 0.85) !important;
+        /* ৫০% এর বদলে ৮৫% অপাসিটি দিন */
+    }
+
+    .text-muted {
+        color: #555555 !important;
+        /* হালকা ধূসর থেকে গাঢ় ধূসরে পরিবর্তন */
+    }
+
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            /* উল্টো দিকে রাখা হয়েছে back-to-top থেকে */
+            background-color: #25d366;
+            color: #FFF;
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        .whatsapp-float i {
+            font-size: 25px;
+            margin-right: 8px;
+        }
+
+        .wa-text {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .wa-text {
+                display: none;
+            }
+
+            /* মোবাইলে শুধু আইকন দেখাবে */
+            .whatsapp-float {
+                padding: 12px;
+            }
+
+            .whatsapp-float i {
+                margin: 0;
+            }
+        }
+    
+
+    /* Base Header Setup */
+    .main-header-area {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .header-top-bar {
+        background: rgba(10, 45, 30, 0.5);
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+    }
+
+    /* Social Icons Style */
+    .social-glass-icon {
+        width: 32px;
+        height: 32px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.4s;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        font-size: 14px;
+    }
+
+    .social-glass-icon:hover {
+        background: #ffb703;
+        color: #0a2d1e;
+        transform: translateY(-3px) rotate(360deg);
+        box-shadow: 0 0 15px #ffb703;
+    }
+
+    /* Navigation Area */
+    .header-navigation-main {
+        padding: 20px 0;
+        transition: 0.4s ease;
+    }
+
+    /* Sticky Effect (Used by your jQuery) */
+    .header-sticky.sticky {
+        position: fixed !important;
+        top: 0;
+        width: 100%;
+        background: rgba(10, 45, 30, 0.98) !important;
+        padding: 12px 0 !important;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+        animation: slideInHeader 0.5s both;
+    }
+
+    @keyframes slideInHeader {
+        from {
+            transform: translateY(-100%);
+        }
+
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    /* Menu Link Animation */
+    .luxury-menu li {
+        margin: 0 18px;
+    }
+
+    .luxury-menu li a {
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 15px;
+        position: relative;
+        padding: 10px 0;
+        transition: 0.3s;
+    }
+
+    .luxury-menu li a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #ffb703;
+        transition: 0.4s;
+        box-shadow: 0 0 10px #ffb703;
+    }
+
+    .luxury-menu li a:hover::after,
+    .luxury-menu li a.active::after {
+        width: 100%;
+    }
+
+    .luxury-menu li a:hover,
+    .luxury-menu li a.active {
+        color: #ffb703;
+    }
+
+    /* Neon Call Button */
+    .btn-call-neon {
+        background: #ffb703;
+        color: #0a2d1e !important;
+        padding: 10px 22px;
+        border-radius: 50px;
+        font-weight: 800;
+        text-decoration: none;
+        box-shadow: 0 0 15px rgba(255, 183, 3, 0.3);
+        transition: 0.4s;
+    }
+
+    .btn-call-neon:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px rgba(255, 183, 3, 0.6);
+    }
+
+    /* Phone Shake Animation */
+    .phone-shake {
+        animation: shake 2s infinite;
+    }
+
+    @keyframes shake {
+
+        0%,
+        100% {
+            transform: rotate(0);
+        }
+
+        10%,
+        30%,
+        50% {
+            transform: rotate(-15deg);
+        }
+
+        20%,
+        40%,
+        60% {
+            transform: rotate(15deg);
+        }
+    }
+
+    /* Mobile View Responsive Fix */
+    @media (max-width: 991px) {
+        .main-header-area {
+            position: relative;
+            background: #0a2d1e;
+        }
+
+        .header-navigation-main {
+            padding: 12px 0;
+        }
+
+        .main-logo-img {
+            height: 40px !important;
+        }
+
+        .mobile-nav-toggle {
+            background: none;
+            border: none;
+            color: #ffb703;
+            font-size: 24px;
+        }
+    }
+
+    .main-logo-img {
+        height: 60px;
+        transition: 0.4s;
+        width: auto;
+    }
+
+    .sticky .main-logo-img {
+        height: 45px;
+    }
+
+    /* Mobile Canvas Sidebar */
+    .luxury-mobile-canvas {
+        background: #0a2d1e;
+        width: 280px !important;
+    }
+
+    .mobile-nav-links li a {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 15px 0;
+        display: block;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+
+    .ls-2 {
+        letter-spacing: 2px;
+    }
+
+    .footer-section {
+        background-image: radial-gradient(circle at 0% 0%, #0a2d1e 0%, #051a11 100%);
+    }
+
+    /* Contact Hover Effect */
+    .contact-link {
+        transition: 0.3s ease;
+        padding: 5px 0;
+        display: block;
+    }
+
+    .contact-link:hover {
+        padding-left: 10px;
+        background: rgba(255, 183, 3, 0.05);
+        border-radius: 5px;
+    }
+
+    .contact-link i {
+        width: 25px;
+    }
+
+    /* Premium Link Style */
+    .footer-links li a {
+        position: relative;
+        transition: 0.3s;
+    }
+
+    .footer-links li a:hover {
+        color: #ffb703 !important;
+        padding-left: 8px;
+    }
+
+    /* Social Buttons */
+    .social-v4-btn {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.4s;
+        border: 1px solid rgba(255, 183, 3, 0.3);
+    }
+
+    .social-v4-btn:hover {
+        background: #ffb703;
+        color: #000;
+        transform: rotate(360deg) scale(1.1);
+    }
+
+    /* Facebook Page Premium Card - Boro and Sundor */
+    .fb-premium-card {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 20px;
+        transition: 0.5s;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .fb-premium-card:hover {
+        transform: translateY(-10px);
+        border-color: #ffb703;
+        box-shadow: 0 15px 40px rgba(25, 135, 84, 0.4);
+    }
+
+    .fb-profile-img {
+        width: 80px;
+        height: 80px;
+        border: 3px solid #ffb703;
+        padding: 3px;
+        background: #fff;
+    }
+
+    .btn-fb-follow {
+        background: #ffb703;
+        color: #000;
+        font-weight: bold;
+        border-radius: 50px;
+        padding: 8px 20px;
+        font-size: 13px;
+        transition: 0.3s;
+        border: none;
+    }
+
+    .btn-fb-follow:hover {
+        background: #fff;
+        color: #0a2d1e;
+        transform: scale(1.05);
+    }
+
+    /* Scroll Top */
+    .back-to-top-simple {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: #ffb703;
+        color: #000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        transition: 0.3s;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .back-to-top-simple:hover {
+        transform: translateY(-10px);
+        background: #fff;
+    }
+
+    .credential-tag {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.75);
+        letter-spacing: 0.5px;
+        transition: color 0.3s ease;
+    }
+
+    .credential-tag:hover {
+        color: #ffb703;
+        /* গোল্ডেন হাইলাইট */
+    }
+
+    .credential-separator {
+        font-size: 1.2rem;
+        line-height: 1;
+    }
+
+    @media (max-width: 991px) {
+        .doctor-credentials-wrapper .d-flex {
+            justify-content: center;
+            /* মোবাইলে সেন্টারে থাকবে */
+        }
+
+        .credential-tag {
+            font-size: 0.85rem;
+        }
+    }

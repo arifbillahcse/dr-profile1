@@ -1,0 +1,7 @@
+/* Keep off-screen animation transforms from widening the mobile viewport. */
+html { overflow-x: clip; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-aos] { opacity: 1 !important; transform: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}

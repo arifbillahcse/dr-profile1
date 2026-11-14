@@ -1,0 +1,1723 @@
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            /* উল্টো দিকে রাখা হয়েছে back-to-top থেকে */
+            background-color: #25d366;
+            color: #FFF;
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        .whatsapp-float i {
+            font-size: 25px;
+            margin-right: 8px;
+        }
+
+        .wa-text {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .wa-text {
+                display: none;
+            }
+
+            /* মোবাইলে শুধু আইকন দেখাবে */
+            .whatsapp-float {
+                padding: 12px;
+            }
+
+            .whatsapp-float i {
+                margin: 0;
+            }
+        }
+    
+
+    /* Base Header Setup */
+    .main-header-area {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .header-top-bar {
+        background: rgba(10, 45, 30, 0.5);
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+    }
+
+    /* Social Icons Style */
+    .social-glass-icon {
+        width: 32px;
+        height: 32px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.4s;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        font-size: 14px;
+    }
+
+    .social-glass-icon:hover {
+        background: #ffb703;
+        color: #0a2d1e;
+        transform: translateY(-3px) rotate(360deg);
+        box-shadow: 0 0 15px #ffb703;
+    }
+
+    /* Navigation Area */
+    .header-navigation-main {
+        padding: 20px 0;
+        transition: 0.4s ease;
+    }
+
+    /* Sticky Effect (Used by your jQuery) */
+    .header-sticky.sticky {
+        position: fixed !important;
+        top: 0;
+        width: 100%;
+        background: rgba(10, 45, 30, 0.98) !important;
+        padding: 12px 0 !important;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+        animation: slideInHeader 0.5s both;
+    }
+
+    @keyframes slideInHeader {
+        from {
+            transform: translateY(-100%);
+        }
+
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    /* Menu Link Animation */
+    .luxury-menu li {
+        margin: 0 18px;
+    }
+
+    .luxury-menu li a {
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 15px;
+        position: relative;
+        padding: 10px 0;
+        transition: 0.3s;
+    }
+
+    .luxury-menu li a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #ffb703;
+        transition: 0.4s;
+        box-shadow: 0 0 10px #ffb703;
+    }
+
+    .luxury-menu li a:hover::after,
+    .luxury-menu li a.active::after {
+        width: 100%;
+    }
+
+    .luxury-menu li a:hover,
+    .luxury-menu li a.active {
+        color: #ffb703;
+    }
+
+    /* Neon Call Button */
+    .btn-call-neon {
+        background: #ffb703;
+        color: #0a2d1e !important;
+        padding: 10px 22px;
+        border-radius: 50px;
+        font-weight: 800;
+        text-decoration: none;
+        box-shadow: 0 0 15px rgba(255, 183, 3, 0.3);
+        transition: 0.4s;
+    }
+
+    .btn-call-neon:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px rgba(255, 183, 3, 0.6);
+    }
+
+    /* Phone Shake Animation */
+    .phone-shake {
+        animation: shake 2s infinite;
+    }
+
+    @keyframes shake {
+
+        0%,
+        100% {
+            transform: rotate(0);
+        }
+
+        10%,
+        30%,
+        50% {
+            transform: rotate(-15deg);
+        }
+
+        20%,
+        40%,
+        60% {
+            transform: rotate(15deg);
+        }
+    }
+
+    /* Mobile View Responsive Fix */
+    @media (max-width: 991px) {
+        .main-header-area {
+            position: relative;
+            background: #0a2d1e;
+        }
+
+        .header-navigation-main {
+            padding: 12px 0;
+        }
+
+        .main-logo-img {
+            height: 40px !important;
+        }
+
+        .mobile-nav-toggle {
+            background: none;
+            border: none;
+            color: #ffb703;
+            font-size: 24px;
+        }
+    }
+
+    .main-logo-img {
+        height: 60px;
+        transition: 0.4s;
+        width: auto;
+    }
+
+    .sticky .main-logo-img {
+        height: 45px;
+    }
+
+    /* Mobile Canvas Sidebar */
+    .luxury-mobile-canvas {
+        background: #0a2d1e;
+        width: 280px !important;
+    }
+
+    .mobile-nav-links li a {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 15px 0;
+        display: block;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+
+    .luxury-degree-badge {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 6px 16px;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(5px);
+    }
+
+    .luxury-degree-badge:hover {
+        background: rgba(255, 183, 3, 0.1);
+        /* Gold tint on hover */
+        border-color: #ffb703;
+        transform: translateY(-2px);
+    }
+
+    .degree-text {
+        color: #f8f9fa;
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    /* মোবাইলে যাতে কলাপস না করে সুন্দর দেখায় */
+    @media (max-width: 991px) {
+        .luxury-degree-badge {
+            padding: 4px 12px;
+        }
+
+        .degree-text {
+            font-size: 0.75rem;
+            text-align:left;
+        }
+    }
+
+    .hero-section {
+        background: linear-gradient(135deg, #0a2d1e 0%, #051911 100%);
+        padding: 100px 0;
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+        color: #ffffff;
+        padding-top: 200px;
+    }
+
+    /* Background Shapes */
+    .hero-bg-shapes .shape {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        z-index: 1;
+    }
+
+    .shape-1 {
+        width: 350px;
+        height: 350px;
+        background: rgba(25, 135, 84, 0.2);
+        top: -5%;
+        right: -5%;
+    }
+
+    .shape-2 {
+        width: 450px;
+        height: 450px;
+        background: rgba(255, 183, 3, 0.05);
+        bottom: -10%;
+        left: -5%;
+    }
+
+    /* Doctor Branding */
+    .doctor-name {
+        font-weight: 800;
+        line-height: 1.1;
+        text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .medical-badge {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 10px 20px !important;
+        border-radius: 50px !important;
+        color: #fff !important;
+    }
+
+    /* Slider Styling */
+    .hero-img {
+        height: 520px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 30px;
+    }
+
+    .slide-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40%;
+        background: linear-gradient(to top, rgba(10, 45, 30, 0.9), transparent);
+        z-index: 1;
+    }
+
+    /* Buttons */
+    .btn-appointment-luxury {
+        background: #ffb703;
+        color: #0a2d1e !important;
+        font-weight: 800;
+        border-radius: 50px;
+        transition: all 0.4s ease;
+        border: none;
+    }
+
+    .btn-appointment-luxury:hover {
+        background: #ffffff;
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(255, 183, 3, 0.4);
+    }
+
+    .btn-outline-gold {
+        border: 2px solid #ffb703;
+        color: #ffb703 !important;
+    }
+
+    /* Trust Card */
+    .trust-card-luxury {
+        position: absolute;
+        bottom: -20px;
+        left: -30px;
+        background: #ffffff;
+        padding: 18px 25px;
+        border-radius: 20px;
+        z-index: 10;
+        border-bottom: 5px solid #ffb703;
+    }
+
+    .avatar-item {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        margin-left: -12px;
+    }
+
+    .count-badge-luxury {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: #ffb703;
+        color: #0a2d1e;
+        font-size: 14px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #fff;
+        margin-left: -12px;
+    }
+
+    /* Animations */
+    @keyframes ring {
+
+        0%,
+        100% {
+            transform: rotate(0);
+        }
+
+        10%,
+        30%,
+        50% {
+            transform: rotate(-15deg);
+        }
+
+        20%,
+        40%,
+        60% {
+            transform: rotate(15deg);
+        }
+    }
+
+    .animate-phone {
+        animation: ring 1.5s infinite ease-in-out;
+    }
+
+    @keyframes bounceSlow {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-15px);
+        }
+    }
+
+    .animate-bounce-slow {
+        animation: bounceSlow 3s infinite ease-in-out;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 991px) {
+        .hero-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero-img {
+            height: 350px;
+        }
+
+        .hero-buttons .btn {
+            width: 48%;
+            font-size: 13px;
+        }
+
+        .trust-card-luxury {
+            position: relative;
+            left: 0;
+            bottom: 0;
+            margin: 30px auto 0;
+            display: inline-block;
+        }
+    }
+
+    .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+
+
+    /* বেস কার্ড এবং ইনফিনিট অ্যানিমেশন */
+    .feature-card {
+        background: #ffffff;
+        border-radius: 20px;
+        transition: all 0.4s ease;
+        border-bottom: 4px solid transparent;
+        z-index: 2;
+    }
+
+    /* Infinite Floating Animation */
+    .infinite-float {
+        animation: floatMotion 4s infinite ease-in-out;
+    }
+
+    @keyframes floatMotion {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+    }
+
+    /* হোভারে অ্যানিমেশন পজ হবে এবং কার্ড হাইলাইট হবে */
+    .feature-card:hover {
+        animation-play-state: paused;
+        transform: scale(1.03) !important;
+        box-shadow: 0 20px 40px rgba(10, 45, 30, 0.1) !important;
+        border-bottom-color: #198754;
+    }
+
+    /* আইকন সার্কেল */
+    .icon-circle-custom {
+        width: 60px; height: 60px;
+        background: #f0fdf4;
+        border-radius: 50%;
+        color: #198754;
+        transition: 0.4s ease;
+    }
+
+    .feature-card:hover .icon-circle-custom {
+        background: #0a2d1e;
+        color: #fff;
+        transform: rotateY(360deg);
+    }
+
+    /* টেক্সট এবং ইন্ডিকেটর */
+    .text-dark-green { color: #0a2d1e !important; }
+
+    .card-indicator-premium {
+        height: 4px; width: 40px;
+        border-radius: 10px;
+        transition: 0.4s;
+    }
+
+    .feature-card:hover .card-indicator-premium {
+        width: 100%; /* হোভারে ফুল হয়ে যাবে */
+        background: #ffb703 !important; /* গোল্ডেন টাচ */
+    }
+
+    .visually-hidden {
+        position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+        overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;
+    }
+
+
+    /* বর্ডার ও কন্টেইনার */
+    .border-top-premium {
+        border-top: 5px solid #0a2d1e !important;
+        background: #ffffff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+    }
+
+    /* Left Aligned Step Card */
+    .q-card-step {
+        padding: 15px;
+        background: #f9fafb;
+        border-radius: 20px;
+        margin-bottom: 15px;
+        transition: 0.3s ease;
+        border-left: 4px solid transparent;
+    }
+
+    .q-card-step:hover {
+        background: #ffffff;
+        border-left-color: #198754;
+        transform: translateX(10px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .q-logo-wrapper {
+        width: 65px;
+        height: 65px;
+        background: #fff;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        flex-shrink: 0;
+    }
+
+    /* Typography Updates */
+    .institution-name {
+        font-size: 1.15rem;
+        line-height: 1.2;
+        color: #0a2d1e !important;
+    }
+
+    .session-text {
+        font-size: 0.9rem;
+        color: #198754;
+    }
+
+    .degree-badge-inline {
+        font-size: 0.9rem;
+        color: #0a2d1e;
+        background: rgba(25, 135, 84, 0.08);
+        padding: 4px 12px;
+        border-radius: 50px;
+    }
+
+    /* Award Section - Left Aligned */
+    .award-thumb-main {
+        width: 70px;
+        height: 70px;
+        background: #fff;
+        padding: 10px;
+        border-radius: 15px;
+        flex-shrink: 0;
+    }
+
+    .award-title {
+        font-size: 1.1rem;
+        line-height: 1.3;
+    }
+
+    .award-desc {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        color: #6b7280;
+    }
+
+    /* Buttons */
+    .award-nav-btn {
+        background: #fff !important;
+        border: 1px solid #eee !important;
+        border-radius: 10px !important;
+        transition: 0.3s;
+    }
+
+    .award-nav-btn.active {
+        border-color: #198754 !important;
+        background: #eef7f2 !important;
+        transform: translateY(-3px);
+    }
+
+    /* Visual Elements */
+    .premium-underline {
+        width: 75px;
+        height: 5px;
+        background: #0a2d1e;
+        border-radius: 10px;
+    }
+
+    .ls-2 {
+        letter-spacing: 2.5px;
+    }
+
+    .icon-circle-sm {
+        width: 42px;
+        height: 42px;
+        background: #eef7f2;
+        color: #198754;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+    }
+
+    .medical-watermark {
+        position: absolute;
+        right: -40px;
+        top: 15%;
+        font-size: 280px;
+        color: rgba(10, 45, 30, 0.02);
+        z-index: 1;
+        transform: rotate(-15deg);
+    }
+
+    @media (max-width: 768px) {
+        .q-card-step {
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .q-logo-wrapper {
+            margin-bottom: 12px;
+        }
+
+        .degree-badge-inline {
+            margin-top: 5px;
+        }
+    }
+
+
+    /* Section Decoration */
+    .divider-premium {
+        width: 80px;
+        height: 5px;
+        background: #0a2d1e;
+        margin: auto;
+        border-radius: 10px;
+    }
+
+    .ls-2 {
+        letter-spacing: 2px;
+    }
+
+    /* Floating Icons */
+    .service-bg-icon {
+        position: absolute;
+        font-size: 120px;
+        color: #198754;
+        opacity: 1;
+        z-index: 1;
+    }
+
+    .s-icon-1 {
+        top: 10%;
+        right: 5%;
+        animation: floatY 10s infinite ease-in-out;
+    }
+
+    .s-icon-2 {
+        bottom: 20%;
+        left: 3%;
+        animation: floatY 12s infinite reverse ease-in-out;
+    }
+
+    /* Service Card Pro */
+    .service-card-pro {
+        border: 1px solid rgba(10, 45, 30, 0.05);
+        border-bottom: 4px solid #0a2d1e;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        z-index: 2;
+    }
+
+    .icon-wrapper-medical {
+        width: 65px;
+        height: 65px;
+        background: #eef7f2;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        color: #198754;
+        transition: 0.4s;
+    }
+
+    .service-card-pro:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(10, 45, 30, 0.1) !important;
+        border-bottom-color: #ffb703;
+        /* হোভারে গোল্ডেন টাচ */
+    }
+
+    .service-card-pro:hover .icon-wrapper-medical {
+        background: #0a2d1e;
+        color: #fff;
+        transform: rotateY(360deg);
+    }
+
+    /* CTA Banner Luxury */
+    .cta-banner-premium {
+        background: linear-gradient(135deg, #0a2d1e 0%, #198754 100%);
+        box-shadow: 0 15px 35px rgba(10, 45, 30, 0.3);
+    }
+
+    .btn-cta-luxury {
+        background: #ffb703;
+        color: #000 !important;
+        padding: 12px 35px;
+        border-radius: 50px;
+        font-weight: 800;
+        display: inline-block;
+        transition: 0.4s;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-cta-luxury:hover {
+        background: #fff;
+        transform: scale(1.05);
+    }
+
+    .floating-cta-icon {
+        font-size: 180px;
+        opacity: 0.15;
+        position: absolute;
+        right: -20px;
+        bottom: -50px;
+        animation: floatY 6s infinite ease-in-out;
+    }
+
+    @keyframes floatY {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .service-bg-icon {
+            display: none;
+        }
+
+        .cta-banner-premium {
+            text-align: center;
+        }
+    }
+
+
+    /* Background Floating Icons */
+    .about-area {
+        position: relative;
+    }
+
+    .about-bg-anim {
+        position: absolute;
+        font-size: 100px;
+        color: #198754;
+        opacity: 1;
+        z-index: 0;
+    }
+
+    .about-bg-anim.icon-1 {
+        top: 10%;
+        left: 5%;
+        animation: floatY 8s infinite ease-in-out;
+    }
+
+    .about-bg-anim.icon-2 {
+        bottom: 10%;
+        right: 5%;
+        animation: floatY 10s infinite reverse ease-in-out;
+    }
+
+    @keyframes floatY {
+
+        0%,
+        100% {
+            transform: translateY(0) rotate(0deg);
+        }
+
+        50% {
+            transform: translateY(-30px) rotate(10deg);
+        }
+    }
+
+    /* Rotating Text & Play Button */
+    .rotating-svg {
+        animation: rotateText 15s linear infinite;
+        transform-origin: center;
+    }
+
+    @keyframes rotateText {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .play-btn-main {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 65px;
+        height: 65px;
+        background: #0a2d1e;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.4s;
+        z-index: 5;
+    }
+
+    .play-pulse-ring {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 2px solid #198754;
+        border-radius: 50%;
+        animation: btnPulse 2s infinite;
+    }
+
+    @keyframes btnPulse {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        100% {
+            transform: scale(1.8);
+            opacity: 0;
+        }
+    }
+
+    /* Degree & Badges */
+    .degree-badge-premium {
+        font-size: 13px;
+        font-weight: 500;
+        background: rgba(25, 135, 84, 0.1);
+        color: #0a2d1e;
+        padding: 8px 15px;
+        border-radius: 50px;
+        display: inline-block;
+        border-left: 4px solid #198754;
+    }
+
+    /* Custom Read More Button */
+    .btn-about-premium {
+        display: inline-flex;
+        align-items: center;
+        background: #0a2d1e;
+        color: #fff !important;
+        padding: 12px 32px;
+        border-radius: 50px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: 0.4s;
+        box-shadow: 0 10px 20px rgba(10, 45, 30, 0.2);
+    }
+
+    .btn-about-premium:hover {
+        background: #198754;
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(25, 135, 84, 0.3);
+    }
+
+    /* Modal Luxury Close Button */
+    .btn-close-custom {
+        width: 40px;
+        height: 40px;
+        background: #198754;
+        color: #fff;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+        transition: 0.3s;
+    }
+
+    .btn-close-custom:hover {
+        background: #0a2d1e;
+        transform: rotate(90deg);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 991px) {
+        .video-promotion-wrap {
+            right: 5%;
+            bottom: -10px;
+        }
+
+        .about-bg-anim {
+            display: none;
+        }
+    }
+
+    .degree-pill-premium {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 183, 3, 0.3);
+        padding: 4px 14px;
+        border-radius: 50px;
+        font-size: 13px;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(4px);
+    }
+
+    .degree-pill-premium:hover {
+        background: rgba(255, 183, 3, 0.15);
+        border-color: #ffb703;
+        transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+        .degree-pill-premium {
+            font-size: 11px;
+            padding: 3px 10px;
+        }
+    }
+
+
+    /* Section Typography */
+    .ls-2 {
+        letter-spacing: 2px;
+    }
+
+    .divider-premium {
+        width: 70px;
+        height: 5px;
+        background: #0a2d1e;
+        border-radius: 10px;
+    }
+
+    .bg-success-light {
+        background: rgba(25, 135, 84, 0.1);
+    }
+
+    /* Call Button Styling */
+    .btn-premium-call {
+        background: #0a2d1e;
+        color: #fff !important;
+        transition: 0.4s;
+        border: none;
+    }
+
+    .btn-premium-call:hover {
+        background: #198754;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(25, 135, 84, 0.3);
+    }
+
+    /* Timeline Vertical Line */
+    .process-timeline-wrapper::before {
+        content: '';
+        position: absolute;
+        left: 16px;
+        top: 0;
+        width: 3px;
+        height: 100%;
+        background: linear-gradient(to bottom, #198754, #0a2d1e, transparent);
+        z-index: 0;
+    }
+
+    /* Step Badges */
+    .step-badge-outer {
+        position: absolute;
+        left: -50px;
+        top: 5px;
+        z-index: 2;
+    }
+
+    .step-badge-inner {
+        width: 35px;
+        height: 35px;
+        background: #0a2d1e;
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        border: 3px solid #fff;
+        transition: 0.4s;
+    }
+
+    /* Hover Effects */
+    .process-item-new:hover .step-badge-inner {
+        background: #ffb703;
+        color: #000;
+        transform: scale(1.1);
+    }
+
+    .process-content-card {
+        transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .process-content-card:hover {
+        transform: translateX(8px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    /* Pulse Icon for Appointment */
+    .pulse-icon {
+        animation: heartBeat 1.5s infinite;
+    }
+
+    @keyframes heartBeat {
+
+        0%,
+        100% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.2);
+        }
+    }
+
+    /* --- Responsive Adjustments --- */
+    @media (max-width: 991.98px) {
+        .order-lg-1 {
+            order: 2;
+        }
+
+        /* মোবাইলে চেম্বার লোকেশন নিচে যাবে */
+        .order-lg-2 {
+            order: 1;
+        }
+
+        /* মোবাইলে প্রসেস টাইমলাইন উপরে আসবে */
+        .sticky-lg-top {
+            position: relative !important;
+            top: 0 !important;
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        .process-timeline-wrapper::before {
+            left: 12px;
+        }
+
+        .step-badge-outer {
+            left: -38px;
+        }
+
+        .step-badge-inner {
+            width: 30px;
+            height: 30px;
+            font-size: 0.9rem;
+        }
+
+        .process-content-card:hover {
+            transform: translateX(5px);
+        }
+
+        .display-5 {
+            font-size: 2rem;
+        }
+    }
+
+
+    /* Section Setup */
+    .video-gallery-area {
+        position: relative;
+        z-index: 1;
+        padding: 60px 0;
+    }
+
+    /* Video Card & Hover */
+    .video-card-pure {
+        transition: 0.4s;
+        border: 1px solid #f1f1f1;
+    }
+
+    .video-card-pure:hover {
+        transform: scale(1.01);
+        box-shadow: 0 15px 30px rgba(10, 45, 30, 0.1) !important;
+    }
+
+    /* Button Styling */
+    .more-video-wrapper {
+        position: relative;
+        padding: 20px 0;
+        animation: floatingBtn 3s infinite ease-in-out;
+    }
+
+    .btn-premium-video {
+        display: inline-flex;
+        align-items: center;
+        background: linear-gradient(135deg, #0a2d1e 0%, #198754 100%);
+        padding: 10px 10px 10px 30px;
+        border-radius: 60px;
+        color: #ffffff !important;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 13px;
+        letter-spacing: 1.5px;
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        box-shadow: 0 10px 25px rgba(10, 45, 30, 0.3);
+    }
+
+    .btn-icon-box {
+        width: 42px;
+        height: 42px;
+        background: #ffb703;
+        color: #000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .pulse-ring {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #ffb703;
+        border-radius: 50%;
+        z-index: -1;
+        animation: ripple 2s infinite;
+        opacity: 0.5;
+    }
+
+    @keyframes ripple {
+        0% { transform: scale(1); opacity: 0.5; }
+        100% { transform: scale(1.8); opacity: 0; }
+    }
+
+    /* Background Icons Animations */
+    .video-bg-icon {
+        position: absolute;
+        color: #198754;
+        opacity: 0.1;
+        z-index: 1;
+        pointer-events: none;
+        font-size: 40px;
+    }
+
+    .v-icon-1 { top: 5%; left: 3%; animation: floatY 6s infinite ease-in-out; }
+    .v-icon-2 { top: 12%; right: 4%; color: #0a2d1e; font-size: 55px; animation: floatY 8s infinite reverse ease-in-out; }
+    .v-icon-3 { bottom: 8%; left: 5%; font-size: 50px; animation: floatY 7s infinite ease-in-out 1s; }
+    .v-icon-4 { bottom: 15%; right: 6%; color: #0a2d1e; animation: floatY 9s infinite reverse ease-in-out; }
+
+    @keyframes floatY {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-30px) rotate(10deg); }
+    }
+
+    @keyframes floatingBtn {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        .video-bg-icon { font-size: 25px; opacity: 0.05 !important; }
+        .btn-premium-video { padding: 8px 8px 8px 20px; font-size: 11px; }
+        .btn-icon-box { width: 35px; height: 35px; }
+    }
+
+
+    /* Section Divider */
+    .divider-premium {
+        width: 80px;
+        height: 5px;
+        background: #0a2d1e;
+        margin: auto;
+        border-radius: 10px;
+    }
+
+    /* Experience Card Premium Styling */
+    .experience-card-pro {
+        border: 1px solid rgba(10, 45, 30, 0.08) !important;
+        border-top: 5px solid #0a2d1e !important;
+        /* ফুটারের সেই ডার্ক গ্রিন টাচ */
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        z-index: 1;
+    }
+
+    .experience-card-pro:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 20px 40px rgba(10, 45, 30, 0.12) !important;
+        border-top-color: #198754 !important;
+        /* হোভারে কালার একটু লাইট হবে */
+    }
+
+    /* Logo & Verified Badge */
+    .logo-wrapper-premium {
+        position: relative;
+        width: 100px;
+        transition: 0.3s;
+    }
+
+    .experience-card-pro:hover .logo-wrapper-premium {
+        transform: scale(1.05);
+    }
+
+    .verified-badge-exp {
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        background: #fff;
+        color: #198754;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Badges & Text */
+    .bg-success-subtle {
+        background-color: #eef7f2 !important;
+        color: #198754 !important;
+    }
+
+    .ls-2 {
+        letter-spacing: 2px;
+    }
+
+    .shadow-xs {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    }
+
+    /* Performance optimization */
+    .experience-card-pro {
+        will-change: transform;
+    }
+
+
+    .help-section-wrapper {
+        background: #ffffff;
+        position: relative;
+        padding: 3px;
+        /* বর্ডারের পুরুত্ব নিয়ন্ত্রণ করে */
+        z-index: 1;
+        overflow: hidden;
+        border-radius: 20px;
+        /* Rounded-4 এর সাথে সামঞ্জস্যপূর্ণ */
+    }
+
+    /* রানিং এনিমেশন তৈরি করার জন্য ছদ্ম-উপাদান (Pseudo-element) */
+    .help-section-wrapper::before {
+        content: "";
+        position: absolute;
+        z-index: -2;
+        left: -50%;
+        top: -50%;
+        width: 200%;
+        height: 200%;
+        background-color: #f1f1f1;
+        /* বর্ডারের পেছনের কালার */
+        background-repeat: no-repeat;
+        background-size: 50% 50%, 50% 50%;
+        background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+        /* এখানে ফুটারের গ্রিন এবং গোল্ডেন ইয়েলোর গ্রেডিয়েন্ট ব্যবহার করা হয়েছে */
+        background-image: linear-gradient(#198754, #198754),
+            linear-gradient(#ffb703, #ffb703),
+            linear-gradient(#198754, #198754),
+            linear-gradient(#ffb703, #ffb703);
+        animation: rotate-border 4s linear infinite;
+    }
+
+    /* ভেতরের অংশটিকে সাদা রাখার জন্য */
+    .help-section-wrapper::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 4px;
+        top: 4px;
+        width: calc(100% - 8px);
+        height: calc(100% - 8px);
+        background: white;
+        border-radius: 16px;
+    }
+
+    @keyframes rotate-border {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* হোভার করলে এনিমেশন ফাস্ট হবে */
+    .help-section-wrapper:hover::before {
+        animation-duration: 2s;
+    }
+
+    /* Help Banner Base */
+    .help-banner-premium {
+        background: linear-gradient(135deg, #0a2d1e 0%, #154d35 100%);
+        border-radius: 15px;
+        z-index: 1;
+        box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Background Pulse Animation - এখন আরও গাঢ় করা হয়েছে */
+    .pulse-bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 150%;
+        height: 150%;
+        background: radial-gradient(circle, rgba(255, 183, 3, 0.15) 0%, transparent 60%);
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        animation: bgPulse 6s infinite ease-in-out;
+    }
+
+    @keyframes bgPulse {
+
+        0%,
+        100% {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 0.4;
+        }
+
+        50% {
+            transform: translate(-50%, -50%) scale(1.3);
+            opacity: 0.8;
+        }
+    }
+
+    /* Floating Medical Icons */
+    .floating-medical-icon {
+        position: absolute;
+        font-size: 120px;
+        color: rgba(255, 255, 255, 0.05);
+        right: 10%;
+        top: -20px;
+        z-index: -1;
+        transform: rotate(-15deg);
+        animation: floatIcon 8s infinite ease-in-out;
+    }
+
+    .floating-medical-icon.icon-2 {
+        font-size: 80px;
+        left: 5%;
+        bottom: -10px;
+        top: auto;
+        animation: floatIcon 10s infinite reverse ease-in-out;
+    }
+
+    @keyframes floatIcon {
+
+        0%,
+        100% {
+            transform: translateY(0) rotate(-15deg);
+        }
+
+        50% {
+            transform: translateY(-30px) rotate(5deg);
+        }
+    }
+
+    /* Button and Icon Pulse */
+    .btn-help-premium {
+        background-color: #ffb703;
+        color: #000 !important;
+        padding: 16px 40px;
+        border-radius: 50px;
+        font-size: 1.15rem;
+        transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: 2px solid transparent;
+    }
+
+    .btn-help-premium:hover {
+        background-color: transparent;
+        color: #ffb703 !important;
+        border-color: #ffb703;
+        transform: scale(1.08);
+    }
+
+    .pulse-icon {
+        animation: heartBeat 1.2s infinite;
+    }
+
+    @keyframes heartBeat {
+
+        0%,
+        100% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.2);
+        }
+    }
+
+
+    /* Review Section Base */
+    .review-section {
+        background-color: #f8fdfb;
+        /* Light fresh background */
+        position: relative;
+    }
+
+    /* Header Styling */
+    .reveiwbutton h2 {
+        color: #0a2d1e;
+        /* Footer color sync */
+        letter-spacing: -1px;
+    }
+
+    .divider-custom {
+        width: 70px;
+        height: 5px;
+        background: linear-gradient(to right, #198754, #ffb703);
+        border-radius: 10px;
+    }
+
+    /* Premium Review Card */
+    .review-card {
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        border: 1px solid rgba(10, 45, 30, 0.05) !important;
+        background: #ffffff;
+        min-height: 280px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .review-card:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 20px 40px rgba(10, 45, 30, 0.12) !important;
+        border-color: #198754 !important;
+    }
+
+    .review-card p {
+        color: #4b5563;
+        font-style: italic;
+        line-height: 1.6;
+        flex-grow: 1;
+    }
+
+    /* Quote Icon Animation */
+    .quote-icon i {
+        transition: 0.3s;
+    }
+
+    .review-card:hover .quote-icon i {
+        opacity: 0.8 !important;
+        transform: scale(1.2);
+    }
+
+    /* Button Styling */
+    .client_review_btn {
+        background-color: #0a2d1e;
+        color: white;
+        border: none;
+        padding: 12px 28px;
+        border-radius: 50px;
+        font-weight: 600;
+        position: relative;
+        overflow: hidden;
+        transition: 0.3s;
+        box-shadow: 0 10px 20px rgba(10, 45, 30, 0.2);
+    }
+
+    .client_review_btn:hover {
+        background-color: #198754;
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(10, 45, 30, 0.3);
+    }
+
+    /* Modal Styling */
+    .modal-content {
+        border-radius: 20px;
+        overflow: hidden;
+        border: none;
+    }
+
+    .modal-header {
+        background: linear-gradient(135deg, #0a2d1e 0%, #198754 100%) !important;
+        padding: 1.5rem;
+    }
+
+    .custom-input {
+        border-radius: 12px !important;
+        padding: 12px 15px !important;
+        border: 1.5px solid #eee !important;
+        transition: 0.3s;
+    }
+
+    .custom-input:focus {
+        border-color: #198754 !important;
+        box-shadow: 0 0 0 4px rgba(25, 135, 84, 0.1) !important;
+        outline: none;
+    }
+
+    /* Swiper Pagination */
+    .swiper-pagination-bullet-active {
+        background: #198754 !important;
+        width: 30px !important;
+        border-radius: 10px !important;
+    }
+
+
+    .ls-2 {
+        letter-spacing: 2px;
+    }
+
+    .footer-section {
+        background-image: radial-gradient(circle at 0% 0%, #0a2d1e 0%, #051a11 100%);
+    }
+
+    /* Contact Hover Effect */
+    .contact-link {
+        transition: 0.3s ease;
+        padding: 5px 0;
+        display: block;
+    }
+
+    .contact-link:hover {
+        padding-left: 10px;
+        background: rgba(255, 183, 3, 0.05);
+        border-radius: 5px;
+    }
+
+    .contact-link i {
+        width: 25px;
+    }
+
+    /* Premium Link Style */
+    .footer-links li a {
+        position: relative;
+        transition: 0.3s;
+    }
+
+    .footer-links li a:hover {
+        color: #ffb703 !important;
+        padding-left: 8px;
+    }
+
+    /* Social Buttons */
+    .social-v4-btn {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.4s;
+        border: 1px solid rgba(255, 183, 3, 0.3);
+    }
+
+    .social-v4-btn:hover {
+        background: #ffb703;
+        color: #000;
+        transform: rotate(360deg) scale(1.1);
+    }
+
+    /* Facebook Page Premium Card - Boro and Sundor */
+    .fb-premium-card {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 20px;
+        transition: 0.5s;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .fb-premium-card:hover {
+        transform: translateY(-10px);
+        border-color: #ffb703;
+        box-shadow: 0 15px 40px rgba(25, 135, 84, 0.4);
+    }
+
+    .fb-profile-img {
+        width: 80px;
+        height: 80px;
+        border: 3px solid #ffb703;
+        padding: 3px;
+        background: #fff;
+    }
+
+    .btn-fb-follow {
+        background: #ffb703;
+        color: #000;
+        font-weight: bold;
+        border-radius: 50px;
+        padding: 8px 20px;
+        font-size: 13px;
+        transition: 0.3s;
+        border: none;
+    }
+
+    .btn-fb-follow:hover {
+        background: #fff;
+        color: #0a2d1e;
+        transform: scale(1.05);
+    }
+
+    /* Scroll Top */
+    .back-to-top-simple {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: #ffb703;
+        color: #000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        transition: 0.3s;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .back-to-top-simple:hover {
+        transform: translateY(-10px);
+        background: #fff;
+    }
+
+    .credential-tag {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.75);
+        letter-spacing: 0.5px;
+        transition: color 0.3s ease;
+    }
+
+    .credential-tag:hover {
+        color: #ffb703;
+        /* গোল্ডেন হাইলাইট */
+    }
+
+    .credential-separator {
+        font-size: 1.2rem;
+        line-height: 1;
+    }
+
+    @media (max-width: 991px) {
+        .doctor-credentials-wrapper .d-flex {
+            justify-content: center;
+            /* মোবাইলে সেন্টারে থাকবে */
+        }
+
+        .credential-tag {
+            font-size: 0.85rem;
+        }
+    }
