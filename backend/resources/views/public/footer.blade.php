@@ -1,4 +1,4 @@
-<footer class="pt-5 pb-4 text-white footer-section position-relative" itemscope="" itemtype="https://schema.org/MedicalOrganization">
+<footer class="pt-5 pb-4 text-white text-start footer-section position-relative" itemscope="" itemtype="https://schema.org/MedicalOrganization">
     <div class="container">
         <div class="row g-4">
 
@@ -34,7 +34,7 @@
 
             <div class="mb-4 col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
                 <h4 class="mb-4 text-white footer-subtitle fw-bold">Official Facebook</h4>
-                                    <div class="text-center fb-premium-card">
+                                    <div class="text-start fb-premium-card">
                         @if($site->socialImage)<img src="{{ $site->socialImage->url() }}" alt="{{ $profile->name }}" class="mb-3 shadow fb-profile-img rounded-circle" loading="lazy">@endif
                         <h2 class="mb-1 text-white fw-bold h6-size-fix">{{ $profile->name }}</h2>
                         <p class="mb-3 x-small text-white-50">{{ $profile->specialty }}</p>
@@ -42,7 +42,7 @@
                         @if(!empty($site->social_links['facebook']))<a href="{{ $site->social_links['facebook'] ?? '' }}" target="_blank" rel="noopener noreferrer" class="btn btn-fb-follow" aria-label="Visit our Facebook profile">
                             <i class="fab fa-facebook-f me-2"></i> Visit Facebook Page
                         </a>@endif
-                        <div class="gap-2 mt-3 d-flex justify-content-center">@foreach(['linkedin'=>'fab fa-linkedin-in','youtube'=>'fab fa-youtube','instagram'=>'fab fa-instagram'] as $network=>$icon)@if(!empty($site->social_links[$network]))<a href="{{ $site->social_links[$network] }}" target="_blank" rel="noopener noreferrer" class="social-v4-btn" aria-label="{{ ucfirst($network) }}"><i class="{{ $icon }}"></i></a>@endif @endforeach @if($phoneLink)<a href="{{ $phoneLink }}" class="social-v4-btn" aria-label="Call the practice"><i class="fas fa-phone"></i></a>@endif</div>
+                        <div class="gap-2 mt-3 d-flex justify-content-start">@foreach(['linkedin'=>'fab fa-linkedin-in','youtube'=>'fab fa-youtube','instagram'=>'fab fa-instagram'] as $network=>$icon)@if(!empty($site->social_links[$network]))<a href="{{ $site->social_links[$network] }}" target="_blank" rel="noopener noreferrer" class="social-v4-btn" aria-label="{{ ucfirst($network) }}"><i class="{{ $icon }}"></i></a>@endif @endforeach @if($phoneLink)<a href="{{ $phoneLink }}" class="social-v4-btn" aria-label="Call the practice"><i class="fas fa-phone"></i></a>@endif</div>
                     </div>
                             </div>
         </div>
@@ -50,10 +50,10 @@
         <hr class="mt-5 mb-4 opacity-10">
 
         <div class="row align-items-center">
-            <div class="text-center col-md-6 text-md-start">
+            <div class="text-start col-md-6">
                 <p class="mb-0 opacity-50 x-small">© {{ now()->year }} {{ $profile->name }}. All rights reserved.</p>
             </div>
-            <div class="mt-3 text-center col-md-6 text-md-end mt-md-0">
+            <div class="mt-3 text-start col-md-6 mt-md-0">
                 <p class="mb-0 opacity-50 x-small">Developed by <a href="https://softorio.com" target="_blank" rel="noopener noreferrer" class="text-warning text-decoration-none fw-bold">Softorio</a></p>
             </div>
         </div>
