@@ -24,7 +24,7 @@
     @foreach(['ab62d5ee79a9-bootstrap.min','dbe397d0d04e-all.min','39bc4941d961-swiper-bundle.min','3bb26241a579-magnific-popup.min','784d76080809-bootstrap-icons','2e8ca68208a7-aos','8c4e301a8e13-style','6b743f2723bf-responsive'] as $stylesheet)
         <link rel="stylesheet" href="{{ asset('site/css/'.$stylesheet.'.css') }}">
     @endforeach
-    <link rel="stylesheet" href="{{ asset('site/css/page-'.$page.'.css') }}">
+    <link rel="stylesheet" href="{{ asset('site/css/page-'.$page.'.css') }}?v={{ filemtime(public_path('site/css/page-'.$page.'.css')) }}">
     <link rel="stylesheet" href="{{ asset('site/css/site.css') }}?v={{ filemtime(public_path('site/css/site.css')) }}">
     <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -37,7 +37,7 @@
 <a class="whatsapp-float" href="https://wa.me/{{ ltrim($site->whatsapp_number, '+') }}" target="_blank" rel="noopener noreferrer" aria-label="Contact the practice on WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i><span class="wa-text">WhatsApp</span></a>
 @endif
 @foreach(['0de5e5bb3196-jquery.min','b711803b04bd-popper.min','dee9369ea5e2-bootstrap.min','13cf11a4182d-swiper-bundle.min','f685c239a3a3-jquery.magnific-popup.min','4dc952d76a63-aos','site'] as $script)
-    <script src="{{ asset('site/js/'.$script.'.js') }}" defer></script>
+    <script src="{{ asset('site/js/'.$script.'.js') }}?v={{ filemtime(public_path('site/js/'.$script.'.js')) }}" defer></script>
 @endforeach
 </body>
 </html>

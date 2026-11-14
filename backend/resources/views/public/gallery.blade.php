@@ -1,62 +1,85 @@
 @extends('public.layout')
 @section('content')
-<main id="main-content">
-        <section class="breadcrumb-area slanted-breadcrumb position-relative">
-    <div class="breadcrumb-bg-overlay"></div>
-
-    <div class="container position-relative" style="z-index: 5;">
-        <div class="row align-items-center min-vh-40">
-            <div class="py-5 text-center col-lg-7 text-lg-start">
-                <div class="breadcrumb-text-box animate-up">
-                    <h1 class="mb-3 breadcrumb-title section-title section-title-inverse">Medical <em>Gallery</em></h1>
-
-                    <p class="mt-3 breadcrumb-desc lead text-white-50">{{ $profile->summary }}</p>
-
-                    <nav aria-label="breadcrumb" class="mt-4">
-                        <ol class="breadcrumb custom-breadcrumb justify-content-lg-start justify-content-center">
-                            <li class="breadcrumb-item"><a href="{{ route('public.home') }}" class="text-white-50 text-decoration-none {{ request()->routeIs('public.home') ? 'active' : '' }}">Home</a></li>
-                            <li class="breadcrumb-item active text-warning" aria-current="page">Gallery</li>
-                        </ol>
-                    </nav>
-                </div>
+@php
+    $cover = $gallery->firstWhere('image_id', $profile->portrait_image_id)
+        ?? $gallery->first(fn ($photo) => $photo->image->width >= 400);
+    $moments = $gallery->filter(fn ($photo) => $photo->id !== $cover?->id && $photo->image->width >= 600 && $photo->image->width > $photo->image->height)->take(2);
+    $collection = $gallery->reject(fn ($photo) => $photo->id === $cover?->id || $moments->contains('id', $photo->id));
+@endphp
+<main id="main-content" class="gallery-editorial">
+    <header class="gallery-masthead">
+        <div class="container">
+            <nav class="gallery-breadcrumb" aria-label="breadcrumb"><a href="{{ route('public.home') }}">Home</a><span aria-hidden="true">/</span><span aria-current="page">Gallery</span></nav>
+            <div class="gallery-masthead-row">
+                <div><p class="section-eyebrow">THE VISUAL JOURNAL</p><h1 class="section-title section-title-inverse">In practice.<br><em>In person.</em></h1></div>
+                <div class="gallery-masthead-note"><span class="gallery-line" aria-hidden="true"></span><p>A glimpse into the consultations, clinical practice and everyday care of {{ $profile->name }}.</p><a href="#gallery-container">Discover the collection <i class="fas fa-arrow-down" aria-hidden="true"></i></a></div>
             </div>
         </div>
+    </header>
+
+    <div class="popup-gallery">
+        @if($cover)
+        <section class="gallery-feature" aria-labelledby="gallery-feature-title">
+            <div class="container gallery-feature-grid">
+                <figure class="gallery-cover">
+                    <a class="img-popup gallery-image-link" href="{{ $cover->image->url() }}" title="{{ $cover->title }}">
+                        <img src="{{ $cover->image->url() }}" alt="{{ $cover->image->alt_text ?: $cover->title }}" width="{{ $cover->image->width }}" height="{{ $cover->image->height }}" fetchpriority="high">
+                        <span class="gallery-open" aria-hidden="true"><i class="fas fa-expand"></i></span>
+                    </a>
+                    <figcaption><span class="section-eyebrow">IN FOCUS</span><strong>{{ $cover->title }}</strong></figcaption>
+                </figure>
+                <div class="gallery-feature-copy">
+                    <p class="section-eyebrow">A PERSONAL PERSPECTIVE</p>
+                    <h2 id="gallery-feature-title" class="section-title">The person<br><em>behind the care.</em></h2>
+                    <p class="gallery-intro">From a conversation at the consultation desk to a closer look at clinical practice. Explore moments from {{ $profile->name }}’s professional life.</p>
+                    <div class="gallery-mini-grid">
+                        @foreach($moments as $moment)
+                        <figure class="gallery-mini">
+                            <a class="img-popup gallery-image-link" href="{{ $moment->image->url() }}" title="{{ $moment->title }}">
+                                <img src="{{ $moment->image->url() }}" alt="{{ $moment->image->alt_text ?: $moment->title }}" width="{{ $moment->image->width }}" height="{{ $moment->image->height }}" loading="lazy">
+                                <span class="gallery-open" aria-hidden="true"><i class="fas fa-expand"></i></span>
+                            </a>
+                            <figcaption>{{ $moment->title }}</figcaption>
+                        </figure>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </section>
+        @endif
+
+        <section class="gallery-collection" aria-labelledby="gallery-collection-title">
+            <div class="container">
+                <div class="gallery-collection-heading">
+                    <div><p class="section-eyebrow">PORTRAITS · PRACTICE · CHAMBER</p><h2 id="gallery-collection-title" class="section-title">Moments <em>&amp; details.</em></h2></div>
+                    <p>Tap a photograph to explore it in full.</p>
+                </div>
+                <div id="gallery-container" class="gallery-curated-grid">
+                    @forelse($collection as $photo)
+                        @php
+                            $document = str_contains($photo->image->original_name, 'chamber') || str_contains($photo->image->original_name, 'sparkle-profile');
+                            $compact = $photo->image->width < 400;
+                        @endphp
+                        <figure class="gallery-curated-card {{ $document ? 'gallery-document' : '' }} {{ $compact ? 'gallery-compact' : '' }}">
+                            <a class="img-popup gallery-image-link" href="{{ $photo->image->url() }}" title="{{ $photo->title }}">
+                                <img src="{{ $photo->image->url() }}" alt="{{ $photo->image->alt_text ?: $photo->title }}" width="{{ $photo->image->width }}" height="{{ $photo->image->height }}" loading="lazy">
+                                <span class="gallery-open" aria-hidden="true"><i class="fas fa-expand"></i></span>
+                            </a>
+                            <figcaption><span class="gallery-index" aria-hidden="true">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span><div><h3>{{ $photo->title }}</h3>@if($photo->caption && $photo->caption !== $photo->title)<p>{{ $photo->caption }}</p>@endif</div></figcaption>
+                        </figure>
+                    @empty
+                        <p class="gallery-empty">{{ $cover ? 'Explore the featured photographs above.' : 'Photographs will be published here soon.' }}</p>
+                    @endforelse
+                </div>
+            </div>
+        </section>
     </div>
 
-    <div class="slanted-image-wrapper d-none d-lg-block">
-        <div class="slanted-shape"></div>
-        <div class="doctor-image-bg" @if($profile->portrait)style="background-image: url('{{ $profile->portrait->url() }}')"@endif></div>
-    </div>
-</section>
-
-<section class="py-5 gallery-main" style="background: #fdfdfd;">
-    <div class="container">
-                    <div class="mb-5 text-center section-header animate-up">
-                <h6 class="text-success section-eyebrow">THE PHOTO JOURNAL</h6>
-                <h2 class="section-title">In practice. <em>In person.</em></h2>
-                <div class="mx-auto mt-2 gold-line"></div>
-            </div>
-
-            <div id="gallery-container" class="photo-journal popup-gallery">
-                                    @foreach($gallery as $photo)<div class="gallery-item journal-item {{ $photo->image && $photo->image->width < 400 ? 'journal-small' : '' }}" data-aos="fade-up" data-aos-delay="0">
-                        <div class="overflow-hidden shadow-sm premium-gallery-card position-relative rounded-4">
-                            <a href="{{ $photo->image->url() }}" title="{{ $photo->title }}" class="img-popup">
-                                @if($photo->image)<img src="{{ $photo->image->url() }}" class="img-fluid gallery-img w-100" alt="{{ $photo->image->alt_text ?? $photo->title }}" loading="lazy">@endif
-                                <div class="premium-overlay" aria-hidden="true">
-                                    <i class="text-white fas fa-search-plus fs-3"></i>
-                                </div>
-                            </a>@if($photo->caption)<p class="p-3 mb-0 small public-copy">{{ $photo->caption }}</p>@endif
-                        </div>
-                    </div>@endforeach
-                                    
-                                    
-                                    
-                            </div>
-
-            <div class="mt-5 d-flex justify-content-center">
-
-            </div>
-            </div>
-</section>
-    </main>
+    <section class="gallery-invitation">
+        <div class="container gallery-invitation-inner">
+            <div><p class="section-eyebrow">YOUR NEXT STEP</p><h2 class="section-title">Let’s talk about <em>your care.</em></h2><p>Find consultation details and services for your next visit.</p></div>
+            <div class="gallery-invitation-links"><a href="{{ route('public.services') }}">Explore services <i class="fas fa-arrow-right" aria-hidden="true"></i></a>@if($phoneLink)<a class="gallery-book" href="{{ $phoneLink }}">Call for an appointment <i class="fas fa-phone" aria-hidden="true"></i></a>@endif</div>
+        </div>
+    </section>
+</main>
 @endsection

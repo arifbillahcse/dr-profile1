@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.animate-up').forEach(el => observer.observe(el));
   if (window.jQuery?.fn.magnificPopup) {
     jQuery('.popup-gallery').magnificPopup({
-      delegate: 'a', type: 'image', gallery: { enabled: true },
+      delegate: 'a.img-popup', type: 'image', gallery: { enabled: true },
       image: { titleSrc: item => {
         const caption = document.createElement('span');
         caption.textContent = item.el.attr('title') || '';
