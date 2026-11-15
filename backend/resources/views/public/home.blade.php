@@ -306,7 +306,7 @@
 
                     <div class="mb-4 text-secondary lh-lg" itemprop="description">{{ $profile->summary }}</div>
 
-                    <div class="mb-4 row g-2">@foreach($specialists as $specialist)<div class="col-sm-6"><ul class="list-unstyled checklist-premium"><li class="mb-2 d-flex align-items-center"><i class="{{ $specialist->icon ?: 'fas fa-check-circle' }} text-success me-2"></i><span class="fw-medium text-dark-emphasis small">{{ $specialist->title }}</span></li></ul></div>@endforeach</div>
+                    <div class="mb-4 row g-2 introduction-specialties">@foreach($specialists as $specialist)<div class="col-sm-6"><ul class="list-unstyled checklist-premium"><li class="mb-2 d-flex align-items-center"><i class="{{ $specialist->icon ?: 'fas fa-check-circle' }} text-success me-2"></i><span class="fw-medium text-dark-emphasis small">{{ $specialist->title }}</span></li></ul></div>@endforeach</div>
 
                     <a href="{{ route('public.about') }}" class="btn-about-premium">
                         <span>Read More Biography</span>
