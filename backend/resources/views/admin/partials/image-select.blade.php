@@ -18,7 +18,7 @@
         <button type="button" class="btn btn-sm btn-outline-secondary" data-inline-cancel hidden>Cancel new upload</button>
     </div>
     <img class="selected-image mt-2" id="{{ $inputId }}-preview" @if($selectedImage) src="{{ $selectedImage->url() }}" @else hidden @endif alt="Selected {{ strtolower($label) }} preview">
-    <details class="inline-library-choice mt-3" @if($errors->has($field)) open @endif>
+    <details class="inline-library-choice mt-3" @unless(config('media.allow_existing_image_selection')) hidden @endunless @if($errors->has($field)) open @endif>
         <summary>Or choose an existing image</summary>
         <label class="form-label mt-2 small" for="{{ $inputId }}">Image from library</label>
         <select class="form-select @error($field) is-invalid @enderror" name="{{ $imageInputName }}" id="{{ $inputId }}" data-image-select="{{ $inputId }}-preview">

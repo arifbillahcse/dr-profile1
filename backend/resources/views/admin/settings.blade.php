@@ -20,7 +20,7 @@
         </div>
     </section>
     <section class="content-panel mb-4" aria-labelledby="photos-heading">
-        <h2 id="photos-heading">Profile photographs</h2><p>Upload photographs directly below, or choose an existing image.</p>
+        <h2 id="photos-heading">Profile photographs</h2><p>Upload photographs directly below. Current images stay in place until you upload a replacement.</p>
         <div class="settings-grid">
             @foreach(['portrait_image_id'=>'Profile portrait','first_image_id'=>'First introduction photograph','second_image_id'=>'Second introduction photograph','tall_image_id'=>'Tall introduction photograph'] as $column=>$label)
                 @include('admin.partials.image-select', ['field'=>'profile.'.$column,'label'=>$label,'value'=>$profile->$column])

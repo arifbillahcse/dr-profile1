@@ -11,6 +11,8 @@ use App\Models\Slider;
 use App\Models\Video;
 
 return [
+    'allow_existing_image_selection' => false,
+
     'references' => [
         'Doctor profile' => ['model' => DoctorProfile::class, 'columns' => ['portrait_image_id', 'first_image_id', 'second_image_id', 'tall_image_id']],
         'Site settings' => ['model' => SiteSetting::class, 'columns' => ['logo_image_id', 'favicon_image_id', 'social_image_id']],
