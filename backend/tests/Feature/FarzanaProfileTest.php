@@ -86,10 +86,25 @@ class FarzanaProfileTest extends TestCase
     {
         $this->artisan('website:import')->assertSuccessful();
         $this->assertSame('Dr. Farzana Rahman Shathi', DoctorProfile::first()->name);
+        $this->assertStringStartsWith('Dr. Farzana Rahman Shathi', DoctorProfile::first()->biography);
         $this->assertSame(3, Service::published()->count());
         $this->assertSame(2, MediaAsset::count());
         $this->assertSame(0, Review::count());
         $this->artisan('website:doctor')->expectsOutputToContain('already applied')->assertSuccessful();
+    }
+
+    public function test_biography_name_correction_preserves_other_text_and_later_edits(): void
+    {
+        $suffix = "\n\nExisting administrator biography.";
+        $profile = DoctorProfile::factory()->create(['key' => 'primary', 'biography' => 'ডাঃ ফারজানা রহমান সাথী'.$suffix]);
+        $migration = require database_path('migrations/2026_11_15_181325_use_english_doctor_name_in_biography.php');
+        $migration->up();
+        $this->assertSame('Dr. Farzana Rahman Shathi'.$suffix, $profile->fresh()->biography);
+        $this->get('/about')->assertOk()->assertSee('Dr. Farzana Rahman Shathi'.$suffix);
+        $profile->update(['biography' => 'Later edited biography.']);
+        $migration->up();
+        $migration->down();
+        $this->assertSame('Later edited biography.', $profile->fresh()->biography);
     }
 
     public function test_missing_photo_does_not_archive_existing_content(): void
