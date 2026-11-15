@@ -236,6 +236,15 @@ h1, h2, h3, h4, h5, h6, .doc-name, .specialty { font-family: var(--site-font-bod
     .about-content .btn-about-premium { display: flex; width: fit-content; margin-left: auto; margin-right: auto; }
     .review-section>.container>div:first-child { justify-content: center !important; gap: 16px; }
     .review-section .reveiwbutton { width: 100%; }
+    #reviews .mySwiper>.swiper-pagination {
+        position: static;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 18px 0 0 !important;
+        padding: 8px 0 4px;
+        transform: none;
+    }
     #main-content .accordion-body { padding-left: 20px !important; padding-right: 20px !important; }
     #main-content .accordion-button { padding: 18px; }
     .modal-dialog { margin: 16px; }
