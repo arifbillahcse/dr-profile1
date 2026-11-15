@@ -72,7 +72,7 @@
                                 <p class="mb-4 text-white-50 lead fw-medium">{{ $profile->summary }}</p>
 
                                 <div class="mt-4 specialist-services-grid position-relative">
-                                    <div class="row g-3">@foreach($specialists as $specialist)<div class="col-md-6"><ul class="list-unstyled checklist-premium-luxury mb-0"><li class="mb-3 d-flex align-items-center specialist-item-wrapper animate-up"><span class="icon-circle-glow me-3"><i class="{{ $specialist->icon ?: 'fas fa-check' }}"></i></span><span class="specialist-name text-white-50">{{ $specialist->title }}</span></li></ul></div>@endforeach</div>
+                                    <div class="row g-3">@foreach($specialists as $specialist)<div class="col-md-6"><ul class="list-unstyled checklist-premium-luxury mb-0"><li class="mb-3 d-flex align-items-center specialist-item-wrapper animate-up"><span class="icon-circle-glow me-3"><i class="{{ $specialist->icon ?: 'fas fa-check' }}"></i></span><span class="specialist-name text-white-50">@include('public.specialist-title')</span></li></ul></div>@endforeach</div>
                                 </div>
 
                                 <div class="cta-action-group">
