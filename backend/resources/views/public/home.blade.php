@@ -605,9 +605,10 @@
         </div>
 
         @if(session('review_submitted'))<div class="alert alert-success mt-4" role="status">Thank you. Your review has been received and is awaiting approval.</div>@endif
+        @if($reviews->isEmpty() && config('website.show_demo_reviews'))<p class="demo-review-notice mt-4 mb-0">Sample reviews for design preview — not real patient feedback.</p>@endif
         <div class="py-4 swiper mySwiper">
             <div class="swiper-wrapper">
-                                    @foreach($reviews as $review)<div class="swiper-slide">
+                                    @forelse($reviews as $review)<div class="swiper-slide">
                         <div class="p-4 bg-white border shadow-sm review-card rounded-4">
                             <div class="mb-3 quote-icon"><i class="opacity-25 fas fa-quote-left text-success fa-2x"></i>
                             </div>
@@ -620,7 +621,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>@endforeach
+                    </div>@empty
+                        @if(config('website.show_demo_reviews'))@include('public.demo-reviews')@endif
+                    @endforelse
                             </div>
             <div class="mt-5 swiper-pagination"></div>
         </div>

@@ -90,7 +90,17 @@ class PublicWebsiteTest extends TestCase
         Review::factory()->state(['status' => ReviewStatus::Approved, 'approved_at' => null])->create(['message' => 'Incomplete private review']);
         Review::factory()->approved()->create(['message' => 'Archived private review'])->delete();
         $this->get('/')->assertSee('Approved public review')->assertDontSee('Pending private review')->assertDontSee('Rejected private review')
-            ->assertDontSee('Incomplete private review')->assertDontSee('Archived private review')->assertDontSee('localStorage', false);
+            ->assertDontSee('Incomplete private review')->assertDontSee('Archived private review')->assertDontSee('localStorage', false)
+            ->assertDontSee('data-demo-review', false);
+    }
+
+    public function test_empty_reviews_show_labelled_samples_without_creating_patient_feedback(): void
+    {
+        $response = $this->get('/')->assertOk()->assertSee('not real patient feedback')->assertSee('Demo review');
+        $this->assertSame(3, substr_count($response->getContent(), 'data-demo-review'));
+        $this->assertDatabaseCount('reviews', 0);
+        config(['website.show_demo_reviews' => false]);
+        $this->get('/')->assertOk()->assertDontSee('data-demo-review', false)->assertDontSee('not real patient feedback');
     }
 
     public function test_chamber_hours_filter_inactive_schedules_and_hidden_chambers(): void
