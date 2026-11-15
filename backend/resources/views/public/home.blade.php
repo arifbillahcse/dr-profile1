@@ -285,42 +285,7 @@
     <div class="container position-relative" style="z-index: 2;">
         <div class="row align-items-center g-5">
             <div class="col-lg-6 order-2 order-lg-1">
-                <div class="about-image-wrapper position-relative" data-aos="fade-right">
-                    <div class="row g-3">
-                        <div class="col-6">
-                            <div class="mb-3 overflow-hidden shadow-sm img-hover-card rounded-4">
-                                @if($profile->firstImage)<img src="{{ $profile->firstImage->url() }}" alt="{{ $profile->name }}" class="img-fluid w-100 transition-img" itemprop="image" loading="lazy">@endif
-                            </div>
-                            <div class="overflow-hidden shadow-sm img-hover-card rounded-4">
-                                @if($profile->secondImage)<img src="{{ $profile->secondImage->url() }}" alt="{{ $profile->name }}" class="img-fluid w-100 transition-img" loading="lazy">@endif
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="overflow-hidden shadow-lg main-img-card rounded-4 h-100">
-                                @if($profile->tallImage)<img src="{{ $profile->tallImage->url() }}" alt="{{ $profile->name }}" class="img-fluid w-100 h-100 object-fit-cover transition-img" loading="lazy">@endif
-                            </div>
-                        </div>
-                    </div>
-
-                    @if($profile->introduction_youtube_id)<div class="video-promotion-wrap">
-                        <div class="circle-rotating-text">
-                            <svg viewBox="0 0 100 100" width="155" height="155" class="rotating-svg">
-                                <defs>
-                                    <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0 "></path>
-                                </defs>
-                                <text fill="#198754" font-weight="bold" font-size="8.5" letter-spacing="1">
-                                    <textPath xlink:href="#circlePath">
-                                        DERMATOLOGY • SPECIALIST CONSULTATION • SKIN CARE •
-                                    </textPath>
-                                </text>
-                            </svg>
-                            <button type="button" class="shadow-lg play-btn-main" data-bs-toggle="modal" data-bs-target="#videoModal" aria-label="Watch Introduction Video">
-                                <div class="play-pulse-ring"></div>
-                                <i class="fas fa-play"></i>
-                            </button>
-                        </div>
-                    </div>@endif
-                </div>
+                @include('public.introduction-collage')
             </div>
 
             <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left">
