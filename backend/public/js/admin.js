@@ -35,6 +35,8 @@ document.querySelectorAll('[data-image-select]').forEach(select => {
     const fileInput = widget?.querySelector('[data-inline-file]');
     const status = widget?.querySelector('[data-inline-status]');
     const cancel = widget?.querySelector('[data-inline-cancel]');
+    const dropZone = widget?.querySelector('[data-image-dropzone]');
+    let dragDepth = 0;
     let objectUrl;
     const releasePreview = () => { if (objectUrl) URL.revokeObjectURL(objectUrl); objectUrl = undefined; };
     const showLibraryImage = () => {
@@ -71,9 +73,51 @@ document.querySelectorAll('[data-image-select]').forEach(select => {
         status.textContent = 'New image selected. Save the form to upload and use it here.';
     });
     if (fileInput?.files.length) fileInput.dispatchEvent(new Event('change'));
+    const isFileDrag = event => Array.from(event.dataTransfer?.types || []).includes('Files');
+    dropZone?.addEventListener('dragenter', event => {
+        if (!isFileDrag(event)) return;
+        event.preventDefault();
+        dragDepth++;
+        dropZone.classList.add('is-dragover');
+    });
+    dropZone?.addEventListener('dragover', event => {
+        if (!isFileDrag(event)) return;
+        event.preventDefault();
+        event.dataTransfer.dropEffect = 'copy';
+    });
+    dropZone?.addEventListener('dragleave', event => {
+        dragDepth = Math.max(0, dragDepth - 1);
+        if (!dragDepth) dropZone.classList.remove('is-dragover');
+    });
+    dropZone?.addEventListener('drop', event => {
+        if (!isFileDrag(event)) return;
+        event.preventDefault();
+        dragDepth = 0;
+        dropZone.classList.remove('is-dragover');
+        const files = Array.from(event.dataTransfer.files);
+        if (files.length !== 1) {
+            status.textContent = 'Drop one image at a time. The current selection has not changed.';
+            return;
+        }
+        try {
+            const transfer = new DataTransfer();
+            transfer.items.add(files[0]);
+            fileInput.files = transfer.files;
+            fileInput.dispatchEvent(new Event('change', { bubbles: true }));
+        } catch {
+            status.textContent = 'Please use Choose File to select this image in your browser.';
+        }
+    });
     select.form?.addEventListener('reset', () => setTimeout(showLibraryImage, 0));
     window.addEventListener('pagehide', releasePreview);
 });
+if (document.querySelector('[data-inline-image]')) {
+    ['dragover', 'drop'].forEach(type => document.addEventListener(type, event => {
+        if (Array.from(event.dataTransfer?.types || []).includes('Files') && !(event.target instanceof Element && event.target.closest('input[type="file"]'))) {
+            event.preventDefault();
+        }
+    }));
+}
 document.querySelectorAll('form[data-confirm]').forEach(form => {
     form.addEventListener('submit', event => { if (!window.confirm(form.dataset.confirm)) event.preventDefault(); });
 });

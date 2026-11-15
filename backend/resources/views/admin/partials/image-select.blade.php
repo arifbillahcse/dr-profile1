@@ -9,8 +9,9 @@
 @endphp
 <div class="image-choice inline-image-upload" data-inline-image>
     <label class="form-label" for="{{ $inputId }}-upload">{{ $label }} @if($required ?? false)<span aria-hidden="true">*</span>@endif</label>
-    <div class="inline-upload-box">
+    <div class="inline-upload-box" data-image-dropzone>
         <span class="inline-upload-heading"><i class="bi bi-cloud-arrow-up" aria-hidden="true"></i> Upload new image</span>
+        <span class="small text-secondary">Drag &amp; drop one image here, or choose a file below.</span>
         <input type="file" class="form-control @error($uploadField) is-invalid @enderror" id="{{ $inputId }}-upload" name="{{ $uploadName }}" accept="image/jpeg,image/png,image/webp" data-inline-file aria-describedby="{{ $inputId }}-help">
         <div class="form-text" id="{{ $inputId }}-help">JPG, PNG or WebP. Maximum 5 MB and 4096 × 4096 pixels. The image uploads when you save this form.</div>
         @error($uploadField)<div class="invalid-feedback d-block">{{ $message }}</div>@enderror
