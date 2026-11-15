@@ -542,6 +542,7 @@
     .gallery-breadcrumb { margin-bottom: 20px; }
     .gallery-feature { padding: 36px 0; }
     .gallery-feature-grid { grid-template-columns: 1fr; gap: 30px; }
+    .gallery-cover figcaption { text-align: center; }
     .gallery-collection { padding: 32px 0 40px; }
     .gallery-collection-heading { align-items: start; flex-direction: column; gap: 14px; }
     .gallery-curated-grid { gap: 16px; }
