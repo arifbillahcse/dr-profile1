@@ -479,8 +479,8 @@
             <div class="button-side position-relative">
                 @if($phoneLink)<a href="{{ $phoneLink }}" class="btn-help-premium text-decoration-none d-inline-flex align-items-center" title="Call the chamber for an appointment">
                     <span class="btn-content d-inline-flex align-items-center justify-content-center gap-2 text-nowrap">
+                        <span class="fw-bold">Need Help</span>
                         <i class="fas fa-heartbeat pulse-icon" aria-hidden="true"></i>
-                        <span class="fw-bold">I NEED HELP</span>
                     </span>
                 </a>@endif
             </div>
