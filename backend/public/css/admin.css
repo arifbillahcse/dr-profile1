@@ -4,15 +4,15 @@
 :root{--lte-sidebar-width:246px;--bs-font-sans-serif:"Source Sans 3",system-ui,sans-serif}
 body{font-family:var(--bs-font-sans-serif)}
 .skip-link{position:fixed;top:-80px;left:12px;z-index:2000;padding:10px 16px;background:#fff;color:#132950}.skip-link:focus{top:10px}
-.app-sidebar{background:linear-gradient(165deg,#0e172a 12%,#213b83 100%)!important}
-.sidebar-brand{background:#343a40;justify-content:flex-start;padding-left:72px;border-bottom:1px solid #ffffff10;min-height:56px}
-.brand-link{gap:8px!important;color:#d3d6d9!important;font-size:20px!important}
-.admin-mark{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#bfc5c7;color:#343a40;font-weight:700;font-size:26px;line-height:1}
-.sidebar-wrapper{padding:16px 8px 20px!important;overflow-y:auto}
-.sidebar-menu .nav-link{display:flex;align-items:center;gap:12px;min-height:43px;margin:0 0 0 8px!important;padding:9px 10px!important;border-radius:9px!important;color:#c6cfe1!important;font-size:16px}
+.app-sidebar{background:linear-gradient(165deg,#092b1e 12%,#174b35 100%)!important}
+.sidebar-brand{background:#082719;justify-content:flex-start;padding-left:72px;border-bottom:1px solid #ffffff10;min-height:56px}
+.brand-link{gap:8px!important;color:#e1eee5!important;font-size:20px!important}
+.admin-mark{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#d3e6d7;color:#103d2a;font-weight:700;font-size:26px;line-height:1}
+.sidebar-wrapper{padding:16px 8px 20px!important;overflow-y:auto;scrollbar-color:#507a60 #0c3021}
+.sidebar-menu .nav-link{display:flex;align-items:center;gap:12px;min-height:43px;margin:0 0 0 8px!important;padding:9px 10px!important;border-radius:9px!important;color:#d1e3d7!important;font-size:16px}
 .sidebar-menu .nav-link .nav-icon{font-size:17px!important;width:18px!important;margin:0!important;flex-shrink:0}.sidebar-menu .nav-link p{margin:0}
-.sidebar-menu .nav-link:hover{background:#ffffff0d!important;color:#fff!important}
-.sidebar-menu .nav-link.active{background:linear-gradient(100deg,#168c66,#1cbb8c)!important;color:#fff!important;box-shadow:0 6px 20px #12b88620}
+.sidebar-menu .nav-link:hover{background:#ffffff12!important;color:#fff!important}
+.sidebar-menu .nav-link.active{background:linear-gradient(100deg,#226b49,#32835a)!important;color:#fff!important;box-shadow:0 6px 20px #062b252e}
 .password-link{display:flex;align-items:center;justify-content:center;gap:10px;background:#df334a;color:#fff;text-decoration:none;border-radius:7px;padding:15px 8px;margin:10px -4px 0;font-size:16px}
 .password-link:hover,.password-link.active{background:#c6223b;color:#fff}
 .app-header{min-height:56px;border-bottom:1px solid #dce4e8}.app-header .container-fluid{padding:0 16px}.app-header .nav-link{color:#687785}.account-name{font-size:14px;color:#77858d}.logout-button{color:#dc3545;background:none;border:0;padding:8px 0;font-size:16px}
