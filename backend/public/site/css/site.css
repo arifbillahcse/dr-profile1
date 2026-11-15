@@ -75,6 +75,18 @@ body { overflow-x: clip; max-width: 100%; }
 .care-service-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
 .care-service-icon { width: 48px; height: 48px; display: grid; place-items: center; color: #286a48; background: #eef4ed; border-radius: 14px; font-size: 21px; }
 .care-service-number { font-family: var(--site-font-accent); color: #8fbea0; font-size: 31px; line-height: 1; }
+
+.video-library-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.practice-video-card { min-width: 0; display: flex; flex-direction: column; background: #fff; border: 1px solid #dfe8df; border-radius: 20px; overflow: hidden; }
+.practice-video-card .ratio { background: #123c2c; flex-shrink: 0; }
+.practice-video-card iframe { border: 0; }
+.practice-video-copy { display: flex; flex-direction: column; flex: 1; padding: 22px; }
+.practice-video-copy h3 { margin: 0 0 12px; color: #173e2c; font-family: var(--site-font-body); font-size: 18px; font-weight: 600; line-height: 1.5; overflow-wrap: anywhere; }
+.practice-video-copy p { margin: 0 0 20px; font-size: 13px; line-height: 1.8; color: #6c7a70; }
+.practice-video-copy a { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; color: #2c6948; font-size: 12px; font-weight: 600; }
+.practice-video-copy a:focus-visible { outline: 3px solid #ffb703; outline-offset: 4px; }
+@media(max-width:1199.98px) { .video-library-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media(max-width:767.98px) { .video-library-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; } .practice-video-copy { padding: 20px; } }
 .care-service h3 { color: #173e2d; font-size: 20px; font-weight: 600; line-height: 1.35; margin: 0 0 12px; }
 .care-service>p { color: #69766e; font-size: 13px; line-height: 1.8; margin-bottom: 24px; }
 .care-service-link { display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid #edf0e9; margin-top: auto; color: #365a45; font-size: 12px; font-weight: 600; text-decoration: none; }

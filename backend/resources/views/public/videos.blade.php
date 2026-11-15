@@ -1,4 +1,21 @@
 @extends('public.layout')
 @section('content')
-<main id="main-content"><section class="breadcrumb-area slanted-breadcrumb position-relative"><div class="container py-5"><h1 class="breadcrumb-title section-title section-title-inverse">Video <em>Gallery</em></h1><a class="text-white" href="{{ route('public.home') }}">Home</a></div></section><section class="py-5 video-gallery-area"><div class="container"><div class="row g-4">@forelse($videos as $video)<div class="col-md-6"><div class="video-card-pure bg-white shadow-sm rounded-4 overflow-hidden"><div class="ratio ratio-16x9"><iframe src="https://www.youtube-nocookie.com/embed/{{ $video->youtube_id }}?rel=0" title="{{ $video->title }}" loading="lazy" allowfullscreen></iframe></div><h2 class="content-title p-3 mb-0">{{ $video->title }}</h2>@if($video->description)<p class="px-3 pb-3">{{ $video->description }}</p>@endif</div></div>@empty<div class="col-12 text-center py-5"><p>Videos will be published here when available.</p></div>@endforelse</div></div></section></main>
+<main id="main-content">
+    <section class="breadcrumb-area slanted-breadcrumb position-relative">
+        <div class="container py-5"><h1 class="breadcrumb-title section-title section-title-inverse">Video <em>Gallery</em></h1><a class="text-white" href="{{ route('public.home') }}">Home</a></div>
+    </section>
+    <section class="py-5 video-gallery-area">
+        <div class="container">
+            @if($videos->isNotEmpty())
+            <div class="video-library-grid">
+                @foreach($videos as $video)
+                    @include('public.video-card')
+                @endforeach
+            </div>
+            @else
+            <p class="text-center py-5">Videos will be published here when available.</p>
+            @endif
+        </div>
+    </section>
+</main>
 @endsection

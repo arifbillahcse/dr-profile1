@@ -401,55 +401,7 @@
 
 
 
-    @if($videos->isNotEmpty())<section class="py-5 overflow-hidden video-gallery-area position-relative" id="video-gallery" style="background-color: #f8fdfb;">
-
-
-    <div class="video-bg-icon v-icon-1"><i class="fas fa-heartbeat"></i></div>
-    <div class="video-bg-icon v-icon-2"><i class="fas fa-stethoscope"></i></div>
-    <div class="video-bg-icon v-icon-3"><i class="fas fa-baby-carriage"></i></div>
-    <div class="video-bg-icon v-icon-4"><i class="fas fa-user-md"></i></div>
-    <div class="video-bg-icon v-icon-5"><i class="fas fa-hand-holding-medical"></i></div>
-    <div class="video-bg-icon v-icon-6"><i class="fas fa-microscope"></i></div>
-
-    <div class="container position-relative" style="z-index: 2;">
-        <header class="mb-5 text-center" data-aos="fade-up">
-            <h2 class="section-title">Video <em>Gallery</em></h2>
-            <div class="mx-auto mt-2 header-underline bg-success" style="width: 70px; height: 4px; border-radius: 10px;"></div>
-        </header>
-
-        <div class="row g-4">
-
-                @foreach($videos->take(3) as $video)<div class="{{ $loop->first ? 'col-12' : 'col-md-6' }}" data-aos="fade-up" data-aos-delay="100">
-                    <div class="overflow-hidden bg-white border-0 shadow-sm video-card-pure rounded-4 mb-4">
-                        <div class="video-inner">
-                                                            <div class="ratio ratio-16x9">
-
-                                    <iframe src="{{ 'https://www.youtube-nocookie.com/embed/'.$video->youtube_id.'?rel=0' }}" title="{{ $video->title }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" loading="lazy" style="border: 0;">
-                                    </iframe>
-                                </div>
-                                                    </div>
-                    </div>
-                </div>@endforeach
-
-                
-
-                
-                    </div>
-
-
-        <div class="mt-4 more-video-wrapper d-flex justify-content-center">
-            <a href="{{ route('public.videos') }}" class="btn-premium-video">
-                <span class="btn-text">VIEW ALL VIDEOS</span>
-                <span class="btn-icon-box">
-                    <i class="fas fa-play"></i>
-                    <span class="pulse-ring"></span>
-                </span>
-            </a>
-        </div>
-    </div>
-</section>@endif
-
-
+    @include('public.video-preview')
 
     @if($experiences->isNotEmpty())<section class="py-5 overflow-hidden experience-area" id="experience" style="background-color: #fcfdfd;">
     <div class="container">
