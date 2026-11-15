@@ -52,7 +52,6 @@
             <div class="container">
                 <div class="gallery-collection-heading">
                     <div><p class="section-eyebrow">PORTRAITS · PRACTICE · CHAMBER</p><h2 id="gallery-collection-title" class="section-title">Moments <em>&amp; details.</em></h2></div>
-                    <p>Tap a photograph to explore it in full.</p>
                 </div>
                 <div id="gallery-container" class="gallery-curated-grid">
                     @forelse($collection as $photo)
