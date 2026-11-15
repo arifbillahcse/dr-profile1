@@ -279,8 +279,8 @@
     @include('public.photo-story')
     <section class="py-5 overflow-hidden about-area position-relative" id="about" style="background: #fff url('{{ asset('site/images/a21b1277868e-about_bg.svg') }}') no-repeat center / cover;" itemscope="" itemtype="https://schema.org/Physician">
 
-    <div class="about-bg-anim icon-1"><i class="fas fa-hand-holding-heart"></i></div>
-    <div class="about-bg-anim icon-2"><i class="fas fa-stethoscope"></i></div>
+    <div class="about-bg-anim icon-1" aria-hidden="true"><i class="fas fa-hand-holding-heart"></i></div>
+    <div class="about-bg-anim icon-2" aria-hidden="true"><i class="fas fa-stethoscope"></i></div>
 
     <div class="container position-relative" style="z-index: 2;">
         <div class="row align-items-center g-5">
