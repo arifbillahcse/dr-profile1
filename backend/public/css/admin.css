@@ -4,11 +4,11 @@
 :root{--lte-sidebar-width:246px;--bs-font-sans-serif:"Source Sans 3",system-ui,sans-serif}
 body{font-family:var(--bs-font-sans-serif)}
 .skip-link{position:fixed;top:-80px;left:12px;z-index:2000;padding:10px 16px;background:#fff;color:#132950}.skip-link:focus{top:10px}
-.app-sidebar{background:linear-gradient(165deg,#092b1e 12%,#174b35 100%)!important}
-.sidebar-brand{background:#082719;justify-content:flex-start;padding-left:72px;border-bottom:1px solid #ffffff10;min-height:56px}
+.app-sidebar{background:linear-gradient(165deg,#041a12 12%,#0b2b1e 100%)!important}
+.sidebar-brand{background:#03140d;justify-content:flex-start;padding-left:72px;border-bottom:1px solid #ffffff10;min-height:56px}
 .brand-link{gap:8px!important;color:#e1eee5!important;font-size:20px!important}
 .admin-mark{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#d3e6d7;color:#103d2a;font-weight:700;font-size:26px;line-height:1}
-.sidebar-wrapper{padding:16px 8px 20px!important;overflow-y:auto;scrollbar-color:#507a60 #0c3021;background:transparent!important}
+.sidebar-wrapper{padding:16px 8px 20px!important;overflow-y:auto;scrollbar-color:#365443 #061c13;background:transparent!important}
 .sidebar-menu .nav-link{display:flex;align-items:center;gap:12px;min-height:43px;margin:0 0 0 8px!important;padding:9px 10px!important;border-radius:9px!important;color:#d1e3d7!important;font-size:16px}
 .sidebar-menu .nav-link .nav-icon{font-size:17px!important;width:18px!important;margin:0!important;flex-shrink:0}.sidebar-menu .nav-link p{margin:0}
 .sidebar-menu .nav-link:hover{background:#ffffff12!important;color:#fff!important}
