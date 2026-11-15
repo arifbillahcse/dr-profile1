@@ -281,6 +281,9 @@ h1, h2, h3, h4, h5, h6, .doc-name, .specialty { font-family: var(--site-font-bod
 
 .demo-review-notice{text-align:center;color:#718177;font-size:12px;line-height:1.6}.demo-review-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.demo-review-top>i{font-size:28px;color:#accdb9}.demo-review-top>span{font-size:10px;font-weight:600;letter-spacing:.5px;color:#50765d;background:#eef5ef;border-radius:20px;padding:5px 10px}.demo-review-card{height:100%;display:flex;flex-direction:column}.demo-review-card>p{flex:1;line-height:1.9;min-height:90px}.demo-review-person{display:flex;gap:12px;align-items:center;padding-top:16px;border-top:1px solid #edf1e9}.demo-review-avatar{display:grid;place-items:center;width:42px;height:42px;flex-shrink:0;border-radius:50%;background:#edf4ec;color:#4c7a5e;font-size:13px;font-weight:600}.demo-review-person h6{font-size:14px}.demo-review-person small{font-size:11px}
 
+.footer-section .doctor-credentials-wrapper { text-align: left; }
+.footer-section .doctor-credentials-wrapper>.d-flex { justify-content: flex-start !important; }
+
 /* Keep Introduction decorations inside the outer gutters, away from content. */
 #about .about-bg-anim {
     font-size: clamp(24px, calc((100vw - 1320px) / 2 - 24px), 72px);
