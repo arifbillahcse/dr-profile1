@@ -468,7 +468,7 @@
         }
     }
 
-/* Editorial gallery: natural image proportions and cards that follow each photograph. */
+/* Editorial gallery: uniform collection cards with full photographs in the lightbox. */
 .gallery-editorial { background: #fafbf8; }
 .gallery-editorial>.gallery-masthead { padding: 126px 0 54px; background: #123c2c; color: #fff; }
 .gallery-editorial .container { max-width: 1180px; }
@@ -503,14 +503,17 @@
 .gallery-collection-heading .section-eyebrow { color: #7d8d77; margin-bottom: 12px; }
 .gallery-collection-heading h2 { margin: 0; }
 .gallery-collection-heading>p { color: #7c897d; font-size: 12px; margin-bottom: 6px; }
-.gallery-curated-grid { columns: 3; column-gap: 24px; scroll-margin-top: 95px; }
-.gallery-editorial .gallery-curated-card { display: inline-block; vertical-align: top; width: 100%; margin: 0 0 24px; break-inside: avoid; border: 1px solid #e0e6dc; background: #fff; border-radius: 16px; overflow: hidden; }
-.gallery-curated-card>.gallery-image-link { border-radius: 0; height: auto; }
-.gallery-curated-card figcaption { display: flex; gap: 14px; padding: 18px; }
+.gallery-curated-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; scroll-margin-top: 95px; }
+.gallery-editorial .gallery-curated-card { display: flex; flex-direction: column; width: 100%; height: 100%; margin: 0; border: 1px solid #e0e6dc; background: #fff; border-radius: 16px; overflow: hidden; }
+.gallery-curated-card>.gallery-image-link { border-radius: 0; aspect-ratio: 4 / 3; flex-shrink: 0; }
+.gallery-curated-card>.gallery-image-link img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+.gallery-curated-card figcaption { display: flex; gap: 14px; padding: 18px; height: 124px; flex: 0 0 124px; overflow: hidden; }
+.gallery-curated-card figcaption>div { min-width: 0; }
+.gallery-curated-card h3, .gallery-curated-card figcaption p { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; overflow-wrap: anywhere; }
 .gallery-index { color: #8fbea0; font: italic 18px var(--site-font-accent); line-height: 1.3; flex-shrink: 0; }
 .gallery-curated-card h3 { color: #244832; font-size: 13px; font-weight: 600; line-height: 1.5; margin: 0; }
 .gallery-curated-card figcaption p { color: #7c887a; font-size: 11px; line-height: 1.6; margin: 7px 0 0; white-space: pre-line; }
-.gallery-empty { column-span: all; color: #67766b; padding: 30px 0; }
+.gallery-empty { grid-column: 1 / -1; color: #67766b; padding: 30px 0; }
 .gallery-invitation { background: #eeeee5; padding: 40px 0; border-top: 1px solid #e0e3d7; }
 .gallery-invitation-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
 .gallery-invitation .section-eyebrow { color: #7a8c77; margin-bottom: 10px; }
@@ -523,7 +526,7 @@
 @media(max-width:991px) {
     .gallery-feature-grid { gap: 30px; grid-template-columns: .9fr 1.2fr; }
     .gallery-masthead-row { gap: 30px; }
-    .gallery-curated-grid { columns: 2; }
+    .gallery-curated-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media(max-width:767px) {
     .gallery-editorial>.gallery-masthead { padding: 108px 0 36px; }
@@ -536,8 +539,7 @@
     .gallery-feature-grid { grid-template-columns: 1fr; gap: 30px; }
     .gallery-collection { padding: 32px 0 40px; }
     .gallery-collection-heading { align-items: start; flex-direction: column; gap: 14px; }
-    .gallery-curated-grid { column-gap: 16px; }
-    .gallery-editorial .gallery-curated-card { margin-bottom: 16px; }
+    .gallery-curated-grid { gap: 16px; }
     .gallery-curated-card figcaption { gap: 8px; padding: 12px; }
     .gallery-curated-card h3 { font-size: 11px; }
     .gallery-curated-card figcaption p { font-size: 10px; }
@@ -547,7 +549,7 @@
     .gallery-invitation-links { width: 100%; }
 }
 @media(max-width:575px) {
-    .gallery-curated-grid { columns: 1; }
+    .gallery-curated-grid { grid-template-columns: minmax(0, 1fr); }
     .gallery-curated-card figcaption { padding: 16px; gap: 12px; }
     .gallery-curated-card h3 { font-size: 13px; }
     .gallery-curated-card figcaption p { font-size: 11px; }
