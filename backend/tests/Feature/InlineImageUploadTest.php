@@ -158,4 +158,57 @@ class InlineImageUploadTest extends TestCase
         ])->assertForbidden();
         $this->assertSame(0, MediaAsset::count());
     }
+
+    public function test_cross_removes_an_existing_gallery_image_without_deleting_shared_media(): void
+    {
+        $old = app(MediaLibrary::class)->store(UploadedFile::fake()->image('shared.jpg'), null);
+        $gallery = GalleryImage::factory()->create(['image_id' => $old->id]);
+        $service = Service::factory()->create(['image_id' => $old->id]);
+        $this->actingAs(User::factory()->admin()->create())->post(route('admin.content.update', ['gallery', $gallery->id]), [
+            '_method' => 'PUT', 'title' => 'Gallery item', 'sort_order' => 10, 'image_id' => $old->id,
+            'remove_images' => ['image_id' => 1],
+        ])->assertSessionHasNoErrors()->assertRedirect();
+        $this->assertNull($gallery->fresh()->image_id);
+        $this->assertSame($old->id, $service->fresh()->image_id);
+        $this->assertModelExists($old);
+        Storage::disk('public')->assertExists($old->path);
+        $this->post(route('admin.content.update', ['gallery', $gallery->id]), [
+            '_method' => 'PUT', 'title' => 'Updated without an image', 'sort_order' => 10, 'image_id' => null,
+        ])->assertSessionHasNoErrors();
+        $this->assertNull($gallery->fresh()->image_id);
+        $this->post(route('admin.content.update', ['gallery', $gallery->id]), [
+            '_method' => 'PUT', 'title' => 'Gallery item', 'sort_order' => 10, 'remove_images' => ['image_id' => 1],
+            'uploads' => ['image_id' => UploadedFile::fake()->image('new.jpg')],
+        ])->assertSessionHasNoErrors();
+        $this->assertNotNull($gallery->fresh()->image_id);
+        $this->assertNotSame($old->id, $gallery->fresh()->image_id);
+    }
+
+    public function test_settings_removal_only_clears_the_requested_image_slot(): void
+    {
+        $media = MediaAsset::factory()->create();
+        $profile = DoctorProfile::factory()->create(['key' => 'primary', 'portrait_image_id' => $media->id]);
+        $site = SiteSetting::factory()->create(['key' => 'primary', 'logo_image_id' => $media->id]);
+        $this->actingAs(User::factory()->admin()->create())->post(route('admin.settings.update'), [
+            '_method' => 'PUT', 'profile' => ['name' => 'Doctor', 'portrait_image_id' => $media->id],
+            'site' => ['site_title' => 'Practice', 'logo_image_id' => $media->id],
+            'remove_images' => ['profile' => ['portrait_image_id' => 1]],
+        ])->assertSessionHasNoErrors();
+        $this->assertNull($profile->fresh()->portrait_image_id);
+        $this->assertSame($media->id, $site->fresh()->logo_image_id);
+        $this->assertModelExists($media);
+    }
+
+    public function test_removal_does_not_bypass_other_validation_or_new_gallery_image_requirement(): void
+    {
+        $media = MediaAsset::factory()->create();
+        $gallery = GalleryImage::factory()->create(['image_id' => $media->id]);
+        $this->actingAs(User::factory()->admin()->create())->post(route('admin.content.update', ['gallery', $gallery->id]), [
+            '_method' => 'PUT', 'title' => '', 'sort_order' => 10, 'remove_images' => ['image_id' => 1],
+        ])->assertSessionHasErrors('title');
+        $this->assertSame($media->id, $gallery->fresh()->image_id);
+        $this->post(route('admin.content.store', 'gallery'), [
+            'title' => 'New item', 'sort_order' => 10, 'remove_images' => ['image_id' => 1],
+        ])->assertSessionHasErrors('image_id');
+    }
 }

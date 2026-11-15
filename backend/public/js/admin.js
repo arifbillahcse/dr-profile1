@@ -36,6 +36,10 @@ document.querySelectorAll('[data-image-select]').forEach(select => {
     const status = widget?.querySelector('[data-inline-status]');
     const cancel = widget?.querySelector('[data-inline-cancel]');
     const dropZone = widget?.querySelector('[data-image-dropzone]');
+    const previewFrame = widget?.querySelector('[data-inline-preview]');
+    const removeImage = widget?.querySelector('[data-inline-remove]');
+    const removal = widget?.querySelector('[data-inline-removal]');
+    const syncPreviewFrame = () => { if (previewFrame) previewFrame.hidden = preview.hidden; };
     let dragDepth = 0;
     let objectUrl;
     const releasePreview = () => { if (objectUrl) URL.revokeObjectURL(objectUrl); objectUrl = undefined; };
@@ -46,11 +50,21 @@ document.querySelectorAll('[data-image-select]').forEach(select => {
         preview.hidden = !url;
         if (url) preview.src = url;
         else preview.removeAttribute('src');
+        syncPreviewFrame();
         if (cancel) cancel.hidden = true;
         if (status) status.textContent = url ? 'Current image — choose a file to replace it here.' : 'Choose an image from your device.';
     };
-    select.addEventListener('change', showLibraryImage);
+    select.addEventListener('change', () => {
+        if (removal) removal.value = select.value ? '0' : '1';
+        showLibraryImage();
+    });
     cancel?.addEventListener('click', showLibraryImage);
+    removeImage?.addEventListener('click', () => {
+        select.value = '';
+        if (removal) removal.value = '1';
+        showLibraryImage();
+        status.textContent = 'Image removed. Save changes to apply the removal.';
+    });
     fileInput?.addEventListener('change', () => {
         const file = fileInput.files[0];
         if (!file) { showLibraryImage(); return; }
@@ -65,11 +79,14 @@ document.querySelectorAll('[data-image-select]').forEach(select => {
             preview.hidden = !current;
             if (current) preview.src = current;
             else preview.removeAttribute('src');
+            syncPreviewFrame();
             return;
         }
         objectUrl = URL.createObjectURL(file);
         preview.src = objectUrl;
         preview.hidden = false;
+        if (removal) removal.value = '0';
+        syncPreviewFrame();
         status.textContent = 'New image selected. Save the form to upload and use it here.';
     });
     if (fileInput?.files.length) fileInput.dispatchEvent(new Event('change'));

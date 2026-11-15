@@ -23,7 +23,7 @@ class ContentRequest extends FormRequest
         foreach ($definition['fields'] ?? [] as $name => $field) {
             $rules[$name] = $field['rules'] ?? [];
             if (($field['type'] ?? '') === 'image') {
-                if ($this->hasFile('uploads.'.$name)) {
+                if ($this->hasFile('uploads.'.$name) || $this->route('record')) {
                     $rules[$name] = array_values(array_diff($rules[$name], ['required']));
                     $rules[$name][] = 'nullable';
                 }

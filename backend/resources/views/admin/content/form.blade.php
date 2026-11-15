@@ -17,7 +17,7 @@
                 @endphp
                 @if($fieldType === 'image')
                     <div class="full-width">
-                        @include('admin.partials.image-select', ['field'=>$name,'label'=>$fieldDefinition['label'],'value'=>$fieldValue,'required'=>$fieldDefinition['required'] ?? false])
+                        @include('admin.partials.image-select', ['field'=>$name,'label'=>$fieldDefinition['label'],'value'=>$fieldValue,'required'=>($fieldDefinition['required'] ?? false) && ! $record->exists])
 
                     </div>
                 @elseif($fieldType === 'checkbox')

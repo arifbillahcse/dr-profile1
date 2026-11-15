@@ -47,17 +47,20 @@ class InlineImageUploads
     public static function rules(array $fields): array
     {
         if ($fields === []) {
-            return ['uploads' => ['prohibited']];
+            return ['uploads' => ['prohibited'], 'remove_images' => ['prohibited']];
         }
         $rules = [];
         $groups = [];
         foreach ($fields as $field) {
-            $parent = 'uploads';
-            foreach (explode('.', $field) as $part) {
-                $groups[$parent][] = $part;
-                $parent .= '.'.$part;
+            foreach (['uploads', 'remove_images'] as $prefix) {
+                $parent = $prefix;
+                foreach (explode('.', $field) as $part) {
+                    $groups[$parent][] = $part;
+                    $parent .= '.'.$part;
+                }
             }
             $rules['uploads.'.$field] = ['nullable', ...self::fileRules()];
+            $rules['remove_images.'.$field] = ['sometimes', 'boolean'];
         }
         foreach ($groups as $parent => $keys) {
             $rules[$parent] = ['sometimes', 'array:'.implode(',', array_unique($keys))];
@@ -68,11 +71,14 @@ class InlineImageUploads
 
     public function save(Request $request, array $data, array $fields, Closure $persist): mixed
     {
-        unset($data['uploads']);
+        unset($data['uploads'], $data['remove_images']);
         $created = [];
         try {
             return DB::transaction(function () use ($request, $data, $fields, $persist, &$created): mixed {
                 foreach ($fields as $field) {
+                    if ($request->boolean('remove_images.'.$field)) {
+                        Arr::set($data, $field, null);
+                    }
                     if (! $request->hasFile('uploads.'.$field)) {
                         continue;
                     }

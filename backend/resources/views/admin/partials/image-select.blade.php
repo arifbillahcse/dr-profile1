@@ -4,10 +4,13 @@
     $imageInputName = count($parts) === 2 ? $parts[0].'['.$parts[1].']' : $field;
     $uploadField = 'uploads.'.$field;
     $uploadName = 'uploads['.implode('][', explode('.', $field)).']';
-    $selectedId = old($field, $value ?? '');
+    $removeName = 'remove_images['.implode('][', explode('.', $field)).']';
+    $removing = (bool) old('remove_images.'.$field, false);
+    $selectedId = $removing ? '' : old($field, $value ?? '');
     $selectedImage = $mediaOptions->firstWhere('id', $selectedId);
 @endphp
 <div class="image-choice inline-image-upload" data-inline-image>
+    <input type="hidden" name="{{ $removeName }}" value="{{ $removing ? '1' : '0' }}" data-inline-removal>
     <label class="form-label" for="{{ $inputId }}-upload">{{ $label }} @if($required ?? false)<span aria-hidden="true">*</span>@endif</label>
     <div class="inline-upload-box" data-image-dropzone>
         <span class="inline-upload-heading"><i class="bi bi-cloud-arrow-up" aria-hidden="true"></i> Upload new image</span>
@@ -18,7 +21,10 @@
         <p class="inline-upload-status mb-0 small" data-inline-status aria-live="polite">{{ $selectedImage ? 'Current image — choose a file to replace it here.' : 'Choose an image from your device.' }}</p>
         <button type="button" class="btn btn-sm btn-outline-secondary" data-inline-cancel hidden>Cancel new upload</button>
     </div>
-    <img class="selected-image mt-2" id="{{ $inputId }}-preview" @if($selectedImage) src="{{ $selectedImage->url() }}" @else hidden @endif alt="Selected {{ strtolower($label) }} preview">
+    <div class="image-preview-frame mt-2" data-inline-preview @unless($selectedImage) hidden @endunless>
+        <img class="selected-image" id="{{ $inputId }}-preview" @if($selectedImage) src="{{ $selectedImage->url() }}" @else hidden @endif alt="Selected {{ strtolower($label) }} preview">
+        <button type="button" class="image-remove-button" data-inline-remove aria-label="Remove {{ strtolower($label) }}" title="Remove image"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+    </div>
     <details class="inline-library-choice mt-3" @unless(config('media.allow_existing_image_selection')) hidden @endunless @if($errors->has($field)) open @endif>
         <summary>Or choose an existing image</summary>
         <label class="form-label mt-2 small" for="{{ $inputId }}">Image from library</label>
