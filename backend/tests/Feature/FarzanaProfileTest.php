@@ -96,11 +96,11 @@ class FarzanaProfileTest extends TestCase
     public function test_biography_name_correction_preserves_other_text_and_later_edits(): void
     {
         $suffix = "\n\nExisting administrator biography.";
-        $profile = DoctorProfile::factory()->create(['key' => 'primary', 'biography' => 'ডাঃ ফারজানা রহমান সাথী'.$suffix]);
+        $profile = DoctorProfile::factory()->create(['key' => 'primary', 'name' => 'Dr. Farzana Rahman Shathi', 'biography' => 'ডাঃ ফারজানা রহমান সাথী'.$suffix]);
         $migration = require database_path('migrations/2026_11_15_181325_use_english_doctor_name_in_biography.php');
         $migration->up();
         $this->assertSame('Dr. Farzana Rahman Shathi'.$suffix, $profile->fresh()->biography);
-        $this->get('/about')->assertOk()->assertSee('Dr. Farzana Rahman Shathi'.$suffix);
+        $this->get('/about')->assertOk()->assertSee('<strong class="fw-semibold">Dr. Farzana Rahman Shathi</strong>', false)->assertSee('Existing administrator biography.');
         $profile->update(['biography' => 'Later edited biography.']);
         $migration->up();
         $migration->down();

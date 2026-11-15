@@ -54,7 +54,7 @@
             </div>
 
             <div class="mt-5 dr-long-bio animate-up" data-aos="fade-up">
-                <div class="p-5 bg-white shadow-sm rounded-5 border-light public-copy">{{ $profile->biography }}</div>
+                <div class="p-5 bg-white shadow-sm rounded-5 border-light public-copy">@if(str_starts_with($profile->biography ?? '', $profile->name."\n"))<strong class="fw-semibold">{{ $profile->name }}</strong>{{ substr($profile->biography, strlen($profile->name)) }}@else{{ $profile->biography }}@endif</div>
             </div>
 
             <div class="mt-5 row">
