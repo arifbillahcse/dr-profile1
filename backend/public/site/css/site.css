@@ -258,6 +258,13 @@ h1, h2, h3, h4, h5, h6, .doc-name, .specialty { font-family: var(--site-font-bod
     #about .introduction-specialties .checklist-premium { margin-bottom: 0; }
     #about .introduction-specialties li { display: grid !important; grid-template-columns: 16px minmax(0, 1fr); gap: 10px; align-items: start !important; text-align: left; margin-bottom: 0 !important; }
     #about .introduction-specialties li>i { width: 16px; margin: 3px 0 0 !important; text-align: center; }
+    #services .specialist-services-grid { width: max-content; max-width: 100%; margin-inline: auto; }
+    #services .specialist-services-grid>.row { display: grid; grid-template-columns: minmax(0, 1fr); row-gap: 14px; margin-inline: 0; --bs-gutter-x: 0; --bs-gutter-y: 0; }
+    #services .specialist-services-grid>.row>div { width: 100%; }
+    #services .specialist-services-grid li { display: grid !important; grid-template-columns: 20px minmax(0, 1fr); gap: 12px; align-items: start !important; margin-bottom: 0 !important; text-align: left; }
+    #services .specialist-services-grid .icon-circle-glow { width: 20px; height: 20px; margin: 1px 0 0 !important; }
+    #services .specialist-services-grid .specialist-name { min-width: 0; padding-left: 0; overflow-wrap: anywhere; }
+    #services .specialist-services-grid li:hover, #services .specialist-services-grid li:hover .icon-circle-glow { transform: none; }
     .about-content .btn-about-premium { display: flex; width: fit-content; margin-left: auto; margin-right: auto; }
     .review-section>.container>div:first-child { justify-content: center !important; gap: 16px; }
     .review-section .reveiwbutton { width: 100%; }
