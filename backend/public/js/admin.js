@@ -30,13 +30,49 @@ if (sidebarToggle) {
 }
 
 document.querySelectorAll('[data-image-select]').forEach(select => {
-    select.addEventListener('change', () => {
-        const preview = document.getElementById(select.dataset.imageSelect);
+    const widget = select.closest('[data-inline-image]');
+    const preview = document.getElementById(select.dataset.imageSelect);
+    const fileInput = widget?.querySelector('[data-inline-file]');
+    const status = widget?.querySelector('[data-inline-status]');
+    const cancel = widget?.querySelector('[data-inline-cancel]');
+    let objectUrl;
+    const releasePreview = () => { if (objectUrl) URL.revokeObjectURL(objectUrl); objectUrl = undefined; };
+    const showLibraryImage = () => {
+        releasePreview();
+        if (fileInput) { fileInput.value = ''; fileInput.setCustomValidity(''); }
         const url = select.selectedOptions[0]?.dataset.preview;
         preview.hidden = !url;
         if (url) preview.src = url;
         else preview.removeAttribute('src');
+        if (cancel) cancel.hidden = true;
+        if (status) status.textContent = url ? 'Current image — choose a file to replace it here.' : 'Choose an image from your device.';
+    };
+    select.addEventListener('change', showLibraryImage);
+    cancel?.addEventListener('click', showLibraryImage);
+    fileInput?.addEventListener('change', () => {
+        const file = fileInput.files[0];
+        if (!file) { showLibraryImage(); return; }
+        releasePreview();
+        const error = file.size > 5 * 1024 * 1024 ? 'Choose an image smaller than 5 MB.'
+            : file.type && !['image/jpeg', 'image/png', 'image/webp'].includes(file.type) ? 'Choose a JPG, PNG or WebP image.' : '';
+        fileInput.setCustomValidity(error);
+        cancel.hidden = false;
+        if (error) {
+            status.textContent = error;
+            const current = select.selectedOptions[0]?.dataset.preview;
+            preview.hidden = !current;
+            if (current) preview.src = current;
+            else preview.removeAttribute('src');
+            return;
+        }
+        objectUrl = URL.createObjectURL(file);
+        preview.src = objectUrl;
+        preview.hidden = false;
+        status.textContent = 'New image selected. Save the form to upload and use it here.';
     });
+    if (fileInput?.files.length) fileInput.dispatchEvent(new Event('change'));
+    select.form?.addEventListener('reset', () => setTimeout(showLibraryImage, 0));
+    window.addEventListener('pagehide', releasePreview);
 });
 document.querySelectorAll('form[data-confirm]').forEach(form => {
     form.addEventListener('submit', event => { if (!window.confirm(form.dataset.confirm)) event.preventDefault(); });

@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Admin;
 
+use App\Services\InlineImageUploads;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -45,6 +46,7 @@ class SettingsRequest extends FormRequest
             'site.seo_title' => ['nullable', 'string', 'max:255'],
             'site.seo_description' => ['nullable', 'string', 'max:2000'],
             'site.seo_keywords' => ['nullable', 'string', 'max:2000'],
+            ...InlineImageUploads::rules(InlineImageUploads::settingsFields()),
         ];
     }
 

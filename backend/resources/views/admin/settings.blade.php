@@ -4,7 +4,7 @@
 <section class="dashboard-heading settings-heading"><div><h1><i class="bi bi-sliders" aria-hidden="true"></i> Website settings</h1><p>Manage your profile, branding and contact information.</p></div><a class="btn btn-outline-success" href="{{ route('admin.media.index') }}"><i class="bi bi-folder2-open" aria-hidden="true"></i> Media library</a></section>
 @if($errors->any())<div class="alert alert-danger" role="alert"><strong>Please check these details:</strong><ul class="mb-0">@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul></div>@endif
 <div class="alert alert-info small">Saved settings appear immediately on the public website.</div>
-<form method="POST" action="{{ route('admin.settings.update') }}" class="settings-form">
+<form method="POST" enctype="multipart/form-data" action="{{ route('admin.settings.update') }}" class="settings-form">
     @csrf @method('PUT')
     <section class="content-panel mb-4" aria-labelledby="profile-heading">
         <h2 id="profile-heading">Doctor profile</h2><p>Your public name, qualifications and introduction.</p>
@@ -20,7 +20,7 @@
         </div>
     </section>
     <section class="content-panel mb-4" aria-labelledby="photos-heading">
-        <h2 id="photos-heading">Profile photographs</h2><p>Choose uploaded images. You can upload new photographs in the media library.</p>
+        <h2 id="photos-heading">Profile photographs</h2><p>Upload photographs directly below, or choose an existing image.</p>
         <div class="settings-grid">
             @foreach(['portrait_image_id'=>'Profile portrait','first_image_id'=>'First introduction photograph','second_image_id'=>'Second introduction photograph','tall_image_id'=>'Tall introduction photograph'] as $column=>$label)
                 @include('admin.partials.image-select', ['field'=>'profile.'.$column,'label'=>$label,'value'=>$profile->$column])

@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Admin;
 
+use App\Services\InlineImageUploads;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
@@ -22,6 +23,10 @@ class ContentRequest extends FormRequest
         foreach ($definition['fields'] ?? [] as $name => $field) {
             $rules[$name] = $field['rules'] ?? [];
             if (($field['type'] ?? '') === 'image') {
+                if ($this->hasFile('uploads.'.$name)) {
+                    $rules[$name] = array_values(array_diff($rules[$name], ['required']));
+                    $rules[$name][] = 'nullable';
+                }
                 $rules[$name][] = Rule::exists('media_assets', 'id')->where('disk', 'public');
             }
             if (($field['type'] ?? '') === 'icon') {
@@ -43,7 +48,7 @@ class ContentRequest extends FormRequest
             ];
         }
 
-        return $rules;
+        return [...$rules, ...InlineImageUploads::rules(InlineImageUploads::contentFields($module))];
     }
 
     protected function prepareForValidation(): void

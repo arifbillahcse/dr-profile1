@@ -4,7 +4,7 @@
 <section class="dashboard-heading settings-heading"><div><h1><i class="bi bi-{{ $definition['icon'] }}" aria-hidden="true"></i> {{ $record->exists ? 'Edit' : 'Add' }} {{ $definition['singular'] }}</h1><p>{{ $definition['heading'] }}</p></div><a class="btn btn-outline-success" href="{{ route('admin.content.index', $moduleKey) }}">Back to list</a></section>
 @if($errors->any())<div class="alert alert-danger" role="alert"><strong>Please check these details:</strong><ul class="mb-0">@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul></div>@endif
 <div class="alert alert-info small">Visible content appears on the public website. Hidden and archived items stay private.</div>
-<form method="POST" action="{{ $record->exists ? route('admin.content.update', [$moduleKey, $record->id]) : route('admin.content.store', $moduleKey) }}" class="content-editor">
+<form method="POST" enctype="multipart/form-data" action="{{ $record->exists ? route('admin.content.update', [$moduleKey, $record->id]) : route('admin.content.store', $moduleKey) }}" class="content-editor">
     @csrf @if($record->exists) @method('PUT') @endif
     <section class="content-panel mb-4">
         <div class="settings-grid">
@@ -18,7 +18,7 @@
                 @if($fieldType === 'image')
                     <div class="full-width">
                         @include('admin.partials.image-select', ['field'=>$name,'label'=>$fieldDefinition['label'],'value'=>$fieldValue,'required'=>$fieldDefinition['required'] ?? false])
-                        <p class="form-text">Choose a reusable image, or <a href="{{ route('admin.media.index') }}" target="_blank" rel="noopener">upload an image in the media library</a> and reload this page.</p>
+
                     </div>
                 @elseif($fieldType === 'checkbox')
                     <div class="full-width form-check editor-check"><input type="hidden" name="{{ $name }}" value="0"><input class="form-check-input" id="{{ $name }}" type="checkbox" name="{{ $name }}" value="1" @checked(old($name, $fieldValue)) @if($name === 'is_current') data-current-position @endif><label class="form-check-label" for="{{ $name }}">{{ $fieldDefinition['label'] }}</label></div>

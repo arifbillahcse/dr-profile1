@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\ContentRequest;
 use App\Models\MediaAsset;
 use App\Models\OrderedContent;
+use App\Services\InlineImageUploads;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\RedirectResponse;
@@ -14,6 +15,8 @@ use Illuminate\Support\Facades\DB;
 
 class ContentController extends Controller
 {
+    public function __construct(private InlineImageUploads $images) {}
+
     public function index(Request $request, string $module): View
     {
         $definition = $this->definition($module);
@@ -147,8 +150,7 @@ class ContentController extends Controller
 
     private function save(ContentRequest $request, string $module, Model $record): Model
     {
-        return DB::transaction(function () use ($request, $module, $record): Model {
-            $data = $request->validated();
+        return $this->images->save($request, $request->validated(), InlineImageUploads::contentFields($module), function (array $data) use ($module, $record): Model {
             $schedules = $data['schedules'] ?? null;
             unset($data['schedules'], $data['schedules_present']);
             if ($module === 'chamber' && array_key_exists('additional_phones_text', $data)) {

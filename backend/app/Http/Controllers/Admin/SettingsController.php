@@ -7,12 +7,14 @@ use App\Http\Requests\Admin\SettingsRequest;
 use App\Models\DoctorProfile;
 use App\Models\MediaAsset;
 use App\Models\SiteSetting;
+use App\Services\InlineImageUploads;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\DB;
 
 class SettingsController extends Controller
 {
+    public function __construct(private InlineImageUploads $images) {}
+
     public function edit(): View
     {
         return view('admin.settings', [
@@ -24,8 +26,7 @@ class SettingsController extends Controller
 
     public function update(SettingsRequest $request): RedirectResponse
     {
-        DB::transaction(function () use ($request): void {
-            $data = $request->validated();
+        $this->images->save($request, $request->validated(), InlineImageUploads::settingsFields(), function (array $data): void {
             $profile = $data['profile'];
             $site = $data['site'];
             if (array_key_exists('credentials_text', $profile)) {

@@ -6,10 +6,10 @@
     <title>@yield('title', 'Dashboard') | {{ $adminSiteTitle }}</title>
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/adminlte.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}?v={{ filemtime(public_path('css/admin.css')) }}">
     <script src="{{ asset('vendor/bootstrap/bootstrap.bundle.min.js') }}" defer></script>
     <script src="{{ asset('vendor/adminlte/adminlte.js') }}" defer></script>
-    <script src="{{ asset('js/admin.js') }}" defer></script>
+    <script src="{{ asset('js/admin.js') }}?v={{ filemtime(public_path('js/admin.js')) }}" defer></script>
 </head>
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
 <a class="skip-link" href="#main-content">Skip to content</a>
