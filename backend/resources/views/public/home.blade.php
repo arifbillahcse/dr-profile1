@@ -318,17 +318,18 @@
     </div>
 </section>
 
-@if($profile->introduction_youtube_id)<div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+@if($introductionVideoId)<div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true" aria-labelledby="introduction-video-title">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="bg-transparent border-0 modal-content">
-            <div class="p-0 border-0 justify-content-end">
+            <div class="p-0 border-0 d-flex align-items-center justify-content-between gap-3">
+                <h2 id="introduction-video-title" class="h6 text-white mb-2">{{ $introductionVideoTitle }}</h2>
                 <button type="button" class="shadow-lg btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
             <div class="p-0 modal-body">
                 <div class="overflow-hidden border border-4 border-white shadow-2xl ratio ratio-16x9 rounded-5">
-                                        <iframe class="video-container-luxury" src="{{ 'https://www.youtube-nocookie.com/embed/'.$profile->introduction_youtube_id.'?rel=0' }}" title="Introduction Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy">
+                                        <iframe class="video-container-luxury" src="about:blank" data-video-src="{{ 'https://www.youtube-nocookie.com/embed/'.$introductionVideoId.'?rel=0' }}" title="{{ $introductionVideoTitle }}" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
                     </iframe>
                 </div>
             </div>

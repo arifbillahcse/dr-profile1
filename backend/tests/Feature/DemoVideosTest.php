@@ -18,7 +18,7 @@ class DemoVideosTest extends TestCase
         foreach (['/', '/videos'] as $path) {
             $response = $this->get($path)->assertOk()->assertSee('Demo video - Big Buck Bunny')->assertSee('Demo video - Sintel')->assertSee('Demo video - Tears of Steel')->assertSee('Not a video from this practice.');
             $this->assertSame(3, substr_count($response->getContent(), 'class="practice-video-card"'));
-            $this->assertSame(3, substr_count($response->getContent(), 'youtube-nocookie.com/embed/'));
+            $this->assertSame($path === '/' ? 4 : 3, substr_count($response->getContent(), 'youtube-nocookie.com/embed/'));
         }
     }
 

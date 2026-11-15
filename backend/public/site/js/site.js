@@ -43,8 +43,15 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({ top: 0, behavior: reducedMotion ? 'instant' : 'smooth' });
   });
   document.querySelectorAll('.modal').forEach(modal => {
+    modal.addEventListener('show.bs.modal', () => {
+      modal.querySelectorAll('iframe[data-video-src]').forEach(frame => { frame.src = frame.dataset.videoSrc; });
+    });
     modal.addEventListener('hidden.bs.modal', () => {
       modal.querySelectorAll('iframe').forEach(frame => {
+        if (frame.dataset.videoSrc) {
+          frame.src = 'about:blank';
+          return;
+        }
         const source = frame.src;
         frame.src = 'about:blank';
         frame.src = source;

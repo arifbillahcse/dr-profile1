@@ -40,6 +40,8 @@ class WebsiteController extends Controller
         if (! preg_match('/^[A-Za-z0-9_-]{11}$/D', $profile->introduction_youtube_id ?? '')) {
             $profile->introduction_youtube_id = null;
         }
+        $introductionVideoId = $profile->introduction_youtube_id ?: $videos->first()?->youtube_id;
+        $introductionVideoTitle = $profile->introduction_youtube_id ? 'Introduction Video' : $videos->first()?->title;
 
         return view('public.'.$page, [
             'page' => $page, 'site' => $site, 'profile' => $profile, 'dial' => $dial, 'phoneLink' => $dial($site->phone),
@@ -53,6 +55,8 @@ class WebsiteController extends Controller
             'steps' => ConsultationStep::published()->ordered()->get(),
             'chambers' => Chamber::published()->ordered()->with(['schedules' => fn ($query) => $query->where('is_active', true)])->get(),
             'videos' => $videos,
+            'introductionVideoId' => $introductionVideoId,
+            'introductionVideoTitle' => $introductionVideoTitle,
             'experiences' => Experience::published()->ordered()->with('image')->get(),
             'faqs' => Faq::published()->ordered()->get(),
             'gallery' => GalleryImage::published()->ordered()->with('image')->whereHas('image')->get(),

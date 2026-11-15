@@ -27,13 +27,13 @@
                 <defs><path id="introduction-seal-circle" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0"></path></defs>
                 <text><textPath href="#introduction-seal-circle" textLength="282.7" lengthAdjust="spacing">DERMATOLOGY · PERSONALISED CARE · </textPath></text>
             </svg>
-            @if($profile->introduction_youtube_id)
-            <button type="button" class="introduction-seal-center" data-bs-toggle="modal" data-bs-target="#videoModal" aria-label="Watch Introduction Video"><i class="fas fa-play" aria-hidden="true"></i></button>
+            @if($introductionVideoId)
+            <button type="button" class="introduction-seal-center" data-bs-toggle="modal" data-bs-target="#videoModal" aria-label="Watch {{ $introductionVideoTitle }}"><i class="fas fa-play" aria-hidden="true"></i></button>
             @else
             <span class="introduction-seal-center" aria-hidden="true"><i class="fas fa-leaf"></i></span>
             @endif
         </div>
-        @elseif($profile->introduction_youtube_id)
+        @elseif($introductionVideoId)
         <button type="button" class="introduction-watch" data-bs-toggle="modal" data-bs-target="#videoModal"><i class="fas fa-play" aria-hidden="true"></i> Watch introduction</button>
         @endif
     </div>

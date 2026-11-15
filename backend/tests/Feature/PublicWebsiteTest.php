@@ -113,6 +113,35 @@ class PublicWebsiteTest extends TestCase
         $this->get('/')->assertDontSee('Public chamber address')->assertDontSee('Monday: 16:30');
     }
 
+    public function test_introduction_play_button_prefers_configured_video_and_loads_it_on_demand(): void
+    {
+        $image = MediaAsset::factory()->create();
+        DoctorProfile::factory()->create([
+            'key' => 'primary', 'introduction_youtube_id' => 'M7lc1UVf-VE',
+            'first_image_id' => $image->id, 'second_image_id' => $image->id, 'tall_image_id' => $image->id,
+        ]);
+        Video::factory()->published()->create(['youtube_id' => 'aqz-KE-bpKQ']);
+        $this->get('/')->assertOk()->assertViewHas('introductionVideoId', 'M7lc1UVf-VE')
+            ->assertSee('aria-label="Watch Introduction Video"', false)
+            ->assertSee('data-bs-target="#videoModal"', false)
+            ->assertSee('src="about:blank" data-video-src="https://www.youtube-nocookie.com/embed/M7lc1UVf-VE?rel=0"', false);
+    }
+
+    public function test_introduction_falls_back_to_first_valid_published_video_and_respects_visibility(): void
+    {
+        DoctorProfile::factory()->create(['key' => 'primary', 'introduction_youtube_id' => 'invalid']);
+        Video::factory()->create(['youtube_id' => 'M7lc1UVf-VE', 'sort_order' => 0]);
+        Video::factory()->published()->create(['youtube_id' => 'invalid', 'sort_order' => 1]);
+        $later = Video::factory()->published()->create(['title' => 'Later video', 'youtube_id' => 'eRsGyueVLvQ', 'sort_order' => 20]);
+        $first = Video::factory()->published()->create(['title' => 'Demo video', 'youtube_id' => 'aqz-KE-bpKQ', 'sort_order' => 10]);
+        $this->get('/')->assertOk()->assertViewHas('introductionVideoId', 'aqz-KE-bpKQ')
+            ->assertViewHas('introductionVideoTitle', 'Demo video')->assertSee('id="videoModal"', false);
+        $first->update(['is_active' => false]);
+        $this->get('/')->assertViewHas('introductionVideoId', 'eRsGyueVLvQ');
+        $later->delete();
+        $this->get('/')->assertViewHas('introductionVideoId', null)->assertDontSee('id="videoModal"', false);
+    }
+
     public function test_video_archive_and_legacy_links_stay_local_and_invalid_embeds_are_excluded(): void
     {
         Video::factory()->published()->count(5)->sequence(fn ($sequence) => ['title' => 'Archive video '.$sequence->index, 'sort_order' => $sequence->index])->create();
