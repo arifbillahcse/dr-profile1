@@ -468,7 +468,7 @@
         }
     }
 
-/* Editorial gallery: fixed image frames, a clear reading order, and restrained detail. */
+/* Editorial gallery: natural image proportions and cards that follow each photograph. */
 .gallery-editorial { background: #fafbf8; }
 .gallery-editorial>.gallery-masthead { padding: 126px 0 54px; background: #123c2c; color: #fff; }
 .gallery-editorial .container { max-width: 1180px; }
@@ -485,9 +485,9 @@
 .gallery-feature-grid { display: grid; grid-template-columns: .85fr 1.3fr; align-items: center; gap: 64px; }
 .gallery-editorial figure { margin: 0; min-width: 0; }
 .gallery-image-link { display: block; position: relative; background: #edf0e9; overflow: hidden; border-radius: 16px; }
-.gallery-image-link img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; transition: filter .25s; }
+.gallery-image-link img { display: block; width: 100%; height: auto; transition: filter .25s; }
 .gallery-image-link:hover img { filter: brightness(.95); }
-.gallery-cover>.gallery-image-link { height: 410px; }
+.gallery-cover>.gallery-image-link { height: auto; }
 .gallery-cover figcaption { display: flex; flex-direction: column; gap: 6px; padding-top: 18px; }
 .gallery-cover .section-eyebrow { color: #829380; font-size: 9px!important; margin: 0; }
 .gallery-cover strong { font-size: 14px; font-weight: 600; color: #1c4130; }
@@ -495,7 +495,7 @@
 .gallery-feature-copy h2 { margin-bottom: 18px; }
 .gallery-intro { font-size: 14px; line-height: 1.8; color: #68766a; max-width: 490px; margin-bottom: 26px; }
 .gallery-mini-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
-.gallery-mini>.gallery-image-link { height: 164px; border-radius: 12px; }
+.gallery-mini>.gallery-image-link { height: auto; border-radius: 12px; }
 .gallery-mini figcaption { padding-top: 11px; font-size: 11px; font-weight: 500; color: #405744; line-height: 1.5; }
 .gallery-open { position: absolute; right: 12px; bottom: 12px; display: grid; place-items: center; width: 30px; height: 30px; background: #fff; color: #2d513c; border-radius: 50%; font-size: 11px; box-shadow: 0 2px 8px #00000012; }
 .gallery-collection { padding: 42px 0 64px; border-top: 1px solid #e2e8df; }
@@ -503,18 +503,14 @@
 .gallery-collection-heading .section-eyebrow { color: #7d8d77; margin-bottom: 12px; }
 .gallery-collection-heading h2 { margin: 0; }
 .gallery-collection-heading>p { color: #7c897d; font-size: 12px; margin-bottom: 6px; }
-.gallery-curated-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 28px 24px; scroll-margin-top: 95px; }
-.gallery-curated-card { border: 1px solid #e0e6dc; background: #fff; border-radius: 16px; overflow: hidden; }
-.gallery-curated-card>.gallery-image-link { border-radius: 0; height: 266px; }
-.gallery-document .gallery-image-link { background: #f0f1ec; padding: 10px; }
-.gallery-document .gallery-image-link img { object-fit: contain; }
-.gallery-compact .gallery-image-link { background: #eff2eb; }
-.gallery-compact .gallery-image-link img { object-fit: scale-down; }
+.gallery-curated-grid { columns: 3; column-gap: 24px; scroll-margin-top: 95px; }
+.gallery-editorial .gallery-curated-card { display: inline-block; vertical-align: top; width: 100%; margin: 0 0 24px; break-inside: avoid; border: 1px solid #e0e6dc; background: #fff; border-radius: 16px; overflow: hidden; }
+.gallery-curated-card>.gallery-image-link { border-radius: 0; height: auto; }
 .gallery-curated-card figcaption { display: flex; gap: 14px; padding: 18px; }
-.gallery-index { color: #b1a286; font: italic 18px var(--site-font-accent); line-height: 1.3; }
+.gallery-index { color: #8fbea0; font: italic 18px var(--site-font-accent); line-height: 1.3; flex-shrink: 0; }
 .gallery-curated-card h3 { color: #244832; font-size: 13px; font-weight: 600; line-height: 1.5; margin: 0; }
 .gallery-curated-card figcaption p { color: #7c887a; font-size: 11px; line-height: 1.6; margin: 7px 0 0; white-space: pre-line; }
-.gallery-empty { grid-column: 1/-1; color: #67766b; padding: 30px 0; }
+.gallery-empty { column-span: all; color: #67766b; padding: 30px 0; }
 .gallery-invitation { background: #eeeee5; padding: 40px 0; border-top: 1px solid #e0e3d7; }
 .gallery-invitation-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
 .gallery-invitation .section-eyebrow { color: #7a8c77; margin-bottom: 10px; }
@@ -527,9 +523,7 @@
 @media(max-width:991px) {
     .gallery-feature-grid { gap: 30px; grid-template-columns: .9fr 1.2fr; }
     .gallery-masthead-row { gap: 30px; }
-    .gallery-cover>.gallery-image-link { height: 380px; }
-    .gallery-curated-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
-    .gallery-mini>.gallery-image-link { height: 140px; }
+    .gallery-curated-grid { columns: 2; }
 }
 @media(max-width:767px) {
     .gallery-editorial>.gallery-masthead { padding: 108px 0 36px; }
@@ -540,12 +534,10 @@
     .gallery-breadcrumb { margin-bottom: 20px; }
     .gallery-feature { padding: 36px 0; }
     .gallery-feature-grid { grid-template-columns: 1fr; gap: 30px; }
-    .gallery-cover>.gallery-image-link { height: 360px; }
-    .gallery-mini>.gallery-image-link { height: 155px; }
     .gallery-collection { padding: 32px 0 40px; }
     .gallery-collection-heading { align-items: start; flex-direction: column; gap: 14px; }
-    .gallery-curated-grid { gap: 18px 12px; }
-    .gallery-curated-card>.gallery-image-link { height: 195px; }
+    .gallery-curated-grid { column-gap: 16px; }
+    .gallery-editorial .gallery-curated-card { margin-bottom: 16px; }
     .gallery-curated-card figcaption { gap: 8px; padding: 12px; }
     .gallery-curated-card h3 { font-size: 11px; }
     .gallery-curated-card figcaption p { font-size: 10px; }
@@ -553,5 +545,13 @@
     .gallery-open { right: 8px; bottom: 8px; width: 26px; height: 26px; font-size: 10px; }
     .gallery-invitation-inner { align-items: start; flex-direction: column; gap: 24px; }
     .gallery-invitation-links { width: 100%; }
+}
+@media(max-width:575px) {
+    .gallery-curated-grid { columns: 1; }
+    .gallery-curated-card figcaption { padding: 16px; gap: 12px; }
+    .gallery-curated-card h3 { font-size: 13px; }
+    .gallery-curated-card figcaption p { font-size: 11px; }
+    .gallery-index { font-size: 18px; }
+    .gallery-open { right: 12px; bottom: 12px; width: 36px; height: 36px; font-size: 12px; }
 }
 @media(prefers-reduced-motion:reduce) { .gallery-image-link img { transition: none; } }

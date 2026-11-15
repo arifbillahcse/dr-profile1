@@ -56,11 +56,7 @@
                 </div>
                 <div id="gallery-container" class="gallery-curated-grid">
                     @forelse($collection as $photo)
-                        @php
-                            $document = str_contains($photo->image->original_name, 'chamber') || str_contains($photo->image->original_name, 'sparkle-profile');
-                            $compact = $photo->image->width < 400;
-                        @endphp
-                        <figure class="gallery-curated-card {{ $document ? 'gallery-document' : '' }} {{ $compact ? 'gallery-compact' : '' }}">
+                        <figure class="gallery-curated-card">
                             <a class="img-popup gallery-image-link" href="{{ $photo->image->url() }}" title="{{ $photo->title }}">
                                 <img src="{{ $photo->image->url() }}" alt="{{ $photo->image->alt_text ?: $photo->title }}" width="{{ $photo->image->width }}" height="{{ $photo->image->height }}" loading="lazy">
                                 <span class="gallery-open" aria-hidden="true"><i class="fas fa-expand"></i></span>
