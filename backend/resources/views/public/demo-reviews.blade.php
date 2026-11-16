@@ -7,7 +7,7 @@
     <div class="p-4 bg-white border shadow-sm review-card rounded-4 demo-review-card">
         <div class="demo-review-top"><i class="fas fa-quote-left" aria-hidden="true"></i><span>Sample review</span></div>
         <p class="mb-4 text-muted small">{{ $example['message'] }}</p>
-        <div class="demo-review-person"><span class="demo-review-avatar" aria-hidden="true"><i class="far fa-comment"></i></span><div><h6 class="m-0 fw-semibold">{{ $example['topic'] }}</h6><small class="text-muted">Illustrative example</small></div></div>
+        <div class="demo-review-person"><span class="demo-review-avatar" aria-hidden="true"><i class="far fa-comment"></i></span><div><h6 class="m-0 fw-semibold">{{ $example['topic'] }}</h6></div></div>
     </div>
 </div>
 @endforeach
