@@ -289,29 +289,45 @@
             </div>
 
             <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left">
-                <div class="ps-lg-4 about-content">
-                    <span class="mb-1 text-success fw-bold text-uppercase ls-2 small d-block">🏥 Introduction</span>
-                    <h2 class="mb-3 section-title" itemprop="name">
+                <div class="ps-lg-4 about-content introduction-information">
+                    <span class="text-success fw-bold text-uppercase ls-2 small d-block">🏥 Introduction</span>
+                    <h2 class="section-title" itemprop="name">
                         {{ $profile->name }}
                     </h2>
-                        <div class="mt-3 degree-badge-container" itemprop="medicalSpecialty">
+                    @if($profile->specialty)<p class="introduction-discipline" itemprop="medicalSpecialty">{{ $profile->specialty }}</p>@endif
+                    <div class="introduction-summary" itemprop="description">{{ $profile->summary }}</div>
 
-                            <div class="flex-wrap gap-2 d-flex">
-                                                                    @foreach($profile->credentials ?? [] as $credential)<span class="degree-pill-premium"><i class="fas fa-check-circle text-warning me-1"></i>{{ $credential }}</span>@endforeach
-                                                                    
-                                                                    
-                                                                    
-                                                            </div>
-                        </div>
+                    @if($profile->credentials)
+                    <section class="introduction-qualifications" aria-labelledby="introduction-qualifications-title">
+                        <h3 id="introduction-qualifications-title"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Medical qualifications</h3>
+                        <ul>
+                            @foreach($profile->credentials as $credential)
+                            <li @class(['introduction-credential-wide' => $loop->first || str_starts_with($credential, 'Fellowship')])>
+                                <span class="introduction-credential-mark" aria-hidden="true"></span>
+                                <span>{{ $credential }}</span>
+                            </li>
+                            @endforeach
+                        </ul>
+                    </section>
+                    @endif
 
-                    <div class="mb-4 text-secondary lh-lg" itemprop="description">{{ $profile->summary }}</div>
+                    @if($specialists->isNotEmpty())
+                    <section class="introduction-focus" aria-labelledby="introduction-focus-title">
+                        <h3 id="introduction-focus-title">Clinical focus</h3>
+                        <ul class="introduction-specialties">
+                            @foreach($specialists as $specialist)
+                            <li><i class="{{ $specialist->icon ?: 'fas fa-check-circle' }}" aria-hidden="true"></i><span>@include('public.specialist-title')</span></li>
+                            @endforeach
+                        </ul>
+                    </section>
+                    @endif
 
-                    <div class="mb-4 row g-2 introduction-specialties">@foreach($specialists as $specialist)<div class="col-sm-6"><ul class="list-unstyled checklist-premium"><li class="mb-2 d-flex align-items-center"><i class="{{ $specialist->icon ?: 'fas fa-check-circle' }} text-success me-2"></i><span class="fw-medium text-dark-emphasis small">@include('public.specialist-title')</span></li></ul></div>@endforeach</div>
-
-                    <a href="{{ route('public.about') }}" class="btn-about-premium">
-                        <span>Read More Biography</span>
-                        <i class="fas fa-arrow-right ms-2"></i>
-                    </a>
+                    <div class="introduction-action">
+                        <a href="{{ route('public.about') }}" class="btn-about-premium">
+                            <span>Read More Biography</span>
+                            <i class="fas fa-arrow-right ms-2" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

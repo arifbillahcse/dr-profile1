@@ -262,13 +262,6 @@ h1, h2, h3, h4, h5, h6, .doc-name, .specialty { font-family: var(--site-font-bod
     .qualification-grid .degree-badge-inline { max-width: 100%; white-space: normal; font-size: 12px !important; line-height: 1.6; padding: 4px 8px; }
     #qualification .border-top-premium { padding: 20px !important; border-radius: 24px !important; }
     .dr-long-bio>.p-5, .academic-luxury-card.p-5, .cta-help-luxury>.p-5 { padding: 24px !important; }
-    .about-content .degree-badge-container { margin-bottom: 20px; }
-    .about-content .degree-badge-container .d-flex { justify-content: center; }
-    #about .introduction-specialties { display: grid; grid-template-columns: minmax(0, 1fr); width: max-content; max-width: 100%; margin-inline: auto; row-gap: 14px; --bs-gutter-x: 0; --bs-gutter-y: 0; }
-    #about .introduction-specialties>div { width: 100%; }
-    #about .introduction-specialties .checklist-premium { margin-bottom: 0; }
-    #about .introduction-specialties li { display: grid !important; grid-template-columns: 16px minmax(0, 1fr); gap: 10px; align-items: start !important; text-align: left; margin-bottom: 0 !important; }
-    #about .introduction-specialties li>i { width: 16px; margin: 3px 0 0 !important; text-align: center; }
     #services .specialist-services-grid { width: max-content; max-width: 100%; margin-inline: auto; padding-bottom: 24px; }
     #services .specialist-services-grid>.row { display: grid; grid-template-columns: minmax(0, 1fr); row-gap: 14px; margin-inline: 0; --bs-gutter-x: 0; --bs-gutter-y: 0; }
     #services .specialist-services-grid>.row>div { width: 100%; }
