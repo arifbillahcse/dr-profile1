@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 
 #[Signature('website:youtube-feedback')]
-#[Description('Publish sourced public feedback once, keeping the original wording and author names')]
+#[Description('Publish sourced public feedback in Bangla, preserving author names and moderation decisions')]
 class ImportYoutubeFeedback extends Command
 {
     public function handle(): int
@@ -23,7 +23,7 @@ class ImportYoutubeFeedback extends Command
             return self::FAILURE;
         }
         try {
-            $created = DB::transaction(function (): int {
+            [$created, $translated] = DB::transaction(function (): array {
                 // Public feedback checked on 17 November 2026; source URLs are retained for administrators.
                 $comments = [
                     [
@@ -33,7 +33,8 @@ class ImportYoutubeFeedback extends Command
                     ],
                     [
                         'id' => 'UgycyvK3SoQH0PRO8Q54AaABAg', 'video' => 'Jp-Tz-BYNG0',
-                        'name' => '@shihabchowdhury2820', 'message' => 'It’s was great treatment',
+                        'name' => '@shihabchowdhury2820', 'message' => 'চিকিৎসাটি খুব ভালো ছিল।',
+                        'original_message' => 'It’s was great treatment',
                     ],
                     [
                         'id' => 'UgxwPeei_FRbCwP82Ht4AaABAg', 'video' => 'L9Pqi-nbUSU',
@@ -44,17 +45,26 @@ class ImportYoutubeFeedback extends Command
                         'source_type' => 'doctor_bangladesh',
                         'source_url' => 'https://www.doctorbangladesh.com/dr-farzana-rahman-shathi/#comment-504',
                         'name' => 'Yeasif Ferdous', 'rating' => 5,
-                        'message' => 'Cooperative doctor,good human being,treat patients very solely,good behaviour.',
+                        'message' => 'সহযোগিতাপরায়ণ চিকিৎসক, ভালো মানুষ। রোগীদের আন্তরিকভাবে চিকিৎসা করেন এবং তাঁর ব্যবহার ভালো।',
+                        'original_message' => 'Cooperative doctor,good human being,treat patients very solely,good behaviour.',
                     ],
                 ];
                 $created = 0;
+                $translated = 0;
                 foreach ($comments as $comment) {
                     $key = $comment['key'] ?? 'youtube:feedback:'.$comment['id'];
-                    if (DB::table('website_imports')->where('key', $key)->exists()) {
-                        continue;
-                    }
                     $url = $comment['source_url'] ?? 'https://www.youtube.com/watch?v='.$comment['video'].'&lc='.$comment['id'];
                     $sourceType = $comment['source_type'] ?? 'youtube';
+                    $import = DB::table('website_imports')->where('key', $key)->first();
+                    if ($import) {
+                        if (isset($comment['original_message'])) {
+                            $translated += Review::whereKey($import->record_id)
+                                ->where('source_type', $sourceType)->where('source_url', $url)
+                                ->where('message', $comment['original_message'])->update(['message' => $comment['message']]);
+                        }
+
+                        continue;
+                    }
                     $review = Review::withTrashed()->where('source_type', $sourceType)->where('source_url', $url)->first();
                     if (! $review) {
                         $review = new Review;
@@ -71,9 +81,9 @@ class ImportYoutubeFeedback extends Command
                     ]);
                 }
 
-                return $created;
+                return [$created, $translated];
             });
-            $this->info('Published '.$created.' sourced feedback entries. Existing moderation decisions and deletions were kept.');
+            $this->info('Published '.$created.' sourced feedback entries; translated '.$translated.' existing entries. Existing moderation decisions and deletions were kept.');
 
             return self::SUCCESS;
         } finally {

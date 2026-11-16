@@ -12,7 +12,7 @@ class YoutubeFeedbackTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_imported_comments_keep_original_authors_words_links_and_no_invented_ratings(): void
+    public function test_imported_comments_use_bangla_and_keep_source_authors_and_actual_ratings(): void
     {
         $this->artisan('website:youtube-feedback')->expectsOutputToContain('Published 4 sourced feedback entries')->assertSuccessful();
         $this->assertSame(4, Review::approved()->count());
@@ -21,9 +21,9 @@ class YoutubeFeedbackTest extends TestCase
         $this->assertNull($review->rating);
         $this->assertNull($review->approved_by);
         $response = $this->get('/')->assertOk()->assertSee('What People')->assertDontSee('YouTube মন্তব্য')->assertDontSee('মূল মন্তব্য দেখুন')
-            ->assertSee('@SharifHossain-s2u')->assertSee('@shihabchowdhury2820')->assertSee('It’s was great treatment')
+            ->assertSee('@SharifHossain-s2u')->assertSee('@shihabchowdhury2820')->assertSee('চিকিৎসাটি খুব ভালো ছিল।')
             ->assertSee('@mahimsumi6509')->assertSee('উনি খুবই ভালো একজন ডাক্তার 🥰')->assertSee('Yeasif Ferdous')
-            ->assertSee('Cooperative doctor,good human being,treat patients very solely,good behaviour.')
+            ->assertSee('সহযোগিতাপরায়ণ চিকিৎসক, ভালো মানুষ। রোগীদের আন্তরিকভাবে চিকিৎসা করেন এবং তাঁর ব্যবহার ভালো।')
             ->assertSee($review->message)->assertDontSee($review->youtubeCommentUrl())
             ->assertDontSee('Your experience matters')->assertDontSee('Sample review');
         $this->assertSame(1, substr_count($response->getContent(), 'aria-label="5 out of 5 stars"'));
@@ -33,6 +33,33 @@ class YoutubeFeedbackTest extends TestCase
         $this->assertSame('https://www.doctorbangladesh.com/dr-farzana-rahman-shathi/#comment-504', $directoryReview->feedbackSourceUrl());
         $this->actingAs(User::factory()->admin()->create())->get(route('admin.reviews.index', ['status' => 'approved']))
             ->assertOk()->assertSee('Original feedback')->assertSee($review->youtubeCommentUrl())->assertSee($directoryReview->feedbackSourceUrl());
+    }
+
+    public function test_existing_english_feedback_is_translated_without_changing_names_ratings_or_moderation(): void
+    {
+        $this->artisan('website:youtube-feedback')->assertSuccessful();
+        $youtube = Review::where('name', '@shihabchowdhury2820')->firstOrFail();
+        $directory = Review::where('name', 'Yeasif Ferdous')->firstOrFail();
+        $custom = Review::where('name', '@mahimsumi6509')->firstOrFail();
+        $youtube->update(['message' => 'It’s was great treatment']);
+        $directory->forceFill([
+            'message' => 'Cooperative doctor,good human being,treat patients very solely,good behaviour.',
+            'status' => ReviewStatus::Rejected, 'approved_at' => null,
+        ])->save();
+        $custom->update(['message' => 'Administrator-edited feedback']);
+
+        $this->artisan('website:youtube-feedback')->expectsOutputToContain('translated 2 existing entries')->assertSuccessful();
+        $this->assertSame('চিকিৎসাটি খুব ভালো ছিল।', $youtube->fresh()->message);
+        $this->assertSame('@shihabchowdhury2820', $youtube->fresh()->name);
+        $this->assertNull($youtube->fresh()->rating);
+        $this->assertSame('সহযোগিতাপরায়ণ চিকিৎসক, ভালো মানুষ। রোগীদের আন্তরিকভাবে চিকিৎসা করেন এবং তাঁর ব্যবহার ভালো।', $directory->fresh()->message);
+        $this->assertSame(ReviewStatus::Rejected, $directory->fresh()->status);
+        $this->assertNull($directory->fresh()->approved_at);
+        $this->assertSame(5, $directory->fresh()->rating);
+        $this->assertSame('Yeasif Ferdous', $directory->fresh()->name);
+        $this->assertSame('Administrator-edited feedback', $custom->fresh()->message);
+        $this->artisan('website:youtube-feedback')->expectsOutputToContain('translated 0 existing entries')->assertSuccessful();
+        $this->assertSame(4, Review::count());
     }
 
     public function test_repeat_import_preserves_rejection_archive_deletion_and_existing_patient_reviews(): void
