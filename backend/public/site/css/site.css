@@ -20,6 +20,16 @@ body { overflow-x: clip; max-width: 100%; }
 #reviewModal { overflow-wrap: anywhere; }
 #reviews { scroll-margin-top: 100px; }
 .review-card > p { white-space: pre-line; overflow-wrap: anywhere; height: auto; overflow: visible; }
+#reviews .mySwiper>.swiper-pagination {
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 24px 0 0 !important;
+    padding: 4px 0;
+    transform: none;
+}
 .review-feedback-card { display: flex; flex-direction: column; height: 100%; }
 .review-feedback-card > p { flex: 1; line-height: 1.9; font-style: normal; font-family: 'Poppins', 'Noto Sans Bengali', 'Nirmala UI', sans-serif; }
 .review-author { display: flex; align-items: center; gap: 12px; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--brand-border); }
@@ -272,15 +282,6 @@ h1, h2, h3, h4, h5, h6, .doc-name, .specialty { font-family: var(--site-font-bod
     .about-content .btn-about-premium { display: flex; width: fit-content; margin-left: auto; margin-right: auto; }
     .review-section>.container>div:first-child { justify-content: center !important; gap: 16px; }
     .review-section .reveiwbutton { width: 100%; }
-    #reviews .mySwiper>.swiper-pagination {
-        position: static;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 18px 0 0 !important;
-        padding: 8px 0 4px;
-        transform: none;
-    }
     #main-content .accordion-body { padding-left: 20px !important; padding-right: 20px !important; }
     #main-content .accordion-button { padding: 18px; }
     .modal-dialog { margin: 16px; }
