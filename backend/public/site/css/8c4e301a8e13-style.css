@@ -803,7 +803,7 @@ section.header-area {
 .process-item:hover .step-number {
     background: var(--brand-primary);
     transform: scale(1.2);
-    box-shadow: 0 0 15px rgba(13, 110, 253, 0.4);
+    box-shadow: 0 0 15px rgba(var(--brand-secondary-rgb), 0.4);
 }
 
 .process-item h4 {
@@ -1177,7 +1177,7 @@ section.header-area {
 	/* background-size: cover; */
 	/* background-position: center; */
 	color: #ffffff;
-	border-bottom: 2px solid #1877F2;
+	border-bottom: 2px solid var(--brand-caramel);
 	padding-top: 130px;
 }
 

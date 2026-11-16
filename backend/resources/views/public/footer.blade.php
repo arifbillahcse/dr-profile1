@@ -49,12 +49,12 @@
 
         <hr class="mt-5 mb-4 opacity-10">
 
-        <div class="row align-items-center">
+        <div class="row align-items-center footer-credits">
             <div class="text-center text-md-start col-md-6">
-                <p class="mb-0 opacity-50 x-small">© {{ now()->year }} {{ $profile->name }}. All rights reserved.</p>
+                <p class="mb-0 x-small">© {{ now()->year }} {{ $profile->name }}. All rights reserved.</p>
             </div>
             <div class="mt-3 text-center text-md-end col-md-6 mt-md-0">
-                <p class="mb-0 opacity-50 x-small">Developed by <a href="https://softorio.com" target="_blank" rel="noopener noreferrer" class="text-warning text-decoration-none fw-bold">Softorio</a></p>
+                <p class="mb-0 x-small">Developed by <a href="https://softorio.com" target="_blank" rel="noopener noreferrer" class="text-warning text-decoration-none fw-bold">Softorio</a></p>
             </div>
         </div>
     </div>
