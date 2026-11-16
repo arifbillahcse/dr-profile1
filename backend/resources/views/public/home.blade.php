@@ -544,7 +544,6 @@
                                 <div>
                                     <h6 class="m-0 fw-bold">{{ $review->name }}</h6>
                                     @if($review->workplace)<small class="text-muted">{{ $review->workplace }}</small>@endif
-                                    @if($review->youtubeCommentUrl())<a class="review-source-link" href="{{ $review->youtubeCommentUrl() }}" target="_blank" rel="noopener noreferrer">মূল মন্তব্য দেখুন <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>@endif
                                 </div>
                             </div>
                         </div>

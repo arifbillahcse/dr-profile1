@@ -40,6 +40,18 @@ class Review extends Model
         return null;
     }
 
+    public function feedbackSourceUrl(): ?string
+    {
+        if ($url = $this->youtubeCommentUrl()) {
+            return $url;
+        }
+        if ($this->source_type === 'doctor_bangladesh' && preg_match('~^https://www\.doctorbangladesh\.com/dr-farzana-rahman-shathi/\#comment-[0-9]+$~D', $this->source_url ?? '')) {
+            return $this->source_url;
+        }
+
+        return null;
+    }
+
     public function scopeApproved(Builder $query): Builder
     {
         return $query->where('status', ReviewStatus::Approved->value)->whereNotNull('approved_at');
