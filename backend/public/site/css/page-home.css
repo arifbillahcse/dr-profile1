@@ -791,15 +791,6 @@
         isolation: isolate;
         padding: 18px 16px 22px 0;
     }
-    .introduction-visual::before {
-        content: "";
-        position: absolute;
-        inset: 0 0 0 24%;
-        border: 1px solid var(--brand-border);
-        border-radius: 150px 28px 28px 28px;
-        background: linear-gradient(150deg, var(--brand-soft), var(--brand-border));
-        z-index: -1;
-    }
     .introduction-collage {
         position: relative;
         display: grid;
@@ -858,7 +849,6 @@
     }
     @media (max-width: 575.98px) {
         #about .introduction-visual { padding: 12px 10px 16px 0; }
-        .introduction-visual::before { border-radius: 90px 22px 22px 22px; }
         .introduction-collage, .introduction-stack { gap: 10px; }
         .introduction-stack { padding-block: 10px; }
         .introduction-photo { border-radius: 14px; }
