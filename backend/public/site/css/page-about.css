@@ -8,6 +8,12 @@
         align-items: center;
     }
 
+    .breadcrumb-bg-overlay {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 20% 50%, rgba(var(--brand-secondary-rgb), 0.25), transparent);
+    }
+
     .slanted-image-wrapper {
         position: absolute;
         top: 0;
