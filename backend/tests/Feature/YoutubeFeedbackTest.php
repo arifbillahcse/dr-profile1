@@ -20,11 +20,11 @@ class YoutubeFeedbackTest extends TestCase
         $this->assertSame('ম্যাডামের চিকিৎসা খুবই চমৎকার। আমি উনার থেকে ব্রণের চিকিৎসা নিচ্ছি, আশানুরূপ এখনই ভালো ফলাফল পাচ্ছি।', $review->message);
         $this->assertNull($review->rating);
         $this->assertNull($review->approved_by);
-        $response = $this->get('/')->assertOk()->assertSee('What People')->assertSee('YouTube মন্তব্য')->assertSee('মূল মন্তব্য দেখুন')
+        $response = $this->get('/')->assertOk()->assertSee('What People')->assertDontSee('YouTube মন্তব্য')->assertSee('মূল মন্তব্য দেখুন')
             ->assertSee('@SharifHossain-s2u')->assertSee('@shihabchowdhury2820')->assertSee('It’s was great treatment')
             ->assertSee($review->message)->assertSee($review->youtubeCommentUrl())
             ->assertDontSee('Your experience matters')->assertDontSee('Sample review')->assertDontSee('out of 5 stars');
-        $this->assertSame(2, substr_count($response->getContent(), 'class="review-source"'));
+        $this->assertSame(2, substr_count($response->getContent(), 'class="review-source-link"'));
         $this->actingAs(User::factory()->admin()->create())->get(route('admin.reviews.index', ['status' => 'approved']))
             ->assertOk()->assertSee('YouTube comment')->assertSee($review->youtubeCommentUrl());
     }
@@ -51,7 +51,7 @@ class YoutubeFeedbackTest extends TestCase
     {
         $review = Review::factory()->approved()->create(['source_type' => 'youtube', 'source_url' => 'javascript:alert(1)']);
         $this->assertNull($review->youtubeCommentUrl());
-        $this->get('/')->assertOk()->assertDontSee('href="javascript:', false)->assertDontSee('YouTube মন্তব্য');
+        $this->get('/')->assertOk()->assertDontSee('href="javascript:', false)->assertDontSee('class="review-source-link"', false);
         $review->forceFill(['source_url' => 'https://www.youtube.com/watch?v=scWIJ8pmROg&lc=UgyWORg-pofWtNQXf5N4AaABAg'])->save();
         $this->assertSame($review->source_url, $review->youtubeCommentUrl());
         $review->forceFill(['source_type' => null])->save();

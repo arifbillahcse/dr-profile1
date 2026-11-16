@@ -535,8 +535,7 @@
             <div class="swiper-wrapper">
                                     @forelse($reviews as $review)<div class="swiper-slide">
                         <div class="p-4 bg-white border shadow-sm review-card review-feedback-card rounded-4">
-                            <div class="mb-3 quote-icon d-flex align-items-center justify-content-between gap-2"><i class="opacity-25 fas fa-quote-left text-success fa-2x" aria-hidden="true"></i>
-                                @if($review->youtubeCommentUrl())<span class="review-source"><i class="fab fa-youtube" aria-hidden="true"></i> YouTube মন্তব্য</span>@endif
+                            <div class="mb-3 quote-icon"><i class="opacity-25 fas fa-quote-left text-success fa-2x" aria-hidden="true"></i>
                             </div>
                             <p class="mb-4 text-muted small">{{ $review->message }}</p>
                             @if($review->rating)<div class="mb-3 stars text-warning" aria-label="{{ $review->rating }} out of 5 stars">@for($star=0;$star < $review->rating;$star++)<i class="fas fa-star" aria-hidden="true"></i>@endfor</div>@endif
