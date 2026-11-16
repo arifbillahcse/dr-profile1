@@ -1,9 +1,9 @@
 /* Public website palette: deep purple, soft lavender and champagne gold. */
 :root {
-    --brand-primary: #2D0B49;
-    --brand-primary-rgb: 45, 11, 73;
-    --brand-deep: #1C062E;
-    --brand-deep-rgb: 28, 6, 46;
+    --brand-primary: #28143D;
+    --brand-primary-rgb: 40, 20, 61;
+    --brand-deep: #190C27;
+    --brand-deep-rgb: 25, 12, 39;
     --brand-secondary: #704291;
     --brand-secondary-rgb: 112, 66, 145;
     --brand-muted: #846798;
