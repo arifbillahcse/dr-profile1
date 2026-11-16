@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#28143D">
+    <meta name="theme-color" content="#163E42">
     @php
         $pageTitle = ['home' => null, 'about' => 'About', 'services' => 'Services', 'faqs' => 'FAQs', 'gallery' => 'Gallery', 'videos' => 'Videos'][$page];
         $title = ($pageTitle ? $pageTitle.' | ' : '').($site->seo_title ?: $site->site_title);
