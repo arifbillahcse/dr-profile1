@@ -277,7 +277,7 @@
 
 
     @include('public.photo-story')
-    <section class="py-5 overflow-hidden about-area position-relative" id="about" style="background: var(--brand-soft) url('{{ asset('site/images/a21b1277868e-about_bg.svg') }}?v={{ filemtime(public_path('site/images/a21b1277868e-about_bg.svg')) }}') no-repeat center / cover;" itemscope="" itemtype="https://schema.org/Physician">
+    <section class="py-5 overflow-hidden about-area position-relative" id="about" style="background: #fff url('{{ asset('site/images/a21b1277868e-about_bg.svg') }}?v={{ filemtime(public_path('site/images/a21b1277868e-about_bg.svg')) }}') no-repeat center / cover;" itemscope="" itemtype="https://schema.org/Physician">
 
     <div class="about-bg-anim icon-1" aria-hidden="true"><i class="fas fa-hand-holding-heart"></i></div>
     <div class="about-bg-anim icon-2" aria-hidden="true"><i class="fas fa-stethoscope"></i></div>

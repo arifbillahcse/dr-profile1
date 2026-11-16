@@ -58,11 +58,32 @@ body { color: var(--brand-ink); background-color: var(--brand-soft); }
 }
 .footer-section { background: linear-gradient(135deg, var(--brand-primary), var(--brand-deep)) !important; }
 .footer-credits { color: var(--brand-light); }
-#about.about-area { background-blend-mode: multiply; }
+/* Preserve the Introduction section's navy-and-white reference design. */
+#about.about-area {
+    --brand-primary: #142D52;
+    --brand-primary-rgb: 20, 45, 82;
+    --brand-secondary: #1D5BA6;
+    --brand-secondary-rgb: 29, 91, 166;
+    --brand-muted: #526C8D;
+    --brand-number: #8DA9CD;
+    --brand-light: #D9E4F3;
+    --brand-border: #DDE5F0;
+    --brand-border-rgb: 221, 229, 240;
+    --brand-soft: #F4F7FC;
+    --brand-soft-rgb: 244, 247, 252;
+    --brand-gold: #D7E3F3;
+    --brand-ink: #20314D;
+    --brand-body: #5E6C80;
+    --primary-color: var(--brand-primary);
+    --site-heading-color: var(--brand-primary);
+    --site-accent-color: var(--brand-muted);
+    --bs-success-rgb: var(--brand-secondary-rgb);
+    background-blend-mode: normal;
+}
 .luxury-mobile-canvas { background: var(--brand-primary) !important; }
 .footer-subtitle::after, .premium-underline, .header-underline, .hero-eyebrow span, .care-eyebrow>span { background-color: var(--brand-caramel) !important; }
 .care-service-icon, .review-avatar { background-color: var(--brand-light); color: var(--brand-primary); }
-#about .introduction-qualifications h3 i { color: var(--brand-caramel); }
+#about .introduction-qualifications h3 i { color: var(--brand-secondary); }
 .care-service>p, .care-services-intro p, .practice-video-copy p, .gallery-intro { color: var(--brand-body); }
 .degree-pill-premium .text-warning, .current-position-card .text-warning, .academic-luxury-card .text-warning { color: var(--brand-secondary) !important; }
 .stars.text-warning, .star-rating.text-warning { color: var(--brand-caramel) !important; }
