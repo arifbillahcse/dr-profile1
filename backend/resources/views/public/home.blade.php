@@ -523,6 +523,13 @@
         </div>
 
         @if(session('review_submitted'))<div class="alert alert-success mt-4" role="status">Thank you. Your review has been received and is awaiting approval.</div>@endif
+        @if($reviews->isEmpty() && !config('website.show_demo_reviews'))
+        <div class="review-invitation mt-4">
+            <i class="far fa-comment-dots" aria-hidden="true"></i>
+            <h3>Your experience matters</h3>
+            <p>Visited the practice? Share your experience using “Write a Review”.</p>
+        </div>
+        @else
         @if($reviews->isEmpty() && config('website.show_demo_reviews'))<p class="demo-review-notice mt-4 mb-0">Sample reviews for design preview — not real patient feedback.</p>@endif
         <div class="py-4 swiper mySwiper">
             <div class="swiper-wrapper">
@@ -531,11 +538,12 @@
                             <div class="mb-3 quote-icon"><i class="opacity-25 fas fa-quote-left text-success fa-2x"></i>
                             </div>
                             <p class="mb-4 text-muted small">{{ $review->message }}</p>
-                            <div class="mb-3 stars text-warning">@for($star=0;$star < ($review->rating ?? 5);$star++)<i class="fas fa-star"></i>@endfor</div>
-                            <div class="d-flex align-items-center">
+                            @if($review->rating)<div class="mb-3 stars text-warning" aria-label="{{ $review->rating }} out of 5 stars">@for($star=0;$star < $review->rating;$star++)<i class="fas fa-star" aria-hidden="true"></i>@endfor</div>@endif
+                            <div class="review-author">
+                                <span class="review-avatar" aria-hidden="true">{{ mb_strtoupper(mb_substr(trim($review->name), 0, 1)) }}</span>
                                 <div>
                                     <h6 class="m-0 fw-bold">{{ $review->name }}</h6>
-                                    <small class="text-muted">{{ $review->workplace }}</small>
+                                    @if($review->workplace)<small class="text-muted">{{ $review->workplace }}</small>@endif
                                 </div>
                             </div>
                         </div>
@@ -545,6 +553,7 @@
                             </div>
             <div class="mt-5 swiper-pagination"></div>
         </div>
+        @endif
     </div>
 </section>
 

@@ -96,12 +96,23 @@ class PublicWebsiteTest extends TestCase
 
     public function test_empty_reviews_show_labelled_samples_without_creating_patient_feedback(): void
     {
+        config(['website.show_demo_reviews' => true]);
         $response = $this->get('/')->assertOk()->assertSee('not real patient feedback')->assertSee('Sample review')
             ->assertDontSee('Sample Patient')->assertDontSee('Sample five-star rating');
         $this->assertSame(3, substr_count($response->getContent(), 'data-demo-review'));
         $this->assertDatabaseCount('reviews', 0);
         config(['website.show_demo_reviews' => false]);
         $this->get('/')->assertOk()->assertDontSee('data-demo-review', false)->assertDontSee('not real patient feedback');
+    }
+
+    public function test_public_reviews_use_submitter_names_and_no_sample_cards_by_default(): void
+    {
+        $this->assertFalse(config('website.show_demo_reviews'));
+        $this->get('/')->assertOk()->assertSee('Your experience matters')->assertSee('Write a Review')
+            ->assertDontSee('Sample review')->assertDontSee('A clear plan')->assertDontSee('Time to ask questions');
+        Review::factory()->approved()->create(['name' => 'Review author marker', 'message' => 'Submitted feedback marker', 'rating' => 4]);
+        $this->get('/')->assertOk()->assertSee('Review author marker')->assertSee('Submitted feedback marker')
+            ->assertSee('4 out of 5 stars')->assertDontSee('Your experience matters')->assertDontSee('Sample review');
     }
 
     public function test_chamber_hours_filter_inactive_schedules_and_hidden_chambers(): void

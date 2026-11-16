@@ -19,7 +19,16 @@ body { overflow-x: clip; max-width: 100%; }
 .review-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 #reviewModal { overflow-wrap: anywhere; }
 #reviews { scroll-margin-top: 100px; }
-.review-card > p { white-space: pre-line; overflow-wrap: anywhere; }
+.review-card > p { white-space: pre-line; overflow-wrap: anywhere; height: auto; overflow: visible; }
+.review-author { display: flex; align-items: center; gap: 12px; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--brand-border); }
+.review-author>div { min-width: 0; overflow-wrap: anywhere; }
+.review-author h6 { font-size: 14px; }
+.review-author small { font-size: 11px; }
+.review-avatar { display: grid; place-items: center; width: 42px; height: 42px; flex-shrink: 0; border-radius: 50%; background: var(--brand-soft); color: var(--brand-secondary); font-size: 16px; font-weight: 600; }
+.review-invitation { text-align: center; padding: 32px 24px; background: #fff; border: 1px solid var(--brand-border); border-radius: 18px; }
+.review-invitation>i { font-size: 28px; color: var(--brand-secondary); }
+.review-invitation h3 { margin: 14px 0 10px; font-size: 20px; font-weight: 600; color: var(--brand-primary); }
+.review-invitation p { margin: 0; font-size: 14px; line-height: 1.8; color: var(--brand-body); }
 
 .doctor-wordmark{display:flex;align-items:center;gap:10px;color:var(--brand-primary);max-width:310px;line-height:1.2}.doctor-wordmark strong{font-size:17px;display:block}.doctor-wordmark small{font-size:10px;display:block;margin-top:5px;letter-spacing:.3px}.doctor-wordmark-symbol{font-size:30px;color:var(--brand-secondary)}.logo-box a{text-decoration:none}.luxury-mobile-canvas .doctor-wordmark{color:#fff;max-width:240px}.heroSwiper .hero-img{object-fit:contain;background:var(--brand-border)}.heroSwiperMobile .swiper-slide img{width:100%;height:auto;max-height:440px;object-fit:contain;background:var(--brand-border)}.gallery-img{object-fit:contain!important;background:var(--brand-soft)}.about-image-wrapper .main-img-card img{object-position:center top}.about-image-wrapper .row>.col-6:first-child .img-hover-card:empty{display:none}@media(max-width:575px){.doctor-wordmark{max-width:235px;gap:7px}.doctor-wordmark strong{font-size:14px}.doctor-wordmark small{font-size:9px}.doctor-wordmark-symbol{font-size:25px}}
 
