@@ -96,7 +96,8 @@ class PublicWebsiteTest extends TestCase
 
     public function test_empty_reviews_show_labelled_samples_without_creating_patient_feedback(): void
     {
-        $response = $this->get('/')->assertOk()->assertSee('not real patient feedback')->assertSee('Demo review');
+        $response = $this->get('/')->assertOk()->assertSee('not real patient feedback')->assertSee('Sample review')
+            ->assertDontSee('Sample Patient')->assertDontSee('Sample five-star rating');
         $this->assertSame(3, substr_count($response->getContent(), 'data-demo-review'));
         $this->assertDatabaseCount('reviews', 0);
         config(['website.show_demo_reviews' => false]);

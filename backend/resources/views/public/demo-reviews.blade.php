@@ -1,14 +1,13 @@
 @foreach([
-    'Clear appointment information and a reassuring explanation of what to expect during a consultation.',
-    'Thoughtful communication and time to discuss skin concerns in a comfortable setting.',
-    'Helpful guidance on the next steps and an easy way to arrange a follow-up visit.',
-] as $message)
+    ['topic' => 'A clear plan', 'message' => 'I had a lot of questions about my skin and wasn’t sure where to start. Having things explained in simple terms helped me understand the next steps.'],
+    ['topic' => 'Time to ask questions', 'message' => 'What mattered most to me was being able to explain my concerns without feeling rushed. I appreciated clear advice and the chance to ask a few more questions.'],
+    ['topic' => 'Planning a visit', 'message' => 'I like knowing the appointment time, the chamber location and what I need to bring before I go. Clear information makes preparing for a visit much easier.'],
+] as $example)
 <div class="swiper-slide" data-demo-review>
     <div class="p-4 bg-white border shadow-sm review-card rounded-4 demo-review-card">
-        <div class="demo-review-top"><i class="fas fa-quote-left" aria-hidden="true"></i><span>Demo review</span></div>
-        <p class="mb-4 text-muted small">{{ $message }}</p>
-        <div class="mb-3 stars text-warning" aria-label="Sample five-star rating">@for($star = 0; $star < 5; $star++)<i class="fas fa-star" aria-hidden="true"></i>@endfor</div>
-        <div class="demo-review-person"><span class="demo-review-avatar" aria-hidden="true">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span><div><h6 class="m-0 fw-semibold">Sample Patient {{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</h6><small class="text-muted">Illustrative feedback</small></div></div>
+        <div class="demo-review-top"><i class="fas fa-quote-left" aria-hidden="true"></i><span>Sample review</span></div>
+        <p class="mb-4 text-muted small">{{ $example['message'] }}</p>
+        <div class="demo-review-person"><span class="demo-review-avatar" aria-hidden="true"><i class="far fa-comment"></i></span><div><h6 class="m-0 fw-semibold">{{ $example['topic'] }}</h6><small class="text-muted">Illustrative example</small></div></div>
     </div>
 </div>
 @endforeach
