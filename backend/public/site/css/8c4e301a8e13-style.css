@@ -1177,7 +1177,7 @@ section.header-area {
 	/* background-size: cover; */
 	/* background-position: center; */
 	color: #ffffff;
-	border-bottom: 2px solid var(--brand-caramel);
+	border-bottom: 2px solid var(--brand-highlight);
 	padding-top: 130px;
 }
 

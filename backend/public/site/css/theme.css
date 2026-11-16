@@ -1,33 +1,33 @@
-/* Public website palette: dark olive, warm ivory, sage and caramel. */
+/* Public website palette: deep plum, vivid violet and soft lilac. */
 :root {
-    --brand-primary: #343D2B;
-    --brand-primary-rgb: 52, 61, 43;
-    --brand-deep: #252D1F;
-    --brand-deep-rgb: 37, 45, 31;
-    --brand-secondary: #59654A;
-    --brand-secondary-rgb: 89, 101, 74;
-    --brand-muted: #6B725D;
-    --brand-muted-rgb: 107, 114, 93;
-    --brand-number: #A7B18E;
-    --brand-number-rgb: 167, 177, 142;
-    --brand-light: #E8EBDD;
-    --brand-light-rgb: 232, 235, 221;
-    --brand-border: #DFE1D1;
-    --brand-border-rgb: 223, 225, 209;
-    --brand-soft: #F8F6EF;
-    --brand-soft-rgb: 248, 246, 239;
-    --brand-accent: #E2CDA9;
-    --brand-accent-rgb: 226, 205, 169;
-    --brand-accent-light: #F0E4D0;
-    --brand-accent-light-rgb: 240, 228, 208;
-    --brand-caramel: #95643B;
-    --brand-caramel-rgb: 149, 100, 59;
+    --brand-primary: #2E1047;
+    --brand-primary-rgb: 46, 16, 71;
+    --brand-deep: #170725;
+    --brand-deep-rgb: 23, 7, 37;
+    --brand-secondary: #7835AC;
+    --brand-secondary-rgb: 120, 53, 172;
+    --brand-muted: #785A8C;
+    --brand-muted-rgb: 120, 90, 140;
+    --brand-number: #B49BCB;
+    --brand-number-rgb: 180, 155, 203;
+    --brand-light: #EFE5F7;
+    --brand-light-rgb: 239, 229, 247;
+    --brand-border: #E4D7EE;
+    --brand-border-rgb: 228, 215, 238;
+    --brand-soft: #FBF8FD;
+    --brand-soft-rgb: 251, 248, 253;
+    --brand-accent: #DEC5F3;
+    --brand-accent-rgb: 222, 197, 243;
+    --brand-accent-light: #F1E5FA;
+    --brand-accent-light-rgb: 241, 229, 250;
+    --brand-highlight: #8C45BA;
+    --brand-highlight-rgb: 140, 69, 186;
     --brand-gold: var(--brand-accent);
     --brand-gold-rgb: var(--brand-accent-rgb);
     --brand-gold-light: var(--brand-accent-light);
     --brand-gold-light-rgb: var(--brand-accent-light-rgb);
-    --brand-ink: #34382F;
-    --brand-body: #64675B;
+    --brand-ink: #30203D;
+    --brand-body: #6E6377;
     --primary-color: var(--brand-primary);
     --site-heading-color: var(--brand-primary);
     --site-accent-color: var(--brand-muted);
@@ -37,11 +37,11 @@
     --bs-success-rgb: var(--brand-secondary-rgb);
     --bs-warning: var(--brand-gold);
     --bs-warning-rgb: var(--brand-gold-rgb);
-    --bs-dark-rgb: 52, 56, 47;
+    --bs-dark-rgb: 48, 32, 61;
     --bs-emphasis-color: var(--brand-ink);
-    --bs-emphasis-color-rgb: 52, 56, 47;
+    --bs-emphasis-color-rgb: 48, 32, 61;
     --bs-secondary-color: var(--brand-body);
-    --bs-secondary-rgb: 100, 103, 91;
+    --bs-secondary-rgb: 110, 99, 119;
     --bs-link-color: var(--brand-primary);
     --bs-link-color-rgb: var(--brand-primary-rgb);
     --bs-link-hover-color: var(--brand-secondary);
@@ -58,35 +58,15 @@ body { color: var(--brand-ink); background-color: var(--brand-soft); }
 }
 .footer-section { background: linear-gradient(135deg, var(--brand-primary), var(--brand-deep)) !important; }
 .footer-credits { color: var(--brand-light); }
-/* Preserve the Introduction section's navy-and-white reference design. */
-#about.about-area {
-    --brand-primary: #142D52;
-    --brand-primary-rgb: 20, 45, 82;
-    --brand-secondary: #1D5BA6;
-    --brand-secondary-rgb: 29, 91, 166;
-    --brand-muted: #526C8D;
-    --brand-number: #8DA9CD;
-    --brand-light: #D9E4F3;
-    --brand-border: #DDE5F0;
-    --brand-border-rgb: 221, 229, 240;
-    --brand-soft: #F4F7FC;
-    --brand-soft-rgb: 244, 247, 252;
-    --brand-gold: #D7E3F3;
-    --brand-ink: #20314D;
-    --brand-body: #5E6C80;
-    --primary-color: var(--brand-primary);
-    --site-heading-color: var(--brand-primary);
-    --site-accent-color: var(--brand-muted);
-    --bs-success-rgb: var(--brand-secondary-rgb);
-    background-blend-mode: normal;
-}
+/* Keep the restored Introduction layout on its white background. */
+#about.about-area { background-blend-mode: normal; }
 .luxury-mobile-canvas { background: var(--brand-primary) !important; }
-.footer-subtitle::after, .premium-underline, .header-underline, .hero-eyebrow span, .care-eyebrow>span { background-color: var(--brand-caramel) !important; }
+.footer-subtitle::after, .premium-underline, .header-underline, .hero-eyebrow span, .care-eyebrow>span { background-color: var(--brand-highlight) !important; }
 .care-service-icon, .review-avatar { background-color: var(--brand-light); color: var(--brand-primary); }
 #about .introduction-qualifications h3 i { color: var(--brand-secondary); }
 .care-service>p, .care-services-intro p, .practice-video-copy p, .gallery-intro { color: var(--brand-body); }
 .degree-pill-premium .text-warning, .current-position-card .text-warning, .academic-luxury-card .text-warning { color: var(--brand-secondary) !important; }
-.stars.text-warning, .star-rating.text-warning { color: var(--brand-caramel) !important; }
+.stars.text-warning, .star-rating.text-warning { color: #A77D36 !important; }
 .btn-success {
     --bs-btn-bg: var(--brand-primary);
     --bs-btn-border-color: var(--brand-primary);
