@@ -498,7 +498,7 @@
             <div class="d-none d-md-block"></div>
 
             <div class="text-center reveiwbutton">
-                <h2 class="section-title">What Patients <em>Are Saying!</em></h2>
+                <h2 class="section-title">What People <em>Are Saying!</em></h2>
                 <div class="mx-auto mt-2 divider bg-success" style="width: 60px; height: 4px;"></div>
             </div>
 
@@ -534,16 +534,18 @@
         <div class="py-4 swiper mySwiper">
             <div class="swiper-wrapper">
                                     @forelse($reviews as $review)<div class="swiper-slide">
-                        <div class="p-4 bg-white border shadow-sm review-card rounded-4">
-                            <div class="mb-3 quote-icon"><i class="opacity-25 fas fa-quote-left text-success fa-2x"></i>
+                        <div class="p-4 bg-white border shadow-sm review-card review-feedback-card rounded-4">
+                            <div class="mb-3 quote-icon d-flex align-items-center justify-content-between gap-2"><i class="opacity-25 fas fa-quote-left text-success fa-2x" aria-hidden="true"></i>
+                                @if($review->youtubeCommentUrl())<span class="review-source"><i class="fab fa-youtube" aria-hidden="true"></i> YouTube মন্তব্য</span>@endif
                             </div>
                             <p class="mb-4 text-muted small">{{ $review->message }}</p>
                             @if($review->rating)<div class="mb-3 stars text-warning" aria-label="{{ $review->rating }} out of 5 stars">@for($star=0;$star < $review->rating;$star++)<i class="fas fa-star" aria-hidden="true"></i>@endfor</div>@endif
                             <div class="review-author">
-                                <span class="review-avatar" aria-hidden="true">{{ mb_strtoupper(mb_substr(trim($review->name), 0, 1)) }}</span>
+                                <span class="review-avatar" aria-hidden="true">{{ mb_strtoupper(mb_substr(ltrim(trim($review->name), '@'), 0, 1)) }}</span>
                                 <div>
                                     <h6 class="m-0 fw-bold">{{ $review->name }}</h6>
                                     @if($review->workplace)<small class="text-muted">{{ $review->workplace }}</small>@endif
+                                    @if($review->youtubeCommentUrl())<a class="review-source-link" href="{{ $review->youtubeCommentUrl() }}" target="_blank" rel="noopener noreferrer">মূল মন্তব্য দেখুন <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>@endif
                                 </div>
                             </div>
                         </div>

@@ -19,7 +19,7 @@
         <thead><tr><th scope="col">Visitor</th><th scope="col">Review</th><th scope="col">Status</th><th scope="col" class="text-end">Actions</th></tr></thead>
         <tbody>@forelse($records as $item)<tr>
             <td><strong>{{ $item->name }}</strong>@if($item->workplace)<span class="d-block small text-secondary">{{ $item->workplace }}</span>@endif<span class="d-block small text-secondary">#{{ $item->id }} · {{ $item->created_at?->format('d M Y H:i') }}</span>@if($item->rating)<span class="small">Rating: {{ $item->rating }}/5</span>@endif</td>
-            <td><p class="review-admin-message mb-0">{{ $item->message }}</p></td>
+            <td><p class="review-admin-message mb-0">{{ $item->message }}</p>@if($item->youtubeCommentUrl())<a class="d-inline-block small mt-2" href="{{ $item->youtubeCommentUrl() }}" target="_blank" rel="noopener noreferrer">YouTube comment · View original</a>@endif</td>
             <td><span class="badge {{ $item->trashed() ? 'text-bg-secondary' : ($item->status->value === 'approved' ? 'text-bg-success' : ($item->status->value === 'rejected' ? 'text-bg-danger' : 'text-bg-warning')) }}">{{ $item->trashed() ? 'Archived' : ucfirst($item->status->value) }}</span>@if($item->approved_at)<small class="d-block text-secondary mt-1">Approved {{ $item->approved_at->format('d M Y H:i') }}@if($item->approver) by {{ $item->approver->name }}@endif</small>@endif</td>
             <td><div class="content-actions">
                 @if($item->trashed())

@@ -31,6 +31,15 @@ class Review extends Model
         return $this->belongsTo(User::class, 'approved_by');
     }
 
+    public function youtubeCommentUrl(): ?string
+    {
+        if ($this->source_type === 'youtube' && preg_match('~^https://www\.youtube\.com/watch\?v=[A-Za-z0-9_-]{11}&lc=[A-Za-z0-9_.-]{10,100}$~D', $this->source_url ?? '')) {
+            return $this->source_url;
+        }
+
+        return null;
+    }
+
     public function scopeApproved(Builder $query): Builder
     {
         return $query->where('status', ReviewStatus::Approved->value)->whereNotNull('approved_at');
