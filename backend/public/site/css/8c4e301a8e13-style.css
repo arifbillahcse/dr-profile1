@@ -47,7 +47,7 @@ html {
 
 /* 4. Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #c5a059;       /* Turns Gold on hover to match the theme */
+  background: var(--brand-accent);       /* Turns Gold on hover to match the theme */
 }
 
 /* --- Custom Scrollbar for Firefox --- */
@@ -972,7 +972,7 @@ section.header-area {
 .tab-icon {
     font-size: 30px;
     margin-bottom: 10px;
-    color: #f39c12; /* Orange color */
+    color: var(--brand-secondary);
 }
 
 /* Active State Design (Sobar bame jeita ache) */
@@ -983,7 +983,7 @@ section.header-area {
 }
 
 .nav-pills .nav-link:hover {
-    border-color: #f39c12;
+    border-color: var(--brand-secondary);
 }
 
 /* Text style */
@@ -1470,7 +1470,7 @@ section.header-area {
 	margin-top: 0;
 }
 :root {
-    --gold: #c5a059;
+    --gold: var(--brand-accent);
     --deep-teal: var(--brand-primary);
     --soft-blush: #fff9f9;
 }
@@ -1675,7 +1675,7 @@ section.header-area {
 .video-card-pure:hover {
     transform: translateY(-12px) scale(1.02);
     box-shadow: 0 20px 40px rgba(var(--brand-primary-rgb), 0.2); /* Teal Glow */
-    border-color: #c5a059; /* Changes to Gold on hover */
+    border-color: var(--brand-accent); /* Changes to Gold on hover */
 }
 
 /* Added a soft glass reflection effect over the video */

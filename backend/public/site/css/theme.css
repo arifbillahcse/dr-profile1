@@ -1,27 +1,31 @@
-/* Public website palette: deep teal, warm ivory and muted champagne. */
+/* Public website palette: navy and royal blue with cool white and silver. */
 :root {
-    --brand-primary: #163E42;
-    --brand-primary-rgb: 22, 62, 66;
-    --brand-deep: #0D292D;
-    --brand-deep-rgb: 13, 41, 45;
-    --brand-secondary: #35666B;
-    --brand-secondary-rgb: 53, 102, 107;
-    --brand-muted: #587579;
-    --brand-muted-rgb: 88, 117, 121;
-    --brand-number: #91B4AF;
-    --brand-number-rgb: 145, 180, 175;
-    --brand-light: #D9E5E2;
-    --brand-light-rgb: 217, 229, 226;
-    --brand-border: #E0E6E1;
-    --brand-border-rgb: 224, 230, 225;
-    --brand-soft: #FAF7F2;
-    --brand-soft-rgb: 250, 247, 242;
-    --brand-gold: #C8AD7F;
-    --brand-gold-rgb: 200, 173, 127;
-    --brand-gold-light: #E7D7B8;
-    --brand-gold-light-rgb: 231, 215, 184;
-    --brand-ink: #273638;
-    --brand-body: #626E6F;
+    --brand-primary: #142D52;
+    --brand-primary-rgb: 20, 45, 82;
+    --brand-deep: #0C1D36;
+    --brand-deep-rgb: 12, 29, 54;
+    --brand-secondary: #1D5BA6;
+    --brand-secondary-rgb: 29, 91, 166;
+    --brand-muted: #526C8D;
+    --brand-muted-rgb: 82, 108, 141;
+    --brand-number: #8DA9CD;
+    --brand-number-rgb: 141, 169, 205;
+    --brand-light: #D9E4F3;
+    --brand-light-rgb: 217, 228, 243;
+    --brand-border: #DDE5F0;
+    --brand-border-rgb: 221, 229, 240;
+    --brand-soft: #F4F7FC;
+    --brand-soft-rgb: 244, 247, 252;
+    --brand-accent: #D7E3F3;
+    --brand-accent-rgb: 215, 227, 243;
+    --brand-accent-light: #EDF3FC;
+    --brand-accent-light-rgb: 237, 243, 252;
+    --brand-gold: var(--brand-accent);
+    --brand-gold-rgb: var(--brand-accent-rgb);
+    --brand-gold-light: var(--brand-accent-light);
+    --brand-gold-light-rgb: var(--brand-accent-light-rgb);
+    --brand-ink: #20314D;
+    --brand-body: #5E6C80;
     --primary-color: var(--brand-primary);
     --site-heading-color: var(--brand-primary);
     --site-accent-color: var(--brand-muted);
@@ -31,11 +35,11 @@
     --bs-success-rgb: var(--brand-secondary-rgb);
     --bs-warning: var(--brand-gold);
     --bs-warning-rgb: var(--brand-gold-rgb);
-    --bs-dark-rgb: 39, 54, 56;
+    --bs-dark-rgb: 32, 49, 77;
     --bs-emphasis-color: var(--brand-ink);
-    --bs-emphasis-color-rgb: 39, 54, 56;
+    --bs-emphasis-color-rgb: 32, 49, 77;
     --bs-secondary-color: var(--brand-body);
-    --bs-secondary-rgb: 98, 110, 111;
+    --bs-secondary-rgb: 94, 108, 128;
     --bs-link-color: var(--brand-primary);
     --bs-link-color-rgb: var(--brand-primary-rgb);
     --bs-link-hover-color: var(--brand-secondary);
@@ -46,10 +50,16 @@ body { color: var(--brand-ink); background-color: var(--brand-soft); }
 ::selection { color: #fff; background: var(--brand-secondary); }
 .main-header-area .header-sticky { background: var(--brand-primary) !important; }
 .main-header-area .doctor-wordmark-symbol { color: var(--brand-gold); }
+.hero-section {
+    background: radial-gradient(ellipse at 70% 65%, rgba(var(--brand-secondary-rgb), .7), transparent 65%),
+        linear-gradient(125deg, var(--brand-primary), var(--brand-deep));
+}
 .footer-section { background: linear-gradient(135deg, var(--brand-primary), var(--brand-deep)) !important; }
 .luxury-mobile-canvas { background: var(--brand-primary) !important; }
 .footer-subtitle::after { background-color: var(--brand-gold); }
 .care-service>p, .care-services-intro p, .practice-video-copy p, .gallery-intro { color: var(--brand-body); }
+.degree-pill-premium .text-warning, .current-position-card .text-warning, .academic-luxury-card .text-warning { color: var(--brand-secondary) !important; }
+.stars.text-warning, .star-rating.text-warning { color: #B58A3C !important; }
 .btn-success {
     --bs-btn-bg: var(--brand-primary);
     --bs-btn-border-color: var(--brand-primary);

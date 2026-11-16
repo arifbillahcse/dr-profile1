@@ -38,7 +38,7 @@ body { overflow-x: clip; max-width: 100%; }
 .service-card-pro h3,.service-card-luxury h3{margin:0 24px 12px!important;font-size:21px}
 .service-card-pro [itemprop=description],.service-card-luxury .service-desc{margin:0 24px 26px;line-height:1.7;font-size:14px}
 .service-card-pro:has(img[src]) .icon-main{font-size:23px}
-.practice-story{background:#f3f0eb}.story-eyebrow{font-size:11px;font-weight:700;letter-spacing:2.4px;color:var(--brand-secondary)}
+.practice-story{background:var(--brand-soft)}.story-eyebrow{font-size:11px;font-weight:700;letter-spacing:2.4px;color:var(--brand-secondary)}
 .practice-story h2{color:var(--brand-primary);letter-spacing:-1px;font-size:34px}.practice-story>.container{max-width:1120px}.practice-story .text-secondary{font-size:14px}.practice-story h2 em{font-family:var(--site-font-accent);font-weight:400;color:var(--brand-secondary)}
 .story-gallery-link{color:var(--brand-primary);font-weight:600;text-decoration:none;border-bottom:1px solid var(--brand-number);padding-bottom:8px;display:inline-block}
 .practice-story-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
@@ -63,7 +63,7 @@ body { overflow-x: clip; max-width: 100%; }
 .care-services { padding: 76px 0; background: var(--brand-soft); }
 .care-services-heading { display: grid; grid-template-columns: 1.2fr 1fr; align-items: end; gap: 60px; margin-bottom: 34px; }
 .care-eyebrow { display: flex; align-items: center; gap: 9px; color: var(--brand-muted); font-size: 10px; font-weight: 700; letter-spacing: 2px; margin-bottom: 18px; }
-.care-eyebrow>span { width: 7px; height: 7px; border-radius: 50%; background: #bc9453; }
+.care-eyebrow>span { width: 7px; height: 7px; border-radius: 50%; background: var(--brand-muted); }
 .care-services-heading h2 { color: var(--brand-primary); font-size: clamp(34px, 3.3vw, 48px); font-weight: 700; line-height: 1.15; letter-spacing: -1.6px; margin: 0; }
 .care-services-heading h2 em { font-family: var(--site-font-accent); font-weight: 400; color: var(--brand-muted); }
 .care-services-intro { max-width: 405px; justify-self: end; }
@@ -94,11 +94,11 @@ body { overflow-x: clip; max-width: 100%; }
 .care-service-link:hover,.care-service-link:focus-visible { color: var(--brand-secondary); }
 .care-consultation { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-top: 26px; padding: 25px 30px; background: var(--brand-primary); border-radius: 18px; color: #fff; }
 .care-consultation-copy { display: flex; align-items: center; gap: 17px; }
-.care-consultation-icon { display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; border: 1px solid #ffffff30; border-radius: 50%; color: #d5bb86; font-size: 18px; }
+.care-consultation-icon { display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; border: 1px solid #ffffff30; border-radius: 50%; color: var(--brand-accent); font-size: 18px; }
 .care-consultation h3 { font-size: 18px; font-weight: 600; margin: 0 0 4px; color: #fff; }
 .care-consultation p { font-size: 12px; color: var(--brand-border); margin: 0; }
-.care-consultation>a { display: inline-flex; align-items: center; gap: 20px; color: #f1dfb9; font-size: 13px; font-weight: 600; text-decoration: none; white-space: nowrap; }
-.care-services a:focus-visible { outline: 2px solid #b99248; outline-offset: 5px; }
+.care-consultation>a { display: inline-flex; align-items: center; gap: 20px; color: var(--brand-accent-light); font-size: 13px; font-weight: 600; text-decoration: none; white-space: nowrap; }
+.care-services a:focus-visible { outline: 2px solid var(--brand-secondary); outline-offset: 5px; }
 @media(max-width:991px) { .care-services-heading { gap: 30px; }.care-services-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }.care-consultation { padding: 24px; } }
 @media(max-width:575px) { .care-services { padding: 48px 0; }.care-services-heading { grid-template-columns: 1fr; gap: 20px; margin-bottom: 26px; }.care-services-intro { justify-self: start; }.care-eyebrow { font-size: 9px; letter-spacing: 1.5px; }.care-consultation { align-items: start; flex-direction: column; }.care-consultation>a { margin-left: 61px; white-space: normal; } }
 
