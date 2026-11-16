@@ -24,17 +24,48 @@ class ImportDoctorVideos extends Command
         }
 
         try {
-            [$created, $hidden] = DB::transaction(function (): array {
+            [$created, $hidden, $translated] = DB::transaction(function (): array {
                 // Verified against https://www.youtube.com/channel/UCqKbSj9L-VAO2AhctwmfFOg.
                 $selection = [
-                    ['id' => 'QUtAjd4n3Co', 'title' => 'Acne: Causes & Treatment', 'description' => 'Dr. Farzana Rahman Shathi discusses acne and its treatment in Bangla.'],
-                    ['id' => 'rMdIkmYD-yA', 'title' => 'Acne Scars & Skin Texture', 'description' => 'A Bangla discussion on acne scars and skin texture with Dr. Farzana Rahman Shathi.'],
-                    ['id' => 'scWIJ8pmROg', 'title' => 'Hair Fall: Causes & Care', 'description' => 'Dr. Farzana Rahman Shathi discusses hair fall and hair care in Bangla.'],
+                    [
+                        'id' => 'QUtAjd4n3Co',
+                        'title' => 'ব্রণ কেন হয় ও এর চিকিৎসা',
+                        'description' => 'ব্রণ হওয়ার কারণ ও চিকিৎসা নিয়ে আলোচনা করেছেন ডা. ফারজানা রহমান সাথী।',
+                        'previous' => ['title' => 'Acne: Causes & Treatment', 'description' => 'Dr. Farzana Rahman Shathi discusses acne and its treatment in Bangla.'],
+                    ],
+                    [
+                        'id' => 'rMdIkmYD-yA',
+                        'title' => 'ব্রণের দাগ ও ত্বকের গর্ত',
+                        'description' => 'ব্রণের দাগ ও ত্বকের গর্তের যত্ন নিয়ে ডা. ফারজানা রহমান সাথীর আলোচনা।',
+                        'previous' => ['title' => 'Acne Scars & Skin Texture', 'description' => 'A Bangla discussion on acne scars and skin texture with Dr. Farzana Rahman Shathi.'],
+                    ],
+                    [
+                        'id' => 'scWIJ8pmROg',
+                        'title' => 'চুল পড়ার কারণ ও যত্ন',
+                        'description' => 'চুল পড়ার কারণ ও চুলের যত্ন সম্পর্কে জানাচ্ছেন ডা. ফারজানা রহমান সাথী।',
+                        'previous' => ['title' => 'Hair Fall: Causes & Care', 'description' => 'Dr. Farzana Rahman Shathi discusses hair fall and hair care in Bangla.'],
+                    ],
                 ];
                 $created = 0;
+                $translated = 0;
                 foreach ($selection as $index => $item) {
                     $key = 'doctor:video:youtube:'.$item['id'];
-                    if (DB::table('website_imports')->where('key', $key)->exists()) {
+                    $import = DB::table('website_imports')->where('key', $key)->first();
+                    if ($import) {
+                        $video = Video::whereKey($import->record_id)->where('youtube_id', $item['id'])->first();
+                        if ($video) {
+                            $changes = [];
+                            foreach (['title', 'description'] as $field) {
+                                if ($video->{$field} === $item['previous'][$field]) {
+                                    $changes[$field] = $item[$field];
+                                }
+                            }
+                            if ($changes !== []) {
+                                $video->update($changes);
+                                $translated++;
+                            }
+                        }
+
                         continue;
                     }
                     $video = Video::withTrashed()->firstOrCreate(['youtube_id' => $item['id']], [
@@ -59,9 +90,9 @@ class ImportDoctorVideos extends Command
                 DoctorProfile::where('key', 'primary')->whereIn('introduction_youtube_id', array_keys($demos))
                     ->update(['introduction_youtube_id' => null]);
 
-                return [$created, $hidden];
+                return [$created, $hidden, $translated];
             });
-            $this->info('Added '.$created.' doctor videos; hid '.$hidden.' unchanged demo videos. Existing administrator edits and deletions were kept.');
+            $this->info('Added '.$created.' doctor videos; hid '.$hidden.' unchanged demo videos; translated '.$translated.' existing video captions. Existing administrator edits and deletions were kept.');
 
             return self::SUCCESS;
         } finally {

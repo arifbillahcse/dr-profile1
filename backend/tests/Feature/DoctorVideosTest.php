@@ -21,8 +21,11 @@ class DoctorVideosTest extends TestCase
         $this->assertNull($profile->fresh()->introduction_youtube_id);
 
         foreach (['/', '/videos'] as $path) {
-            $response = $this->get($path)->assertOk()->assertSee('Acne: Causes &amp; Treatment', false)
-                ->assertSee('Acne Scars &amp; Skin Texture', false)->assertSee('Hair Fall: Causes &amp; Care', false)
+            $response = $this->get($path)->assertOk()->assertSee('ব্রণ কেন হয় ও এর চিকিৎসা')
+                ->assertSee('ব্রণের দাগ ও ত্বকের গর্ত')->assertSee('চুল পড়ার কারণ ও যত্ন')
+                ->assertSee('ব্রণ হওয়ার কারণ ও চিকিৎসা নিয়ে আলোচনা করেছেন ডা. ফারজানা রহমান সাথী।')
+                ->assertSee('ব্রণের দাগ ও ত্বকের গর্তের যত্ন নিয়ে ডা. ফারজানা রহমান সাথীর আলোচনা।')
+                ->assertSee('চুল পড়ার কারণ ও চুলের যত্ন সম্পর্কে জানাচ্ছেন ডা. ফারজানা রহমান সাথী।')
                 ->assertDontSee('Big Buck Bunny')->assertDontSee('Sintel')->assertDontSee('Tears of Steel');
             foreach (['QUtAjd4n3Co', 'rMdIkmYD-yA', 'scWIJ8pmROg'] as $id) {
                 $response->assertSee('youtube-nocookie.com/embed/'.$id, false)->assertSee('youtube.com/watch?v='.$id, false);
@@ -64,5 +67,28 @@ class DoctorVideosTest extends TestCase
         $this->assertSame('scWIJ8pmROg', $profile->fresh()->introduction_youtube_id);
         $this->artisan('website:demo-videos')->expectsOutputToContain('Created 0 demo videos')->assertSuccessful();
         $this->assertSame(3, Video::published()->count());
+    }
+
+    public function test_existing_english_captions_are_translated_without_overwriting_administrator_changes(): void
+    {
+        $this->artisan('website:doctor-videos')->assertSuccessful();
+        $acne = Video::where('youtube_id', 'QUtAjd4n3Co')->firstOrFail();
+        $scars = Video::where('youtube_id', 'rMdIkmYD-yA')->firstOrFail();
+        $hair = Video::where('youtube_id', 'scWIJ8pmROg')->firstOrFail();
+        $acne->update(['title' => 'Acne: Causes & Treatment', 'description' => 'Dr. Farzana Rahman Shathi discusses acne and its treatment in Bangla.', 'sort_order' => 80, 'is_active' => false]);
+        $scars->update(['title' => 'Administrator title', 'description' => 'A Bangla discussion on acne scars and skin texture with Dr. Farzana Rahman Shathi.']);
+        $hair->update(['title' => 'Hair Fall: Causes & Care', 'description' => 'Administrator description']);
+
+        $this->artisan('website:doctor-videos')->expectsOutputToContain('translated 3 existing video captions')->assertSuccessful();
+        $this->assertSame('ব্রণ কেন হয় ও এর চিকিৎসা', $acne->fresh()->title);
+        $this->assertSame('ব্রণ হওয়ার কারণ ও চিকিৎসা নিয়ে আলোচনা করেছেন ডা. ফারজানা রহমান সাথী।', $acne->fresh()->description);
+        $this->assertFalse($acne->fresh()->is_active);
+        $this->assertSame(80, $acne->fresh()->sort_order);
+        $this->assertSame('Administrator title', $scars->fresh()->title);
+        $this->assertSame('ব্রণের দাগ ও ত্বকের গর্তের যত্ন নিয়ে ডা. ফারজানা রহমান সাথীর আলোচনা।', $scars->fresh()->description);
+        $this->assertSame('চুল পড়ার কারণ ও যত্ন', $hair->fresh()->title);
+        $this->assertSame('Administrator description', $hair->fresh()->description);
+        $this->artisan('website:doctor-videos')->expectsOutputToContain('translated 0 existing video captions')->assertSuccessful();
+        $this->assertSame(3, Video::count());
     }
 }
