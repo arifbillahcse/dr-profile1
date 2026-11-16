@@ -23,7 +23,7 @@
                     <div class="hero-header"><p class="hero-eyebrow"><span></span> CLINICAL &amp; AESTHETIC DERMATOLOGY</p>
                         <h1 class="mb-2 text-white hero-title fw-bold">
                             <span class="opacity-75 d-block specialist-label fs-5 fw-normal">{{ $profile->designation }}</span>
-                            <span class="mt-1 doctor-name display-4 d-block" style="color: #ffb703;">{{ $profile->name }}</span>
+                            <span class="mt-1 doctor-name display-4 d-block" style="color: var(--brand-gold);">{{ $profile->name }}</span>
                         </h1>
                         <div class="mb-4 degree-box">
                             <div class="border-4 border-start-lg border-warning">
@@ -120,7 +120,7 @@
 
 
 
-    @if($statistics->isNotEmpty())<section class="py-5 overflow-hidden feature-section position-relative" aria-labelledby="feature-heading" itemscope="" itemtype="https://schema.org/AboutPage" style="background-color: #f8fdfb;">
+    @if($statistics->isNotEmpty())<section class="py-5 overflow-hidden feature-section position-relative" aria-labelledby="feature-heading" itemscope="" itemtype="https://schema.org/AboutPage" style="background-color: var(--brand-soft);">
     <div class="container">
         <h2 id="feature-heading" class="visually-hidden">{{ $profile->name }} - Medical Expertise and Patient Success Milestones</h2>
 
@@ -277,7 +277,7 @@
 
 
     @include('public.photo-story')
-    <section class="py-5 overflow-hidden about-area position-relative" id="about" style="background: #fff url('{{ asset('site/images/a21b1277868e-about_bg.svg') }}') no-repeat center / cover;" itemscope="" itemtype="https://schema.org/Physician">
+    <section class="py-5 overflow-hidden about-area position-relative" id="about" style="background: #fff url('{{ asset('site/images/a21b1277868e-about_bg.svg') }}?v={{ filemtime(public_path('site/images/a21b1277868e-about_bg.svg')) }}') no-repeat center / cover;" itemscope="" itemtype="https://schema.org/Physician">
 
     <div class="about-bg-anim icon-1" aria-hidden="true"><i class="fas fa-hand-holding-heart"></i></div>
     <div class="about-bg-anim icon-2" aria-hidden="true"><i class="fas fa-stethoscope"></i></div>
@@ -340,7 +340,7 @@
 
 
 
-    @if($steps->isNotEmpty() || $chambers->isNotEmpty())<section class="py-5 overflow-hidden consultation-section" id="consultation" style="background-color: #f8fdfb;">
+    @if($steps->isNotEmpty() || $chambers->isNotEmpty())<section class="py-5 overflow-hidden consultation-section" id="consultation" style="background-color: var(--brand-soft);">
     <div class="container">
         <div class="mb-5 text-center" data-aos="fade-up">
             <span class="mb-1 text-success fw-bold text-uppercase ls-2 small d-block">How I Care For You</span>
@@ -350,12 +350,12 @@
 
         <div class="row g-4 g-lg-5 align-items-start">
             <div class="order-2 col-lg-4 order-lg-1" data-aos="fade-right">
-                <div class="p-4 bg-white border-0 shadow-lg schedule-card rounded-5 sticky-lg-top" style="top: 100px; border-top: 5px solid #0a2d1e !important;">
+                <div class="p-4 bg-white border-0 shadow-lg schedule-card rounded-5 sticky-lg-top" style="top: 100px; border-top: 5px solid var(--brand-primary) !important;">
                     <div class="mb-4 d-flex align-items-center">
                         <div class="icon-box-sm bg-success-light me-3">
                             <i class="fas fa-hospital-alt text-success"></i>
                         </div>
-                        <h4 class="m-0 fw-bold h5" style="color: #0a2d1e;">Chamber Location</h4>
+                        <h4 class="m-0 fw-bold h5" style="color: var(--brand-primary);">Chamber Location</h4>
                     </div>
 
                     <div class="location-list" itemscope="" itemtype="https://schema.org/MedicalClinic">@foreach($chambers as $chamber)<div class="mb-4 location-item border-start border-3 border-success ps-3 transition-hover">
@@ -386,7 +386,7 @@
                             </div>
 
                             <div class="p-3 bg-white border-0 shadow-sm process-content-card p-md-4 rounded-4 transition-hover">
-                                <h4 class="mb-2 fw-bold h5" style="color: #0a2d1e;" itemprop="name">{{ $step->title }}</h4>
+                                <h4 class="mb-2 fw-bold h5" style="color: var(--brand-primary);" itemprop="name">{{ $step->title }}</h4>
                                 <p class="mb-0 text-secondary small lh-base" itemprop="itemListElement">{{ $step->description }}</p>
                             </div>
                         </div>@endforeach
@@ -420,7 +420,7 @@
                     <div class="p-4 text-center bg-white experience-card-pro h-100 rounded-4 position-relative">
 
                         <div class="mx-auto mb-4 logo-wrapper-premium">
-                            <figure class="m-0 overflow-hidden bg-white shadow-sm rounded-circle d-flex align-items-center justify-content-center" style="width: 100px; height: 100px; border: 3px solid #f0f7f4;">
+                            <figure class="m-0 overflow-hidden bg-white shadow-sm rounded-circle d-flex align-items-center justify-content-center" style="width: 100px; height: 100px; border: 3px solid var(--brand-soft);">
                                 @if($experience->image)<img src="{{ $experience->image->url() }}" alt="{{ $experience->institution }}" class="p-2 img-fluid object-fit-contain" itemprop="logo" loading="lazy">@else<i class="fas fa-hospital fa-2x text-success" aria-hidden="true"></i>@endif
                             </figure>
                             <span class="verified-badge-exp" title="Verified Experience">
@@ -428,7 +428,7 @@
                             </span>
                         </div>
 
-                        <h3 class="mb-2 h5 fw-bold" itemprop="name" style="color: #0a2d1e;">{{ $experience->institution }}</h3>
+                        <h3 class="mb-2 h5 fw-bold" itemprop="name" style="color: var(--brand-primary);">{{ $experience->institution }}</h3>
 
                         <div class="px-3 py-1 mb-2 d-inline-block rounded-pill bg-success-subtle text-success small fw-bold"><i class="fas fa-user-md me-1"></i>{{ $experience->position }}</div>
 

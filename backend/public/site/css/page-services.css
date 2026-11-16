@@ -1,6 +1,6 @@
 
     .slanted-breadcrumb {
-        background: #0a2d1e;
+        background: var(--brand-primary);
         min-height: 450px;
         overflow: hidden;
         display: flex;
@@ -13,7 +13,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: radial-gradient(circle at 20% 50%, rgba(25, 135, 84, 0.25), transparent);
+        background: radial-gradient(circle at 20% 50%, rgba(var(--brand-secondary-rgb), 0.25), transparent);
     }
 
     .slanted-image-wrapper {
@@ -31,7 +31,7 @@
         left: -100px;
         width: 200px;
         height: 100%;
-        background: #0a2d1e;
+        background: var(--brand-primary);
         transform: skewX(-15deg);
         z-index: 3;
     }
@@ -53,15 +53,15 @@
 
     .service-card-luxury:hover {
         transform: translateY(-10px);
-        border-bottom-color: #ffb703 !important;
+        border-bottom-color: var(--brand-gold) !important;
         box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1) !important;
     }
 
     .icon-box-medical-luxury {
         width: 70px;
         height: 70px;
-        background: rgba(25, 135, 84, 0.1);
-        color: #198754;
+        background: rgba(var(--brand-secondary-rgb), 0.1);
+        color: var(--brand-secondary);
         border-radius: 15px;
         display: flex;
         align-items: center;
@@ -71,7 +71,7 @@
     }
 
     .service-card-luxury:hover .icon-box-medical-luxury {
-        background: #198754;
+        background: var(--brand-secondary);
         color: #fff;
         transform: rotateY(360deg);
     }
@@ -79,19 +79,19 @@
     .header-line-gold {
         width: 70px;
         height: 4px;
-        background: #ffb703;
+        background: var(--brand-gold);
         border-radius: 50px;
     }
 
     /* --- CTA Luxury Banner --- */
     .cta-banner-luxury {
-        background: linear-gradient(135deg, #0a2d1e 0%, #198754 100%);
-        box-shadow: 0 20px 40px rgba(10, 45, 30, 0.3);
+        background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
+        box-shadow: 0 20px 40px rgba(var(--brand-primary-rgb), 0.3);
     }
 
     .btn-gold-luxury {
-        background: #ffb703;
-        color: #0a2d1e;
+        background: var(--brand-gold);
+        color: var(--brand-primary);
         border: none;
         font-weight: 800;
         transition: 0.3s;
@@ -99,7 +99,7 @@
 
     .btn-gold-luxury:hover {
         background: #fff;
-        color: #0a2d1e;
+        color: var(--brand-primary);
         transform: scale(1.05);
     }
 
@@ -136,8 +136,8 @@
     }
 
     .cta-help-luxury {
-        background: #0a2d1e;
-        border: 1px solid rgba(255, 183, 3, 0.1);
+        background: var(--brand-primary);
+        border: 1px solid rgba(var(--brand-gold-rgb), 0.1);
         box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
     }
 
@@ -153,13 +153,13 @@
     }
 
     .blob-1 {
-        background: rgba(25, 135, 84, 0.25);
+        background: rgba(var(--brand-secondary-rgb), 0.25);
         top: -100px;
         right: -50px;
     }
 
     .blob-2 {
-        background: rgba(255, 183, 3, 0.1);
+        background: rgba(var(--brand-gold-rgb), 0.1);
         bottom: -100px;
         left: -50px;
         animation-delay: -5s;
@@ -182,8 +182,8 @@
     }
 
     .text-gold-luxury {
-        color: #ffb703;
-        background: linear-gradient(to right, #ffb703, #fff1cc, #ffb703);
+        color: var(--brand-gold);
+        background: linear-gradient(to right, var(--brand-gold), var(--brand-gold-light), var(--brand-gold));
         background-size: 200% auto;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -200,8 +200,8 @@
     .btn-help-luxury {
         position: relative;
         padding: 16px 45px;
-        background: #ffb703;
-        color: #0a2d1e !important;
+        background: var(--brand-gold);
+        color: var(--brand-primary) !important;
         font-weight: 800;
         border-radius: 50px;
         display: inline-flex;
@@ -213,7 +213,7 @@
 
     .btn-help-luxury:hover {
         transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(255, 183, 3, 0.4);
+        box-shadow: 0 15px 30px rgba(var(--brand-gold-rgb), 0.4);
     }
 
     .btn-glow {
@@ -245,15 +245,15 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        border: 2px dashed rgba(255, 183, 3, 0.3);
+        border: 2px dashed rgba(var(--brand-gold-rgb), 0.3);
         border-radius: 50%;
         animation: rotateLine 15s linear infinite;
     }
 
     .cta-main-icon {
         font-size: 130px;
-        color: #ffb703;
-        filter: drop-shadow(0 0 15px rgba(255, 183, 3, 0.5));
+        color: var(--brand-gold);
+        filter: drop-shadow(0 0 15px rgba(var(--brand-gold-rgb), 0.5));
         animation: bounceIcon 4s infinite ease-in-out;
     }
 
@@ -282,13 +282,13 @@
     /* 6. Help Badge Animation */
     .help-badge {
         background: rgba(255, 255, 255, 0.05);
-        color: #ffb703;
+        color: var(--brand-gold);
         padding: 10px 20px;
         border-radius: 50px;
         display: inline-block;
         font-size: 14px;
         font-weight: bold;
-        border: 1px solid rgba(255, 183, 3, 0.2);
+        border: 1px solid rgba(var(--brand-gold-rgb), 0.2);
     }
 
     @media (max-width: 991px) {
@@ -311,13 +311,13 @@
     }
 
     .specialist-services-grid ul li:hover {
-        color: #ffb703;
+        color: var(--brand-gold);
         transform: translateX(5px);
     }
 
     /* Header Text Gradient & Shine */
     .text-gold-luxury {
-        background: linear-gradient(to right, #ffb703, #fff, #ffb703);
+        background: linear-gradient(to right, var(--brand-gold), #fff, var(--brand-gold));
         background-size: 200% auto;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -332,8 +332,8 @@
 
     /* Luxury Wrapper & Background */
     .cta-help-luxury {
-        background: linear-gradient(135deg, #0a2d1e 0%, #051911 100%);
-        border: 1px solid rgba(255, 183, 3, 0.15);
+        background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-deep) 100%);
+        border: 1px solid rgba(var(--brand-gold-rgb), 0.15);
     }
 
     /* Floating Icon Wrapper */
@@ -350,7 +350,7 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        border: 2px dashed rgba(255, 183, 3, 0.4);
+        border: 2px dashed rgba(var(--brand-gold-rgb), 0.4);
         border-radius: 50%;
         animation: spinCircle 20s linear infinite;
     }
@@ -395,15 +395,15 @@
     .icon-circle-glow {
         width: 24px;
         height: 24px;
-        background: rgba(255, 183, 3, 0.1);
-        border: 1px solid rgba(255, 183, 3, 0.4);
+        background: rgba(var(--brand-gold-rgb), 0.1);
+        border: 1px solid rgba(var(--brand-gold-rgb), 0.4);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #ffb703;
+        color: var(--brand-gold);
         font-size: 11px;
-        box-shadow: 0 0 10px rgba(255, 183, 3, 0.2);
+        box-shadow: 0 0 10px rgba(var(--brand-gold-rgb), 0.2);
         transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
@@ -414,10 +414,10 @@
     }
 
     .specialist-item-wrapper:hover .icon-circle-glow {
-        background: #ffb703;
-        color: #0a2d1e;
+        background: var(--brand-gold);
+        color: var(--brand-primary);
         transform: scale(1.2) rotate(360deg);
-        box-shadow: 0 0 15px #ffb703;
+        box-shadow: 0 0 15px var(--brand-gold);
     }
 
     .specialist-name {
@@ -532,7 +532,7 @@
     }
 
     .header-top-bar {
-        background: rgba(10, 45, 30, 0.5);
+        background: rgba(var(--brand-primary-rgb), 0.5);
         padding: 10px 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(5px);
@@ -554,10 +554,10 @@
     }
 
     .social-glass-icon:hover {
-        background: #ffb703;
-        color: #0a2d1e;
+        background: var(--brand-gold);
+        color: var(--brand-primary);
         transform: translateY(-3px) rotate(360deg);
-        box-shadow: 0 0 15px #ffb703;
+        box-shadow: 0 0 15px var(--brand-gold);
     }
 
     /* Navigation Area */
@@ -571,7 +571,7 @@
         position: fixed !important;
         top: 0;
         width: 100%;
-        background: rgba(10, 45, 30, 0.98) !important;
+        background: rgba(var(--brand-primary-rgb), 0.98) !important;
         padding: 12px 0 !important;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
         z-index: 9999;
@@ -610,9 +610,9 @@
         left: 0;
         width: 0;
         height: 2px;
-        background: #ffb703;
+        background: var(--brand-gold);
         transition: 0.4s;
-        box-shadow: 0 0 10px #ffb703;
+        box-shadow: 0 0 10px var(--brand-gold);
     }
 
     .luxury-menu li a:hover::after,
@@ -622,24 +622,24 @@
 
     .luxury-menu li a:hover,
     .luxury-menu li a.active {
-        color: #ffb703;
+        color: var(--brand-gold);
     }
 
     /* Neon Call Button */
     .btn-call-neon {
-        background: #ffb703;
-        color: #0a2d1e !important;
+        background: var(--brand-gold);
+        color: var(--brand-primary) !important;
         padding: 10px 22px;
         border-radius: 50px;
         font-weight: 800;
         text-decoration: none;
-        box-shadow: 0 0 15px rgba(255, 183, 3, 0.3);
+        box-shadow: 0 0 15px rgba(var(--brand-gold-rgb), 0.3);
         transition: 0.4s;
     }
 
     .btn-call-neon:hover {
         transform: scale(1.05);
-        box-shadow: 0 0 25px rgba(255, 183, 3, 0.6);
+        box-shadow: 0 0 25px rgba(var(--brand-gold-rgb), 0.6);
     }
 
     /* Phone Shake Animation */
@@ -671,7 +671,7 @@
     @media (max-width: 991px) {
         .main-header-area {
             position: relative;
-            background: #0a2d1e;
+            background: var(--brand-primary);
         }
 
         .header-navigation-main {
@@ -685,7 +685,7 @@
         .mobile-nav-toggle {
             background: none;
             border: none;
-            color: #ffb703;
+            color: var(--brand-gold);
             font-size: 24px;
         }
     }
@@ -702,7 +702,7 @@
 
     /* Mobile Canvas Sidebar */
     .luxury-mobile-canvas {
-        background: #0a2d1e;
+        background: var(--brand-primary);
         width: 280px !important;
     }
 
@@ -722,7 +722,7 @@
     }
 
     .footer-section {
-        background-image: radial-gradient(circle at 0% 0%, #0a2d1e 0%, #051a11 100%);
+        background-image: radial-gradient(circle at 0% 0%, var(--brand-primary) 0%, var(--brand-deep) 100%);
     }
 
     /* Contact Hover Effect */
@@ -734,7 +734,7 @@
 
     .contact-link:hover {
         padding-left: 10px;
-        background: rgba(255, 183, 3, 0.05);
+        background: rgba(var(--brand-gold-rgb), 0.05);
         border-radius: 5px;
     }
 
@@ -749,7 +749,7 @@
     }
 
     .footer-links li a:hover {
-        color: #ffb703 !important;
+        color: var(--brand-gold) !important;
         padding-left: 8px;
     }
 
@@ -764,11 +764,11 @@
         align-items: center;
         justify-content: center;
         transition: 0.4s;
-        border: 1px solid rgba(255, 183, 3, 0.3);
+        border: 1px solid rgba(var(--brand-gold-rgb), 0.3);
     }
 
     .social-v4-btn:hover {
-        background: #ffb703;
+        background: var(--brand-gold);
         color: #000;
         transform: rotate(360deg) scale(1.1);
     }
@@ -786,20 +786,20 @@
 
     .fb-premium-card:hover {
         transform: translateY(-10px);
-        border-color: #ffb703;
-        box-shadow: 0 15px 40px rgba(25, 135, 84, 0.4);
+        border-color: var(--brand-gold);
+        box-shadow: 0 15px 40px rgba(var(--brand-secondary-rgb), 0.4);
     }
 
     .fb-profile-img {
         width: 80px;
         height: 80px;
-        border: 3px solid #ffb703;
+        border: 3px solid var(--brand-gold);
         padding: 3px;
         background: #fff;
     }
 
     .btn-fb-follow {
-        background: #ffb703;
+        background: var(--brand-gold);
         color: #000;
         font-weight: bold;
         border-radius: 50px;
@@ -811,7 +811,7 @@
 
     .btn-fb-follow:hover {
         background: #fff;
-        color: #0a2d1e;
+        color: var(--brand-primary);
         transform: scale(1.05);
     }
 
@@ -822,7 +822,7 @@
         right: 30px;
         width: 50px;
         height: 50px;
-        background: #ffb703;
+        background: var(--brand-gold);
         color: #000;
         border-radius: 50%;
         display: flex;
@@ -847,7 +847,7 @@
     }
 
     .credential-tag:hover {
-        color: #ffb703;
+        color: var(--brand-gold);
         /* গোল্ডেন হাইলাইট */
     }
 

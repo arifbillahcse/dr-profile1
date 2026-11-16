@@ -1,0 +1,70 @@
+/* Public website palette: deep purple, soft lavender and champagne gold. */
+:root {
+    --brand-primary: #2D0B49;
+    --brand-primary-rgb: 45, 11, 73;
+    --brand-deep: #1C062E;
+    --brand-deep-rgb: 28, 6, 46;
+    --brand-secondary: #704291;
+    --brand-secondary-rgb: 112, 66, 145;
+    --brand-muted: #846798;
+    --brand-muted-rgb: 132, 103, 152;
+    --brand-number: #B59BC9;
+    --brand-number-rgb: 181, 155, 201;
+    --brand-light: #DCCBEA;
+    --brand-light-rgb: 220, 203, 234;
+    --brand-border: #E5DBED;
+    --brand-border-rgb: 229, 219, 237;
+    --brand-soft: #F5F0FA;
+    --brand-soft-rgb: 245, 240, 250;
+    --brand-gold: #D6B36A;
+    --brand-gold-rgb: 214, 179, 106;
+    --brand-gold-light: #E8CEA0;
+    --brand-gold-light-rgb: 232, 206, 160;
+    --brand-ink: #302437;
+    --brand-body: #706678;
+    --primary-color: var(--brand-primary);
+    --site-heading-color: var(--brand-primary);
+    --site-accent-color: var(--brand-muted);
+    --bs-primary: var(--brand-primary);
+    --bs-primary-rgb: var(--brand-primary-rgb);
+    --bs-success: var(--brand-secondary);
+    --bs-success-rgb: var(--brand-secondary-rgb);
+    --bs-warning: var(--brand-gold);
+    --bs-warning-rgb: var(--brand-gold-rgb);
+    --bs-dark-rgb: 48, 36, 55;
+    --bs-emphasis-color: var(--brand-ink);
+    --bs-emphasis-color-rgb: 48, 36, 55;
+    --bs-secondary-color: var(--brand-body);
+    --bs-secondary-rgb: 112, 102, 120;
+    --bs-link-color: var(--brand-primary);
+    --bs-link-color-rgb: var(--brand-primary-rgb);
+    --bs-link-hover-color: var(--brand-secondary);
+    --bs-link-hover-color-rgb: var(--brand-secondary-rgb);
+}
+
+body { color: var(--brand-ink); background-color: #FFFDFA; }
+::selection { color: #fff; background: var(--brand-secondary); }
+.main-header-area .header-sticky { background: var(--brand-primary) !important; }
+.main-header-area .doctor-wordmark-symbol { color: var(--brand-gold); }
+.footer-section { background: linear-gradient(135deg, var(--brand-primary), var(--brand-deep)) !important; }
+.luxury-mobile-canvas { background: var(--brand-primary) !important; }
+.footer-subtitle::after { background-color: var(--brand-gold); }
+.care-service>p, .care-services-intro p, .practice-video-copy p, .gallery-intro { color: var(--brand-body); }
+.btn-success {
+    --bs-btn-bg: var(--brand-primary);
+    --bs-btn-border-color: var(--brand-primary);
+    --bs-btn-hover-bg: var(--brand-secondary);
+    --bs-btn-hover-border-color: var(--brand-secondary);
+    --bs-btn-active-bg: var(--brand-deep);
+    --bs-btn-active-border-color: var(--brand-deep);
+    --bs-btn-focus-shadow-rgb: var(--brand-primary-rgb);
+}
+.form-control:focus, .form-select:focus {
+    border-color: var(--brand-muted);
+    box-shadow: 0 0 0 .2rem rgba(var(--brand-primary-rgb), .12);
+}
+.bg-success-subtle { background-color: var(--brand-soft) !important; }
+.text-success-emphasis { color: var(--brand-primary) !important; }
+.border-success-subtle { border-color: var(--brand-border) !important; }
+.whatsapp-float { background: #25d366; }
+.whatsapp-float:hover { background: #128c7e; }

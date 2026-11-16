@@ -26,7 +26,7 @@
         </div>
     </section>
 
-    <section class="py-5 overflow-hidden dr-about-section position-relative" style="background: #f8fdfb;">
+    <section class="py-5 overflow-hidden dr-about-section position-relative" style="background: var(--brand-soft);">
         <div class="container py-lg-4">
             <div class="row align-items-center g-5">
                 <div class="col-lg-5" data-aos="fade-right">
@@ -95,7 +95,7 @@
                             </a>@endif
                         </div>
                         <div class="cta-visual-luxury d-none d-lg-block">
-                            <i class="opacity-25 fas fa-hand-holding-heart" style="font-size: 150px; color: #ffb703;"></i>
+                            <i class="opacity-25 fas fa-hand-holding-heart" style="font-size: 150px; color: var(--brand-gold);"></i>
                         </div>
                     </div>
                 </div>

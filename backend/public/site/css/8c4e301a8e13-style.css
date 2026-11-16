@@ -21,7 +21,7 @@ html {
    Root Variables
 ========================= */
 :root {
-    --primary-color: #008BB5;
+    --primary-color: var(--brand-primary);
 }
 /* --- Custom Scrollbar for Chrome, Edge, and Safari --- */
 
@@ -39,7 +39,7 @@ html {
 
 /* 3. The Handle (the part that moves) */
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #004d40 0%, #006064 100%); /* Deep Teal gradient */
+  background: linear-gradient(180deg, var(--brand-primary) 0%, var(--brand-primary) 100%); /* Deep Teal gradient */
   border: 2px solid #f8f9fa; /* Creates a padding effect around the handle */
   border-radius: 10px;
   transition: all 0.3s ease;
@@ -54,7 +54,7 @@ html {
 /* Firefox uses different properties */
 * {
   scrollbar-width: thin;          /* Options: auto, thin, none */
-  scrollbar-color: #004d40 #f8f9fa; /* Handle color & Track color */
+  scrollbar-color: var(--brand-primary) #f8f9fa; /* Handle color & Track color */
 }
 /* =========================
    Body Default
@@ -103,7 +103,7 @@ ol {
 
 /* ================= HEADER ================= */
 section.header-area {
-	background: #060C1D;
+	background: var(--brand-deep);
 }
 .header-area.header-sticky.sticky {
 	position: fixed;
@@ -111,10 +111,10 @@ section.header-area {
 	z-index: 99999;
 	transition: all .5s ease-in-out;
 	padding: 0;
-	box-shadow: rgb(25, 135, 84) 0px 4px 12px;
+	box-shadow: var(--brand-secondary) 0px 4px 12px;
 }
 .header-area {
-    background: #0f172a;
+    background: var(--brand-deep);
     padding: 14px 0;
 }
 
@@ -182,7 +182,7 @@ section.header-area {
 	/* background: rgba(255,255,255,0.08); */
 	backdrop-filter: blur(6px);
 	transition: all 0.3s ease;
-	background: linear-gradient(90deg, rgba(56, 189, 248, 0.15), rgba(34, 197, 94, 0.15), rgba(168, 85, 247, 0.15));
+	background: linear-gradient(90deg, rgba(56, 189, 248, 0.15), rgba(var(--brand-secondary-rgb), 0.15), rgba(168, 85, 247, 0.15));
 }
 
 .header-right img {
@@ -242,7 +242,7 @@ section.header-area {
 }
 /* ================= MOBILE OFFCANVAS ================= */
 .mobile-menu {
-    background: linear-gradient(160deg, #0f172a, #020617);
+    background: linear-gradient(160deg, var(--brand-deep), var(--brand-deep));
     width: 280px;
 }
 
@@ -271,9 +271,9 @@ section.header-area {
     color: transparent;
     background-image: linear-gradient(
         90deg,
-        #38bdf8,
-        #22c55e,
-        #a855f7
+        var(--brand-light),
+        var(--brand-secondary),
+        var(--brand-number)
     );
     background-size: 200% 100%;
     background-position: 0% 50%;
@@ -291,7 +291,7 @@ section.header-area {
     background: linear-gradient(
         90deg,
         rgba(56,189,248,0.15),
-        rgba(34,197,94,0.15),
+        rgba(var(--brand-secondary-rgb), 0.15),
         rgba(168,85,247,0.15)
     );
     opacity: 0;
@@ -337,7 +337,7 @@ section.header-area {
 	display: inline;
 	font-weight: normal;
 	text-align: right;
-	color: #060c1d;
+	color: var(--brand-deep);
 	background: #fff;
 	padding: 5px;
 	border-radius: 4px;
@@ -390,7 +390,7 @@ section.header-area {
     width: 600px;
     height: 600px;
     /* Increased opacity slightly to make it visible */
-    background: rgba(0, 77, 64, 0.05);
+    background: rgba(var(--brand-primary-rgb), 0.05);
     border-radius: 45% 55% 70% 30% / 30% 40% 60% 70%;
     animation: shapeMove 15s infinite alternate ease-in-out;
     z-index: 0; /* Background layer */
@@ -449,7 +449,7 @@ section.header-area {
 }
 /* Button */
 .btn-appointment {
-    background: #ffb703;
+    background: var(--brand-gold);
     color: #000;
     padding: 14px 26px;
     border-radius: 8px;
@@ -458,7 +458,7 @@ section.header-area {
 }
 
 .btn-appointment:hover {
-    background: #ffd166;
+    background: var(--brand-gold-light);
     transform: translateY(-3px);
 }
 
@@ -531,7 +531,7 @@ section.header-area {
     inset: 0;
     background: linear-gradient(
         to bottom,
-        rgba(10, 143, 77, 0.3),
+        rgba(var(--brand-secondary-rgb), 0.3),
         rgba(0, 0, 0, 0.4)
     );
 }
@@ -576,13 +576,13 @@ section.header-area {
 .icon-box-medical {
 	width: 70px;
 	height: 70px;
-	background: #e9f5ee;
+	background: var(--brand-border);
 	border-radius: 15px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	font-size: 30px;
-	color: #00984B;
+	color: var(--brand-secondary);
 	transition: 0.3s;
 }
 
@@ -601,7 +601,7 @@ section.header-area {
 
 /* Dark CTA Banner Style */
 .cta-banner-dark {
-    background: linear-gradient(135deg, #0b1120 0%, #06162e 100%);
+    background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary) 100%);
     min-height: 300px;
 }
 
@@ -683,7 +683,7 @@ section.header-area {
     background: #ffffff;
     border-radius: 50%;
     border: none;
-    color: #198754;
+    color: var(--brand-secondary);
     font-size: 20px;
     display: flex;
     align-items: center;
@@ -692,7 +692,7 @@ section.header-area {
 }
 
 .play-btn-inner:hover {
-    background: #198754;
+    background: var(--brand-secondary);
     color: #fff;
     transform: scale(1.1);
 }
@@ -728,14 +728,14 @@ section.header-area {
     justify-content: center;
     width: 35px;
     height: 35px;
-    border: 1px solid #0d6efd;
+    border: 1px solid var(--brand-primary);
     border-radius: 50%;
     margin-left: 8px;
     transition: 0.3s;
 }
 
 .read-more-link:hover .arrow-wrap {
-    background: #0d6efd;
+    background: var(--brand-primary);
     color: #fff;
 }
 
@@ -749,7 +749,7 @@ section.header-area {
 .header-line {
     width: 80px;
     height: 4px;
-    background: #198754;
+    background: var(--brand-secondary);
     border-radius: 10px;
 }
 
@@ -775,7 +775,7 @@ section.header-area {
 
 /* Timeline/Process Styles */
 .process-timeline {
-    border-left: 2px dashed #198754;
+    border-left: 2px dashed var(--brand-secondary);
     position: relative;
 }
 
@@ -789,7 +789,7 @@ section.header-area {
     top: 0;
     width: 40px;
     height: 40px;
-    background: #198754;
+    background: var(--brand-secondary);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -801,7 +801,7 @@ section.header-area {
 }
 
 .process-item:hover .step-number {
-    background: #0d6efd;
+    background: var(--brand-primary);
     transform: scale(1.2);
     box-shadow: 0 0 15px rgba(13, 110, 253, 0.4);
 }
@@ -812,7 +812,7 @@ section.header-area {
 }
 
 .process-item:hover h4 {
-    color: #198754;
+    color: var(--brand-secondary);
 }
 
 /* Mobile Adjustments */
@@ -846,7 +846,7 @@ section.header-area {
 
 .experience-card:hover {
     transform: translateY(-12px);
-    border-color: #198754 !important;
+    border-color: var(--brand-secondary) !important;
     box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
 }
 
@@ -871,30 +871,30 @@ section.header-area {
 /* Container Wrapper for Animated Border */
 .help-section-wrapper {
     background: #ffffff;
-    border: 2px dashed #198754; /* ড্যাশড বর্ডার স্টাইল */
+    border: 2px dashed var(--brand-secondary); /* ড্যাশড বর্ডার স্টাইল */
     position: relative;
     overflow: hidden;
 }
 
 .help-banner-premium {
-    background: linear-gradient(135deg, #ffffff 0%, #f9fffb 100%);
+    background: linear-gradient(135deg, #ffffff 0%, var(--brand-soft) 100%);
     border-radius: 15px;
 }
 
 /* Typography */
 .help-banner-premium h2 {
-    color: #06162e;
+    color: var(--brand-primary);
     font-size: 1.75rem;
     letter-spacing: -0.5px;
 }
 
 .text-success-light {
-    color: #198754;
+    color: var(--brand-secondary);
 }
 
 /* Premium Pulse Button */
 .btn-help-pulse {
-    background: #198754; /* গ্রিন কালার */
+    background: var(--brand-secondary); /* গ্রিন কালার */
     color: white;
     border: none;
     padding: 15px 45px;
@@ -905,13 +905,13 @@ section.header-area {
     letter-spacing: 1px;
     position: relative;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 20px rgba(25, 135, 84, 0.3);
+    box-shadow: 0 10px 20px rgba(var(--brand-secondary-rgb), 0.3);
 }
 
 .btn-help-pulse:hover {
-    background: #146c43;
+    background: var(--brand-secondary);
     transform: translateY(-3px);
-    box-shadow: 0 15px 25px rgba(25, 135, 84, 0.4);
+    box-shadow: 0 15px 25px rgba(var(--brand-secondary-rgb), 0.4);
 }
 
 /* Pulse Animation Effect */
@@ -920,7 +920,7 @@ section.header-area {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     border-radius: 8px;
-    border: 2px solid #198754;
+    border: 2px solid var(--brand-secondary);
     animation: pulse-border 2s infinite;
 }
 
@@ -978,7 +978,7 @@ section.header-area {
 /* Active State Design (Sobar bame jeita ache) */
 .nav-pills .nav-link.active {
     background-color: #fff !important;
-    border: 2px solid #28a745 !important; /* Green border like image */
+    border: 2px solid var(--brand-secondary) !important; /* Green border like image */
     color: #333 !important;
 }
 
@@ -999,7 +999,7 @@ section.header-area {
 
 /* Footer Styles */
 .footer-section {
-    background: #0b1120; /* Deep dark medical blue/black */
+    background: var(--brand-primary); /* Deep dark medical blue/black */
     color: #ffffff;
     padding: 80px 0 30px;
     position: relative;
@@ -1008,7 +1008,7 @@ section.header-area {
 .footer-title {
     font-size: 26px;
     font-weight: 700;
-    color: #ffb703; /* Highlight color */
+    color: var(--brand-gold); /* Highlight color */
     margin-bottom: 5px;
 }
 
@@ -1034,7 +1034,7 @@ section.header-area {
     bottom: 0;
     width: 40px;
     height: 2px;
-    background: #ffb703;
+    background: var(--brand-gold);
 }
 
 /* Link Animations */
@@ -1050,7 +1050,7 @@ section.header-area {
 }
 
 .footer-links li a:hover {
-    color: #ffb703;
+    color: var(--brand-gold);
     transform: translateX(10px); /* ডানে হালকা সরে আসার এনিমেশন */
 }
 
@@ -1059,7 +1059,7 @@ section.header-area {
     background: rgba(255, 255, 255, 0.05);
     padding: 20px;
     border-radius: 12px;
-    border-left: 4px solid #ffb703;
+    border-left: 4px solid var(--brand-gold);
 }
 
 /* Divider */
@@ -1075,7 +1075,7 @@ section.header-area {
     top: -25px;
     width: 50px;
     height: 50px;
-    background: #ffb703;
+    background: var(--brand-gold);
     color: #000;
     border-radius: 50%;
     display: flex;
@@ -1088,7 +1088,7 @@ section.header-area {
 .back-to-top:hover {
     transform: translateY(-5px);
     background: #fff;
-    color: #ffb703;
+    color: var(--brand-gold);
 }
 
 /* SEO Friendly Small Text */
@@ -1173,7 +1173,7 @@ section.header-area {
 .breadcrumb-area {
 	padding: 0;
 	/* background: linear-gradient(rgba(1, 11, 28, 0.85), rgba(1, 11, 28, 0.85)), url('{{ asset("frontend/image/breadcrumb-bg.jpg") }}'); */
-	background: #060c1d;
+	background: var(--brand-deep);
 	/* background-size: cover; */
 	/* background-position: center; */
 	color: #ffffff;
@@ -1280,7 +1280,7 @@ section.header-area {
 /* about */
 /* About Page Specific styling */
 .about-details {
-    background-color: #f8fbf9;
+    background-color: var(--brand-soft);
 }
 
 /* Image Frame */
@@ -1344,7 +1344,7 @@ section.header-area {
     position: absolute;
     bottom: 20px;
     right: -10px;
-    background: #28a745 !important; /* Green Theme like breadcrumb */
+    background: var(--brand-secondary) !important; /* Green Theme like breadcrumb */
     min-width: 150px;
 }
 
@@ -1471,7 +1471,7 @@ section.header-area {
 }
 :root {
     --gold: #c5a059;
-    --deep-teal: #004d40;
+    --deep-teal: var(--brand-primary);
     --soft-blush: #fff9f9;
 }
 
@@ -1586,7 +1586,7 @@ section.header-area {
 /* Premium Review Button */
 .client_review_btn {
     position: relative;
-    background: #198754; /* Success Green */
+    background: var(--brand-secondary); /* Success Green */
     color: white;
     border: none;
     padding: 10px 24px;
@@ -1596,13 +1596,13 @@ section.header-area {
     cursor: pointer;
     transition: all 0.3s ease;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(25, 135, 84, 0.3);
+    box-shadow: 0 4px 15px rgba(var(--brand-secondary-rgb), 0.3);
 }
 
 .client_review_btn:hover {
-    background: #146c43;
+    background: var(--brand-secondary);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(25, 135, 84, 0.4);
+    box-shadow: 0 6px 20px rgba(var(--brand-secondary-rgb), 0.4);
 }
 
 /* The Pulsing Ring Animation */
@@ -1610,7 +1610,7 @@ section.header-area {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     border-radius: 50px;
-    border: 2px solid #198754;
+    border: 2px solid var(--brand-secondary);
     animation: btnPulse 2s infinite;
 }
 
@@ -1628,8 +1628,8 @@ section.header-area {
 }
 
 .custom-input:focus {
-    border-color: #198754;
-    box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.1);
+    border-color: var(--brand-secondary);
+    box-shadow: 0 0 0 0.25rem rgba(var(--brand-secondary-rgb), 0.1);
 }
 
 .modal-content {
@@ -1652,7 +1652,7 @@ section.header-area {
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(0, 77, 64, 0.1); /* Subtle Teal Border */
+    border: 1px solid rgba(var(--brand-primary-rgb), 0.1); /* Subtle Teal Border */
 }
 
 /* Aspect Ratio Box (16:9) */
@@ -1674,7 +1674,7 @@ section.header-area {
 /* Hover State: Lift and Glow */
 .video-card-pure:hover {
     transform: translateY(-12px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 77, 64, 0.2); /* Teal Glow */
+    box-shadow: 0 20px 40px rgba(var(--brand-primary-rgb), 0.2); /* Teal Glow */
     border-color: #c5a059; /* Changes to Gold on hover */
 }
 
@@ -1725,7 +1725,7 @@ section.header-area {
 }
 
         .star-rating {
-            color: #FFB703;
+            color: var(--brand-gold);
             font-size: 20px;
             line-height:1
         }
@@ -1770,7 +1770,7 @@ section.header-area {
 	font-weight: bold;
 	font-size: 0.9rem;
 	margin-left: 10px;
-	box-shadow: 0 4px 10px rgba(0,200,83,0.3);
+	box-shadow: 0 4px 10px rgba(var(--brand-secondary-rgb), 0.3);
 }
 
         /* Animations */
@@ -1806,7 +1806,7 @@ section.header-area {
 	position: absolute;
 	top: 0; left: 0; right: 0; bottom: 0;
 	border-radius: 24px;
-	background: radial-gradient(circle at top right, rgba(0, 139, 181, 0.1), transparent);
+	background: radial-gradient(circle at top right, rgba(var(--brand-primary-rgb), 0.1), transparent);
 	opacity: 0;
 	transition: 0.5s;
 	z-index: -1;
@@ -1815,7 +1815,7 @@ section.header-area {
 .feature-card:hover {
 	transform: translateY(-15px);
 	border-color: var(--primary-color) !important;
-	box-shadow: 0 25px 50px -12px rgba(0, 139, 181, 0.15) !important;
+	box-shadow: 0 25px 50px -12px rgba(var(--brand-primary-rgb), 0.15) !important;
 }
 
 .feature-card:hover::before {
@@ -1897,13 +1897,13 @@ section.header-area {
 }
 
 a.menu-link.active {
-    border-bottom: 2px solid #0088af;
+    border-bottom: 2px solid var(--brand-secondary);
     padding-bottom: 15px;
     line-height: 20px;
 }
 
 .process-timeline {
-    border-left: 2px dashed #198754; /* Green dashed line */
+    border-left: 2px dashed var(--brand-secondary); /* Green dashed line */
     position: relative;
 }
 
@@ -1913,7 +1913,7 @@ a.menu-link.active {
     top: 0;
     width: 40px;
     height: 40px;
-    background: #198754;
+    background: var(--brand-secondary);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -1945,18 +1945,18 @@ a.menu-link.active {
 
 /* Hover Effect */
 .custom-pagination .page-item .page-link:hover {
-    background-color: #198754; /* আপনার প্রাইমারি কালার (যেমন: গ্রিন) */
+    background-color: var(--brand-secondary); /* আপনার প্রাইমারি কালার (যেমন: গ্রিন) */
     color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(25, 135, 84, 0.2);
+    box-shadow: 0 4px 10px rgba(var(--brand-secondary-rgb), 0.2);
 }
 
 /* Active State */
 .custom-pagination .page-item.active .page-link {
-    background-color: #198754 !important;
+    background-color: var(--brand-secondary) !important;
     color: #fff !important;
     border: none;
-    box-shadow: 0 4px 12px rgba(25, 135, 84, 0.3);
+    box-shadow: 0 4px 12px rgba(var(--brand-secondary-rgb), 0.3);
 }
 
 /* Disabled State */
@@ -2061,7 +2061,7 @@ color: rgba(255, 255, 255, 0.85) !important;
     margin: 4px;   /* একটি বাটন থেকে অন্যটির গ্যাপ নিশ্চিত করা */
 }
 .fb-profile-img {
-    border: 3px solid #ffb703;
+    border: 3px solid var(--brand-gold);
     padding: 3px;
     background: #fff;
     width: 68px;

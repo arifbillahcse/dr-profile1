@@ -1,5 +1,5 @@
 @if($videos->isNotEmpty())
-<section class="py-5 video-gallery-area" id="video-gallery" aria-labelledby="video-gallery-title" style="background-color: #f8fdfb;">
+<section class="py-5 video-gallery-area" id="video-gallery" aria-labelledby="video-gallery-title" style="background-color: var(--brand-soft);">
     <div class="container">
         <header class="mb-5 text-center">
             <p class="section-eyebrow">FROM THE VIDEO LIBRARY</p>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#2D0B49">
     @php
         $pageTitle = ['home' => null, 'about' => 'About', 'services' => 'Services', 'faqs' => 'FAQs', 'gallery' => 'Gallery', 'videos' => 'Videos'][$page];
         $title = ($pageTitle ? $pageTitle.' | ' : '').($site->seo_title ?: $site->site_title);
@@ -20,12 +21,13 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ $title }}">
     <meta name="twitter:description" content="{{ $description }}">
-    @if($site->favicon)<link rel="icon" href="{{ $site->favicon->url() }}" type="image/webp">@else<link rel="icon" href="{{ asset('site/images/doctor-mark.svg') }}" type="image/svg+xml">@endif
+    @if($site->favicon)<link rel="icon" href="{{ $site->favicon->url() }}" type="image/webp">@else<link rel="icon" href="{{ asset('site/images/doctor-mark.svg') }}?v={{ filemtime(public_path('site/images/doctor-mark.svg')) }}" type="image/svg+xml">@endif
     @foreach(['ab62d5ee79a9-bootstrap.min','dbe397d0d04e-all.min','39bc4941d961-swiper-bundle.min','3bb26241a579-magnific-popup.min','784d76080809-bootstrap-icons','2e8ca68208a7-aos','8c4e301a8e13-style','6b743f2723bf-responsive'] as $stylesheet)
-        <link rel="stylesheet" href="{{ asset('site/css/'.$stylesheet.'.css') }}">
+        <link rel="stylesheet" href="{{ asset('site/css/'.$stylesheet.'.css') }}?v={{ filemtime(public_path('site/css/'.$stylesheet.'.css')) }}">
     @endforeach
     <link rel="stylesheet" href="{{ asset('site/css/page-'.$page.'.css') }}?v={{ filemtime(public_path('site/css/page-'.$page.'.css')) }}">
     <link rel="stylesheet" href="{{ asset('site/css/site.css') }}?v={{ filemtime(public_path('site/css/site.css')) }}">
+    <link rel="stylesheet" href="{{ asset('site/css/theme.css') }}?v={{ filemtime(public_path('site/css/theme.css')) }}">
     <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>

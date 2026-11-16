@@ -26,7 +26,7 @@
         </div>
     </section>
 
-    <section class="py-5 faq-main-section" style="background: #f8fdfb;">
+    <section class="py-5 faq-main-section" style="background: var(--brand-soft);">
         <div class="container">
                             <div class="mb-5 text-center section-header animate-up">
                     <span class="text-success section-eyebrow">Knowledge Base</span>

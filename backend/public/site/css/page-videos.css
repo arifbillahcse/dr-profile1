@@ -1,14 +1,14 @@
 
 /* Slanted Breadcrumb Setup */
 .slanted-breadcrumb {
-    background: #0a2d1e; /* Dark Green Base */
+    background: var(--brand-primary); /* Dark Green Base */
     min-height: 400px;
     overflow: hidden;
 }
 
 .breadcrumb-bg-overlay {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(circle at 20% 50%, rgba(25, 135, 84, 0.2), transparent);
+    background: radial-gradient(circle at 20% 50%, rgba(var(--brand-secondary-rgb), 0.2), transparent);
 }
 
 /* The Magic: Slanted Image Wrapper */
@@ -27,7 +27,7 @@
     left: -100px; /* Adjust for the cut angle */
     width: 200px;
     height: 100%;
-    background: #0a2d1e;
+    background: var(--brand-primary);
     transform: skewX(-15deg); /* তেরছা করার মেইন কোড */
     z-index: 3;
 }
@@ -53,14 +53,14 @@
 }
 .premium-overlay {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(10, 45, 30, 0.8);
+    background: rgba(var(--brand-primary-rgb), 0.8);
     display: flex; align-items: center; justify-content: center;
     opacity: 0; transition: 0.4s;
 }
 .premium-gallery-card:hover .premium-overlay { opacity: 1; }
 .premium-gallery-card:hover .gallery-img { transform: scale(1.1); }
 
-.gold-line { width: 60px; height: 4px; background: #ffb703; border-radius: 50px; }
+.gold-line { width: 60px; height: 4px; background: var(--brand-gold); border-radius: 50px; }
 
 @media (max-width: 991px) {
     .slanted-breadcrumb { min-height: auto; padding: 80px 0; }
@@ -133,7 +133,7 @@
     }
 
     .header-top-bar {
-        background: rgba(10, 45, 30, 0.5);
+        background: rgba(var(--brand-primary-rgb), 0.5);
         padding: 10px 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(5px);
@@ -155,10 +155,10 @@
     }
 
     .social-glass-icon:hover {
-        background: #ffb703;
-        color: #0a2d1e;
+        background: var(--brand-gold);
+        color: var(--brand-primary);
         transform: translateY(-3px) rotate(360deg);
-        box-shadow: 0 0 15px #ffb703;
+        box-shadow: 0 0 15px var(--brand-gold);
     }
 
     /* Navigation Area */
@@ -172,7 +172,7 @@
         position: fixed !important;
         top: 0;
         width: 100%;
-        background: rgba(10, 45, 30, 0.98) !important;
+        background: rgba(var(--brand-primary-rgb), 0.98) !important;
         padding: 12px 0 !important;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
         z-index: 9999;
@@ -211,9 +211,9 @@
         left: 0;
         width: 0;
         height: 2px;
-        background: #ffb703;
+        background: var(--brand-gold);
         transition: 0.4s;
-        box-shadow: 0 0 10px #ffb703;
+        box-shadow: 0 0 10px var(--brand-gold);
     }
 
     .luxury-menu li a:hover::after,
@@ -223,24 +223,24 @@
 
     .luxury-menu li a:hover,
     .luxury-menu li a.active {
-        color: #ffb703;
+        color: var(--brand-gold);
     }
 
     /* Neon Call Button */
     .btn-call-neon {
-        background: #ffb703;
-        color: #0a2d1e !important;
+        background: var(--brand-gold);
+        color: var(--brand-primary) !important;
         padding: 10px 22px;
         border-radius: 50px;
         font-weight: 800;
         text-decoration: none;
-        box-shadow: 0 0 15px rgba(255, 183, 3, 0.3);
+        box-shadow: 0 0 15px rgba(var(--brand-gold-rgb), 0.3);
         transition: 0.4s;
     }
 
     .btn-call-neon:hover {
         transform: scale(1.05);
-        box-shadow: 0 0 25px rgba(255, 183, 3, 0.6);
+        box-shadow: 0 0 25px rgba(var(--brand-gold-rgb), 0.6);
     }
 
     /* Phone Shake Animation */
@@ -272,7 +272,7 @@
     @media (max-width: 991px) {
         .main-header-area {
             position: relative;
-            background: #0a2d1e;
+            background: var(--brand-primary);
         }
 
         .header-navigation-main {
@@ -286,7 +286,7 @@
         .mobile-nav-toggle {
             background: none;
             border: none;
-            color: #ffb703;
+            color: var(--brand-gold);
             font-size: 24px;
         }
     }
@@ -303,7 +303,7 @@
 
     /* Mobile Canvas Sidebar */
     .luxury-mobile-canvas {
-        background: #0a2d1e;
+        background: var(--brand-primary);
         width: 280px !important;
     }
 
@@ -323,7 +323,7 @@
     }
 
     .footer-section {
-        background-image: radial-gradient(circle at 0% 0%, #0a2d1e 0%, #051a11 100%);
+        background-image: radial-gradient(circle at 0% 0%, var(--brand-primary) 0%, var(--brand-deep) 100%);
     }
 
     /* Contact Hover Effect */
@@ -335,7 +335,7 @@
 
     .contact-link:hover {
         padding-left: 10px;
-        background: rgba(255, 183, 3, 0.05);
+        background: rgba(var(--brand-gold-rgb), 0.05);
         border-radius: 5px;
     }
 
@@ -350,7 +350,7 @@
     }
 
     .footer-links li a:hover {
-        color: #ffb703 !important;
+        color: var(--brand-gold) !important;
         padding-left: 8px;
     }
 
@@ -365,11 +365,11 @@
         align-items: center;
         justify-content: center;
         transition: 0.4s;
-        border: 1px solid rgba(255, 183, 3, 0.3);
+        border: 1px solid rgba(var(--brand-gold-rgb), 0.3);
     }
 
     .social-v4-btn:hover {
-        background: #ffb703;
+        background: var(--brand-gold);
         color: #000;
         transform: rotate(360deg) scale(1.1);
     }
@@ -387,20 +387,20 @@
 
     .fb-premium-card:hover {
         transform: translateY(-10px);
-        border-color: #ffb703;
-        box-shadow: 0 15px 40px rgba(25, 135, 84, 0.4);
+        border-color: var(--brand-gold);
+        box-shadow: 0 15px 40px rgba(var(--brand-secondary-rgb), 0.4);
     }
 
     .fb-profile-img {
         width: 80px;
         height: 80px;
-        border: 3px solid #ffb703;
+        border: 3px solid var(--brand-gold);
         padding: 3px;
         background: #fff;
     }
 
     .btn-fb-follow {
-        background: #ffb703;
+        background: var(--brand-gold);
         color: #000;
         font-weight: bold;
         border-radius: 50px;
@@ -412,7 +412,7 @@
 
     .btn-fb-follow:hover {
         background: #fff;
-        color: #0a2d1e;
+        color: var(--brand-primary);
         transform: scale(1.05);
     }
 
@@ -423,7 +423,7 @@
         right: 30px;
         width: 50px;
         height: 50px;
-        background: #ffb703;
+        background: var(--brand-gold);
         color: #000;
         border-radius: 50%;
         display: flex;
@@ -448,7 +448,7 @@
     }
 
     .credential-tag:hover {
-        color: #ffb703;
+        color: var(--brand-gold);
         /* গোল্ডেন হাইলাইট */
     }
 

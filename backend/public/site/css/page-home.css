@@ -57,7 +57,7 @@
     }
 
     .header-top-bar {
-        background: rgba(10, 45, 30, 0.5);
+        background: rgba(var(--brand-primary-rgb), 0.5);
         padding: 10px 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(5px);
@@ -79,10 +79,10 @@
     }
 
     .social-glass-icon:hover {
-        background: #ffb703;
-        color: #0a2d1e;
+        background: var(--brand-gold);
+        color: var(--brand-primary);
         transform: translateY(-3px) rotate(360deg);
-        box-shadow: 0 0 15px #ffb703;
+        box-shadow: 0 0 15px var(--brand-gold);
     }
 
     /* Navigation Area */
@@ -96,7 +96,7 @@
         position: fixed !important;
         top: 0;
         width: 100%;
-        background: rgba(10, 45, 30, 0.98) !important;
+        background: rgba(var(--brand-primary-rgb), 0.98) !important;
         padding: 12px 0 !important;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
         z-index: 9999;
@@ -135,9 +135,9 @@
         left: 0;
         width: 0;
         height: 2px;
-        background: #ffb703;
+        background: var(--brand-gold);
         transition: 0.4s;
-        box-shadow: 0 0 10px #ffb703;
+        box-shadow: 0 0 10px var(--brand-gold);
     }
 
     .luxury-menu li a:hover::after,
@@ -147,24 +147,24 @@
 
     .luxury-menu li a:hover,
     .luxury-menu li a.active {
-        color: #ffb703;
+        color: var(--brand-gold);
     }
 
     /* Neon Call Button */
     .btn-call-neon {
-        background: #ffb703;
-        color: #0a2d1e !important;
+        background: var(--brand-gold);
+        color: var(--brand-primary) !important;
         padding: 10px 22px;
         border-radius: 50px;
         font-weight: 800;
         text-decoration: none;
-        box-shadow: 0 0 15px rgba(255, 183, 3, 0.3);
+        box-shadow: 0 0 15px rgba(var(--brand-gold-rgb), 0.3);
         transition: 0.4s;
     }
 
     .btn-call-neon:hover {
         transform: scale(1.05);
-        box-shadow: 0 0 25px rgba(255, 183, 3, 0.6);
+        box-shadow: 0 0 25px rgba(var(--brand-gold-rgb), 0.6);
     }
 
     /* Phone Shake Animation */
@@ -196,7 +196,7 @@
     @media (max-width: 991px) {
         .main-header-area {
             position: relative;
-            background: #0a2d1e;
+            background: var(--brand-primary);
         }
 
         .header-navigation-main {
@@ -210,7 +210,7 @@
         .mobile-nav-toggle {
             background: none;
             border: none;
-            color: #ffb703;
+            color: var(--brand-gold);
             font-size: 24px;
         }
     }
@@ -227,7 +227,7 @@
 
     /* Mobile Canvas Sidebar */
     .luxury-mobile-canvas {
-        background: #0a2d1e;
+        background: var(--brand-primary);
         width: 280px !important;
     }
 
@@ -254,9 +254,9 @@
     }
 
     .luxury-degree-badge:hover {
-        background: rgba(255, 183, 3, 0.1);
+        background: rgba(var(--brand-gold-rgb), 0.1);
         /* Gold tint on hover */
-        border-color: #ffb703;
+        border-color: var(--brand-gold);
         transform: translateY(-2px);
     }
 
@@ -281,7 +281,7 @@
     }
 
     .hero-section {
-        background: linear-gradient(135deg, #0a2d1e 0%, #051911 100%);
+        background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-deep) 100%);
         padding: 100px 0;
         min-height: 85vh;
         display: flex;
@@ -301,7 +301,7 @@
     .shape-1 {
         width: 350px;
         height: 350px;
-        background: rgba(25, 135, 84, 0.2);
+        background: rgba(var(--brand-secondary-rgb), 0.2);
         top: -5%;
         right: -5%;
     }
@@ -309,7 +309,7 @@
     .shape-2 {
         width: 450px;
         height: 450px;
-        background: rgba(255, 183, 3, 0.05);
+        background: rgba(var(--brand-gold-rgb), 0.05);
         bottom: -10%;
         left: -5%;
     }
@@ -343,14 +343,14 @@
         left: 0;
         width: 100%;
         height: 40%;
-        background: linear-gradient(to top, rgba(10, 45, 30, 0.9), transparent);
+        background: linear-gradient(to top, rgba(var(--brand-primary-rgb), 0.9), transparent);
         z-index: 1;
     }
 
     /* Buttons */
     .btn-appointment-luxury {
-        background: #ffb703;
-        color: #0a2d1e !important;
+        background: var(--brand-gold);
+        color: var(--brand-primary) !important;
         font-weight: 800;
         border-radius: 50px;
         transition: all 0.4s ease;
@@ -360,12 +360,12 @@
     .btn-appointment-luxury:hover {
         background: #ffffff;
         transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(255, 183, 3, 0.4);
+        box-shadow: 0 15px 30px rgba(var(--brand-gold-rgb), 0.4);
     }
 
     .btn-outline-gold {
-        border: 2px solid #ffb703;
-        color: #ffb703 !important;
+        border: 2px solid var(--brand-gold);
+        color: var(--brand-gold) !important;
     }
 
     /* Trust Card */
@@ -377,7 +377,7 @@
         padding: 18px 25px;
         border-radius: 20px;
         z-index: 10;
-        border-bottom: 5px solid #ffb703;
+        border-bottom: 5px solid var(--brand-gold);
     }
 
     .avatar-item {
@@ -392,8 +392,8 @@
         width: 38px;
         height: 38px;
         border-radius: 50%;
-        background: #ffb703;
-        color: #0a2d1e;
+        background: var(--brand-gold);
+        color: var(--brand-primary);
         font-size: 14px;
         font-weight: bold;
         display: flex;
@@ -505,27 +505,27 @@
     .feature-card:hover {
         animation-play-state: paused;
         transform: scale(1.03) !important;
-        box-shadow: 0 20px 40px rgba(10, 45, 30, 0.1) !important;
-        border-bottom-color: #198754;
+        box-shadow: 0 20px 40px rgba(var(--brand-primary-rgb), 0.1) !important;
+        border-bottom-color: var(--brand-secondary);
     }
 
     /* আইকন সার্কেল */
     .icon-circle-custom {
         width: 60px; height: 60px;
-        background: #f0fdf4;
+        background: var(--brand-soft);
         border-radius: 50%;
-        color: #198754;
+        color: var(--brand-secondary);
         transition: 0.4s ease;
     }
 
     .feature-card:hover .icon-circle-custom {
-        background: #0a2d1e;
+        background: var(--brand-primary);
         color: #fff;
         transform: rotateY(360deg);
     }
 
     /* টেক্সট এবং ইন্ডিকেটর */
-    .text-dark-green { color: #0a2d1e !important; }
+    .text-dark-green { color: var(--brand-primary) !important; }
 
     .card-indicator-premium {
         height: 4px; width: 40px;
@@ -535,7 +535,7 @@
 
     .feature-card:hover .card-indicator-premium {
         width: 100%; /* হোভারে ফুল হয়ে যাবে */
-        background: #ffb703 !important; /* গোল্ডেন টাচ */
+        background: var(--brand-gold) !important; /* গোল্ডেন টাচ */
     }
 
     .visually-hidden {
@@ -546,7 +546,7 @@
 
     /* বর্ডার ও কন্টেইনার */
     .border-top-premium {
-        border-top: 5px solid #0a2d1e !important;
+        border-top: 5px solid var(--brand-primary) !important;
         background: #ffffff;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
     }
@@ -563,7 +563,7 @@
 
     .q-card-step:hover {
         background: #ffffff;
-        border-left-color: #198754;
+        border-left-color: var(--brand-secondary);
         transform: translateX(10px);
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     }
@@ -584,18 +584,18 @@
     .institution-name {
         font-size: 1.15rem;
         line-height: 1.2;
-        color: #0a2d1e !important;
+        color: var(--brand-primary) !important;
     }
 
     .session-text {
         font-size: 0.9rem;
-        color: #198754;
+        color: var(--brand-secondary);
     }
 
     .degree-badge-inline {
         font-size: 0.9rem;
-        color: #0a2d1e;
-        background: rgba(25, 135, 84, 0.08);
+        color: var(--brand-primary);
+        background: rgba(var(--brand-secondary-rgb), 0.08);
         padding: 4px 12px;
         border-radius: 50px;
     }
@@ -630,8 +630,8 @@
     }
 
     .award-nav-btn.active {
-        border-color: #198754 !important;
-        background: #eef7f2 !important;
+        border-color: var(--brand-secondary) !important;
+        background: var(--brand-soft) !important;
         transform: translateY(-3px);
     }
 
@@ -639,7 +639,7 @@
     .premium-underline {
         width: 75px;
         height: 5px;
-        background: #0a2d1e;
+        background: var(--brand-primary);
         border-radius: 10px;
     }
 
@@ -650,8 +650,8 @@
     .icon-circle-sm {
         width: 42px;
         height: 42px;
-        background: #eef7f2;
-        color: #198754;
+        background: var(--brand-soft);
+        color: var(--brand-secondary);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -664,7 +664,7 @@
         right: -40px;
         top: 15%;
         font-size: 280px;
-        color: rgba(10, 45, 30, 0.02);
+        color: rgba(var(--brand-primary-rgb), 0.02);
         z-index: 1;
         transform: rotate(-15deg);
     }
@@ -696,9 +696,9 @@
         content: "";
         position: absolute;
         inset: 0 0 0 24%;
-        border: 1px solid #d8e5da;
+        border: 1px solid var(--brand-border);
         border-radius: 150px 28px 28px 28px;
-        background: linear-gradient(150deg, #f1f6ee, #e6efe7);
+        background: linear-gradient(150deg, var(--brand-soft), var(--brand-border));
         z-index: -1;
     }
     .introduction-collage {
@@ -709,10 +709,10 @@
         aspect-ratio: 1.05;
     }
     .introduction-stack { display: grid; grid-auto-rows: minmax(0, 1fr); gap: 16px; padding-block: 14px; min-width: 0; }
-    .introduction-photo { position: relative; margin: 0; min-width: 0; min-height: 0; overflow: hidden; border-radius: 20px; background: #eaf1ec; }
+    .introduction-photo { position: relative; margin: 0; min-width: 0; min-height: 0; overflow: hidden; border-radius: 20px; background: var(--brand-border); }
     .introduction-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform .6s ease; }
     .introduction-photo:hover img { transform: scale(1.035); }
-    .introduction-photo--portrait { border-radius: 100px 100px 22px 22px; box-shadow: 0 18px 32px -24px #163d2c80; }
+    .introduction-photo--portrait { border-radius: 100px 100px 22px 22px; box-shadow: 0 18px 32px -24px rgba(var(--brand-primary-rgb), 0.502); }
     .introduction-photo--portrait img { object-position: center top; }
     .introduction-photo figcaption {
         position: absolute;
@@ -725,12 +725,12 @@
         border: 1px solid #ffffffd9;
         border-radius: 30px;
         background: #fffffff0;
-        color: #174833;
+        color: var(--brand-primary);
         font-size: 10px;
         font-weight: 500;
         line-height: 1.4;
     }
-    .introduction-photo figcaption span { width: 5px; height: 5px; flex-shrink: 0; border-radius: 50%; background: #41845a; }
+    .introduction-photo figcaption span { width: 5px; height: 5px; flex-shrink: 0; border-radius: 50%; background: var(--brand-secondary); }
     .introduction-seal {
         position: absolute;
         left: 44%;
@@ -742,16 +742,16 @@
         aspect-ratio: 1;
         border: 6px solid #fff;
         border-radius: 50%;
-        background: #f1f6ee;
-        box-shadow: 0 6px 24px #0c392522;
+        background: var(--brand-soft);
+        box-shadow: 0 6px 24px rgba(var(--brand-primary-rgb), 0.133);
     }
-    .introduction-seal-text { position: absolute; inset: 0; width: 100%; height: 100%; fill: #235e40; font-family: inherit; font-size: 9px; font-weight: 600; letter-spacing: 1px; animation: introduction-seal-turn 38s linear infinite; }
-    .introduction-seal-center { display: grid; place-items: center; width: 53%; aspect-ratio: 1; padding: 0; border: 0; border-radius: 50%; background: #103d2a; color: #fff; font-size: 19px; z-index: 1; }
-    button.introduction-seal-center:hover { background: #28724b; }
-    button.introduction-seal-center:focus-visible, .introduction-watch:focus-visible { outline: 3px solid #ffb703; outline-offset: 4px; }
+    .introduction-seal-text { position: absolute; inset: 0; width: 100%; height: 100%; fill: var(--brand-secondary); font-family: inherit; font-size: 9px; font-weight: 600; letter-spacing: 1px; animation: introduction-seal-turn 38s linear infinite; }
+    .introduction-seal-center { display: grid; place-items: center; width: 53%; aspect-ratio: 1; padding: 0; border: 0; border-radius: 50%; background: var(--brand-primary); color: #fff; font-size: 19px; z-index: 1; }
+    button.introduction-seal-center:hover { background: var(--brand-secondary); }
+    button.introduction-seal-center:focus-visible, .introduction-watch:focus-visible { outline: 3px solid var(--brand-gold); outline-offset: 4px; }
     .introduction-collage--single { grid-template-columns: minmax(0, 1fr); max-width: 460px; margin-inline: auto; aspect-ratio: .9; }
     .introduction-collage--no-portrait .introduction-stack { display: contents; }
-    .introduction-watch { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border: 3px solid #fff; border-radius: 30px; background: #103d2a; color: #fff; font-size: 12px; white-space: nowrap; }
+    .introduction-watch { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border: 3px solid #fff; border-radius: 30px; background: var(--brand-primary); color: #fff; font-size: 12px; white-space: nowrap; }
     @keyframes introduction-seal-turn { to { transform: rotate(360deg); } }
     @media (max-width: 991.98px) {
         #about .introduction-visual { max-width: 580px; margin-inline: auto; }
@@ -778,7 +778,7 @@
     .divider-premium {
         width: 80px;
         height: 5px;
-        background: #0a2d1e;
+        background: var(--brand-primary);
         margin: auto;
         border-radius: 10px;
     }
@@ -791,7 +791,7 @@
     .service-bg-icon {
         position: absolute;
         font-size: 120px;
-        color: #198754;
+        color: var(--brand-secondary);
         opacity: 1;
         z-index: 1;
     }
@@ -810,8 +810,8 @@
 
     /* Service Card Pro */
     .service-card-pro {
-        border: 1px solid rgba(10, 45, 30, 0.05);
-        border-bottom: 4px solid #0a2d1e;
+        border: 1px solid rgba(var(--brand-primary-rgb), 0.05);
+        border-bottom: 4px solid var(--brand-primary);
         transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         z-index: 2;
     }
@@ -819,37 +819,37 @@
     .icon-wrapper-medical {
         width: 65px;
         height: 65px;
-        background: #eef7f2;
+        background: var(--brand-soft);
         border-radius: 15px;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 28px;
-        color: #198754;
+        color: var(--brand-secondary);
         transition: 0.4s;
     }
 
     .service-card-pro:hover {
         transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(10, 45, 30, 0.1) !important;
-        border-bottom-color: #ffb703;
+        box-shadow: 0 20px 40px rgba(var(--brand-primary-rgb), 0.1) !important;
+        border-bottom-color: var(--brand-gold);
         /* হোভারে গোল্ডেন টাচ */
     }
 
     .service-card-pro:hover .icon-wrapper-medical {
-        background: #0a2d1e;
+        background: var(--brand-primary);
         color: #fff;
         transform: rotateY(360deg);
     }
 
     /* CTA Banner Luxury */
     .cta-banner-premium {
-        background: linear-gradient(135deg, #0a2d1e 0%, #198754 100%);
-        box-shadow: 0 15px 35px rgba(10, 45, 30, 0.3);
+        background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
+        box-shadow: 0 15px 35px rgba(var(--brand-primary-rgb), 0.3);
     }
 
     .btn-cta-luxury {
-        background: #ffb703;
+        background: var(--brand-gold);
         color: #000 !important;
         padding: 12px 35px;
         border-radius: 50px;
@@ -904,7 +904,7 @@
     .about-bg-anim {
         position: absolute;
         font-size: 100px;
-        color: #198754;
+        color: var(--brand-secondary);
         opacity: 1;
         z-index: 0;
     }
@@ -956,7 +956,7 @@
         transform: translate(-50%, -50%);
         width: 65px;
         height: 65px;
-        background: #0a2d1e;
+        background: var(--brand-primary);
         color: #fff;
         border: none;
         border-radius: 50%;
@@ -971,7 +971,7 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        border: 2px solid #198754;
+        border: 2px solid var(--brand-secondary);
         border-radius: 50%;
         animation: btnPulse 2s infinite;
     }
@@ -992,39 +992,39 @@
     .degree-badge-premium {
         font-size: 13px;
         font-weight: 500;
-        background: rgba(25, 135, 84, 0.1);
-        color: #0a2d1e;
+        background: rgba(var(--brand-secondary-rgb), 0.1);
+        color: var(--brand-primary);
         padding: 8px 15px;
         border-radius: 50px;
         display: inline-block;
-        border-left: 4px solid #198754;
+        border-left: 4px solid var(--brand-secondary);
     }
 
     /* Custom Read More Button */
     .btn-about-premium {
         display: inline-flex;
         align-items: center;
-        background: #0a2d1e;
+        background: var(--brand-primary);
         color: #fff !important;
         padding: 12px 32px;
         border-radius: 50px;
         font-weight: 700;
         text-decoration: none;
         transition: 0.4s;
-        box-shadow: 0 10px 20px rgba(10, 45, 30, 0.2);
+        box-shadow: 0 10px 20px rgba(var(--brand-primary-rgb), 0.2);
     }
 
     .btn-about-premium:hover {
-        background: #198754;
+        background: var(--brand-secondary);
         transform: scale(1.05);
-        box-shadow: 0 15px 30px rgba(25, 135, 84, 0.3);
+        box-shadow: 0 15px 30px rgba(var(--brand-secondary-rgb), 0.3);
     }
 
     /* Modal Luxury Close Button */
     .btn-close-custom {
         width: 40px;
         height: 40px;
-        background: #198754;
+        background: var(--brand-secondary);
         color: #fff;
         border-radius: 50%;
         border: 2px solid #fff;
@@ -1036,7 +1036,7 @@
     }
 
     .btn-close-custom:hover {
-        background: #0a2d1e;
+        background: var(--brand-primary);
         transform: rotate(90deg);
     }
 
@@ -1054,7 +1054,7 @@
 
     .degree-pill-premium {
         background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 183, 3, 0.3);
+        border: 1px solid rgba(var(--brand-gold-rgb), 0.3);
         padding: 4px 14px;
         border-radius: 50px;
         font-size: 13px;
@@ -1066,8 +1066,8 @@
     }
 
     .degree-pill-premium:hover {
-        background: rgba(255, 183, 3, 0.15);
-        border-color: #ffb703;
+        background: rgba(var(--brand-gold-rgb), 0.15);
+        border-color: var(--brand-gold);
         transform: scale(1.05);
     }
 
@@ -1087,26 +1087,26 @@
     .divider-premium {
         width: 70px;
         height: 5px;
-        background: #0a2d1e;
+        background: var(--brand-primary);
         border-radius: 10px;
     }
 
     .bg-success-light {
-        background: rgba(25, 135, 84, 0.1);
+        background: rgba(var(--brand-secondary-rgb), 0.1);
     }
 
     /* Call Button Styling */
     .btn-premium-call {
-        background: #0a2d1e;
+        background: var(--brand-primary);
         color: #fff !important;
         transition: 0.4s;
         border: none;
     }
 
     .btn-premium-call:hover {
-        background: #198754;
+        background: var(--brand-secondary);
         transform: translateY(-3px);
-        box-shadow: 0 10px 20px rgba(25, 135, 84, 0.3);
+        box-shadow: 0 10px 20px rgba(var(--brand-secondary-rgb), 0.3);
     }
 
     /* Timeline Vertical Line */
@@ -1117,7 +1117,7 @@
         top: 0;
         width: 3px;
         height: 100%;
-        background: linear-gradient(to bottom, #198754, #0a2d1e, transparent);
+        background: linear-gradient(to bottom, var(--brand-secondary), var(--brand-primary), transparent);
         z-index: 0;
     }
 
@@ -1132,7 +1132,7 @@
     .step-badge-inner {
         width: 35px;
         height: 35px;
-        background: #0a2d1e;
+        background: var(--brand-primary);
         color: #fff;
         border-radius: 50%;
         display: flex;
@@ -1145,7 +1145,7 @@
 
     /* Hover Effects */
     .process-item-new:hover .step-badge-inner {
-        background: #ffb703;
+        background: var(--brand-gold);
         color: #000;
         transform: scale(1.1);
     }
@@ -1234,7 +1234,7 @@
 
     .video-card-pure:hover {
         transform: scale(1.01);
-        box-shadow: 0 15px 30px rgba(10, 45, 30, 0.1) !important;
+        box-shadow: 0 15px 30px rgba(var(--brand-primary-rgb), 0.1) !important;
     }
 
     /* Button Styling */
@@ -1247,7 +1247,7 @@
     .btn-premium-video {
         display: inline-flex;
         align-items: center;
-        background: linear-gradient(135deg, #0a2d1e 0%, #198754 100%);
+        background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
         padding: 10px 10px 10px 30px;
         border-radius: 60px;
         color: #ffffff !important;
@@ -1256,13 +1256,13 @@
         font-size: 13px;
         letter-spacing: 1.5px;
         transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-        box-shadow: 0 10px 25px rgba(10, 45, 30, 0.3);
+        box-shadow: 0 10px 25px rgba(var(--brand-primary-rgb), 0.3);
     }
 
     .btn-icon-box {
         width: 42px;
         height: 42px;
-        background: #ffb703;
+        background: var(--brand-gold);
         color: #000;
         border-radius: 50%;
         display: flex;
@@ -1277,7 +1277,7 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        background: #ffb703;
+        background: var(--brand-gold);
         border-radius: 50%;
         z-index: -1;
         animation: ripple 2s infinite;
@@ -1292,7 +1292,7 @@
     /* Background Icons Animations */
     .video-bg-icon {
         position: absolute;
-        color: #198754;
+        color: var(--brand-secondary);
         opacity: 0.1;
         z-index: 1;
         pointer-events: none;
@@ -1300,9 +1300,9 @@
     }
 
     .v-icon-1 { top: 5%; left: 3%; animation: floatY 6s infinite ease-in-out; }
-    .v-icon-2 { top: 12%; right: 4%; color: #0a2d1e; font-size: 55px; animation: floatY 8s infinite reverse ease-in-out; }
+    .v-icon-2 { top: 12%; right: 4%; color: var(--brand-primary); font-size: 55px; animation: floatY 8s infinite reverse ease-in-out; }
     .v-icon-3 { bottom: 8%; left: 5%; font-size: 50px; animation: floatY 7s infinite ease-in-out 1s; }
-    .v-icon-4 { bottom: 15%; right: 6%; color: #0a2d1e; animation: floatY 9s infinite reverse ease-in-out; }
+    .v-icon-4 { bottom: 15%; right: 6%; color: var(--brand-primary); animation: floatY 9s infinite reverse ease-in-out; }
 
     @keyframes floatY {
         0%, 100% { transform: translateY(0) rotate(0deg); }
@@ -1326,15 +1326,15 @@
     .divider-premium {
         width: 80px;
         height: 5px;
-        background: #0a2d1e;
+        background: var(--brand-primary);
         margin: auto;
         border-radius: 10px;
     }
 
     /* Experience Card Premium Styling */
     .experience-card-pro {
-        border: 1px solid rgba(10, 45, 30, 0.08) !important;
-        border-top: 5px solid #0a2d1e !important;
+        border: 1px solid rgba(var(--brand-primary-rgb), 0.08) !important;
+        border-top: 5px solid var(--brand-primary) !important;
         /* ফুটারের সেই ডার্ক গ্রিন টাচ */
         transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         z-index: 1;
@@ -1342,8 +1342,8 @@
 
     .experience-card-pro:hover {
         transform: translateY(-12px);
-        box-shadow: 0 20px 40px rgba(10, 45, 30, 0.12) !important;
-        border-top-color: #198754 !important;
+        box-shadow: 0 20px 40px rgba(var(--brand-primary-rgb), 0.12) !important;
+        border-top-color: var(--brand-secondary) !important;
         /* হোভারে কালার একটু লাইট হবে */
     }
 
@@ -1363,7 +1363,7 @@
         bottom: 5px;
         right: 5px;
         background: #fff;
-        color: #198754;
+        color: var(--brand-secondary);
         border-radius: 50%;
         width: 24px;
         height: 24px;
@@ -1376,8 +1376,8 @@
 
     /* Badges & Text */
     .bg-success-subtle {
-        background-color: #eef7f2 !important;
-        color: #198754 !important;
+        background-color: var(--brand-soft) !important;
+        color: var(--brand-secondary) !important;
     }
 
     .ls-2 {
@@ -1420,10 +1420,10 @@
         background-size: 50% 50%, 50% 50%;
         background-position: 0 0, 100% 0, 100% 100%, 0 100%;
         /* এখানে ফুটারের গ্রিন এবং গোল্ডেন ইয়েলোর গ্রেডিয়েন্ট ব্যবহার করা হয়েছে */
-        background-image: linear-gradient(#198754, #198754),
-            linear-gradient(#ffb703, #ffb703),
-            linear-gradient(#198754, #198754),
-            linear-gradient(#ffb703, #ffb703);
+        background-image: linear-gradient(var(--brand-secondary), var(--brand-secondary)),
+            linear-gradient(var(--brand-gold), var(--brand-gold)),
+            linear-gradient(var(--brand-secondary), var(--brand-secondary)),
+            linear-gradient(var(--brand-gold), var(--brand-gold));
         animation: rotate-border 4s linear infinite;
     }
 
@@ -1453,7 +1453,7 @@
 
     /* Help Banner Base */
     .help-banner-premium {
-        background: linear-gradient(135deg, #0a2d1e 0%, #154d35 100%);
+        background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary) 100%);
         border-radius: 15px;
         z-index: 1;
         box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.2);
@@ -1466,7 +1466,7 @@
         left: 50%;
         width: 150%;
         height: 150%;
-        background: radial-gradient(circle, rgba(255, 183, 3, 0.15) 0%, transparent 60%);
+        background: radial-gradient(circle, rgba(var(--brand-gold-rgb), 0.15) 0%, transparent 60%);
         transform: translate(-50%, -50%);
         z-index: -1;
         animation: bgPulse 6s infinite ease-in-out;
@@ -1520,7 +1520,7 @@
 
     /* Button and Icon Pulse */
     .btn-help-premium {
-        background-color: #ffb703;
+        background-color: var(--brand-gold);
         color: #000 !important;
         padding: 16px 40px;
         border-radius: 50px;
@@ -1531,8 +1531,8 @@
 
     .btn-help-premium:hover {
         background-color: transparent;
-        color: #ffb703 !important;
-        border-color: #ffb703;
+        color: var(--brand-gold) !important;
+        border-color: var(--brand-gold);
         transform: scale(1.08);
     }
 
@@ -1555,14 +1555,14 @@
 
     /* Review Section Base */
     .review-section {
-        background-color: #f8fdfb;
+        background-color: var(--brand-soft);
         /* Light fresh background */
         position: relative;
     }
 
     /* Header Styling */
     .reveiwbutton h2 {
-        color: #0a2d1e;
+        color: var(--brand-primary);
         /* Footer color sync */
         letter-spacing: -1px;
     }
@@ -1570,14 +1570,14 @@
     .divider-custom {
         width: 70px;
         height: 5px;
-        background: linear-gradient(to right, #198754, #ffb703);
+        background: linear-gradient(to right, var(--brand-secondary), var(--brand-gold));
         border-radius: 10px;
     }
 
     /* Premium Review Card */
     .review-card {
         transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        border: 1px solid rgba(10, 45, 30, 0.05) !important;
+        border: 1px solid rgba(var(--brand-primary-rgb), 0.05) !important;
         background: #ffffff;
         min-height: 280px;
         display: flex;
@@ -1586,8 +1586,8 @@
 
     .review-card:hover {
         transform: translateY(-12px);
-        box-shadow: 0 20px 40px rgba(10, 45, 30, 0.12) !important;
-        border-color: #198754 !important;
+        box-shadow: 0 20px 40px rgba(var(--brand-primary-rgb), 0.12) !important;
+        border-color: var(--brand-secondary) !important;
     }
 
     .review-card p {
@@ -1609,7 +1609,7 @@
 
     /* Button Styling */
     .client_review_btn {
-        background-color: #0a2d1e;
+        background-color: var(--brand-primary);
         color: white;
         border: none;
         padding: 12px 28px;
@@ -1618,13 +1618,13 @@
         position: relative;
         overflow: hidden;
         transition: 0.3s;
-        box-shadow: 0 10px 20px rgba(10, 45, 30, 0.2);
+        box-shadow: 0 10px 20px rgba(var(--brand-primary-rgb), 0.2);
     }
 
     .client_review_btn:hover {
-        background-color: #198754;
+        background-color: var(--brand-secondary);
         transform: translateY(-3px);
-        box-shadow: 0 15px 30px rgba(10, 45, 30, 0.3);
+        box-shadow: 0 15px 30px rgba(var(--brand-primary-rgb), 0.3);
     }
 
     /* Modal Styling */
@@ -1635,7 +1635,7 @@
     }
 
     .modal-header {
-        background: linear-gradient(135deg, #0a2d1e 0%, #198754 100%) !important;
+        background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%) !important;
         padding: 1.5rem;
     }
 
@@ -1647,14 +1647,14 @@
     }
 
     .custom-input:focus {
-        border-color: #198754 !important;
-        box-shadow: 0 0 0 4px rgba(25, 135, 84, 0.1) !important;
+        border-color: var(--brand-secondary) !important;
+        box-shadow: 0 0 0 4px rgba(var(--brand-secondary-rgb), 0.1) !important;
         outline: none;
     }
 
     /* Swiper Pagination */
     .swiper-pagination-bullet-active {
-        background: #198754 !important;
+        background: var(--brand-secondary) !important;
         width: 30px !important;
         border-radius: 10px !important;
     }
@@ -1665,7 +1665,7 @@
     }
 
     .footer-section {
-        background-image: radial-gradient(circle at 0% 0%, #0a2d1e 0%, #051a11 100%);
+        background-image: radial-gradient(circle at 0% 0%, var(--brand-primary) 0%, var(--brand-deep) 100%);
     }
 
     /* Contact Hover Effect */
@@ -1677,7 +1677,7 @@
 
     .contact-link:hover {
         padding-left: 10px;
-        background: rgba(255, 183, 3, 0.05);
+        background: rgba(var(--brand-gold-rgb), 0.05);
         border-radius: 5px;
     }
 
@@ -1692,7 +1692,7 @@
     }
 
     .footer-links li a:hover {
-        color: #ffb703 !important;
+        color: var(--brand-gold) !important;
         padding-left: 8px;
     }
 
@@ -1707,11 +1707,11 @@
         align-items: center;
         justify-content: center;
         transition: 0.4s;
-        border: 1px solid rgba(255, 183, 3, 0.3);
+        border: 1px solid rgba(var(--brand-gold-rgb), 0.3);
     }
 
     .social-v4-btn:hover {
-        background: #ffb703;
+        background: var(--brand-gold);
         color: #000;
         transform: rotate(360deg) scale(1.1);
     }
@@ -1729,20 +1729,20 @@
 
     .fb-premium-card:hover {
         transform: translateY(-10px);
-        border-color: #ffb703;
-        box-shadow: 0 15px 40px rgba(25, 135, 84, 0.4);
+        border-color: var(--brand-gold);
+        box-shadow: 0 15px 40px rgba(var(--brand-secondary-rgb), 0.4);
     }
 
     .fb-profile-img {
         width: 80px;
         height: 80px;
-        border: 3px solid #ffb703;
+        border: 3px solid var(--brand-gold);
         padding: 3px;
         background: #fff;
     }
 
     .btn-fb-follow {
-        background: #ffb703;
+        background: var(--brand-gold);
         color: #000;
         font-weight: bold;
         border-radius: 50px;
@@ -1754,7 +1754,7 @@
 
     .btn-fb-follow:hover {
         background: #fff;
-        color: #0a2d1e;
+        color: var(--brand-primary);
         transform: scale(1.05);
     }
 
@@ -1765,7 +1765,7 @@
         right: 30px;
         width: 50px;
         height: 50px;
-        background: #ffb703;
+        background: var(--brand-gold);
         color: #000;
         border-radius: 50%;
         display: flex;
@@ -1790,7 +1790,7 @@
     }
 
     .credential-tag:hover {
-        color: #ffb703;
+        color: var(--brand-gold);
         /* গোল্ডেন হাইলাইট */
     }
 

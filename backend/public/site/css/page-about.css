@@ -1,7 +1,7 @@
 
     /* Slanted Breadcrumb Setup */
     .slanted-breadcrumb {
-        background: #0a2d1e;
+        background: var(--brand-primary);
         min-height: 450px;
         overflow: hidden;
         display: flex;
@@ -23,7 +23,7 @@
         left: -100px;
         width: 200px;
         height: 100%;
-        background: #0a2d1e;
+        background: var(--brand-primary);
         transform: skewX(-15deg);
         z-index: 3;
     }
@@ -42,11 +42,11 @@
         position: absolute;
         bottom: 30px;
         left: -20px;
-        background: #198754;
+        background: var(--brand-secondary);
         padding: 20px;
         border-radius: 15px;
         text-align: center;
-        border-left: 5px solid #ffb703;
+        border-left: 5px solid var(--brand-gold);
     }
 
     /* Border Gold & Cards */
@@ -55,11 +55,11 @@
     }
 
     .border-start-gold {
-        border-left: 5px solid #ffb703 !important;
+        border-left: 5px solid var(--brand-gold) !important;
     }
 
     .academic-luxury-card {
-        background: #0a2d1e;
+        background: var(--brand-primary);
         color: #fff;
     }
 
@@ -68,7 +68,7 @@
         right: -20px;
         bottom: -20px;
         font-size: 150px;
-        color: rgba(255, 183, 3, 0.05);
+        color: rgba(var(--brand-gold-rgb), 0.05);
         transform: rotate(-15deg);
     }
 
@@ -83,7 +83,7 @@
         content: '→';
         position: absolute;
         left: 0;
-        color: #ffb703;
+        color: var(--brand-gold);
     }
 
     /* Video Styling */
@@ -94,8 +94,8 @@
 
     /* CTA Banner Animation */
     .cta-help-luxury {
-        background: #0a2d1e;
-        border: 1px solid rgba(255, 183, 3, 0.1);
+        background: var(--brand-primary);
+        border: 1px solid rgba(var(--brand-gold-rgb), 0.1);
     }
 
     .luxury-blob {
@@ -108,13 +108,13 @@
     }
 
     .blob-1 {
-        background: #198754;
+        background: var(--brand-secondary);
         top: -100px;
         right: -50px;
     }
 
     .blob-2 {
-        background: #ffb703;
+        background: var(--brand-gold);
         bottom: -100px;
         left: -50px;
     }
@@ -122,8 +122,8 @@
     .btn-help-luxury {
         position: relative;
         padding: 15px 45px;
-        background: #ffb703;
-        color: #0a2d1e !important;
+        background: var(--brand-gold);
+        color: var(--brand-primary) !important;
         font-weight: 800;
         border-radius: 50px;
         display: inline-flex;
@@ -203,7 +203,7 @@
     }
 
     .header-top-bar {
-        background: rgba(10, 45, 30, 0.5);
+        background: rgba(var(--brand-primary-rgb), 0.5);
         padding: 10px 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(5px);
@@ -225,10 +225,10 @@
     }
 
     .social-glass-icon:hover {
-        background: #ffb703;
-        color: #0a2d1e;
+        background: var(--brand-gold);
+        color: var(--brand-primary);
         transform: translateY(-3px) rotate(360deg);
-        box-shadow: 0 0 15px #ffb703;
+        box-shadow: 0 0 15px var(--brand-gold);
     }
 
     /* Navigation Area */
@@ -242,7 +242,7 @@
         position: fixed !important;
         top: 0;
         width: 100%;
-        background: rgba(10, 45, 30, 0.98) !important;
+        background: rgba(var(--brand-primary-rgb), 0.98) !important;
         padding: 12px 0 !important;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
         z-index: 9999;
@@ -281,9 +281,9 @@
         left: 0;
         width: 0;
         height: 2px;
-        background: #ffb703;
+        background: var(--brand-gold);
         transition: 0.4s;
-        box-shadow: 0 0 10px #ffb703;
+        box-shadow: 0 0 10px var(--brand-gold);
     }
 
     .luxury-menu li a:hover::after,
@@ -293,24 +293,24 @@
 
     .luxury-menu li a:hover,
     .luxury-menu li a.active {
-        color: #ffb703;
+        color: var(--brand-gold);
     }
 
     /* Neon Call Button */
     .btn-call-neon {
-        background: #ffb703;
-        color: #0a2d1e !important;
+        background: var(--brand-gold);
+        color: var(--brand-primary) !important;
         padding: 10px 22px;
         border-radius: 50px;
         font-weight: 800;
         text-decoration: none;
-        box-shadow: 0 0 15px rgba(255, 183, 3, 0.3);
+        box-shadow: 0 0 15px rgba(var(--brand-gold-rgb), 0.3);
         transition: 0.4s;
     }
 
     .btn-call-neon:hover {
         transform: scale(1.05);
-        box-shadow: 0 0 25px rgba(255, 183, 3, 0.6);
+        box-shadow: 0 0 25px rgba(var(--brand-gold-rgb), 0.6);
     }
 
     /* Phone Shake Animation */
@@ -342,7 +342,7 @@
     @media (max-width: 991px) {
         .main-header-area {
             position: relative;
-            background: #0a2d1e;
+            background: var(--brand-primary);
         }
 
         .header-navigation-main {
@@ -356,7 +356,7 @@
         .mobile-nav-toggle {
             background: none;
             border: none;
-            color: #ffb703;
+            color: var(--brand-gold);
             font-size: 24px;
         }
     }
@@ -373,7 +373,7 @@
 
     /* Mobile Canvas Sidebar */
     .luxury-mobile-canvas {
-        background: #0a2d1e;
+        background: var(--brand-primary);
         width: 280px !important;
     }
 
@@ -393,7 +393,7 @@
     }
 
     .footer-section {
-        background-image: radial-gradient(circle at 0% 0%, #0a2d1e 0%, #051a11 100%);
+        background-image: radial-gradient(circle at 0% 0%, var(--brand-primary) 0%, var(--brand-deep) 100%);
     }
 
     /* Contact Hover Effect */
@@ -405,7 +405,7 @@
 
     .contact-link:hover {
         padding-left: 10px;
-        background: rgba(255, 183, 3, 0.05);
+        background: rgba(var(--brand-gold-rgb), 0.05);
         border-radius: 5px;
     }
 
@@ -420,7 +420,7 @@
     }
 
     .footer-links li a:hover {
-        color: #ffb703 !important;
+        color: var(--brand-gold) !important;
         padding-left: 8px;
     }
 
@@ -435,11 +435,11 @@
         align-items: center;
         justify-content: center;
         transition: 0.4s;
-        border: 1px solid rgba(255, 183, 3, 0.3);
+        border: 1px solid rgba(var(--brand-gold-rgb), 0.3);
     }
 
     .social-v4-btn:hover {
-        background: #ffb703;
+        background: var(--brand-gold);
         color: #000;
         transform: rotate(360deg) scale(1.1);
     }
@@ -457,20 +457,20 @@
 
     .fb-premium-card:hover {
         transform: translateY(-10px);
-        border-color: #ffb703;
-        box-shadow: 0 15px 40px rgba(25, 135, 84, 0.4);
+        border-color: var(--brand-gold);
+        box-shadow: 0 15px 40px rgba(var(--brand-secondary-rgb), 0.4);
     }
 
     .fb-profile-img {
         width: 80px;
         height: 80px;
-        border: 3px solid #ffb703;
+        border: 3px solid var(--brand-gold);
         padding: 3px;
         background: #fff;
     }
 
     .btn-fb-follow {
-        background: #ffb703;
+        background: var(--brand-gold);
         color: #000;
         font-weight: bold;
         border-radius: 50px;
@@ -482,7 +482,7 @@
 
     .btn-fb-follow:hover {
         background: #fff;
-        color: #0a2d1e;
+        color: var(--brand-primary);
         transform: scale(1.05);
     }
 
@@ -493,7 +493,7 @@
         right: 30px;
         width: 50px;
         height: 50px;
-        background: #ffb703;
+        background: var(--brand-gold);
         color: #000;
         border-radius: 50%;
         display: flex;
@@ -518,7 +518,7 @@
     }
 
     .credential-tag:hover {
-        color: #ffb703;
+        color: var(--brand-gold);
         /* গোল্ডেন হাইলাইট */
     }
 
