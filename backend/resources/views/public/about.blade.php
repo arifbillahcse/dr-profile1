@@ -77,6 +77,7 @@
                                 <i class="bi bi-mortarboard-fill me-3 text-warning"></i> Academic Excellence
                             </h3>
                             <div class="row g-4">@foreach($educations as $education)<div class="col-md-6"><ul class="list-unstyled timeline-luxury"><li class="mb-3"><strong>{{ $education->qualification }}</strong> {{ $education->year }}<br>{{ $education->description ?: $education->institution }}</li></ul></div>@endforeach</div>
+                            @include('public.memberships')
                         </div>
                     </div>@endif
                 </div>

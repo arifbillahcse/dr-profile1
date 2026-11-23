@@ -83,6 +83,32 @@ class PracticeDetailsTest extends TestCase
         $this->get('/')->assertDontSee('info@sparkleaestheticbd.com');
     }
 
+    public function test_aaam_membership_is_shown_in_every_requested_credential_area(): void
+    {
+        app(WebsiteImporter::class)->run();
+        $membership = 'Member of American Academy of Aesthetic Medicine (AAAM)';
+        foreach ([
+            '/' => ['hero-header', 'introduction-qualifications', 'qualification-award-area', 'footer-about'],
+            '/about' => ['academic-luxury-card', 'footer-about'],
+        ] as $url => $sections) {
+            $response = $this->get($url)->assertOk();
+            $document = new \DOMDocument;
+            $previous = libxml_use_internal_errors(true);
+            try {
+                $document->loadHTML($response->getContent());
+            } finally {
+                libxml_clear_errors();
+                libxml_use_internal_errors($previous);
+            }
+            $xpath = new \DOMXPath($document);
+            foreach ($sections as $section) {
+                $nodes = $xpath->query('//*[contains(concat(" ", normalize-space(@class), " "), " '.$section.' ")]');
+                $this->assertSame(1, $nodes->length, $url.' '.$section);
+                $this->assertStringContainsString($membership, $nodes->item(0)->textContent, $url.' '.$section);
+            }
+        }
+    }
+
     public function test_archived_or_deleted_imported_content_is_not_recreated(): void
     {
         app(WebsiteImporter::class)->run();

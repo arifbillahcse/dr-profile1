@@ -29,7 +29,7 @@
                             <div class="border-4 border-start-lg border-warning">
 
                                 <div class="flex-wrap gap-2 mt-2 d-flex">
-                                                                            @foreach($qualifications as $credential)<div class="luxury-degree-badge">
+                                                                            @foreach($profile->credentials ?? [] as $credential)<div class="luxury-degree-badge">
                                             <i class="fas fa-certificate text-warning me-2 small"></i>
                                             <span class="degree-text">{{ $credential }}</span>
                                         </div>@endforeach
@@ -191,6 +191,7 @@
                                                     
                                                     
                                             </div>
+                    @include('public.memberships')
                 </div>
             </div>
 
@@ -297,12 +298,12 @@
                     @if($profile->specialty)<p class="introduction-discipline" itemprop="medicalSpecialty">{{ $profile->specialty }}</p>@endif
                     <div class="introduction-summary" itemprop="description">{{ $profile->summary }}</div>
 
-                    @if($qualifications->isNotEmpty())
+                    @if(!empty($profile->credentials))
                     <section class="introduction-qualifications" aria-labelledby="introduction-qualifications-title">
-                        <h3 id="introduction-qualifications-title"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Medical qualifications</h3>
+                        <h3 id="introduction-qualifications-title"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Qualifications &amp; memberships</h3>
                         <ul>
-                            @foreach($qualifications as $credential)
-                            <li @class(['introduction-credential-wide' => $loop->first || str_starts_with($credential, 'Fellowship')])>
+                            @foreach($profile->credentials as $credential)
+                            <li @class(['introduction-credential-wide' => $loop->first || str_starts_with($credential, 'Fellowship') || str_starts_with($credential, 'Member of')])>
                                 <span class="introduction-credential-mark" aria-hidden="true"></span>
                                 <span>{{ $credential }}</span>
                             </li>
@@ -311,7 +312,6 @@
                     </section>
                     @endif
 
-                    @include('public.memberships')
                     @if($chambers->isNotEmpty())
                     <p class="introduction-chambers"><i class="fas fa-hospital" aria-hidden="true"></i><span>Consulting at <a href="#consultation">{{ $chambers->pluck('name')->join(' & ') }}</a></span></p>
                     @endif

@@ -7,7 +7,7 @@
                     <h3 class="mb-2 footer-title fw-bold text-warning" itemprop="name">{{ $profile->name }}</h3>
                     <div class="mb-3 doctor-credentials-wrapper">
 
-                        <div class="flex-wrap gap-2 d-flex align-items-center">@foreach($qualifications as $credential)<span class="credential-tag">{{ $credential }}</span>@unless($loop->last)<span class="opacity-50 credential-separator text-warning">•</span>@endunless @endforeach</div>
+                        <div class="flex-wrap gap-2 d-flex align-items-center">@foreach($profile->credentials ?? [] as $credential)<span class="credential-tag">{{ $credential }}</span>@unless($loop->last)<span class="opacity-50 credential-separator text-warning">•</span>@endunless @endforeach</div>
                     </div>
                     <div class="mb-4 opacity-75 about-text small lh-lg" itemprop="description">{{ $profile->summary }}</div>
 
