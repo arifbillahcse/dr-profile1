@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-#[Fillable(['name', 'address', 'phone', 'additional_phones', 'map_url', 'timezone', 'sort_order', 'is_active'])]
+#[Fillable(['name', 'address', 'phone', 'additional_phones', 'email', 'map_url', 'timezone', 'sort_order', 'is_active'])]
 class Chamber extends OrderedContent
 {
     /** @use HasFactory<ChamberFactory> */

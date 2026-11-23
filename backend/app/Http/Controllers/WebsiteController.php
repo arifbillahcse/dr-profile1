@@ -45,6 +45,8 @@ class WebsiteController extends Controller
 
         return view('public.'.$page, [
             'page' => $page, 'site' => $site, 'profile' => $profile, 'dial' => $dial, 'phoneLink' => $dial($site->phone),
+            'qualifications' => collect($profile->credentials ?? [])->reject(fn (string $credential): bool => str_starts_with($credential, 'Member of'))->values(),
+            'memberships' => collect($profile->credentials ?? [])->filter(fn (string $credential): bool => str_starts_with($credential, 'Member of'))->values(),
             'sliders' => Slider::published()->ordered()->with('image')->whereHas('image')->get(),
             'statistics' => $statistics,
             'experienceStat' => $statistics->first(fn ($stat): bool => str_contains(strtolower($stat->label), 'year')),

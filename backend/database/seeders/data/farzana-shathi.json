@@ -32,23 +32,39 @@
         "fellowship",
         "chamber poster"
       ]
+    },
+    {
+      "provided_by": "client",
+      "provided_on": "2026-11-24",
+      "fields": [
+        "qualifications",
+        "memberships",
+        "specialty",
+        "institution",
+        "Medinova chamber and contacts",
+        "Sparkle chamber and contacts"
+      ],
+      "schedule_note": "Sparkle: Thursday 3 PM–5 PM; no other weekday was specified."
     }
   ],
   "profile": {
     "data": {
       "name": "Dr. Farzana Rahman Shathi",
-      "designation": "Assistant Professor, Dermatology",
+      "designation": "Assistant Professor",
       "credentials": [
         "MBBS (Shaheed Suhrawardy Medical College)",
         "BCS (Health)",
+        "DDV (Bangladesh Medical University, formerly PG Hospital)",
         "FCPS (Dermatology & Venereology)",
         "MCPS (Dermatology & Venereology)",
-        "DDV",
-        "Fellowship in Advanced Aesthetic Dermatology & Regenerative Medicine"
+        "Fellowship in Advanced Aesthetic Medicine & Regenerative Medicine (IEB-UK, Malaysia)",
+        "Member of American College of Physicians (ACP)",
+        "Member of International Society of Dermatology (ISD)",
+        "Member of American Academy of Aesthetic Medicine (AAAM)"
       ],
-      "summary": "Assistant Professor, Dermatology, Shaheed Suhrawardy Medical College & Hospital, Dhaka. Specialist in skin, allergy, sexual diseases and leprosy; dermatosurgeon and aesthetic practitioner.",
-      "biography": "Dr. Farzana Rahman Shathi\n\nAssistant Professor, Dermatology, Shaheed Suhrawardy Medical College & Hospital, Dhaka. Specialist in skin, allergy, sexual diseases and leprosy; dermatosurgeon and aesthetic practitioner.\n\nShe holds MBBS, BCS (Health), FCPS (Dermatology & Venereology), MCPS (Dermatology & Venereology), DDV, and a fellowship in Advanced Aesthetic Dermatology & Regenerative Medicine.\n\nShe sees patients at Medinova Malibagh on Saturday, Monday and Wednesday, 6:00 PM–9:00 PM, Lift 6, Room 701. Call the chamber to confirm your appointment.",
-      "specialty": "Dermatology, Venereology & Aesthetic Medicine",
+      "summary": "Assistant Professor at Shaheed Suhrawardy Medical College Hospital. Clinical & Aesthetic Dermatologist specializing in skin, hair, nail, allergy, venereal disease and sexology.",
+      "biography": "Dr. Farzana Rahman Shathi\n\nAssistant Professor at Shaheed Suhrawardy Medical College Hospital. Clinical & Aesthetic Dermatologist specializing in skin, hair, nail, allergy, venereal disease and sexology.\n\nMBBS (Shaheed Suhrawardy Medical College); BCS (Health); DDV (Bangladesh Medical University, formerly PG Hospital); FCPS (Dermatology & Venereology); MCPS (Dermatology & Venereology); Fellowship in Advanced Aesthetic Medicine & Regenerative Medicine (IEB-UK, Malaysia).\n\nProfessional memberships: American College of Physicians (ACP), International Society of Dermatology (ISD), and American Academy of Aesthetic Medicine (AAAM).\n\nShe consults at two clinics in Dhaka: Medinova Medical Services Ltd., Gemcon Business Center, 255 New Circular Road, Malibag, Dhaka-1217, on Saturday, Monday and Wednesday, 6 PM–9 PM; and Sparkle Skin, Laser & Aesthetic Center, 145/1, Crescent Plaza (2nd Floor), Green Road, Dhaka, on Thursday, 3 PM–5 PM. Contact the relevant chamber to confirm availability and book your appointment.",
+      "specialty": "Clinical & Aesthetic Dermatologist",
       "trusted_patients": null,
       "introduction_youtube_id": null
     },
@@ -62,21 +78,20 @@
   "site": {
     "data": {
       "site_title": "Dr. Farzana Rahman Shathi",
-      "phone": "+880 1790-118855",
+      "phone": "01790118855",
       "additional_phones": [
-        "01790-118866",
-        "02-58313811",
-        "02-58311812-13"
+        "01790118866",
+        "0258311-13"
       ],
       "email": null,
-      "address": "Room 701, Lift 6, Medinova Medical Services Ltd., Gemcon Business Center, 255 New Circular Road, Malibagh More, Dhaka-1217",
+      "address": "Medinova Medical Services Ltd., Gemcon Business Center, 255 New Circular Road, Malibag, Dhaka-1217",
       "whatsapp_number": null,
       "social_links": {
         "facebook": "https://www.facebook.com/dr.shathi"
       },
       "seo_title": "Dr. Farzana Rahman Shathi | Dermatologist in Dhaka",
-      "seo_description": "Dermatology, skin, allergy and aesthetic consultations with Dr. Farzana Rahman Shathi at Medinova Malibagh. Saturday, Monday & Wednesday, 6 PM–9 PM. Room 701.",
-      "seo_keywords": "Dr Farzana Rahman Shathi, ডাঃ ফারজানা রহমান সাথী, dermatologist Dhaka, skin allergy specialist, Medinova Malibagh"
+      "seo_description": "Consult Dr. Farzana Rahman Shathi, Clinical & Aesthetic Dermatologist, at Medinova Medical Services Ltd., Malibag, and Sparkle Skin, Laser & Aesthetic Center, Green Road, Dhaka.",
+      "seo_keywords": "Dr Farzana Rahman Shathi, dermatologist Dhaka, skin hair nail allergy, Medinova Malibag, Sparkle Skin Laser Aesthetic Center Green Road"
     },
     "media": {
       "logo_image_id": null,
@@ -139,18 +154,18 @@
       {
         "data": {
           "qualification": "DDV",
-          "institution": null,
+          "institution": "Bangladesh Medical University (formerly PG Hospital)",
           "year": null,
-          "description": "Diploma in Dermatology and Venereology"
+          "description": "Diploma in Dermatology and Venereology — Bangladesh Medical University (formerly PG Hospital)."
         },
         "media": {}
       },
       {
         "data": {
-          "qualification": "Fellowship in Advanced Aesthetic Dermatology & Regenerative Medicine",
-          "institution": null,
+          "qualification": "Fellowship in Advanced Aesthetic Medicine & Regenerative Medicine (IEB-UK, Malaysia)",
+          "institution": "IEB-UK, Malaysia",
           "year": null,
-          "description": "Advanced training in aesthetic dermatology and regenerative medicine."
+          "description": "Fellowship in Advanced Aesthetic Medicine & Regenerative Medicine (IEB-UK, Malaysia)."
         },
         "media": {}
       }
@@ -231,15 +246,15 @@
     "process": [
       {
         "data": {
-          "title": "Call the Chamber",
-          "description": "Call 01790-118855 or 01790-118866 to confirm availability and book your serial."
+          "title": "Choose Your Chamber",
+          "description": "Choose Medinova Medical Services Ltd. in Malibag or Sparkle Skin, Laser & Aesthetic Center on Green Road. Call your preferred chamber to confirm availability and book your serial."
         },
         "media": {}
       },
       {
         "data": {
-          "title": "Visit Medinova Malibagh",
-          "description": "Saturday, Monday or Wednesday, 6 PM–9 PM. Lift 6, Room 701, Gemcon Business Center, 255 New Circular Road, Dhaka."
+          "title": "Visit Your Chosen Clinic",
+          "description": "Medinova: Saturday, Monday and Wednesday, 6 PM–9 PM. Sparkle: Thursday, 3 PM–5 PM. Check the chamber details for the address and contact numbers."
         },
         "media": {}
       },
@@ -261,9 +276,9 @@
     "experience": [
       {
         "data": {
-          "institution": "Shaheed Suhrawardy Medical College & Hospital, Dhaka",
-          "position": "Assistant Professor, Dermatology (Skin & VD)",
-          "description": "Clinical and academic role in Dermatology & Venereology.",
+          "institution": "Shaheed Suhrawardy Medical College Hospital",
+          "position": "Assistant Professor",
+          "description": "Clinical and academic practice in dermatology, venereology and aesthetic medicine.",
           "period_label": "Current appointment",
           "is_current": true
         },
@@ -273,11 +288,12 @@
     "chamber": [
       {
         "data": {
-          "name": "Medinova Medical Services Ltd. — Malibagh Branch",
-          "address": "Room 701, Lift 6, Medinova Medical Services Ltd., Gemcon Business Center, 255 New Circular Road, Malibagh More, Dhaka-1217",
-          "phone": "+880 1790-118855",
+          "name": "Medinova Medical Services Ltd.",
+          "address": "Gemcon Business Center, 255 New Circular Road, Malibag, Dhaka-1217",
+          "phone": "01790118855",
           "additional_phones": [
-            "01790-118866"
+            "01790118866",
+            "0258311-13"
           ],
           "timezone": "Asia/Dhaka",
           "map_url": "https://www.google.com/maps/search/?api=1&query=Medinova+Malibagh+255+New+Circular+Road+Dhaka",
@@ -300,6 +316,29 @@
               "closes_at": "21:00",
               "is_active": true
             }
+          ],
+          "email": null
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "name": "Sparkle Skin, Laser & Aesthetic Center",
+          "address": "145/1, Crescent Plaza (2nd Floor), Green Road, Dhaka",
+          "phone": "0963297137",
+          "additional_phones": [
+            "01310519250"
+          ],
+          "email": "info@sparkleaestheticbd.com",
+          "timezone": "Asia/Dhaka",
+          "map_url": "https://www.google.com/maps/search/?api=1&query=Sparkle+Skin+Laser+Aesthetic+Center+145%2F1+Crescent+Plaza+Green+Road+Dhaka",
+          "schedules": [
+            {
+              "day_of_week": 4,
+              "opens_at": "15:00",
+              "closes_at": "17:00",
+              "is_active": true
+            }
           ]
         },
         "media": {}
@@ -309,21 +348,21 @@
       {
         "data": {
           "question": "ডাঃ ফারজানা রহমান সাথী কোন বিষয়ে বিশেষজ্ঞ?",
-          "answer": "তিনি চর্ম, যৌন, কুষ্ঠ ও এলার্জি রোগের বিশেষজ্ঞ এবং ডার্মাটোসার্জারি ও এসথেটিক চিকিৎসায় পরামর্শ দেন।"
+          "answer": "তিনি ক্লিনিক্যাল ও এসথেটিক ডার্মাটোলজিস্ট। ত্বক, চুল, নখ, অ্যালার্জি, যৌনরোগ ও সেক্সোলজি বিষয়ে পরামর্শ দেন।"
         },
         "media": {}
       },
       {
         "data": {
           "question": "কোথায় এবং কখন রোগী দেখেন?",
-          "answer": "মেডিনোভা মালিবাগ শাখা, জেমকন বিজনেস সেন্টার, ২৫৫ নিউ সার্কুলার রোড, ঢাকা-১২১৭। লিফট ৬, রুম ৭০১। শনি, সোম ও বুধবার সন্ধ্যা ৬টা থেকে রাত ৯টা পর্যন্ত।"
+          "answer": "তিনি ঢাকায় দুটি ক্লিনিকে রোগী দেখেন। মেডিনোভা মেডিকেল সার্ভিসেস লিমিটেড, জেমকন বিজনেস সেন্টার, ২৫৫ নিউ সার্কুলার রোড, মালিবাগ, ঢাকা-১২১৭: শনি, সোম ও বুধবার সন্ধ্যা ৬টা–রাত ৯টা। স্পার্কল স্কিন, লেজার অ্যান্ড এসথেটিক সেন্টার, ১৪৫/১ ক্রিসেন্ট প্লাজা (২য় তলা), গ্রিন রোড, ঢাকা: বৃহস্পতিবার বিকেল ৩টা–৫টা।"
         },
         "media": {}
       },
       {
         "data": {
           "question": "অ্যাপয়েন্টমেন্ট কীভাবে নেব?",
-          "answer": "সিরিয়াল ও সময় নিশ্চিত করতে 01790-118855 অথবা 01790-118866 নম্বরে কল করুন।"
+          "answer": "মেডিনোভায় সিরিয়ালের জন্য 01790118855, 01790118866 অথবা 0258311-13 নম্বরে কল করুন। স্পার্কলে যোগাযোগ করুন 0963297137 অথবা 01310519250 নম্বরে; ইমেইল: info@sparkleaestheticbd.com। যাওয়ার আগে সংশ্লিষ্ট চেম্বারে সময় নিশ্চিত করুন।"
         },
         "media": {}
       }

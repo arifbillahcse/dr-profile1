@@ -85,3 +85,35 @@ body { color: var(--brand-ink); background-color: var(--brand-soft); }
 .border-success-subtle { border-color: var(--brand-border) !important; }
 .whatsapp-float { background: #25d366; }
 .whatsapp-float:hover { background: #128c7e; }
+/* Doctor credentials and clinic-specific consultation details. */
+.introduction-memberships { margin: 24px 0; }
+.introduction-memberships h3, .footer-chambers > h3 { font: inherit; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.introduction-memberships h3 { color: var(--brand-muted); margin-bottom: 14px; }
+.introduction-memberships ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.introduction-memberships li { display: flex; align-items: baseline; gap: 10px; font-size: 14px; line-height: 1.65; color: var(--brand-ink); }
+.introduction-memberships li i { color: var(--brand-secondary); flex: 0 0 16px; }
+.introduction-chambers { display: flex; align-items: baseline; gap: 12px; font-size: 14px; line-height: 1.8; color: var(--brand-body); margin: 24px 0; }
+.introduction-chambers > i { color: var(--brand-secondary); }
+.introduction-chambers a { color: var(--brand-primary); text-underline-offset: 4px; }
+.practice-chamber { border-top: 1px solid var(--brand-border); padding: 22px 0; text-align: left; }
+.practice-chamber-name { font: inherit; font-size: 17px; font-weight: 600; line-height: 1.5; margin: 0 0 10px; color: var(--brand-primary); }
+.practice-chamber-address { font-size: 14px; line-height: 1.8; margin-bottom: 14px; color: var(--brand-body); }
+.practice-chamber-hours { display: grid; gap: 6px; margin-bottom: 14px; font-size: 13px; line-height: 1.6; color: var(--brand-ink); }
+.practice-chamber-hours i { color: var(--brand-secondary); margin-right: 8px; }
+.practice-chamber-hours small { color: var(--brand-muted); }
+.practice-chamber-contacts { display: flex; flex-wrap: wrap; gap: 10px 18px; }
+.practice-chamber-contacts a { font-size: 13px; color: var(--brand-secondary); text-decoration: none; overflow-wrap: anywhere; }
+.practice-chamber-contacts a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.practice-chamber-contacts i { margin-right: 8px; }
+.practice-chamber-card { height: 100%; padding: 28px; background: #fff; border: 1px solid var(--brand-border); border-radius: 22px; }
+.footer-chambers { margin-top: 24px; }
+.footer-chambers > h3 { color: var(--brand-accent); margin-bottom: 20px; }
+.footer-chambers .practice-chamber { border-color: rgba(255,255,255,.18); }
+.footer-chambers .practice-chamber-name { color: #fff; }
+.footer-chambers .practice-chamber-address, .footer-chambers .practice-chamber-hours { color: rgba(255,255,255,.8); }
+.footer-chambers .practice-chamber-contacts a, .footer-chambers .practice-chamber-hours i, .footer-chambers .practice-chamber-hours small { color: var(--brand-accent); }
+@media (max-width: 767.98px) {
+    .introduction-memberships { text-align: left; }
+    .introduction-chambers { text-align: left; }
+    .practice-chamber-card { padding: 22px; }
+}

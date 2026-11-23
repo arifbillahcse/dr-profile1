@@ -16,7 +16,7 @@ class ChamberManagementTest extends TestCase
     {
         return [
             'name' => 'Dhaka chamber', 'address' => 'ঢাকা', 'phone' => '+8801712345678',
-            'additional_phones_text' => "01700000000\n01800000000", 'timezone' => 'Asia/Dhaka',
+            'additional_phones_text' => "01700000000\n01800000000", 'timezone' => 'Asia/Dhaka', 'email' => 'clinic@example.com',
             'sort_order' => 10, 'is_active' => 0, 'schedules_present' => 1, 'schedules' => $schedules,
         ];
     }
@@ -35,6 +35,7 @@ class ChamberManagementTest extends TestCase
         $chamber = Chamber::firstOrFail();
         $this->assertSame(5, $chamber->schedules()->count());
         $this->assertSame('Asia/Dhaka', $chamber->timezone);
+        $this->assertSame('clinic@example.com', $chamber->email);
         $this->assertSame(['01700000000', '01800000000'], $chamber->additional_phones);
         $this->assertSame('09:00', substr($chamber->schedules()->first()->opens_at, 0, 5));
         $this->get(route('admin.content.edit', ['chamber', $chamber->id]))->assertOk()->assertSee('Consultation hours');
@@ -59,7 +60,8 @@ class ChamberManagementTest extends TestCase
         $data = $this->data([$this->slot(7, '21:00', '17:00')]);
         $data['timezone'] = 'Invalid/Timezone';
         $data['map_url'] = 'javascript:alert(1)';
-        $this->post(route('admin.content.store', 'chamber'), $data)->assertSessionHasErrors(['timezone', 'map_url', 'schedules.0.day_of_week', 'schedules.0.closes_at']);
+        $data['email'] = 'not-an-email';
+        $this->post(route('admin.content.store', 'chamber'), $data)->assertSessionHasErrors(['timezone', 'map_url', 'email', 'schedules.0.day_of_week', 'schedules.0.closes_at']);
         $this->assertSame(0, Chamber::count());
         $this->assertSame(0, ChamberSchedule::count());
     }

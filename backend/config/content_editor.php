@@ -503,6 +503,11 @@ return [
                         'max:2000',
                     ],
                 ],
+                'email' => [
+                    'label' => 'Chamber email',
+                    'type' => 'email',
+                    'rules' => ['nullable', 'email', 'max:254'],
+                ],
                 'map_url' => [
                     'label' => 'Map link',
                     'type' => 'url',

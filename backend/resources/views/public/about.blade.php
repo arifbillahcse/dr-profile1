@@ -48,6 +48,7 @@
                     <h4 class="mb-4 text-success-glow fw-semibold">{{ $profile->specialty }}</h4>
 
                     <div class="mb-4 dr-short-bio text-muted lead">{{ $profile->summary }}</div>
+                    @include('public.memberships')
 
                                             @if($experiences->isNotEmpty())<div class="p-4 bg-white shadow-sm current-position-card rounded-4 border-start-gold">@if($experiences->isNotEmpty())<p class="mb-0 text-dark"><i class="fas fa-briefcase me-2 text-warning"></i>{{ $experiences->first()->position }} — {{ $experiences->first()->institution }}</p>@endif</div>@endif
                                     </div>
@@ -56,6 +57,16 @@
             <div class="mt-5 dr-long-bio animate-up" data-aos="fade-up">
                 <div class="p-5 bg-white shadow-sm rounded-5 border-light public-copy">@if(str_starts_with($profile->biography ?? '', $profile->name."\n"))<strong class="fw-semibold">{{ $profile->name }}</strong>{{ substr($profile->biography, strlen($profile->name)) }}@else{{ $profile->biography }}@endif</div>
             </div>
+
+            @if($chambers->isNotEmpty())
+            <section class="mt-5" id="chambers" aria-labelledby="about-chambers-title">
+                <h2 class="section-title" id="about-chambers-title">Consultation <em>Chambers</em></h2>
+                <p class="text-muted">Choose your preferred clinic and call to confirm availability.</p>
+                <div class="row g-4">@foreach($chambers as $chamber)
+                    <div class="col-md-6"><div class="practice-chamber practice-chamber-card">@include('public.chamber-details')</div></div>
+                @endforeach</div>
+            </section>
+            @endif
 
             <div class="mt-5 row">
                 <div class="col-12" data-aos="fade-up">
