@@ -47,12 +47,12 @@ class FarzanaProfileTest extends TestCase
         $this->assertSame('Dr. Farzana Rahman Shathi', DoctorProfile::first()->name);
         $this->assertNull(DoctorProfile::first()->introduction_youtube_id);
         $this->assertNull(DoctorProfile::first()->trusted_patients);
-        $this->assertSame(['facebook' => 'https://www.facebook.com/dr.shathi'], SiteSetting::first()->social_links);
+        $this->assertSame(['facebook' => 'https://www.facebook.com/dr.farzanashathi'], SiteSetting::first()->social_links);
         $this->assertNull(SiteSetting::first()->email);
         $this->assertNull(SiteSetting::first()->whatsapp_number);
         $this->assertNull(SiteSetting::first()->logo_image_id);
         $chamber = Chamber::first();
-        $this->assertStringContainsString('Room 701, Lift 6', $chamber->address);
+        $this->assertStringContainsString('Gemcon Business Center, 255 New Circular Road', $chamber->address);
         $this->assertEqualsCanonicalizing([1, 3, 6], $chamber->schedules->pluck('day_of_week')->all());
         foreach ($chamber->schedules as $schedule) {
             $this->assertStringStartsWith('18:00', $schedule->opens_at);

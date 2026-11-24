@@ -57,7 +57,7 @@ class PracticeDetailsTest extends TestCase
         $this->assertSame($review->toArray(), $review->fresh()->toArray());
         $this->assertSame('personal@example.com', SiteSetting::first()->email);
         $this->assertSame('https://instagram.com/practice', SiteSetting::first()->social_links['instagram']);
-        $this->assertSame('https://www.facebook.com/dr.shathi', SiteSetting::first()->social_links['facebook']);
+        $this->assertSame('https://www.facebook.com/dr.farzanashathi', SiteSetting::first()->social_links['facebook']);
         foreach (['/', '/about', '/services', '/faqs', '/gallery'] as $url) {
             $this->get($url)->assertOk()->assertSee('Medinova Medical Services Ltd.')->assertSee('Sparkle Skin, Laser &amp; Aesthetic Center', false)->assertSee('info@sparkleaestheticbd.com');
         }
