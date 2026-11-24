@@ -300,7 +300,7 @@
 
                     @if(!empty($profile->credentials))
                     <section class="introduction-qualifications" aria-labelledby="introduction-qualifications-title">
-                        <h3 id="introduction-qualifications-title"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Qualifications &amp; memberships</h3>
+                        <h3 id="introduction-qualifications-title"><i class="fas fa-graduation-cap" aria-hidden="true"></i> {{ $memberships->isNotEmpty() ? 'Qualifications & memberships' : 'Medical qualifications' }}</h3>
                         <ul>
                             @foreach($profile->credentials as $credential)
                             <li @class(['introduction-credential-wide' => $loop->first || str_starts_with($credential, 'Fellowship') || str_starts_with($credential, 'Member of')])>
@@ -312,7 +312,7 @@
                     </section>
                     @endif
 
-                    @if($chambers->isNotEmpty())
+                    @if($chambers->count() > 1)
                     <p class="introduction-chambers"><i class="fas fa-hospital" aria-hidden="true"></i><span>Consulting at <a href="#consultation">{{ $chambers->pluck('name')->join(' & ') }}</a></span></p>
                     @endif
 
@@ -376,12 +376,23 @@
                         <div class="icon-box-sm bg-success-light me-3">
                             <i class="fas fa-hospital-alt text-success"></i>
                         </div>
-                        <h4 class="m-0 fw-bold h5" style="color: var(--brand-primary);">Consultation Chambers</h4>
+                        <h4 class="m-0 fw-bold h5" style="color: var(--brand-primary);">{{ $chambers->count() > 1 ? 'Consultation Chambers' : 'Chamber Location' }}</h4>
                     </div>
 
+                    @if($chambers->count() > 1)
                     <div class="location-list">@foreach($chambers as $chamber)
                         <div class="practice-chamber">@include('public.chamber-details')</div>
                     @endforeach</div>
+                    @else
+                    <div class="location-list" itemscope="" itemtype="https://schema.org/MedicalClinic">@foreach($chambers as $chamber)<div class="mb-4 location-item border-start border-3 border-success ps-3 transition-hover">
+                                <h5 class="mb-1 text-dark fw-bold h6" itemprop="name">{{ $chamber->name }}</h5>
+<p class="mb-1 small text-muted public-copy">{{ $chamber->address }}</p>
+@if($dial($chamber->phone))<a class="small text-success" href="{{ $dial($chamber->phone) }}">{{ $chamber->phone }}</a>@endif
+@foreach($chamber->additional_phones ?? [] as $number) @if($dial($number))<a class="small text-success ms-2" href="{{ $dial($number) }}">{{ $number }}</a>@endif @endforeach
+@if($chamber->map_url)<a class="small d-block text-success" href="{{ $chamber->map_url }}" target="_blank" rel="noopener noreferrer">View location</a>@endif
+                                <p class="mb-0 text-muted small">@foreach($chamber->schedules as $schedule)<span class="d-block"><i class="far fa-clock text-success me-1"></i>{{ ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][$schedule->day_of_week] }}: {{ substr($schedule->opens_at,0,5) }}–{{ substr($schedule->closes_at,0,5) }}</span>@endforeach @if($chamber->schedules->isNotEmpty())<small>{{ $chamber->timezone }}</small>@endif</p>
+                            </div>@endforeach</div>
+                    @endif
 
                     <div class="pt-3">
                         @if($phoneLink)<a href="{{ $phoneLink }}" class="py-3 shadow-md btn-premium-call w-100 rounded-pill d-flex align-items-center justify-content-center text-decoration-none">

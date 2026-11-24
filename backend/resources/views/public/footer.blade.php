@@ -11,7 +11,7 @@
                     </div>
                     <div class="mb-4 opacity-75 about-text small lh-lg" itemprop="description">{{ $profile->summary }}</div>
 
-                    @if($chambers->isEmpty())<div class="footer-contact-info">@if($phoneLink)<div class="contact-link"><i class="fas fa-phone-alt text-warning"></i><a href="{{ $phoneLink }}" class="text-white text-decoration-none small">{{ $site->phone }}</a></div>@endif
+                    @if($chambers->count() < 2)<div class="footer-contact-info">@if($phoneLink)<div class="contact-link"><i class="fas fa-phone-alt text-warning"></i><a href="{{ $phoneLink }}" class="text-white text-decoration-none small">{{ $site->phone }}</a></div>@endif
  @if($site->additional_phones)<div class="contact-link"><i class="fas fa-phone-alt text-warning"></i>@foreach($site->additional_phones as $number)@if($dial($number))<a href="{{ $dial($number) }}" class="text-white text-decoration-none small">{{ $number }}</a>@else<span class="small">{{ $number }}</span>@endif @unless($loop->last), @endunless @endforeach</div>@endif
  @if($site->email)<div class="contact-link"><i class="fas fa-envelope text-warning"></i><a href="mailto:{{ $site->email }}" class="text-white text-decoration-none small">{{ $site->email }}</a></div>@endif
  @if($site->address)<div class="contact-link d-flex align-items-start"><i class="fas fa-map-marker-alt text-warning mt-1"></i><address class="mb-0 text-white small ms-1 public-copy">{{ $site->address }}</address></div>@endif</div>@endif
@@ -47,7 +47,7 @@
                             </div>
         </div>
 
-        @if($chambers->isNotEmpty())
+        @if($chambers->count() > 1)
         <section class="footer-chambers" aria-labelledby="footer-chambers-title">
             <h3 id="footer-chambers-title">Consultation chambers</h3>
             <div class="row g-4">@foreach($chambers as $chamber)

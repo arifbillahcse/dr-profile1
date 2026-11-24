@@ -58,7 +58,7 @@
                 <div class="p-5 bg-white shadow-sm rounded-5 border-light public-copy">@if(str_starts_with($profile->biography ?? '', $profile->name."\n"))<strong class="fw-semibold">{{ $profile->name }}</strong>{{ substr($profile->biography, strlen($profile->name)) }}@else{{ $profile->biography }}@endif</div>
             </div>
 
-            @if($chambers->isNotEmpty())
+            @if($chambers->count() > 1)
             <section class="mt-5" id="chambers" aria-labelledby="about-chambers-title">
                 <h2 class="section-title" id="about-chambers-title">Consultation <em>Chambers</em></h2>
                 <p class="text-muted">Choose your preferred clinic and call to confirm availability.</p>

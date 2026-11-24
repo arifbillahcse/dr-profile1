@@ -1,0 +1,617 @@
+{
+  "identity": "demo-reference-2026-11-24-v1",
+  "sources": [
+    {
+      "url": "https://medinovamalibagh.com/doctor-detailes/74",
+      "accessed": "2026-11-14",
+      "fields": [
+        "name",
+        "qualifications",
+        "designation",
+        "institution",
+        "specialty",
+        "portrait",
+        "chamber",
+        "schedule",
+        "phones"
+      ]
+    },
+    {
+      "url": "https://monowarahospital.com/doctors/dr-farzana-rahman-shathi/",
+      "accessed": "2026-11-14",
+      "fields": [
+        "MBBS institution",
+        "dermatosurgery"
+      ]
+    },
+    {
+      "file": "farzana-shathi-chamber.jpeg",
+      "provided_by": "client",
+      "fields": [
+        "Bengali name",
+        "fellowship",
+        "chamber poster"
+      ]
+    }
+  ],
+  "profile": {
+    "data": {
+      "name": "Dr. Farzana Rahman Shathi",
+      "designation": "Assistant Professor, Dermatology",
+      "credentials": [
+        "MBBS (Shaheed Suhrawardy Medical College)",
+        "BCS (Health)",
+        "FCPS (Dermatology & Venereology)",
+        "MCPS (Dermatology & Venereology)",
+        "DDV",
+        "Fellowship in Advanced Aesthetic Dermatology & Regenerative Medicine"
+      ],
+      "summary": "Assistant Professor, Dermatology, Shaheed Suhrawardy Medical College & Hospital, Dhaka. Specialist in skin, allergy, sexual diseases and leprosy; dermatosurgeon and aesthetic practitioner.",
+      "biography": "Dr. Farzana Rahman Shathi\n\nAssistant Professor, Dermatology, Shaheed Suhrawardy Medical College & Hospital, Dhaka. Specialist in skin, allergy, sexual diseases and leprosy; dermatosurgeon and aesthetic practitioner.\n\nShe holds MBBS, BCS (Health), FCPS (Dermatology & Venereology), MCPS (Dermatology & Venereology), DDV, and a fellowship in Advanced Aesthetic Dermatology & Regenerative Medicine.\n\nShe sees patients at Medinova Malibagh on Saturday, Monday and Wednesday, 6:00 PM–9:00 PM, Lift 6, Room 701. Call the chamber to confirm your appointment.",
+      "specialty": "Dermatology, Venereology & Aesthetic Medicine",
+      "trusted_patients": null,
+      "introduction_youtube_id": null
+    },
+    "media": {
+      "portrait_image_id": "26",
+      "first_image_id": "27",
+      "second_image_id": "25",
+      "tall_image_id": "26"
+    }
+  },
+  "site": {
+    "data": {
+      "site_title": "Dr. Farzana Rahman Shathi",
+      "phone": "+880 1790-118855",
+      "additional_phones": [
+        "01790-118866",
+        "02-58313811",
+        "02-58311812-13"
+      ],
+      "email": null,
+      "address": "Room 701, Lift 6, Medinova Medical Services Ltd., Gemcon Business Center, 255 New Circular Road, Malibagh More, Dhaka-1217",
+      "whatsapp_number": null,
+      "social_links": {
+        "facebook": "https://www.facebook.com/dr.shathi"
+      },
+      "seo_title": "Dr. Farzana Rahman Shathi | Dermatologist in Dhaka",
+      "seo_description": "Dermatology, skin, allergy and aesthetic consultations with Dr. Farzana Rahman Shathi at Medinova Malibagh. Saturday, Monday & Wednesday, 6 PM–9 PM. Room 701.",
+      "seo_keywords": "Dr Farzana Rahman Shathi, ডাঃ ফারজানা রহমান সাথী, dermatologist Dhaka, skin allergy specialist, Medinova Malibagh"
+    },
+    "media": {
+      "logo_image_id": null,
+      "favicon_image_id": null,
+      "social_image_id": "26"
+    }
+  },
+  "modules": {
+    "slider": [
+      {
+        "data": {
+          "title": "Dr. Farzana Rahman Shathi",
+          "caption": "Clinical & Aesthetic Dermatology"
+        },
+        "media": {
+          "image_id": "26"
+        }
+      }
+    ],
+    "featured": [],
+    "award": [],
+    "youtube": [
+      {
+        "data": {
+          "title": "ব্রণ কেন হয় ও এর চিকিৎসা",
+          "description": "ব্রণ হওয়ার কারণ ও চিকিৎসা নিয়ে আলোচনা করেছেন ডা. ফারজানা রহমান সাথী।",
+          "youtube_id": "QUtAjd4n3Co"
+        },
+        "media": {
+          "thumbnail_image_id": null
+        }
+      },
+      {
+        "data": {
+          "title": "ব্রণের দাগ ও ত্বকের গর্ত",
+          "description": "ব্রণের দাগ ও ত্বকের গর্তের যত্ন নিয়ে ডা. ফারজানা রহমান সাথীর আলোচনা।",
+          "youtube_id": "rMdIkmYD-yA"
+        },
+        "media": {
+          "thumbnail_image_id": null
+        }
+      },
+      {
+        "data": {
+          "title": "চুল পড়ার কারণ ও যত্ন",
+          "description": "চুল পড়ার কারণ ও চুলের যত্ন সম্পর্কে জানাচ্ছেন ডা. ফারজানা রহমান সাথী।",
+          "youtube_id": "scWIJ8pmROg"
+        },
+        "media": {
+          "thumbnail_image_id": null
+        }
+      }
+    ],
+    "education": [
+      {
+        "data": {
+          "qualification": "MBBS",
+          "institution": "Shaheed Suhrawardy Medical College",
+          "year": null,
+          "description": "Bachelor of Medicine and Bachelor of Surgery"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "qualification": "BCS (Health)",
+          "institution": null,
+          "year": null,
+          "description": "Bangladesh Civil Service (Health)"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "qualification": "FCPS (Dermatology & Venereology)",
+          "institution": null,
+          "year": null,
+          "description": "Specialist qualification in skin and venereal diseases"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "qualification": "MCPS (Dermatology & Venereology)",
+          "institution": null,
+          "year": null,
+          "description": "Membership qualification in skin and venereal diseases"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "qualification": "DDV",
+          "institution": null,
+          "year": null,
+          "description": "Diploma in Dermatology and Venereology"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "qualification": "Fellowship in Advanced Aesthetic Dermatology & Regenerative Medicine",
+          "institution": null,
+          "year": null,
+          "description": "Advanced training in aesthetic dermatology and regenerative medicine."
+        },
+        "media": {}
+      }
+    ],
+    "service": [
+      {
+        "data": {
+          "name": "Skin & Allergy",
+          "description": "Consultation for skin conditions, allergies, eczema, psoriasis and fungal concerns.",
+          "icon": "fas fa-hand-holding-medical",
+          "slug": "skin-allergy"
+        },
+        "media": {
+          "image_id": "27"
+        }
+      },
+      {
+        "data": {
+          "name": "Laser & Skin Resurfacing",
+          "description": "Consultation on laser-based skin treatments and resurfacing, following an individual skin assessment.",
+          "icon": "fas fa-bolt",
+          "slug": "laser-skin-care"
+        },
+        "media": {
+          "image_id": "25"
+        }
+      },
+      {
+        "data": {
+          "name": "Aesthetic Dermatology",
+          "description": "Personalized discussion of skin rejuvenation, pigmentation care and aesthetic treatment options.",
+          "icon": "fas fa-spa",
+          "slug": "aesthetic-dermatology"
+        },
+        "media": {
+          "image_id": "28"
+        }
+      },
+      {
+        "data": {
+          "name": "Acne & Acne Scars",
+          "description": "Clinical assessment and a treatment plan for acne and acne scarring.",
+          "icon": "fas fa-leaf",
+          "slug": "acne-scar-care"
+        },
+        "media": {
+          "image_id": "24"
+        }
+      },
+      {
+        "data": {
+          "name": "Hair & Scalp",
+          "description": "Assessment of hair and scalp concerns with an individual care plan.",
+          "icon": "fas fa-user-md",
+          "slug": "hair-scalp-care"
+        },
+        "media": {
+          "image_id": "30"
+        }
+      },
+      {
+        "data": {
+          "name": "Venereology & Leprosy",
+          "description": "Private specialist consultation for sexual diseases and leprosy.",
+          "icon": "fas fa-stethoscope",
+          "slug": "venereology-leprosy"
+        },
+        "media": {
+          "image_id": "26"
+        }
+      }
+    ],
+    "specialist": [
+      {
+        "data": {
+          "title": "Dermatology",
+          "icon": "fas fa-check-circle"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Skin Allergies",
+          "icon": "fas fa-check-circle"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Venereology",
+          "icon": "fas fa-check-circle"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Leprosy",
+          "icon": "fas fa-check-circle"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Dermatosurgery",
+          "icon": "fas fa-check-circle"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Aesthetic & Cosmetic Consultation",
+          "icon": "fas fa-check-circle"
+        },
+        "media": {}
+      }
+    ],
+    "process": [
+      {
+        "data": {
+          "title": "Call the Chamber",
+          "description": "Call 01790-118855 or 01790-118866 to confirm availability and book your serial."
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Visit Medinova Malibagh",
+          "description": "Saturday, Monday or Wednesday, 6 PM–9 PM. Lift 6, Room 701, Gemcon Business Center, 255 New Circular Road, Dhaka."
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Consult the Doctor",
+          "description": "Bring relevant medical reports, prescriptions and a list of medicines you currently use."
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "title": "Plan Your Follow-up",
+          "description": "Follow the advice given during your consultation and contact the chamber to arrange any recommended follow-up."
+        },
+        "media": {}
+      }
+    ],
+    "experience": [
+      {
+        "data": {
+          "institution": "Shaheed Suhrawardy Medical College & Hospital, Dhaka",
+          "position": "Assistant Professor, Dermatology (Skin & VD)",
+          "description": "Clinical and academic role in Dermatology & Venereology.",
+          "period_label": "Current appointment",
+          "is_current": true
+        },
+        "media": {}
+      }
+    ],
+    "chamber": [
+      {
+        "data": {
+          "name": "Medinova Medical Services Ltd. — Malibagh Branch",
+          "address": "Room 701, Lift 6, Medinova Medical Services Ltd., Gemcon Business Center, 255 New Circular Road, Malibagh More, Dhaka-1217",
+          "phone": "+880 1790-118855",
+          "additional_phones": [
+            "01790-118866"
+          ],
+          "timezone": "Asia/Dhaka",
+          "map_url": "https://www.google.com/maps/search/?api=1&query=Medinova+Malibagh+255+New+Circular+Road+Dhaka",
+          "schedules": [
+            {
+              "day_of_week": 6,
+              "opens_at": "18:00",
+              "closes_at": "21:00",
+              "is_active": true
+            },
+            {
+              "day_of_week": 1,
+              "opens_at": "18:00",
+              "closes_at": "21:00",
+              "is_active": true
+            },
+            {
+              "day_of_week": 3,
+              "opens_at": "18:00",
+              "closes_at": "21:00",
+              "is_active": true
+            }
+          ]
+        },
+        "media": {}
+      }
+    ],
+    "faq": [
+      {
+        "data": {
+          "question": "ডাঃ ফারজানা রহমান সাথী কোন বিষয়ে বিশেষজ্ঞ?",
+          "answer": "তিনি চর্ম, যৌন, কুষ্ঠ ও এলার্জি রোগের বিশেষজ্ঞ এবং ডার্মাটোসার্জারি ও এসথেটিক চিকিৎসায় পরামর্শ দেন।"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "question": "কোথায় এবং কখন রোগী দেখেন?",
+          "answer": "মেডিনোভা মালিবাগ শাখা, জেমকন বিজনেস সেন্টার, ২৫৫ নিউ সার্কুলার রোড, ঢাকা-১২১৭। লিফট ৬, রুম ৭০১। শনি, সোম ও বুধবার সন্ধ্যা ৬টা থেকে রাত ৯টা পর্যন্ত।"
+        },
+        "media": {}
+      },
+      {
+        "data": {
+          "question": "অ্যাপয়েন্টমেন্ট কীভাবে নেব?",
+          "answer": "সিরিয়াল ও সময় নিশ্চিত করতে 01790-118855 অথবা 01790-118866 নম্বরে কল করুন।"
+        },
+        "media": {}
+      }
+    ],
+    "gallery": [
+      {
+        "data": {
+          "title": "Clinical & aesthetic dermatology",
+          "caption": "Clinical & aesthetic dermatology"
+        },
+        "media": {
+          "image_id": "24"
+        }
+      },
+      {
+        "data": {
+          "title": "Laser treatment in practice",
+          "caption": "Laser treatment in practice"
+        },
+        "media": {
+          "image_id": "25"
+        }
+      },
+      {
+        "data": {
+          "title": "Dr. Farzana Rahman Shathi",
+          "caption": "Dr. Farzana Rahman Shathi"
+        },
+        "media": {
+          "image_id": "26"
+        }
+      },
+      {
+        "data": {
+          "title": "At the consultation desk",
+          "caption": "At the consultation desk"
+        },
+        "media": {
+          "image_id": "27"
+        }
+      },
+      {
+        "data": {
+          "title": "Aesthetic treatment in practice",
+          "caption": "Aesthetic treatment in practice"
+        },
+        "media": {
+          "image_id": "28"
+        }
+      },
+      {
+        "data": {
+          "title": "Skin procedure in practice",
+          "caption": "Skin procedure in practice"
+        },
+        "media": {
+          "image_id": "29"
+        }
+      },
+      {
+        "data": {
+          "title": "Hair & scalp care",
+          "caption": "Hair & scalp care"
+        },
+        "media": {
+          "image_id": "30"
+        }
+      },
+      {
+        "data": {
+          "title": "Dr. Farzana Rahman Shathi",
+          "caption": "Portrait published by Medinova Malibagh."
+        },
+        "media": {
+          "image_id": "22"
+        }
+      },
+      {
+        "data": {
+          "title": "Medinova Malibagh — Chamber Information",
+          "caption": "শনি, সোম ও বুধবার সন্ধ্যা ৬টা–রাত ৯টা। লিফট ৬, রুম ৭০১।"
+        },
+        "media": {
+          "image_id": "23"
+        }
+      }
+    ]
+  },
+  "reviews": [
+    {
+      "data": {
+        "name": "Yeasif Ferdous",
+        "message": "সহযোগিতাপরায়ণ চিকিৎসক, ভালো মানুষ। রোগীদের আন্তরিকভাবে চিকিৎসা করেন এবং তাঁর ব্যবহার ভালো।",
+        "workplace": null,
+        "rating": 5,
+        "source_type": "doctor_bangladesh",
+        "source_url": "https://www.doctorbangladesh.com/dr-farzana-rahman-shathi/#comment-504"
+      },
+      "media": {}
+    },
+    {
+      "data": {
+        "name": "@mahimsumi6509",
+        "message": "উনি খুবই ভালো একজন ডাক্তার 🥰",
+        "workplace": null,
+        "rating": null,
+        "source_type": "youtube",
+        "source_url": "https://www.youtube.com/watch?v=L9Pqi-nbUSU&lc=UgxwPeei_FRbCwP82Ht4AaABAg"
+      },
+      "media": {}
+    },
+    {
+      "data": {
+        "name": "@shihabchowdhury2820",
+        "message": "চিকিৎসাটি খুব ভালো ছিল।",
+        "workplace": null,
+        "rating": null,
+        "source_type": "youtube",
+        "source_url": "https://www.youtube.com/watch?v=Jp-Tz-BYNG0&lc=UgycyvK3SoQH0PRO8Q54AaABAg"
+      },
+      "media": {}
+    },
+    {
+      "data": {
+        "name": "@SharifHossain-s2u",
+        "message": "ম্যাডামের চিকিৎসা খুবই চমৎকার। আমি উনার থেকে ব্রণের চিকিৎসা নিচ্ছি, আশানুরূপ এখনই ভালো ফলাফল পাচ্ছি।",
+        "workplace": null,
+        "rating": null,
+        "source_type": "youtube",
+        "source_url": "https://www.youtube.com/watch?v=scWIJ8pmROg&lc=UgyWORg-pofWtNQXf5N4AaABAg"
+      },
+      "media": {}
+    }
+  ],
+  "reference": {
+    "url": "https://doctor.demo.softorio.com/",
+    "captured_on": "2026-11-24",
+    "target_host": "drfarzanashathi.com",
+    "expected": {
+      "services": 6,
+      "gallery": 9,
+      "videos": 3,
+      "reviews": 4
+    }
+  },
+  "media": [
+    {
+      "key": "22",
+      "file": "demo-reference-22.webp",
+      "sha256": "274d73200ef670a626964653ddab5430c31ae6d83e3a7c332cc8e294d160bda6",
+      "source": "https://doctor.demo.softorio.com/images/22",
+      "alt_text": "Dr. Farzana Rahman Shathi"
+    },
+    {
+      "key": "23",
+      "file": "demo-reference-23.webp",
+      "sha256": "c939bf3fc977c195a54b25c44ebc2fdbea30308b86f8dd4a880c62d2aa8679d0",
+      "source": "https://doctor.demo.softorio.com/images/23",
+      "alt_text": "Medinova Malibagh — Chamber Information"
+    },
+    {
+      "key": "24",
+      "file": "demo-reference-24.webp",
+      "sha256": "0ee3493f35fd7912056404b1c1df38aa539bcf9b89d6c714b37d8099e4b2112f",
+      "source": "https://doctor.demo.softorio.com/images/24",
+      "alt_text": "Clinical & aesthetic dermatology"
+    },
+    {
+      "key": "25",
+      "file": "demo-reference-25.webp",
+      "sha256": "aa039a0e072c3ccb7929bcd736c94dc38d18b6030fe76cb819ed82656444a5fb",
+      "source": "https://doctor.demo.softorio.com/images/25",
+      "alt_text": "Laser treatment in practice"
+    },
+    {
+      "key": "26",
+      "file": "demo-reference-26.webp",
+      "sha256": "10c59346314ddaeb3c5b9d4a6e91344bd91417e0d99b269d46bde49f370437be",
+      "source": "https://doctor.demo.softorio.com/images/26",
+      "alt_text": "Dr. Farzana Rahman Shathi"
+    },
+    {
+      "key": "27",
+      "file": "demo-reference-27.webp",
+      "sha256": "9277796a32ab1b15eb4e3bcbf2d019bad7bebe82e2560566c947b648e11c40bb",
+      "source": "https://doctor.demo.softorio.com/images/27",
+      "alt_text": "At the consultation desk"
+    },
+    {
+      "key": "28",
+      "file": "demo-reference-28.webp",
+      "sha256": "a30c7b523c42714da0ecc745261afb2f68f0dfcd9bf20004d0deb41c04b23e08",
+      "source": "https://doctor.demo.softorio.com/images/28",
+      "alt_text": "Aesthetic treatment in practice"
+    },
+    {
+      "key": "29",
+      "file": "demo-reference-29.webp",
+      "sha256": "6541eccdd931ea9ce230f6f7656a85771a0140134cb154823d115d76dd8a1518",
+      "source": "https://doctor.demo.softorio.com/images/29",
+      "alt_text": "Skin procedure in practice"
+    },
+    {
+      "key": "30",
+      "file": "demo-reference-30.webp",
+      "sha256": "78e9d3f0090d1f7de40911d577df679be9b8295e70784248a379bb22dc319fde",
+      "source": "https://doctor.demo.softorio.com/images/30",
+      "alt_text": "Hair & scalp care"
+    }
+  ],
+  "verification": {
+    "pages": {
+      "/": "Skip to content ✚Dr. Farzana Rahman ShathiDermatology, Venereology & Aesthetic Medicine Home About Services Faqs Gallery +880 1790-118855 ✚Dr. Farzana Rahman ShathiDermatology, Venereology & Aesthetic Medicine Home About Services Faqs Gallery CLINICAL & AESTHETIC DERMATOLOGY Assistant Professor, Dermatology Dr. Farzana Rahman Shathi MBBS (Shaheed Suhrawardy Medical College) BCS (Health) FCPS (Dermatology & Venereology) MCPS (Dermatology & Venereology) DDV Fellowship in Advanced Aesthetic Dermatology & Regenerative Medicine Assistant Professor, Dermatology, Shaheed Suhrawardy Medical College & Hospital, Dhaka. Specialist in skin, allergy, sexual diseases and leprosy; dermatosurgeon and aesthetic practitioner. Call Now View Services Academic Journey Expertise & Certifications Academic Excellence MBBS Bachelor of Medicine and Bachelor of Surgery BCS (Health) Bangladesh Civil Service (Health) FCPS (Dermatology & Venereology) Specialist qualification in skin and venereal diseases MCPS (Dermatology & Venereology) Membership qualification in skin and venereal diseases DDV Diploma in Dermatology and Venereology Fellowship in Advanced Aesthetic Dermatology & Regenerative Medicine Advanced training in aesthetic dermatology and regenerative medicine. EXPERT HEALTHCARE SOLUTIONS SpecializedMedical Services. Explore care for your skin, hair and aesthetic concerns. Start with a consultation to discuss the options suited to you. Explore all services 01 Skin & Allergy Consultation for skin conditions, allergies, eczema, psoriasis and fungal concerns. Explore care ↗ 02 Laser & Skin Resurfacing Consultation on laser-based skin treatments and resurfacing, following an individual skin assessment. Explore care ↗ 03 Aesthetic Dermatology Personalized discussion of skin rejuvenation, pigmentation care and aesthetic treatment options. Explore care ↗ 04 Acne & Acne Scars Clinical assessment and a treatment plan for acne and acne scarring. Explore care ↗ 05 Hair & Scalp Assessment of hair and scalp concerns with an individual care plan. Explore care ↗ 06 Venereology & Leprosy Private specialist consultation for sexual diseases and leprosy. Explore care ↗ Not sure where to start?Book a consultation with Dr. Farzana Rahman Shathi. Let’s talk about your care THE PERSON BEHIND THE CARE A closer look at the practice. Meet Dr. Farzana Rahman Shathi — in consultation and in clinical practice. Explore the photo journal Clinical & aesthetic dermatology Laser treatment in practice Dr. Farzana Rahman Shathi At the consultation desk In consultation Care in practice DERMATOLOGY · PERSONALISED CARE · 🏥 Introduction Dr. Farzana Rahman Shathi Dermatology, Venereology & Aesthetic Medicine Assistant Professor, Dermatology, Shaheed Suhrawardy Medical College & Hospital, Dhaka. Specialist in skin, allergy, sexual diseases and leprosy; dermatosurgeon and aesthetic practitioner. Medical qualifications MBBS (Shaheed Suhrawardy Medical College) BCS (Health) FCPS (Dermatology & Venereology) MCPS (Dermatology & Venereology) DDV Fellowship in Advanced Aesthetic Dermatology & Regenerative Medicine Clinical focus Dermatology Skin Allergies Venereology Leprosy Dermatosurgery Aesthetic & Cosmetic Consultation Read More Biography ব্রণ কেন হয় ও এর চিকিৎসা How I Care For You My Consultation Process Chamber Location Medinova Medical Services Ltd. — Malibagh Branch Room 701, Lift 6, Medinova Medical Services Ltd., Gemcon Business Center, 255 New Circular Road, Malibagh More, Dhaka-1217 +880 1790-118855 01790-118866 View location Monday: 18:00–21:00Wednesday: 18:00–21:00Saturday: 18:00–21:00 Asia/Dhaka BOOK APPOINTMENT 1 Call the Chamber Call 01790-118855 or 01790-118866 to confirm availability and book your serial. 2 Visit Medinova Malibagh Saturday, Monday or Wednesday, 6 PM–9 PM. Lift 6, Room 701, Gemcon Business Center, 255 New Circular Road, Dhaka. 3 Consult the Doctor Bring relevant medical reports, prescriptions and a list of medicines you currently use. 4 Plan Your Follow-up Follow the advice given during your consultation and contact the chamber to arrange any recommended follow-up. FROM THE VIDEO LIBRARY Video Gallery ব্রণ কেন হয় ও এর চিকিৎসা ব্রণ হওয়ার কারণ ও চিকিৎসা নিয়ে আলোচনা করেছেন ডা. ফারজানা রহমান সাথী। Watch on YouTube ব্রণের দাগ ও ত্বকের গর্ত ব্রণের দাগ ও ত্বকের গর্তের যত্ন নিয়ে ডা. ফারজানা রহমান সাথীর আলোচনা। Watch on YouTube চুল পড়ার কারণ ও যত্ন চুল পড়ার কারণ ও চুলের যত্ন সম্পর্কে জানাচ্ছেন ডা. ফারজানা রহমান সাথী। Watch on YouTube View all videos Career Journey Professional Experience Shaheed Suhrawardy Medical College & Hospital, Dhaka Assistant Professor, Dermatology (Skin & VD) Current appointment Clinical and academic role in Dermatology & Venereology. Bangladesh CONTACT THE PRACTICE Do You Have Health Concerns? For consultation availability and appointments, contact Dr. Farzana Rahman Shathi — Dermatology, Venereology & Aesthetic Medicine Need Help What People Are Saying! Write a Review Share Your Experience Your review will appear after approval. Your name, optional location and feedback will be public. Please avoid private medical details. Your name * Location or workplace (optional) Rating *Choose a rating5 — Excellent4 — Good3 — Average2 — Fair1 — Poor Your review *10–3,000 characters. Leave this field empty I agree to publish my name, location (if supplied), rating and review after approval. Submit review সহযোগিতাপরায়ণ চিকিৎসক, ভালো মানুষ। রোগীদের আন্তরিকভাবে চিকিৎসা করেন এবং তাঁর ব্যবহার ভালো। Y Yeasif Ferdous উনি খুবই ভালো একজন ডাক্তার 🥰 M @mahimsumi6509 চিকিৎসাটি খুব ভালো ছিল। S @shihabchowdhury2820 ম্যাডামের চিকিৎসা খুবই চমৎকার। আমি উনার থেকে ব্রণের চিকিৎসা নিচ্ছি, আশানুরূপ এখনই ভালো ফলাফল পাচ্ছি। S @SharifHossain-s2u Dr. Farzana Rahman Shathi MBBS (Shaheed Suhrawardy Medical College)• BCS (Health)• FCPS (Dermatology & Venereology)• MCPS (Dermatology & Venereology)• DDV• Fellowship in Advanced Aesthetic Dermatology & Regenerative Medicine Assistant Professor, Dermatology, Shaheed Suhrawardy Medical College & Hospital, Dhaka. Specialist in skin, allergy, sexual diseases and leprosy; dermatosurgeon and aesthetic practitioner. +880 1790-118855 01790-118866 , 02-58313811 , 02-58311812-13 Room 701, Lift 6, Medinova Medical Services Ltd., Gemcon Business Center, 255 New Circular Road, Malibagh More, Dhaka-1217 Services Skin & AllergyLaser & Skin ResurfacingAesthetic DermatologyAcne & Acne ScarsHair & ScalpVenereology & Leprosy Expertise DermatologySkin AllergiesVenereologyLeprosyDermatosurgeryAesthetic & Cosmetic Consultation Official Facebook Dr. Farzana Rahman Shathi Dermatology, Venereology & Aesthetic Medicine Visit Facebook Page © YEAR Dr. Farzana Rahman Shathi. All rights reserved. Developed by Softorio",
+      "/about": "Skip to content ✚Dr. Farzana Rahman ShathiDermatology, Venereology & Aesthetic Medicine Home About Services Faqs Gallery +880 1790-118855 ✚Dr. Farzana Rahman ShathiDermatology, Venereology & Aesthetic Medicine Home About Services Faqs Gallery Dr. Farzana Rahman Shathi Assistant Professor, Dermatology, Shaheed Suhrawardy Medical College & Hospital, Dhaka. Specialist in skin, allergy, sexual diseases and leprosy; dermatosurgeon and aesthetic practitioner. Home About Me Expert Physician Dr. Farzana Rahman Shathi Dermatology, Venereology & Aesthetic Medicine Assistant Professor, Dermatology, Shaheed Suhrawardy Medical College & Hospital, Dhaka. Specialist in skin, allergy, sexual diseases and leprosy; dermatosurgeon and aesthetic practitioner. Assistant Professor, Dermatology (Skin & VD) — Shaheed Suhrawardy Medical College & Hospital, Dhaka Dr. Farzana Rahman Shathi Assistant Professor, Dermatology, Shaheed Suhrawardy Medical College & Hospital, Dhaka. Specialist in skin, allergy, sexual diseases and leprosy; dermatosurgeon and aesthetic practitioner. She holds MBBS, BCS (Health), FCPS (Dermatology & Venereology), MCPS (Dermatology & Venereology), DDV, and a fellowship in Advanced Aesthetic Dermatology & Regenerative Medicine. She sees patients at Medinova Malibagh on Saturday, Monday and Wednesday, 6:00 PM–9:00 PM, Lift 6, Room 701. Call the chamber to confirm your appointment. Academic Excellence MBBS Bachelor of Medicine and Bachelor of SurgeryBCS (Health) Bangladesh Civil Service (Health)FCPS (Dermatology & Venereology) Specialist qualification in skin and venereal diseasesMCPS (Dermatology & Venereology) Membership qualification in skin and venereal diseasesDDV Diploma in Dermatology and VenereologyFellowship in Advanced Aesthetic Dermatology & Regenerative Medicine Advanced training in aesthetic dermatology and regenerative medicine. Care for Your Skin & Wellbeing Specialist consultations in dermatology, venereology and aesthetic medicine. CALL FOR APPOINTMENT Dr. Farzana Rahman Shathi MBBS (Shaheed Suhrawardy Medical College)• BCS (Health)• FCPS (Dermatology & Venereology)• MCPS (Dermatology & Venereology)• DDV• Fellowship in Advanced Aesthetic Dermatology & Regenerative Medicine Assistant Professor, Dermatology, Shaheed Suhrawardy Medical College & Hospital, Dhaka. Specialist in skin, allergy, sexual diseases and leprosy; dermatosurgeon and aesthetic practitioner. +880 1790-118855 01790-118866 , 02-58313811 , 02-58311812-13 Room 701, Lift 6, Medinova Medical Services Ltd., Gemcon Business Center, 255 New Circular Road, Malibagh More, Dhaka-1217 Services Skin & AllergyLaser & Skin ResurfacingAesthetic DermatologyAcne & Acne ScarsHair & ScalpVenereology & Leprosy Expertise DermatologySkin AllergiesVenereologyLeprosyDermatosurgeryAesthetic & Cosmetic Consultation Official Facebook Dr. Farzana Rahman Shathi Dermatology, Venereology & Aesthetic Medicine Visit Facebook Page © YEAR Dr. Farzana Rahman Shathi. All rights reserved. Developed by Softorio",
+      "/services": "Skip to content ✚Dr. Farzana Rahman ShathiDermatology, Venereology & Aesthetic Medicine Home About Services Faqs Gallery +880 1790-118855 ✚Dr. Farzana Rahman ShathiDermatology, Venereology & Aesthetic Medicine Home About Services Faqs Gallery Expert Services Assistant Professor, Dermatology, Shaheed Suhrawardy Medical College & Hospital, Dhaka. Specialist in skin, allergy, sexual diseases and leprosy; dermatosurgeon and aesthetic practitioner. Home Services What I Provide Expert Medical Services Assistant Professor, Dermatology, Shaheed Suhrawardy Medical College & Hospital, Dhaka. Specialist in skin, allergy, sexual diseases and leprosy; dermatosurgeon and aesthetic practitioner. Skin & Allergy Consultation for skin conditions, allergies, eczema, psoriasis and fungal concerns. Laser & Skin Resurfacing Consultation on laser-based skin treatments and resurfacing, following an individual skin assessment. Aesthetic Dermatology Personalized discussion of skin rejuvenation, pigmentation care and aesthetic treatment options. Acne & Acne Scars Clinical assessment and a treatment plan for acne and acne scarring. Hair & Scalp Assessment of hair and scalp concerns with an individual care plan. Venereology & Leprosy Private specialist consultation for sexual diseases and leprosy. Specialized Healthcare Specialist Expert Solutions for Skin Health & Aesthetic Care. Assistant Professor, Dermatology, Shaheed Suhrawardy Medical College & Hospital, Dhaka. Specialist in skin, allergy, sexual diseases and leprosy; dermatosurgeon and aesthetic practitioner. Dermatology Skin Allergies Venereology Leprosy Dermatosurgery Aesthetic & Cosmetic Consultation BOOK AN APPOINTMENT Dr. Farzana Rahman Shathi MBBS (Shaheed Suhrawardy Medical College)• BCS (Health)• FCPS (Dermatology & Venereology)• MCPS (Dermatology & Venereology)• DDV• Fellowship in Advanced Aesthetic Dermatology & Regenerative Medicine Assistant Professor, Dermatology, Shaheed Suhrawardy Medical College & Hospital, Dhaka. Specialist in skin, allergy, sexual diseases and leprosy; dermatosurgeon and aesthetic practitioner. +880 1790-118855 01790-118866 , 02-58313811 , 02-58311812-13 Room 701, Lift 6, Medinova Medical Services Ltd., Gemcon Business Center, 255 New Circular Road, Malibagh More, Dhaka-1217 Services Skin & AllergyLaser & Skin ResurfacingAesthetic DermatologyAcne & Acne ScarsHair & ScalpVenereology & Leprosy Expertise DermatologySkin AllergiesVenereologyLeprosyDermatosurgeryAesthetic & Cosmetic Consultation Official Facebook Dr. Farzana Rahman Shathi Dermatology, Venereology & Aesthetic Medicine Visit Facebook Page © YEAR Dr. Farzana Rahman Shathi. All rights reserved. Developed by Softorio",
+      "/faqs": "Skip to content ✚Dr. Farzana Rahman ShathiDermatology, Venereology & Aesthetic Medicine Home About Services Faqs Gallery +880 1790-118855 ✚Dr. Farzana Rahman ShathiDermatology, Venereology & Aesthetic Medicine Home About Services Faqs Gallery Frequently Asked Questions Assistant Professor, Dermatology, Shaheed Suhrawardy Medical College & Hospital, Dhaka. Specialist in skin, allergy, sexual diseases and leprosy; dermatosurgeon and aesthetic practitioner. Home FAQs Knowledge Base Have Any Questions? Explore answers to common questions about the doctor and chamber. For appointment information, call the chamber. 01ডাঃ ফারজানা রহমান সাথী কোন বিষয়ে বিশেষজ্ঞ? তিনি চর্ম, যৌন, কুষ্ঠ ও এলার্জি রোগের বিশেষজ্ঞ এবং ডার্মাটোসার্জারি ও এসথেটিক চিকিৎসায় পরামর্শ দেন। 02কোথায় এবং কখন রোগী দেখেন? মেডিনোভা মালিবাগ শাখা, জেমকন বিজনেস সেন্টার, ২৫৫ নিউ সার্কুলার রোড, ঢাকা-১২১৭। লিফট ৬, রুম ৭০১। শনি, সোম ও বুধবার সন্ধ্যা ৬টা থেকে রাত ৯টা পর্যন্ত। 03অ্যাপয়েন্টমেন্ট কীভাবে নেব? সিরিয়াল ও সময় নিশ্চিত করতে 01790-118855 অথবা 01790-118866 নম্বরে কল করুন। Dr. Farzana Rahman Shathi MBBS (Shaheed Suhrawardy Medical College)• BCS (Health)• FCPS (Dermatology & Venereology)• MCPS (Dermatology & Venereology)• DDV• Fellowship in Advanced Aesthetic Dermatology & Regenerative Medicine Assistant Professor, Dermatology, Shaheed Suhrawardy Medical College & Hospital, Dhaka. Specialist in skin, allergy, sexual diseases and leprosy; dermatosurgeon and aesthetic practitioner. +880 1790-118855 01790-118866 , 02-58313811 , 02-58311812-13 Room 701, Lift 6, Medinova Medical Services Ltd., Gemcon Business Center, 255 New Circular Road, Malibagh More, Dhaka-1217 Services Skin & AllergyLaser & Skin ResurfacingAesthetic DermatologyAcne & Acne ScarsHair & ScalpVenereology & Leprosy Expertise DermatologySkin AllergiesVenereologyLeprosyDermatosurgeryAesthetic & Cosmetic Consultation Official Facebook Dr. Farzana Rahman Shathi Dermatology, Venereology & Aesthetic Medicine Visit Facebook Page © YEAR Dr. Farzana Rahman Shathi. All rights reserved. Developed by Softorio",
+      "/gallery": "Skip to content ✚Dr. Farzana Rahman ShathiDermatology, Venereology & Aesthetic Medicine Home About Services Faqs Gallery +880 1790-118855 ✚Dr. Farzana Rahman ShathiDermatology, Venereology & Aesthetic Medicine Home About Services Faqs Gallery Home/Gallery THE VISUAL JOURNALIn practice.In person. A glimpse into the consultations, clinical practice and everyday care of Dr. Farzana Rahman Shathi.Discover the collection IN FOCUSDr. Farzana Rahman Shathi A PERSONAL PERSPECTIVE The personbehind the care. From a conversation at the consultation desk to a closer look at clinical practice. Explore moments from Dr. Farzana Rahman Shathi’s professional life. Laser treatment in practice At the consultation desk PORTRAITS · PRACTICE · CHAMBERMoments & details. 01Clinical & aesthetic dermatology 02Aesthetic treatment in practice 03Skin procedure in practice 04Hair & scalp care 05Dr. Farzana Rahman ShathiPortrait published by Medinova Malibagh. 06Medinova Malibagh — Chamber Informationশনি, সোম ও বুধবার সন্ধ্যা ৬টা–রাত ৯টা। লিফট ৬, রুম ৭০১। YOUR NEXT STEPLet’s talk about your care.Find consultation details and services for your next visit. Explore services Call for an appointment Dr. Farzana Rahman Shathi MBBS (Shaheed Suhrawardy Medical College)• BCS (Health)• FCPS (Dermatology & Venereology)• MCPS (Dermatology & Venereology)• DDV• Fellowship in Advanced Aesthetic Dermatology & Regenerative Medicine Assistant Professor, Dermatology, Shaheed Suhrawardy Medical College & Hospital, Dhaka. Specialist in skin, allergy, sexual diseases and leprosy; dermatosurgeon and aesthetic practitioner. +880 1790-118855 01790-118866 , 02-58313811 , 02-58311812-13 Room 701, Lift 6, Medinova Medical Services Ltd., Gemcon Business Center, 255 New Circular Road, Malibagh More, Dhaka-1217 Services Skin & AllergyLaser & Skin ResurfacingAesthetic DermatologyAcne & Acne ScarsHair & ScalpVenereology & Leprosy Expertise DermatologySkin AllergiesVenereologyLeprosyDermatosurgeryAesthetic & Cosmetic Consultation Official Facebook Dr. Farzana Rahman Shathi Dermatology, Venereology & Aesthetic Medicine Visit Facebook Page © YEAR Dr. Farzana Rahman Shathi. All rights reserved. Developed by Softorio",
+      "/videos": "Skip to content ✚Dr. Farzana Rahman ShathiDermatology, Venereology & Aesthetic Medicine Home About Services Faqs Gallery +880 1790-118855 ✚Dr. Farzana Rahman ShathiDermatology, Venereology & Aesthetic Medicine Home About Services Faqs Gallery Video GalleryHome ব্রণ কেন হয় ও এর চিকিৎসা ব্রণ হওয়ার কারণ ও চিকিৎসা নিয়ে আলোচনা করেছেন ডা. ফারজানা রহমান সাথী। Watch on YouTube ব্রণের দাগ ও ত্বকের গর্ত ব্রণের দাগ ও ত্বকের গর্তের যত্ন নিয়ে ডা. ফারজানা রহমান সাথীর আলোচনা। Watch on YouTube চুল পড়ার কারণ ও যত্ন চুল পড়ার কারণ ও চুলের যত্ন সম্পর্কে জানাচ্ছেন ডা. ফারজানা রহমান সাথী। Watch on YouTube Dr. Farzana Rahman Shathi MBBS (Shaheed Suhrawardy Medical College)• BCS (Health)• FCPS (Dermatology & Venereology)• MCPS (Dermatology & Venereology)• DDV• Fellowship in Advanced Aesthetic Dermatology & Regenerative Medicine Assistant Professor, Dermatology, Shaheed Suhrawardy Medical College & Hospital, Dhaka. Specialist in skin, allergy, sexual diseases and leprosy; dermatosurgeon and aesthetic practitioner. +880 1790-118855 01790-118866 , 02-58313811 , 02-58311812-13 Room 701, Lift 6, Medinova Medical Services Ltd., Gemcon Business Center, 255 New Circular Road, Malibagh More, Dhaka-1217 Services Skin & AllergyLaser & Skin ResurfacingAesthetic DermatologyAcne & Acne ScarsHair & ScalpVenereology & Leprosy Expertise DermatologySkin AllergiesVenereologyLeprosyDermatosurgeryAesthetic & Cosmetic Consultation Official Facebook Dr. Farzana Rahman Shathi Dermatology, Venereology & Aesthetic Medicine Visit Facebook Page © YEAR Dr. Farzana Rahman Shathi. All rights reserved. Developed by Softorio"
+    }
+  }
+}
