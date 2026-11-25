@@ -61,7 +61,7 @@ class DemoWebsiteMirrorTest extends TestCase
         foreach (['/', '/about', '/services', '/faqs', '/gallery', '/videos'] as $url) {
             $this->get($url)->assertOk()->assertSee('Dr. Farzana Rahman Shathi')->assertDontSee('Previous public feedback');
         }
-        $this->get('/')->assertSee('Laser &amp; Skin Resurfacing', false)->assertSee('What People')->assertSee('Medical qualifications');
+        $this->get('/')->assertSee('Laser &amp; Skin Resurfacing', false)->assertSee('What People')->assertSee('Qualifications &amp; memberships', false);
         $this->get('/gallery')->assertSee('Clinical &amp; aesthetic dermatology', false)->assertDontSee('Explore the featured photographs above.');
 
         $manifest = json_decode(file_get_contents(database_path('seeders/data/demo-reference.json')), true);
@@ -83,11 +83,12 @@ class DemoWebsiteMirrorTest extends TestCase
         $this->artisan('website:match-demo')->expectsOutputToContain('already applied')->assertSuccessful();
         $this->assertSame($counts, [MediaAsset::count(), Service::withTrashed()->count(), Review::withTrashed()->count()]);
         $this->assertSame('Later edited biography', DoctorProfile::first()->summary);
+        $this->assertContains('Member of American Academy of Aesthetic Medicine (AAAM)', DoctorProfile::first()->credentials);
         $this->assertSame('Later edited service', Service::published()->first()->name);
         $this->assertCount(1, Storage::disk('local')->files('demo-mirror-backups'));
     }
 
-    public function test_every_public_page_contains_the_same_complete_text_as_the_live_reference(): void
+    public function test_every_public_page_matches_the_reference_except_the_requested_aaam_addition(): void
     {
         $this->artisan('website:match-demo')->assertSuccessful();
         $manifest = json_decode(file_get_contents(database_path('seeders/data/demo-reference.json')), true);
@@ -97,6 +98,27 @@ class DemoWebsiteMirrorTest extends TestCase
             $previous = libxml_use_internal_errors(true);
             try {
                 $document->loadHTML('<?xml encoding="UTF-8">'.$response->getContent());
+                $xpath = new \DOMXPath($document);
+                $membership = 'Member of American Academy of Aesthetic Medicine (AAAM)';
+                $footer = $xpath->query('//*[contains(concat(" ", normalize-space(@class), " "), " footer-about ")]')->item(0);
+                $this->assertStringContainsString($membership, $footer->textContent, $url.' footer membership');
+                $areas = match ($url) {
+                    '/' => ['hero-header', 'introduction-qualifications', 'qualification-award-area'],
+                    '/about' => ['academic-luxury-card'],
+                    default => [],
+                };
+                foreach ($areas as $area) {
+                    $section = $xpath->query('//*[contains(concat(" ", normalize-space(@class), " "), " '.$area.' ")]')->item(0);
+                    $this->assertNotNull($section, $url.' '.$area);
+                    $this->assertStringContainsString($membership, $section->textContent, $url.' '.$area);
+                }
+                foreach ($xpath->query('//section[@aria-label="Professional memberships"]') as $section) {
+                    $this->assertStringContainsString($membership, $section->textContent);
+                    $section->parentNode->removeChild($section);
+                }
+                $separator = $xpath->query('//span[contains(@class, "credential-tag") and text()="'.$membership.'"]/preceding-sibling::span[1][contains(@class, "credential-separator")]')->item(0);
+                $this->assertNotNull($separator, $url.' membership separator');
+                $separator->parentNode->removeChild($separator);
                 foreach (['script', 'style', 'noscript'] as $tag) {
                     while ($document->getElementsByTagName($tag)->length > 0) {
                         $node = $document->getElementsByTagName($tag)->item(0);
@@ -104,6 +126,8 @@ class DemoWebsiteMirrorTest extends TestCase
                     }
                 }
                 $actual = preg_replace('/\s+/u', ' ', trim($document->getElementsByTagName('body')->item(0)->textContent));
+                $actual = str_replace([$membership, 'Qualifications & memberships'], ['', 'Medical qualifications'], $actual);
+                $actual = preg_replace('/\s+/u', ' ', trim($actual));
                 $actual = preg_replace('/©\s+\d{4}/u', '© YEAR', $actual);
                 $this->assertSame($expected, $actual, 'Complete public content differs on '.$url);
             } finally {
@@ -168,5 +192,43 @@ class DemoWebsiteMirrorTest extends TestCase
         $this->artisan('website:match-demo')->expectsOutputToContain('another doctor')->assertFailed();
         $this->assertSame('Other doctor', DoctorProfile::first()->name);
         $this->assertDatabaseCount('media_assets', 0);
+    }
+
+    public function test_existing_demo_profile_gets_aaam_once_without_changing_other_content(): void
+    {
+        $this->artisan('website:match-demo')->assertSuccessful();
+        $profile = DoctorProfile::firstOrFail();
+        $credentials = ['Administrator edited qualification', 'DDV'];
+        $profile->update(['credentials' => $credentials, 'summary' => 'Administrator edited biography']);
+        $before = $profile->fresh()->getAttributes();
+        $migration = require database_path('migrations/2026_11_25_201632_add_aaam_membership_to_farzana_profile.php');
+
+        $migration->up();
+        $migration->up();
+        $this->artisan('website:match-demo')->expectsOutputToContain('already applied')->assertSuccessful();
+
+        $this->assertSame([...$credentials, 'Member of American Academy of Aesthetic Medicine (AAAM)'], $profile->fresh()->credentials);
+        $this->assertSame(
+            collect($before)->except(['credentials', 'updated_at'])->all(),
+            collect($profile->fresh()->getAttributes())->except(['credentials', 'updated_at'])->all(),
+        );
+    }
+
+    public function test_aaam_correction_preserves_existing_membership_variants_and_other_doctors(): void
+    {
+        $profile = DoctorProfile::factory()->create([
+            'key' => 'primary',
+            'name' => 'Dr. Farzana Rahman Shathi',
+            'credentials' => ['Member of American Academy of Aesthetic Medicine ( AAAM)'],
+        ]);
+        $migration = require database_path('migrations/2026_11_25_201632_add_aaam_membership_to_farzana_profile.php');
+        $before = $profile->fresh()->getAttributes();
+        $migration->up();
+        $this->assertSame($before, $profile->fresh()->getAttributes());
+
+        $profile->update(['name' => 'Another doctor', 'credentials' => ['MBBS']]);
+        $before = $profile->fresh()->getAttributes();
+        $migration->up();
+        $this->assertSame($before, $profile->fresh()->getAttributes());
     }
 }
