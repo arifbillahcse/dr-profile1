@@ -100,6 +100,7 @@ cd "$app_root"
 "$php_bin" artisan optimize:clear --no-interaction
 "$php_bin" artisan migrate --force --no-interaction
 "$php_bin" artisan website:match-demo --no-interaction
+"$php_bin" artisan website:chambers --no-interaction
 "$php_bin" artisan optimize --no-interaction
 
 printf 'Deployment commands completed for https://%s/\nSource commit: %s\nBackup: %s\n' "$expected_host" "$(git -C "$source_root" rev-parse --short HEAD)" "$backup_root"
